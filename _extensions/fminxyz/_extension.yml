@@ -1,0 +1,22 @@
+title: fminxyz
+author: Daniil Merkulov
+version: 0.0.1
+contributes:
+  formats:
+    html:
+      theme: [cosmo, theme.scss]
+      toc: true
+      code-link: true
+      code-copy: true
+      html-math-method: katex
+      auto-play-media: true
+      include-in-header:
+        - text: |
+            <script defer type="text/javascript" src="/_scripts/toggle_button.js"></script>
+    pdf:
+      toc: false
+      geometry:
+      - left=10mm
+      - right=10mm
+  filters:
+    - custom_callout.lua

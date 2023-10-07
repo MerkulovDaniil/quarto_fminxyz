@@ -1,0 +1,140 @@
+/*-- scss:defaults --*/
+
+$example-border-callout: #381885;
+$example-background-callout: rgba(114,83,237,0.2);
+$question-border-callout: #183385;
+$question-background-callout: rgba(44,132,250,0.2);
+$theorem-border-callout: #026e57;
+$theorem-background-callout: rgba(65,214,147,0.2);
+
+.katex-display { 
+  overflow: auto hidden ;
+}  /* For preventing top cropping for high formulas */
+
+/*-- scss:rules --*/
+
+// figure display
+.figure {
+  text-align: center;
+  text-indent: 0;
+}
+
+// Example callout styling
+div.callout-example.callout {
+  border-left-color: $example-border-callout;
+  p{
+    margin-bottom: 0px;
+  }
+}
+
+div.callout-example.callout-style-default > .callout-header {
+  background-color: $example-background-callout;
+}
+
+.callout-example > .callout-header::before {
+  content: "👨‍🏫";
+  margin-right: 10px;
+}
+
+// Theorem callout styling
+div.callout-theorem.callout {
+  border-left-color: $theorem-border-callout;
+  p{
+    margin-bottom: 0px;
+  }
+}
+
+div.callout-theorem.callout-style-default > .callout-header {
+  background-color: $theorem-background-callout;
+}
+
+.callout-theorem > .callout-header::before {
+  content: "🤓";
+  margin-right: 10px;
+}
+
+// Question callout styling
+div.callout-question.callout {
+  border-left-color: $question-border-callout;
+  p{
+    margin-bottom: 0px;
+  }
+}
+
+div.callout-question.callout-style-default > .callout-header {
+  background-color: $question-background-callout;
+}
+
+.callout-question > .callout-header::before {
+  content: "🤔";
+  margin-right: 10px;
+}
+
+// Answer callout styling
+.callout-answer > .callout-header::before {
+  content: "🔽";
+  margin-right: 10px;
+}
+
+div.callout-answer.callout {
+  border-left-color: #28828A;
+  border: 0;
+}
+
+div.callout-answer.callout-style-default > .callout-header {
+  background-color: transparent;
+}
+
+// Solution callout styling
+.callout-solution > .callout-header::before {
+  content: "🔽";
+  margin-right: 10px;
+}
+
+div.callout-solution.callout {
+  border-left-color: #28828A;
+  border: 0;
+}
+
+div.callout-solution.callout-style-default > .callout-header {
+  background-color: transparent;
+}
+
+// Hint callout styling
+.callout-hint > .callout-header::before {
+  content: "🔽";
+  margin-right: 10px;
+}
+
+div.callout-hint.callout {
+  border-left-color: #6c757d;
+  border: 0;
+}
+
+div.callout-hint.callout-style-default > .callout-header {
+  background-color: transparent;
+}
+
+// Proof callout styling
+.callout-proof > .callout-header::before {
+  content: "🔽";
+  margin-right: 10px;
+}
+
+div.callout-proof.callout {
+  border-left-color: #6c757d;
+  border: 0;
+}
+
+div.callout-proof.callout-style-default > .callout-header {
+  background-color: transparent;
+}
+
+.quarto-margin-footer {
+  .margin-footer-item {
+    #toggleSpoilers {
+      font-size: 0.75rem;
+      padding-left: 2px;
+    }
+  }
+}
