@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index</title>
+<title>fmin.xyz</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,6 +62,152 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-theory .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 4,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-theory'] = new List('listing-theory', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-methods .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 4,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-methods'] = new List('listing-methods', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-exercises .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      page: 20,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-exercises'] = new List('listing-exercises', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-applications .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 4,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-applications'] = new List('listing-applications', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-benchmarks .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 4,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-benchmarks'] = new List('listing-benchmarks', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script defer="" type="text/javascript" src="./_assets/toggle_button.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js" integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A" crossorigin="anonymous"></script>
 
@@ -80,6 +228,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<meta name="twitter:title" content="fmin.xyz">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -106,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">fmin.xyz</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -712,21 +862,6 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#optim" id="toc-optim" class="nav-link active" data-scroll-target="#optim"><span class="header-section-number">1</span> Optim</a>
-  <ul class="collapse">
-  <li><a href="#contribution" id="toc-contribution" class="nav-link" data-scroll-target="#contribution"><span class="header-section-number">1.1</span> Contribution</a>
-  <ul class="collapse">
-  <li><a href="#guide" id="toc-guide" class="nav-link" data-scroll-target="#guide"><span class="header-section-number">1.1.1</span> Guide</a></li>
-  <li><a href="#formatting-rules" id="toc-formatting-rules" class="nav-link" data-scroll-target="#formatting-rules"><span class="header-section-number">1.1.2</span> Formatting rules</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.2</span> References</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/index.md" class="toc-action">Edit this page</a></p></div></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
 <button type="button" name="button" class="btn" id="toggleSpoilers">
 🔽
@@ -735,60 +870,3710 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">fmin.xyz</h1>
+</div>
 
 
-<section id="optim" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Optim</h1>
-<p>💎A site, that contains systematic optimization methods review</p>
-<section id="contribution" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="contribution"><span class="header-section-number">1.1</span> Contribution</h2>
-<section id="guide" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="guide"><span class="header-section-number">1.1.1</span> Guide</h3>
-<ol type="1">
-<li>Fork this repository to your own account (Fork button at the top right corner)</li>
-<li>Create a branch in your repository (locally or remotely). Let’s name it <code>contribution</code> branch</li>
-<li>Commit your changes&nbsp;fixes&nbsp;additions to this branch</li>
-<li>Send your pull request to the <code>master</code> branch of the original repository.</li>
-</ol>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="welcome-to-fmin.xyz" class="level1">
+<h1>Welcome to 💎fmin.xyz!</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Welcome to 💎fmin.xyz, a comprehensive source designed for enthusiasts, researchers, students, and advanced school practitioners in the fields of optimization and mathematical theory! This platform is diligently crafted to serve as a reliable companion in your journey of acquiring and refining knowledge in optimization theory and methods.</p>
 </section>
-<section id="formatting-rules" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="formatting-rules"><span class="header-section-number">1.1.2</span> Formatting rules</h3>
-<section id="math-blocks" class="level4" data-number="1.1.2.1">
-<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="math-blocks"><span class="header-section-number">1.1.2.1</span> Math blocks</h4>
+<section id="get-started" class="level2">
+<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
+<p>Dive into the wealth of resources available:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Theory</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Methods</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Exercises</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Applications</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Benchmarks</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="listing-theory" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-4">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1696763285977" data-listing-reading-time-sort="22">
+<a href="./docs/theory/Matrix_calculus.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="docs/theory/vector_im.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Matrix calculus
+</h5>
+<div class="card-text listing-description">
+We will treat all vectors as column vectors by default. The space of real vectors of length <span class="math inline">n</span> is denoted by <span class="math inline">\mathbb{R}^n</span>, while the space of real-valued <span class="math inline">m \times n</span> matrices…<span class="math inline"></span><sup></sup>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1696706817291" data-listing-reading-time-sort="6">
+<a href="./docs/theory/Convex_function.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="docs/theory/convex_function.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Convex function
+</h5>
+<div class="card-text listing-description">
+The function <span class="math inline">f(x)</span>, <strong>which is defined on the convex set</strong> <span class="math inline">S \subseteq \mathbb{R}^n</span>, is called <strong>convex</strong> on <span class="math inline">S</span>, if:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1696706817291" data-listing-reading-time-sort="6">
+<a href="./docs/theory/Conjugate_set.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="docs/theory/normal.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Conjugate set
+</h5>
+<div class="card-text listing-description">
+Пусть <span class="math display">S \subseteq \mathbb{R}^n</span> - произвольное непустое множество. Тогда cопряженное к нему множество определяется, как:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1696706817291" data-listing-reading-time-sort="6">
+<a href="./docs/theory/Conjugate function.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="docs/theory/conj.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Conjugate function
+</h5>
+<div class="card-text listing-description">
+Let <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}</span>. The function <span class="math inline">f^*: \mathbb{R}^n \to \mathbb{R}</span> is called convex conjugate (Fenchel’s conjugate, dual, Legendre transform) <span class="math inline">f(x)</span> and is…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1696706817291" data-listing-reading-time-sort="1">
+<a href="./docs/theory/Dual norm.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Dual norm
+</h5>
+<div class="card-text listing-description">
+Let <span class="math display">\Vert x\Vert </span> be the norm in the primal space <span class="math display">x \in S \subseteq \mathbb{R}^n</span>, then the following expression defines dual norm:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1696706817295" data-listing-reading-time-sort="5">
+<a href="./docs/theory/Subgradient.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/theory/conv_support.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Subgradient and subdifferential
+</h5>
+<div class="card-text listing-description">
+Важным свойством непрерывной выпуклой функции <span class="math display">f(x)</span> является то, что в выбранной точке <span class="math display">x_0</span> для всех <span class="math display">x \in \text{dom } f</span> выполнено неравенство:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1696706817295" data-listing-reading-time-sort="9">
+<a href="./docs/theory/Optimality.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/theory/goodnews.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Optimality conditions. KKT
+</h5>
+<div class="card-text listing-description">
+Let <span class="math display">S \subset \mathbb{R}^n</span> be a compact set and <span class="math display">f(x)</span> a continuous function on <span class="math display">S</span>. So that, the point of the global minimum of the function <span class="math display">f (x)</span> on <span class="math display">S</span> exists.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1696706817291" data-listing-reading-time-sort="1">
+<a href="./docs/theory/Convex_optimization_problem.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Convex optimization problem
+</h5>
+<div class="card-text listing-description">
+Note, that there is an agreement in notation of mathematical programming. The problems of the following type are called <strong>Convex optimization problem</strong>:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1696706817292" data-listing-reading-time-sort="10">
+<a href="./docs/theory/Duality.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Duality
+</h5>
+<div class="card-text listing-description">
+Duality lets us associate to any constrained optimization problem a concave maximization problem, whose solutions lower bound the optimal value of the original…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1696706817295" data-listing-reading-time-sort="3">
+<a href="./docs/theory/Rates_of_convergence.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/theory/convergence.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Rates of convergence
+</h5>
+<div class="card-text listing-description">
+In order to compare perfomance of algorithms we need to define a terminology for different types of convergence. Let <span class="math display">\{x_k\}</span> be a sequence in <span class="math display">\mathbb{R}^n</span> that…<span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="theory-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="listing-methods" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-4">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1696706817083" data-listing-reading-time-sort="1">
+<a href="./docs/methods/line_search/line_search.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="docs/methods/line_search/unimodal.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Line search
+</h5>
+<div class="card-text listing-description">
+Suppose, we have a problem of minimization of a function <span class="math display">f(x): \mathbb{R} \to \mathbb{R}</span> of scalar variable:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1696706817286" data-listing-reading-time-sort="1">
+<a href="./docs/methods/zom/zom.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="docs/methods/zom/zero_order_oracle.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Zero order methods
+</h5>
+<div class="card-text listing-description">
+Now we have only…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1696706817079" data-listing-reading-time-sort="1">
+<a href="./docs/methods/fom/fom.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+First order methods
+</h5>
+<div class="card-text listing-description">
+Now we have only first order information from the oracle.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1696706817075" data-listing-reading-time-sort="7">
+<a href="./docs/methods/fom/GD.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="docs/methods/fom/lipschitz_parabola.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Gradient descent
+</h5>
+<div class="card-text listing-description">
+A classical problem of function minimization is considered.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1696706817069" data-listing-reading-time-sort="5">
+<a href="./docs/methods/adaptive_metrics/Newton.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/adaptive_metrics/newton_1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Newton method
+</h5>
+<div class="card-text listing-description">
+Consider the function <span class="math display">\varphi(x): \mathbb{R} \to \mathbb{R}</span>. Let there be equation <span class="math display">\varphi(x^*) = 0</span>. Consider a linear approximation of the function <span class="math display">\varphi(x)</span> ne…<span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1696771952117" data-listing-reading-time-sort="3">
+<a href="./docs/methods/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/iterative.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Methods
+</h5>
+<div class="card-text listing-description">
+<span class="math display">
+\begin{split}
+&amp; \min_{x \in \mathbb{R}^n} f(x)\\
+\text{s.t. }  g_i(x) \leq&amp; 0, \; i = 1,\ldots,m\\
+h_j(x) =&amp; 0, \; j = 1,\ldots,k\\
+\end{split}
+</span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1696706817070" data-listing-reading-time-sort="3">
+<a href="./docs/methods/adaptive_metrics/Quasi_newton.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Quasi Newton methods
+</h5>
+<div class="card-text listing-description">
+For the classic task of unconditional optimization <span class="math display">f(x) \to \min\limits_{x \in \mathbb{R}^n}</span> the general scheme of iteration method is written as:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1696706817076" data-listing-reading-time-sort="7">
+<a href="./docs/methods/fom/Subgradient descent.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/fom/SD.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Subgradient descent
+</h5>
+<div class="card-text listing-description">
+Рассматривается классическая задача выпуклой оптимизации:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1696706817070" data-listing-reading-time-sort="2">
+<a href="./docs/methods/adaptive_metrics/adaptive_metric.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Adaptive metric methods
+</h5>
+<div class="card-text listing-description">
+It is known, that antigradient <span class="math display">-\nabla f (x_0)</span> is the direction of the steepest descent of the function <span class="math display">f(x)</span> at point <span class="math display">x_0</span>. However, we can introduce another concept…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1696706817076" data-listing-reading-time-sort="7">
+<a href="./docs/methods/fom/Projected_subgradient_descent.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/fom/geom_bound.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Projected subgradient descent
+</h5>
+<div class="card-text listing-description">
+Suppose, we are to solve the following problem:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1696706817076" data-listing-reading-time-sort="9">
+<a href="./docs/methods/fom/Mirror_descent.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/fom/bregman.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Mirror descent
+</h5>
+<div class="card-text listing-description">
+Метод зеркального спуска является естественным обобщением метода проекции субградиента в случае обобщения <span class="math display">l_2</span> нормы на более общий случай какой-то функции расстояния.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1696706817069" data-listing-reading-time-sort="6">
+<a href="./docs/methods/Simplex.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/LP.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LP and simplex algorithm
+</h5>
+<div class="card-text listing-description">
+Generall…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1696706817076" data-listing-reading-time-sort="4">
+<a href="./docs/methods/fom/SGD.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Stochastic gradient descent
+</h5>
+<div class="card-text listing-description">
+Suppose, our target function is the sum of functions.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1696706817067" data-listing-reading-time-sort="5">
+<a href="./docs/methods/Autograd.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/differentiation_scheme.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Automatic differentiation
+</h5>
+<div class="card-text listing-description">
+ Automatic differentiation is a scheme, that allows you to compute a value of gradient of function with a cost of computing…<span class="math display"></span><span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1696706817076" data-listing-reading-time-sort="2">
+<a href="./docs/methods/fom/SAG.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Stochastic average gradient
+</h5>
+<div class="card-text listing-description">
+A classical problem of minimizing finite sum of the smooth and convex functions was considered.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="15" data-listing-file-modified-sort="1696706817075" data-listing-reading-time-sort="2">
+<a href="./docs/methods/fom/ADAM.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+ADAM: A Method for Stochastic Optimization
+</h5>
+<div class="card-text listing-description">
+Adam is the stochastic first…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1696706817075" data-listing-reading-time-sort="2">
+<a href="./docs/methods/fom/Lookahead.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/fom/fast_vs_slow.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lookahead Optimizer: <span class="math inline">k</span> steps forward, <span class="math inline">1</span> step back
+</h5>
+<div class="card-text listing-description">
+The lookahead method provides an interesting way to accelerate and stabilize algorithms of stochastic gradient descent family. The main idea is quite simple:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1696706817076" data-listing-reading-time-sort="1">
+<a href="./docs/methods/fom/Shampoo.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Shampoo: Preconditioned Stochastic Tensor Optimization
+</h5>
+<div class="card-text listing-description">
+The idea of maintaining second order statistics from accumulated stochastic gradients is the cornerstone of the stochastic first order optimization. Conceptually, guys…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1696706817113" data-listing-reading-time-sort="6">
+<a href="./docs/methods/zom/bee_algorithm.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/zom/Schwefel_function_plot.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Bee algorithm
+</h5>
+<div class="card-text listing-description">
+The Bee Algorithm was mathematically first described relatively recently. It is one of the representatives of a large family of algorithms that allow modeling swarm…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="19" data-listing-file-modified-sort="1696706817082" data-listing-reading-time-sort="2">
+<a href="./docs/methods/line_search/binary_search.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/line_search/binary_search.gif" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Binary search
+</h5>
+<div class="card-text listing-description">
+We divide a segment into two equal parts and choose the one that contains the solution of the problem using the values of functions. # Algorithm
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="20" data-listing-file-modified-sort="1696706817069" data-listing-reading-time-sort="5">
+<a href="./docs/methods/adaptive_metrics/CG.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/adaptive_metrics/cg_win.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Conjugate gradients
+</h5>
+<div class="card-text listing-description">
+Originally, the conjugate gradients method was created to solve a system of linear equations.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="21" data-listing-file-modified-sort="1696706817082" data-listing-reading-time-sort="2">
+<a href="./docs/methods/line_search/golden_search.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/line_search/golden_search.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Golden search
+</h5>
+<div class="card-text listing-description">
+The idea is quite similar to the…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="22" data-listing-file-modified-sort="1696706817083" data-listing-reading-time-sort="2">
+<a href="./docs/methods/line_search/inexact.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/line_search/backtracking.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Inexact line search
+</h5>
+<div class="card-text listing-description">
+This strategy of inexact line search works well in practice, as well as it has the following geometric interpretation:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="23" data-listing-file-modified-sort="1696706817069" data-listing-reading-time-sort="1">
+<a href="./docs/methods/adaptive_metrics/KFAC.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="https://colab.research.google.com/assets/colab-badge.svg#button" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+KFAC
+</h5>
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="24" data-listing-file-modified-sort="1696706817069" data-listing-reading-time-sort="2">
+<a href="./docs/methods/adaptive_metrics/Natural_gradient.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Natural gradient descent
+</h5>
+<div class="card-text listing-description">
+Let’s consider illustrative example of a simple function of 2 variables:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="25" data-listing-file-modified-sort="1696706817113" data-listing-reading-time-sort="4">
+<a href="./docs/methods/zom/nelder-mead.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/zom/nm_mishra3d.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Nelder–Mead
+</h5>
+<div class="card-text listing-description">
+Sometimes the multidimensional function is so difficult to evaluate that even expressing the <span class="math display">1^{\text{st}}</span> derivative for gradient-based methods of finding optimum becomes an impossible task. In this case, we can only rely…<span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="26" data-listing-file-modified-sort="1696706817285" data-listing-reading-time-sort="3">
+<a href="./docs/methods/zom/simulated-annealing.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/methods/zom/sa_wiki.gif" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Simulated annealing
+</h5>
+<div class="card-text listing-description">
+We need to optimize the global optimum of a given function on some space using only the values of the function in some points on the space.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="27" data-listing-file-modified-sort="1696706817083" data-listing-reading-time-sort="3">
+<a href="./docs/methods/line_search/parabola.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Successive parabolic interpolation
+</h5>
+<div class="card-text listing-description">
+Sampling 3 points of a function determines unique parabola. Using this information we will go directly to its minimum. Suppose, we have 3 points <span class="math display">x_1 &lt; x_2 &lt; x_3</span> such…<span class="math display"></span><span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="28" data-listing-file-modified-sort="1696772272007">
+<a href="./docs/methods/Autograd.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="29" data-listing-file-modified-sort="1696706817067">
+<a href="./docs/methods/LP.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="30" data-listing-file-modified-sort="1696706817068">
+<a href="./docs/methods/LP_1.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="31" data-listing-file-modified-sort="1696706817068">
+<a href="./docs/methods/LP_2.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="32" data-listing-file-modified-sort="1696706817069">
+<a href="./docs/methods/LP_KM.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="33" data-listing-file-modified-sort="1696772271570">
+<a href="./docs/methods/Simplex.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="34" data-listing-file-modified-sort="1696772279882">
+<a href="./docs/methods/adaptive_metrics/CG.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="35" data-listing-file-modified-sort="1696772279056">
+<a href="./docs/methods/adaptive_metrics/KFAC.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="36" data-listing-file-modified-sort="1696772278718">
+<a href="./docs/methods/adaptive_metrics/Natural_gradient.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="37" data-listing-file-modified-sort="1696772280705">
+<a href="./docs/methods/adaptive_metrics/Newton.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="38" data-listing-file-modified-sort="1696772280262">
+<a href="./docs/methods/adaptive_metrics/Quasi_newton.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="39" data-listing-file-modified-sort="1696772279419">
+<a href="./docs/methods/adaptive_metrics/adaptive_metric.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="40" data-listing-file-modified-sort="1696706817070">
+<a href="./docs/methods/adaptive_metrics/approx_taylor.mp4" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="41" data-listing-file-modified-sort="1696706817070">
+<a href="./docs/methods/adaptive_metrics/cg_win.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="42" data-listing-file-modified-sort="1696706817071">
+<a href="./docs/methods/adaptive_metrics/eigenvectors.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="43" data-listing-file-modified-sort="1696706817071">
+<a href="./docs/methods/adaptive_metrics/newton.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="44" data-listing-file-modified-sort="1696706817071">
+<a href="./docs/methods/adaptive_metrics/newton_1.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="45" data-listing-file-modified-sort="1696706817073">
+<a href="./docs/methods/adaptive_metrics/newton_field.mp4" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="46" data-listing-file-modified-sort="1696706817073">
+<a href="./docs/methods/adaptive_metrics/steepest.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="47" data-listing-file-modified-sort="1696706817073">
+<a href="./docs/methods/backprop.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="48" data-listing-file-modified-sort="1696706817074">
+<a href="./docs/methods/backpropagation.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="49" data-listing-file-modified-sort="1696706817074">
+<a href="./docs/methods/diet_LP.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="50" data-listing-file-modified-sort="1696706817075">
+<a href="./docs/methods/differentiation_scheme.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="51" data-listing-file-modified-sort="1696772272730">
+<a href="./docs/methods/fom/ADAM.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="52" data-listing-file-modified-sort="1696772274118">
+<a href="./docs/methods/fom/GD.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="53" data-listing-file-modified-sort="1696772274498">
+<a href="./docs/methods/fom/Lookahead.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="54" data-listing-file-modified-sort="1696706817075">
+<a href="./docs/methods/fom/MD.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="55" data-listing-file-modified-sort="1696706817075">
+<a href="./docs/methods/fom/MD_test.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="56" data-listing-file-modified-sort="1696772273242">
+<a href="./docs/methods/fom/Mirror_descent.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="57" data-listing-file-modified-sort="1696772274941">
+<a href="./docs/methods/fom/Projected_subgradient_descent.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="58" data-listing-file-modified-sort="1696772273633">
+<a href="./docs/methods/fom/SAG.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="59" data-listing-file-modified-sort="1696706817076">
+<a href="./docs/methods/fom/SD.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="60" data-listing-file-modified-sort="1696772276170">
+<a href="./docs/methods/fom/SGD.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="61" data-listing-file-modified-sort="1696772272346">
+<a href="./docs/methods/fom/Shampoo.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="62" data-listing-file-modified-sort="1696772275741">
+<a href="./docs/methods/fom/Subgradient descent.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="63" data-listing-file-modified-sort="1696706817077">
+<a href="./docs/methods/fom/bregman.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="64" data-listing-file-modified-sort="1696706817079">
+<a href="./docs/methods/fom/fast_vs_slow.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="65" data-listing-file-modified-sort="1696772275270">
+<a href="./docs/methods/fom/fom.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="66" data-listing-file-modified-sort="1696706817080">
+<a href="./docs/methods/fom/geom_bound.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="67" data-listing-file-modified-sort="1696706817080">
+<a href="./docs/methods/fom/imagenet_train_loss.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="68" data-listing-file-modified-sort="1696706817080">
+<a href="./docs/methods/fom/lipschitz_parabola.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="69" data-listing-file-modified-sort="1696706817081">
+<a href="./docs/methods/globallocal.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="70" data-listing-file-modified-sort="1696772278349">
+<a href="./docs/methods/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="71" data-listing-file-modified-sort="1696706817081">
+<a href="./docs/methods/iterative.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="72" data-listing-file-modified-sort="1696706817081">
+<a href="./docs/methods/line_search/backtracking.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="73" data-listing-file-modified-sort="1696706817082">
+<a href="./docs/methods/line_search/binary_search.gif" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="74" data-listing-file-modified-sort="1696772277241">
+<a href="./docs/methods/line_search/binary_search.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="75" data-listing-file-modified-sort="1696772277612">
+<a href="./docs/methods/line_search/golden_search.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="76" data-listing-file-modified-sort="1696706817083">
+<a href="./docs/methods/line_search/golden_search.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="77" data-listing-file-modified-sort="1696772276882">
+<a href="./docs/methods/line_search/inexact.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="78" data-listing-file-modified-sort="1696772277964">
+<a href="./docs/methods/line_search/line_search.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="79" data-listing-file-modified-sort="1696772276514">
+<a href="./docs/methods/line_search/parabola.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="80" data-listing-file-modified-sort="1696706817084">
+<a href="./docs/methods/line_search/unimodal.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="81" data-listing-file-modified-sort="1696706817086">
+<a href="./docs/methods/line_search/unimodal_pro.gif" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="82" data-listing-file-modified-sort="1696706817086">
+<a href="./docs/methods/line_search/wolfe_fmin.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="83" data-listing-file-modified-sort="1696706817086">
+<a href="./docs/methods/oracle.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="84" data-listing-file-modified-sort="1696706817086">
+<a href="./docs/methods/zom/Rosenbrock_average.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="85" data-listing-file-modified-sort="1696706817086">
+<a href="./docs/methods/zom/Rosenbrock_dimension.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="86" data-listing-file-modified-sort="1696706817095">
+<a href="./docs/methods/zom/Rosenbrock_function_plot.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="87" data-listing-file-modified-sort="1696706817095">
+<a href="./docs/methods/zom/Schwefel_average.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="88" data-listing-file-modified-sort="1696706817096">
+<a href="./docs/methods/zom/Schwefel_function.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="89" data-listing-file-modified-sort="1696706817112">
+<a href="./docs/methods/zom/Schwefel_function_plot.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="90" data-listing-file-modified-sort="1696772271100">
+<a href="./docs/methods/zom/bee_algorithm.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="91" data-listing-file-modified-sort="1696772270156">
+<a href="./docs/methods/zom/nelder-mead.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="92" data-listing-file-modified-sort="1696706817149">
+<a href="./docs/methods/zom/nm_RoundDomain.gif" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="93" data-listing-file-modified-sort="1696706817151">
+<a href="./docs/methods/zom/nm_RoundDomain.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="94" data-listing-file-modified-sort="1696706817193">
+<a href="./docs/methods/zom/nm_SquareDomain1.gif" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="95" data-listing-file-modified-sort="1696706817196">
+<a href="./docs/methods/zom/nm_SquareDomain1.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="96" data-listing-file-modified-sort="1696706817237">
+<a href="./docs/methods/zom/nm_SquareDomain2.gif" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="97" data-listing-file-modified-sort="1696706817239">
+<a href="./docs/methods/zom/nm_SquareDomain2.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="98" data-listing-file-modified-sort="1696706817269">
+<a href="./docs/methods/zom/nm_SquareDomain3.gif" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="99" data-listing-file-modified-sort="1696706817273">
+<a href="./docs/methods/zom/nm_SquareDomain3.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="100" data-listing-file-modified-sort="1696706817277">
+<a href="./docs/methods/zom/nm_domains.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="101" data-listing-file-modified-sort="1696706817281">
+<a href="./docs/methods/zom/nm_mishra3d.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="102" data-listing-file-modified-sort="1696706817281">
+<a href="./docs/methods/zom/queens.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="103" data-listing-file-modified-sort="1696706817281">
+<a href="./docs/methods/zom/sa-example.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="104" data-listing-file-modified-sort="1696706817281">
+<a href="./docs/methods/zom/sa-runs.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="105" data-listing-file-modified-sort="1696706817285">
+<a href="./docs/methods/zom/sa_wiki.gif" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="106" data-listing-file-modified-sort="1696772270581">
+<a href="./docs/methods/zom/simulated-annealing.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="107" data-listing-file-modified-sort="1696706817285">
+<a href="./docs/methods/zom/zero_order_oracle.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="108" data-listing-file-modified-sort="1696772269685">
+<a href="./docs/methods/zom/zom.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="methods-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="listing-exercises" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-exercises-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-exercises'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table table-hover">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1696706817057" data-listing-reading-time-sort="4" data-listing-title-sort="Matrix calculus" data-listing-filename-sort="matrix_calculus.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/matrix_calculus.html" class="title listing-title">Matrix calculus</a>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1696706817056" data-listing-reading-time-sort="11" data-listing-title-sort="Convex sets" data-listing-filename-sort="convex_sets.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/convex_sets.html" class="title listing-title">Convex sets</a>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1696706817057" data-listing-reading-time-sort="3" data-listing-title-sort="Projection" data-listing-filename-sort="projection.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/projection.html" class="title listing-title">Projection</a>
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1696706817057" data-listing-reading-time-sort="1" data-listing-title-sort="Exercises" data-listing-filename-sort="index.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/index.html" class="title listing-title">Exercises</a>
+</td>
+</tr>
+<tr data-index="4" data-listing-file-modified-sort="1696706817057" data-listing-reading-time-sort="2" data-listing-title-sort="Separation" data-listing-filename-sort="separation.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/separation.html" class="title listing-title">Separation</a>
+</td>
+</tr>
+<tr data-index="5" data-listing-file-modified-sort="1696706817056" data-listing-reading-time-sort="5" data-listing-title-sort="Conjugate sets" data-listing-filename-sort="conjugate_sets.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/conjugate_sets.html" class="title listing-title">Conjugate sets</a>
+</td>
+</tr>
+<tr data-index="6" data-listing-file-modified-sort="1696706817056" data-listing-reading-time-sort="5" data-listing-title-sort="Convex functions" data-listing-filename-sort="convex_functions.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/convex_functions.html" class="title listing-title">Convex functions</a>
+</td>
+</tr>
+<tr data-index="7" data-listing-file-modified-sort="1696706817058" data-listing-reading-time-sort="2" data-listing-title-sort="Subgradient and subdifferential" data-listing-filename-sort="subgradient.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/subgradient.html" class="title listing-title">Subgradient and subdifferential</a>
+</td>
+</tr>
+<tr data-index="8" data-listing-file-modified-sort="1696706817056" data-listing-reading-time-sort="2" data-listing-title-sort="Conjugate functions" data-listing-filename-sort="conjugate_functions.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/conjugate_functions.html" class="title listing-title">Conjugate functions</a>
+</td>
+</tr>
+<tr data-index="9" data-listing-file-modified-sort="1696706817057" data-listing-reading-time-sort="4" data-listing-title-sort="General optimization problems" data-listing-filename-sort="gop.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/gop.html" class="title listing-title">General optimization problems</a>
+</td>
+</tr>
+<tr data-index="10" data-listing-file-modified-sort="1696706817057" data-listing-reading-time-sort="6" data-listing-title-sort="Duality" data-listing-filename-sort="duality.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/duality.html" class="title listing-title">Duality</a>
+</td>
+</tr>
+<tr data-index="11" data-listing-file-modified-sort="1696706817056" data-listing-reading-time-sort="2" data-listing-title-sort="Rates of convergence" data-listing-filename-sort="convergence.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/convergence.html" class="title listing-title">Rates of convergence</a>
+</td>
+</tr>
+<tr data-index="12" data-listing-file-modified-sort="1696706817057" data-listing-reading-time-sort="3" data-listing-title-sort="Line search" data-listing-filename-sort="line_search.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/line_search.html" class="title listing-title">Line search</a>
+</td>
+</tr>
+<tr data-index="13" data-listing-file-modified-sort="1696706817056" data-listing-reading-time-sort="3" data-listing-title-sort="CVXPY library" data-listing-filename-sort="cvxpy.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/cvxpy.html" class="title listing-title">CVXPY library</a>
+</td>
+</tr>
+<tr data-index="14" data-listing-file-modified-sort="1696706817056" data-listing-reading-time-sort="4" data-listing-title-sort="Automatic differentiation" data-listing-filename-sort="automatic_differentiation.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/automatic_differentiation.html" class="title listing-title">Automatic differentiation</a>
+</td>
+</tr>
+<tr data-index="15" data-listing-file-modified-sort="1696706817058" data-listing-reading-time-sort="13" data-listing-title-sort="Zero order methods" data-listing-filename-sort="zom.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/zom.html" class="title listing-title">Zero order methods</a>
+</td>
+</tr>
+<tr data-index="16" data-listing-file-modified-sort="1696706817057" data-listing-reading-time-sort="8" data-listing-title-sort="First order methods" data-listing-filename-sort="fom.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/fom.html" class="title listing-title">First order methods</a>
+</td>
+</tr>
+<tr data-index="17" data-listing-file-modified-sort="1696706817058" data-listing-reading-time-sort="2" data-listing-title-sort="Uncategorized" data-listing-filename-sort="uncategorized.md" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./docs/exercises/uncategorized.html" class="title listing-title">Uncategorized</a>
+</td>
+</tr>
+<tr data-index="18" data-listing-file-modified-sort="1696706817056" data-listing-filename-sort="Unimodal.svg" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="19" data-listing-file-modified-sort="1696772295007" data-listing-filename-sort="automatic_differentiation.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="20" data-listing-file-modified-sort="1696772294218" data-listing-filename-sort="conjugate_functions.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="21" data-listing-file-modified-sort="1696772288883" data-listing-filename-sort="conjugate_sets.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="22" data-listing-file-modified-sort="1696772292776" data-listing-filename-sort="convergence.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="23" data-listing-file-modified-sort="1696772295819" data-listing-filename-sort="convex_functions.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="24" data-listing-file-modified-sort="1696772290392" data-listing-filename-sort="convex_sets.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="25" data-listing-file-modified-sort="1696772289274" data-listing-filename-sort="cvxpy.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="26" data-listing-file-modified-sort="1696772290912" data-listing-filename-sort="duality.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="27" data-listing-file-modified-sort="1696772293191" data-listing-filename-sort="fom.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="28" data-listing-file-modified-sort="1696772292422" data-listing-filename-sort="gop.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="29" data-listing-file-modified-sort="1696772293515" data-listing-filename-sort="index.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="30" data-listing-file-modified-sort="1696772295375" data-listing-filename-sort="line_search.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="31" data-listing-file-modified-sort="1696772294610" data-listing-filename-sort="matrix_calculus.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="32" data-listing-file-modified-sort="1696772292017" data-listing-filename-sort="projection.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="33" data-listing-file-modified-sort="1696772293855" data-listing-filename-sort="separation.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="34" data-listing-file-modified-sort="1696706817058" data-listing-filename-sort="simple_learning.svg" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="35" data-listing-file-modified-sort="1696772291649" data-listing-filename-sort="subgradient.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="36" data-listing-file-modified-sort="1696772291264" data-listing-filename-sort="uncategorized.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+<tr data-index="37" data-listing-file-modified-sort="1696772289762" data-listing-filename-sort="zom.html" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<span class="listing-title">undefined</span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="exercises-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div id="listing-applications" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-4">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1696706817039" data-listing-reading-time-sort="1">
+<a href="./docs/applications/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Applications
+</h5>
+<div class="card-text listing-description">
+This section contains self-sufficient examples of numerical applications with Python code. Most of the examples are covered in the Boyd book. There are also some very useful…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1696706817025" data-listing-reading-time-sort="6">
+<a href="./docs/applications/A-Star.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/MapGermanyGraph.svg/250px-MapGermanyGraph.svg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<span class="math inline">A^*</span> algorithm for path finding
+</h5>
+<div class="card-text listing-description">
+The <strong>graph</strong> is one of the most significant structures in the algorithms, because this structure can represent many real life cases, from streets to networks.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1696706817037" data-listing-reading-time-sort="2">
+<a href="./docs/applications/deep_learning.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="docs/applications/dl.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Deep learning
+</h5>
+<div class="card-text listing-description">
+A lot of practical tasks nowadays are being solved using the deep learning approach, which is usually implies finding local…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1696706817039" data-listing-reading-time-sort="4">
+<a href="./docs/applications/knapsack_problem.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Knapsack.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Knapsack problem
+</h5>
+<div class="card-text listing-description">
+The knapsack problem or rucksack problem is a problem in combinatorial optimization. Given a set of items, each with a weight and a value, determine the number of each item…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1696706817040" data-listing-reading-time-sort="3">
+<a href="./docs/applications/least_squares.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/lls_idea.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Linear least squares
+</h5>
+<div class="card-text listing-description">
+ In a least-squares, or linear regression, problem, we have measurements <span class="math display"> X \in \mathbb{R}^{m \times n} </span> and <span class="math display"> y \in \mathbb{R}^{m} </span> and seek a vector <span class="math display"> …</span><span class="math display"></span><span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1696706817026" data-listing-reading-time-sort="3">
+<a href="./docs/applications/MLE.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/mle.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Maximum likelihood estimation
+</h5>
+<div class="card-text listing-description">
+We need to estimate probability density <span class="math display">p(x)</span> of a random variable from observed values.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1696706817038" data-listing-reading-time-sort="1">
+<a href="./docs/applications/ellipsoid.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/ellipsoid.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Minimum volume ellipsoid
+</h5>
+<div class="card-text listing-description">
+Let <span class="math display">x_1, \ldots, x_n</span> be the points in <span class="math display">\mathbb{R}^2</span>. Given these points we need…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1696706817026" data-listing-reading-time-sort="2">
+<a href="./docs/applications/NN_Loss_Surface.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/nn_vis_CNN_line_no_drop.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Neural Network Loss Surface Visualization
+</h5>
+<div class="card-text listing-description">
+Let’s consider the training of our neural network by solving the following optimization problem:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1696706817026" data-listing-reading-time-sort="1">
+<a href="./docs/applications/Neural_Lipschitz_constant.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/adv_attack.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Neural network Lipschitz constant
+</h5>
+<div class="card-text listing-description">
+It was observed, that small perturbation in Neural Network input could lead to significant errors, i.e.&nbsp;misclassifications.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1696706817043" data-listing-reading-time-sort="3">
+<a href="./docs/applications/pca.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="https://i.stack.imgur.com/lNHqt.gif" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Principal component analysis
+</h5>
+<div class="card-text listing-description">
+Imagine, that you have a dataset of points. Your goal is to choose orthogonal axes, that describe your data the most informative way. To be precise, we choose first axis in…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1696706817043" data-listing-reading-time-sort="1">
+<a href="./docs/applications/rendezvous.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/rendezvous.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Rendezvous problem
+</h5>
+<div class="card-text listing-description">
+We have two bodies in discrete time: the first is described by its coordinate <span class="math display">x_i</span> and its speed <span class="math display">v_i</span>, the second has coordinate <span class="math display">z_i</span> and speed <span class="math display">u_i</span>. Each body has its own dynamics, which we denote…<span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1696706817052" data-listing-reading-time-sort="3">
+<a href="./docs/applications/total_variation_inpainting.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/tv_start.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Total variation in-painting
+</h5>
+<div class="card-text listing-description">
+A grayscale image is represented as an <span class="math display">m \times n</span> matrix of intensities <span class="math display">U^{orig}</span> (typically between the values <span class="math display">0</span> and <span class="math display">255</span>). We are given all the values of corrupted picture, but some of them…<span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1696706817051" data-listing-reading-time-sort="3">
+<a href="./docs/applications/salesman_problem.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/salesman_problem.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Travelling salesman problem
+</h5>
+<div class="card-text listing-description">
+Suppose, we have <span class="math display">N</span> points in <span class="math display">\mathbb{R}^d</span> Euclidian space (for simplicity, we’ll consider and plot case with <span class="math display">d=2</span>). Let’s imagine, that these points are nothing else but houses in some 2d village. Salesman…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1696706817055" data-listing-reading-time-sort="3">
+<a href="./docs/applications/two_way_partitioning.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top"><img data-src="docs/applications/partition.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Two way partitioning problem
+</h5>
+<div class="card-text listing-description">
+Suppose, we have a set of <span class="math display">n</span> objects, which are needed to be split into two groups. Moreover, we…<span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1696772300387">
+<a href="./docs/applications/A-Star.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="15" data-listing-file-modified-sort="1696706817025">
+<a href="./docs/applications/CP.SVG" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1696772301054">
+<a href="./docs/applications/Eigenfaces.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1696706817025" data-listing-reading-time-sort="0">
+<a href="./docs/applications/Eigenfaces.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1696772298773">
+<a href="./docs/applications/MLE.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="19" data-listing-file-modified-sort="1696706817026">
+<a href="./docs/applications/MLP_optims.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="20" data-listing-file-modified-sort="1696772297990">
+<a href="./docs/applications/NN_Loss_Surface.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="21" data-listing-file-modified-sort="1696772297150">
+<a href="./docs/applications/Neural_Lipschitz_constant.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="22" data-listing-file-modified-sort="1696706817026">
+<a href="./docs/applications/a_star_dijkstra.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="23" data-listing-file-modified-sort="1696706817036">
+<a href="./docs/applications/adv_attack.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="24" data-listing-file-modified-sort="1696772299817">
+<a href="./docs/applications/deep_learning.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="25" data-listing-file-modified-sort="1696706817037">
+<a href="./docs/applications/dl.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="26" data-listing-file-modified-sort="1696772299140">
+<a href="./docs/applications/ellipsoid.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="27" data-listing-file-modified-sort="1696706817039">
+<a href="./docs/applications/ellipsoid.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="28" data-listing-file-modified-sort="1696706817039">
+<a href="./docs/applications/ellipsoid2.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="29" data-listing-file-modified-sort="1696772299461">
+<a href="./docs/applications/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="30" data-listing-file-modified-sort="1696772297612">
+<a href="./docs/applications/knapsack_problem.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="31" data-listing-file-modified-sort="1696706817039">
+<a href="./docs/applications/knapsack_problem_1.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="32" data-listing-file-modified-sort="1696706817039">
+<a href="./docs/applications/knapsack_problem_2.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="33" data-listing-file-modified-sort="1696706817040">
+<a href="./docs/applications/knapsack_problem_3.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="34" data-listing-file-modified-sort="1696772301814">
+<a href="./docs/applications/least_squares.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="35" data-listing-file-modified-sort="1696706817040">
+<a href="./docs/applications/lls_idea.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="36" data-listing-file-modified-sort="1696706817040">
+<a href="./docs/applications/lls_times.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="37" data-listing-file-modified-sort="1696706817040">
+<a href="./docs/applications/mle.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="38" data-listing-file-modified-sort="1696706817040">
+<a href="./docs/applications/nn_vis_CNN_line_drop.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="39" data-listing-file-modified-sort="1696706817041">
+<a href="./docs/applications/nn_vis_CNN_line_no_drop.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="40" data-listing-file-modified-sort="1696706817041">
+<a href="./docs/applications/nn_vis_CNN_plane_drop.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="41" data-listing-file-modified-sort="1696706817042">
+<a href="./docs/applications/nn_vis_CNN_plane_no_drop.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="42" data-listing-file-modified-sort="1696706817042">
+<a href="./docs/applications/non_linear_fit.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="43" data-listing-file-modified-sort="1696706817042">
+<a href="./docs/applications/ordered_crossover.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="44" data-listing-file-modified-sort="1696706817042">
+<a href="./docs/applications/partition.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="45" data-listing-file-modified-sort="1696706817043">
+<a href="./docs/applications/partition_bruteforce.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="46" data-listing-file-modified-sort="1696772298393">
+<a href="./docs/applications/pca.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="47" data-listing-file-modified-sort="1696706817043">
+<a href="./docs/applications/pca_exp_var_iris.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="48" data-listing-file-modified-sort="1696706817043">
+<a href="./docs/applications/pca_pr_iris.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="49" data-listing-file-modified-sort="1696772300736">
+<a href="./docs/applications/rendezvous.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="50" data-listing-file-modified-sort="1696706817043">
+<a href="./docs/applications/rendezvous.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="51" data-listing-file-modified-sort="1696706817051">
+<a href="./docs/applications/salesman.gif" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="52" data-listing-file-modified-sort="1696706817051">
+<a href="./docs/applications/salesman_loss.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="53" data-listing-file-modified-sort="1696772302578">
+<a href="./docs/applications/salesman_problem.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="54" data-listing-file-modified-sort="1696706817051">
+<a href="./docs/applications/salesman_problem.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="55" data-listing-file-modified-sort="1696706817052">
+<a href="./docs/applications/sigmoid.svg" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="56" data-listing-file-modified-sort="1696772301434">
+<a href="./docs/applications/total_variation_inpainting.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="57" data-listing-file-modified-sort="1696706817052">
+<a href="./docs/applications/tv_finish.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="58" data-listing-file-modified-sort="1696706817052">
+<a href="./docs/applications/tv_finish1.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="59" data-listing-file-modified-sort="1696706817053">
+<a href="./docs/applications/tv_finish2.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="60" data-listing-file-modified-sort="1696706817053">
+<a href="./docs/applications/tv_finish3.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="61" data-listing-file-modified-sort="1696706817053">
+<a href="./docs/applications/tv_finish4.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="62" data-listing-file-modified-sort="1696706817054">
+<a href="./docs/applications/tv_start.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="63" data-listing-file-modified-sort="1696706817054">
+<a href="./docs/applications/tv_start1.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="64" data-listing-file-modified-sort="1696706817054">
+<a href="./docs/applications/tv_start2.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="65" data-listing-file-modified-sort="1696706817055">
+<a href="./docs/applications/tv_start3.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="66" data-listing-file-modified-sort="1696706817055">
+<a href="./docs/applications/tv_start4.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="67" data-listing-file-modified-sort="1696772302187">
+<a href="./docs/applications/two_way_partitioning.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="applications-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<div id="listing-benchmarks" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-4">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1696706817055" data-listing-reading-time-sort="1">
+<a href="./docs/benchmarks/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Benchmarks
+</h5>
+<div class="card-text listing-description">
+Here you can find comparison of different algorithms with respect to the different hyperparameter choice.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1696706817055" data-listing-reading-time-sort="1">
+<a href="./docs/benchmarks/CNN_on_Fashion_MNIST.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+CNN on FashionMNIST
+</h5>
+<div class="card-text listing-description">
+This chapter is WIP. We will make interactive graphs with benchmarx library, which allows to benchmark different optimizers in a convenient, reproducible way.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1696706817056" data-listing-reading-time-sort="1">
+<a href="./docs/benchmarks/linear_least_squares.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Linear Least Squares
+</h5>
+<div class="card-text listing-description">
+In a least-squares, or linear regression, problem, we have measurements <span class="math display"> A \in \mathbb{R}^{m \times n} </span> and <span class="math display"> b \in \mathbb{R}^{m} </span> and seek a vector <span class="math display"> x \in \mathbb{R}^{n} </span> such…<span class="math display"></span><span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1696706817055">
+<a href="./docs/benchmarks/CNN_fashion_mnist.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1696772296802">
+<a href="./docs/benchmarks/CNN_on_Fashion_MNIST.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1696772296477">
+<a href="./docs/benchmarks/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1696772296159">
+<a href="./docs/benchmarks/linear_least_squares.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="benchmarks-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="our-principles" class="level2">
+<h2 class="anchored" data-anchor-id="our-principles">Our Principles</h2>
 <ul>
-<li>All materials are available in <code>kramdown</code> version of Markdown. It is pretty simple, some syntax cheatsheet could be found on the <a href="https://kramdown.gettalong.org/syntax.html">site</a>.</li>
-<li>All formulas (both inline and block style) should be arranged with double dollar sign (<code>$$ x^2 $$</code> stands for inline <span class="math display">x^2</span>, if you’ll arrange it with new line symbols, you’ll recieve block style) due to <code>kramdown</code> preprocessor.</li>
-<li>If you want to place just one <em>inline</em> formula on the paragrah, please write this way: <code>\$$ x^2 $$</code> (weird, I know).</li>
+<li><p><strong>Open Education for All:</strong> At 💎fmin.xyz, we steadfastly believe in dismantling barriers to education. All content on this site is open-sourced and freely accessible to everyone, echoing our commitment to inclusive learning.</p></li>
+<li><p><strong>Designed for Learners at Various Levels:</strong> Whether you are a researcher, a student, or an enthusiast with some prior expertise, 💎fmin.xyz is tailored to cater to your needs, providing a vast array of content ranging from fundamental theories to advanced applications.</p></li>
+<li><p><strong>Structured Learning:</strong> Every page on 💎fmin.xyz is meticulously structured as a self-sufficient unit, providing concise and comprehensive material on a specific topic. This modular design allows for flexible and personalized learning paths.</p></li>
+<li><p><strong>Continuous Improvement:</strong> The structure and content of 💎fmin.xyz are dynamic. We are devoted to refining and expanding our resources iteratively, adapting to the evolving needs of our learning community and the advancements in the field.</p></li>
 </ul>
 </section>
-<section id="figures" class="level4" data-number="1.1.2.2">
-<h4 data-number="1.1.2.2" class="anchored" data-anchor-id="figures"><span class="header-section-number">1.1.2.2</span> Figures</h4>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
 <ul>
-<li>Figures and graphs should be in <code>.svg</code> vector format if possible.</li>
-<li>By default all pictures are centered and has 75% of linewidth. However, if you will use <code>#button</code> suffix at the end of the path (or url) to the picture, it will be displayed in inline style with 150px in width (was primarly done for <a href=""><img src="https://colab.research.google.com/assets/colab-badge.svg#button" class="img-fluid" alt="Open In Colab"></a> buttons).</li>
+<li><p><strong>Rich Content:</strong> Delve into a wide spectrum of topics from matrix calculus, convex sets, to various optimization methods and their applications. With a plethora of exercises and benchmarks, 💎fmin.xyz is a treasure trove of knowledge waiting to be explored.</p></li>
+<li><p><strong>Interactive Visualizations:</strong> Engage with our extensive collection of Python visualizations designed to elucidate key mathematical concepts, enhancing your understanding and learning experience.</p></li>
+<li><p><strong>Efficient Search Functionality:</strong> With a user-friendly built-in search engine, finding specific content on 💎fmin.xyz is just a click away. Navigate through our extensive repository with ease and efficiency.</p></li>
 </ul>
 </section>
-<section id="names" class="level4" data-number="1.1.2.3">
-<h4 data-number="1.1.2.3" class="anchored" data-anchor-id="names"><span class="header-section-number">1.1.2.3</span> Names</h4>
+<section id="technical-insights" class="level2">
+<h2 class="anchored" data-anchor-id="technical-insights">Technical Insights</h2>
 <ul>
-<li>Titles of the pages should start from the capital letter. Do not use abbreviation style of naming: <code>Gradient descent</code>✅, while <code>Gradient Descent</code>❎, <code>GD</code>❎</li>
-<li>You can include the link to some page of the site right in the text through the following syntax: <code>{% raw %}{% include link.html title="Excersises"%}{% endraw %}</code>, where you should place only the name of the page in title field. One more example: <code>{% raw %}{% include link.html title="Gradient descent"%}{% endraw %}</code>. It is useful, because it is robust to the structure changes in this site.</li>
+<li><p><strong>Easy to Use &amp; Share:</strong> Each page is formatted as a Markdown file or Jupyter notebook, facilitating easy copying, sharing, and utilization for your purposes.</p></li>
+<li><p><strong>Built with Quarto:</strong> 💎fmin.xyz is powered by the <a href="https://quarto.org">Quarto</a> system, ensuring a smooth and responsive user experience.</p></li>
+<li><p><strong>Contribute &amp; Collaborate:</strong> Your insights are valuable! Contributions are not just welcomed but encouraged. Check out our guides at the repository and join us in refining and expanding this educational endeavor.</p></li>
 </ul>
-</section>
-<section id="buttons" class="level4" data-number="1.1.2.4">
-<h4 data-number="1.1.2.4" class="anchored" data-anchor-id="buttons"><span class="header-section-number">1.1.2.4</span> Buttons</h4>
-<ul>
-<li><code>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg#button)](%LINK TO THE SHARED COLAB NOTEBOOK%) buttons)</code> stands for the <a href=""><img src="https://colab.research.google.com/assets/colab-badge.svg#button" class="img-fluid" alt="Open In Colab"></a> buttons)</li>
-<li><code>{% include tabs.html bibtex = '@article{kingma2014adam,   title={Adam: A method for stochastic optimization},   author={Kingma, Diederik P and Ba, Jimmy},   journal={arXiv preprint arXiv:1412.6980},   year={2014} }' file='PATH_TO_THE_FILE'%}</code> will display <img src="./assets/images/bibtex_button.png" class="img-fluid"></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="references" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="references"><span class="header-section-number">1.2</span> References</h2>
-<ul>
-<li>The jekyll template was taken from <a href="https://github.com/pmarsceill/just-the-docs">Just the docs</a> and modified</li>
-</ul>
+<p>Embark on a learning adventure with 💎fmin.xyz, where knowledge is open, and education is accessible. Happy learning!</p>
+
 
 
 </section>
@@ -1046,4 +4831,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/index.md" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
