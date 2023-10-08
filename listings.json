@@ -1,5 +1,34 @@
 [
   {
+    "listing": "/docs/theory/convex sets/index.html",
+    "items": [
+      "/docs/theory/convex sets/Affine_sets.html",
+      "/docs/theory/convex sets/Convex_set.html",
+      "/docs/theory/convex sets/Conic_sets.html",
+      "/docs/theory/convex sets/Projection.html"
+    ]
+  },
+  {
+    "listing": "/docs/theory/index.html",
+    "items": [
+      "/docs/theory/convex sets/Affine_sets.html",
+      "/docs/theory/Matrix_calculus.html",
+      "/docs/theory/convex sets/Convex_set.html",
+      "/docs/theory/convex sets/index.html",
+      "/docs/theory/convex sets/Conic_sets.html",
+      "/docs/theory/Convex_function.html",
+      "/docs/theory/Conjugate_set.html",
+      "/docs/theory/Conjugate function.html",
+      "/docs/theory/convex sets/Projection.html",
+      "/docs/theory/Dual norm.html",
+      "/docs/theory/Subgradient.html",
+      "/docs/theory/Optimality.html",
+      "/docs/theory/Convex_optimization_problem.html",
+      "/docs/theory/Duality.html",
+      "/docs/theory/Rates_of_convergence.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/docs/theory/Matrix_calculus.html",

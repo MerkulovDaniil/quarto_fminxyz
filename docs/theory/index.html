@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,7 +62,36 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script defer="" type="text/javascript" src="../../_assets/toggle_button.js"></script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-theory .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-theory'] = new List('listing-theory', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<script defer="" type="text/javascript" src="../../assets/toggle_button.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js" integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A" crossorigin="anonymous"></script>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
@@ -80,7 +111,10 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<meta property="og:title" content="Theory">
+<meta property="og:description" content="">
 <meta name="twitter:title" content="Theory">
+<meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -723,22 +757,317 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Theory</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
+<header id="title-block-header">
 </header>
+
+<p>This chapter provides the information about foundation terms and notations for optimization.</p>
+<div id="listing-theory" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-4">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1696788407108" data-listing-reading-time-sort="2">
+<a href="../../docs/theory/convex sets/Affine_sets.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="convex sets/line.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Affine set
+</h5>
+<div class="card-text listing-description">
+Suppose <span class="math inline">x_1, x_2</span> are two points in <span class="math inline">\mathbb{R^n}</span>. Then the line passing through them is defined as follows:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1696787289875" data-listing-reading-time-sort="22">
+<a href="../../docs/theory/Matrix_calculus.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="vector_im.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Matrix calculus
+</h5>
+<div class="card-text listing-description">
+We will treat all vectors as column vectors by default. The space of real vectors of length <span class="math inline">n</span> is denoted by <span class="math inline">\mathbb{R}^n</span>, while the space of real-valued <span class="math inline">m \times n</span> matrices…<span class="math inline"></span><sup></sup>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1696797877600" data-listing-reading-time-sort="5">
+<a href="../../docs/theory/convex sets/Convex_set.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="convex sets/line_segment.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Convex set
+</h5>
+<div class="card-text listing-description">
+Suppose <span class="math inline">x_1, x_2</span> are two points in <span class="math inline">\mathbb{R^n}</span>. Then the line segment between them is defined as follows:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1696788097337" data-listing-reading-time-sort="1">
+<a href="../../docs/theory/convex sets/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="convex sets/line.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Convex sets
+</h5>
+<div class="card-text listing-description">
+In this chapter a variety of convex sets and related definitions are described.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1696797827540" data-listing-reading-time-sort="1">
+<a href="../../docs/theory/convex sets/Conic_sets.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="convex sets/cone.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Conic set
+</h5>
+<div class="card-text listing-description">
+A non-empty set <span class="math inline">S</span> is called cone, if:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1696783360790" data-listing-reading-time-sort="6">
+<a href="../../docs/theory/Convex_function.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="convex_function.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Convex function
+</h5>
+<div class="card-text listing-description">
+The function <span class="math inline">f(x)</span>, <strong>which is defined on the convex set</strong> <span class="math inline">S \subseteq \mathbb{R}^n</span>, is called <strong>convex</strong> on <span class="math inline">S</span>, if:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1696783364805" data-listing-reading-time-sort="6">
+<a href="../../docs/theory/Conjugate_set.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="normal.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Conjugate set
+</h5>
+<div class="card-text listing-description">
+Пусть <span class="math display">S \subseteq \mathbb{R}^n</span> - произвольное непустое множество. Тогда cопряженное к нему множество определяется, как:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1696783368062" data-listing-reading-time-sort="6">
+<a href="../../docs/theory/Conjugate function.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="conj.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Conjugate function
+</h5>
+<div class="card-text listing-description">
+Let <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}</span>. The function <span class="math inline">f^*: \mathbb{R}^n \to \mathbb{R}</span> is called convex conjugate (Fenchel’s conjugate, dual, Legendre transform) <span class="math inline">f(x)</span> and is…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1696783685349" data-listing-reading-time-sort="4">
+<a href="../../docs/theory/convex sets/Projection.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="convex sets/proj_cir.gif" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Projection
+</h5>
+<div class="card-text listing-description">
+The distance <span class="math display">d</span> from point <span class="math display">\mathbf{y} \in \mathbb{R}^n</span> to closed set <span class="math display">S \subset \mathbb{R}^n</span>:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1696783352856" data-listing-reading-time-sort="1">
+<a href="../../docs/theory/Dual norm.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Dual norm
+</h5>
+<div class="card-text listing-description">
+Let <span class="math display">\Vert x\Vert </span> be the norm in the primal space <span class="math display">x \in S \subseteq \mathbb{R}^n</span>, then the following expression defines dual norm:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1696783334652" data-listing-reading-time-sort="5">
+<a href="../../docs/theory/Subgradient.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="conv_support.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Subgradient and subdifferential
+</h5>
+<div class="card-text listing-description">
+Важным свойством непрерывной выпуклой функции <span class="math display">f(x)</span> является то, что в выбранной точке <span class="math display">x_0</span> для всех <span class="math display">x \in \text{dom } f</span> выполнено неравенство:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1696783342145" data-listing-reading-time-sort="9">
+<a href="../../docs/theory/Optimality.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="goodnews.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Optimality conditions. KKT
+</h5>
+<div class="card-text listing-description">
+Let <span class="math display">S \subset \mathbb{R}^n</span> be a compact set and <span class="math display">f(x)</span> a continuous function on <span class="math display">S</span>. So that, the point of the global minimum of the function <span class="math display">f (x)</span> on <span class="math display">S</span> exists.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1696783356665" data-listing-reading-time-sort="1">
+<a href="../../docs/theory/Convex_optimization_problem.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Convex optimization problem
+</h5>
+<div class="card-text listing-description">
+Note, that there is an agreement in notation of mathematical programming. The problems of the following type are called <strong>Convex optimization problem</strong>:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1696783348501" data-listing-reading-time-sort="10">
+<a href="../../docs/theory/Duality.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Duality
+</h5>
+<div class="card-text listing-description">
+Duality lets us associate to any constrained optimization problem a concave maximization problem, whose solutions lower bound the optimal value of the original…
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1696783338255" data-listing-reading-time-sort="3">
+<a href="../../docs/theory/Rates_of_convergence.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="convergence.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Rates of convergence
+</h5>
+<div class="card-text listing-description">
+In order to compare perfomance of algorithms we need to define a terminology for different types of convergence. Let <span class="math display">\{x_k\}</span> be a sequence in <span class="math display">\mathbb{R}^n</span> that…<span class="math display"></span>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 
 
 

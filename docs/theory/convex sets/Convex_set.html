@@ -60,7 +60,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script defer="" type="text/javascript" src="../../../_assets/toggle_button.js"></script>
+<script defer="" type="text/javascript" src="../../../assets/toggle_button.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js" integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A" crossorigin="anonymous"></script>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
@@ -80,6 +80,9 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<meta property="og:title" content="Convex set">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://new.fmin.xyz/docs/theory/convex sets/line_segment.svg">
 <meta name="twitter:title" content="Convex set">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://new.fmin.xyz/docs/theory/convex sets/line_segment.svg">
@@ -748,30 +751,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Convex set</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
+<header id="title-block-header">
 </header>
 
 <section id="line-segment" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Line segment</h1>
-<p>Suppose $x_1, x_2 $ are two points in <span class="math inline">\mathbb{R^n}</span>. Then the line segment between them is defined as follows:</p>
+<p>Suppose <span class="math inline">x_1, x_2</span> are two points in <span class="math inline">\mathbb{R^n}</span>. Then the line segment between them is defined as follows:</p>
 <p><span class="math display">
 x = \theta x_1 + (1 - \theta)x_2, \; \theta \in [0,1]
 </span></p>
-<p><img src="./line_segment.svg" class="img-fluid"></p>
+<div id="fig-line_segment" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="line_segment.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Illustration of a line segment between points <span class="math inline">x_1</span>, <span class="math inline">x_2</span></figcaption>
+</figure>
+</div>
 </section>
 <section id="convex-set" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Convex set</h1>
@@ -779,10 +773,42 @@ x = \theta x_1 + (1 - \theta)x_2, \; \theta \in [0,1]
 <p><span class="math display">
 \forall \theta \in [0,1], \; \forall x_1, x_2 \in S: \\ \theta x_1 + (1- \theta) x_2 \in S
 </span></p>
-<p>{: .example} Empty set and a set from a single vector are convex by definition.</p>
-<p>{: .example} Any affine set, a ray, a line segment - they all are convex sets.</p>
-<p><img src="./convex_1.svg" class="img-fluid"></p>
-<p><img src="./convex_2.svg" class="img-fluid"></p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Empty set and a set from a single vector are convex by definition.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Any affine set, a ray, a line segment - they all are convex sets.</p>
+</div>
+</div>
+</div>
+</div>
+<p><img src="convex_1.svg" class="img-fluid"></p>
+<p><img src="convex_2.svg" class="img-fluid"></p>
 </section>
 <section id="related-definitions" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Related definitions</h1>

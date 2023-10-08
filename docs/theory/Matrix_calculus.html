@@ -60,7 +60,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script defer="" type="text/javascript" src="../../_assets/toggle_button.js"></script>
+<script defer="" type="text/javascript" src="../../assets/toggle_button.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js" integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A" crossorigin="anonymous"></script>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
@@ -80,6 +80,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<meta property="og:title" content="Matrix calculus">
+<meta property="og:image" content="https://new.fmin.xyz/docs/theory/vector_im.svg">
 <meta name="twitter:title" content="Matrix calculus">
 <meta name="twitter:image" content="https://new.fmin.xyz/docs/theory/vector_im.svg">
 <meta name="twitter:card" content="summary_large_image">
@@ -741,8 +743,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.4</span> Summary</a></li>
   <li><a href="#taylor-approximations" id="toc-taylor-approximations" class="nav-link" data-scroll-target="#taylor-approximations"><span class="header-section-number">2.5</span> Taylor approximations</a>
   <ul class="collapse">
-  <li><a href="#first-order-taylor-approximation" id="toc-first-order-taylor-approximation" class="nav-link" data-scroll-target="#first-order-taylor-approximation"><span class="header-section-number">2.5.1</span> First order Taylor approximation</a></li>
-  <li><a href="#second-order-taylor-approximation" id="toc-second-order-taylor-approximation" class="nav-link" data-scroll-target="#second-order-taylor-approximation"><span class="header-section-number">2.5.2</span> Second order Taylor approximation</a></li>
+  <li><a href="#first-order-taylor-approximation" id="toc-first-order-taylor-approximation" class="nav-link" data-scroll-target="#first-order-taylor-approximation"><span class="header-section-number">2.5.1</span> First-order Taylor approximation</a></li>
+  <li><a href="#second-order-taylor-approximation" id="toc-second-order-taylor-approximation" class="nav-link" data-scroll-target="#second-order-taylor-approximation"><span class="header-section-number">2.5.2</span> Second-order Taylor approximation</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#derivatives" id="toc-derivatives" class="nav-link" data-scroll-target="#derivatives"><span class="header-section-number">3</span> Derivatives</a>
@@ -765,21 +767,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Matrix calculus</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
+<header id="title-block-header">
 </header>
 
 <section id="basic-linear-algebra-background" class="level1" data-number="1">
@@ -815,7 +803,7 @@ a_{1n} &amp; a_{2n} &amp; \dots &amp; a_{mn}
 <figcaption class="figure-caption">Figure&nbsp;1: Equivivalent representations of a vector</figcaption>
 </figure>
 </div>
-<p>A matrix is symmetric if <span class="math inline">A = A^T</span>. It is denoted as <span class="math inline">A \in \mathbb{S}^n</span> (set of square symmetric matrices of dimension <span class="math inline">n</span>). Note, that only square matrix could be symmetric by definition.</p>
+<p>A matrix is symmetric if <span class="math inline">A = A^T</span>. It is denoted as <span class="math inline">A \in \mathbb{S}^n</span> (set of square symmetric matrices of dimension <span class="math inline">n</span>). Note, that only a square matrix could be symmetric by definition.</p>
 <p>A matrix <span class="math inline">A \in \mathbb{S}^n</span> is called <strong>positive (negative) definite</strong> if for all <span class="math inline">x \neq 0 : x^T Ax &gt; (&lt;) 0</span>. We denote this as <span class="math inline">A \succ (\prec) 0</span>. The set of such matrices is denoted as <span class="math inline">\mathbb{S}^n_{++} (\mathbb{S}^n_{- -})</span></p>
 <p>A matrix <span class="math inline">A \in \mathbb{S}^n</span> is called <strong>positive (negative) semidefinite</strong> if for all <span class="math inline">x : x^T Ax \geq (\leq) 0</span>. We denote this as <span class="math inline">A \succeq (\preceq) 0</span>. The set of such matrices is denoted as <span class="math inline">\mathbb{S}^n_{+} (\mathbb{S}^n_{-})</span></p>
 <div class="callout callout-style-default callout-question no-icon callout-titled">
@@ -830,7 +818,7 @@ Question
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-question">
-<p>Is it correct, that positive definite matrix has all positive entries?</p>
+<p>Is it correct, that a positive definite matrix has all positive entries?</p>
 </div>
 </div>
 </div>
@@ -856,7 +844,7 @@ Question
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-question">
-<p>Is it possible to multiply two matrices faster, then <span class="math inline">\mathcal{O}(n^3)</span>? How about <span class="math inline">\mathcal{O}(n^2)</span>, <span class="math inline">\mathcal{O}(n)</span>?</p>
+<p>Is it possible to multiply two matrices faster, than <span class="math inline">\mathcal{O}(n^3)</span>? How about <span class="math inline">\mathcal{O}(n^2)</span>, <span class="math inline">\mathcal{O}(n)</span>?</p>
 </div>
 </div>
 </div>
@@ -877,7 +865,7 @@ z_i = \sum_{k=1}^n a_{ik}x_k
 </section>
 <section id="norms-and-scalar-products" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="norms-and-scalar-products"><span class="header-section-number">1.3</span> Norms and scalar products</h2>
-<p>Norm is a <strong>qualitative measure of smallness of a vector</strong> and is typically denoted as <span class="math inline">\Vert x \Vert</span>.</p>
+<p>Norm is a <strong>qualitative measure of the smallness of a vector</strong> and is typically denoted as <span class="math inline">\Vert x \Vert</span>.</p>
 <p>The norm should satisfy certain properties:</p>
 <ol type="1">
 <li><span class="math inline">\Vert \alpha x \Vert = \vert \alpha\vert \Vert x \Vert</span>, <span class="math inline">\alpha \in \mathbb{R}</span></li>
@@ -886,19 +874,19 @@ z_i = \sum_{k=1}^n a_{ik}x_k
 </ol>
 <p>The distance between two vectors is then defined as <span class="math display">
 d(x, y) = \Vert x - y \Vert.
-</span> The most well-known and widely used norm is <strong>euclidean norm</strong>: <span class="math display">
+</span> The most well-known and widely used norm is <strong>Euclidean norm</strong>: <span class="math display">
 \Vert x \Vert_2 = \sqrt{\sum_{i=1}^n |x_i|^2},
 </span> which corresponds to the distance in our real life. If the vectors have complex elements, we use their modulus.</p>
 <p>Euclidean norm, or <span class="math inline">2</span>-norm, is a subclass of an important class of <span class="math inline">p</span>-norms:</p>
 <p><span class="math display">
 \Vert x \Vert_p = \Big(\sum_{i=1}^n |x_i|^p\Big)^{1/p}.
-</span> There are two very important special cases: - Infinity norm, or Chebyshev norm is defined as the element of the maximal absolute value: <span class="math display">
+</span> There are two very important special cases. The infinity norm, or Chebyshev norm is defined as the element of the maximal absolute value: <span class="math display">
 \Vert x \Vert_{\infty} = \max_i | x_i|
 </span> <span class="math inline">L_1</span> norm (or <strong>Manhattan distance</strong>) which is defined as the sum of modules of the elements of <span class="math inline">x</span>:</p>
 <p><span class="math display">
 \Vert x \Vert_1 = \sum_i |x_i|
 </span></p>
-<p><span class="math inline">L_1</span> norm plays very important role: it all relates to the <strong>compressed sensing</strong> methods that emerged in the mid-00s as one of the most popular research topics. The code for picture below is available here: <a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Balls_p_norm.ipynb">👨‍💻</a></p>
+<p><span class="math inline">L_1</span> norm plays a very important role: it all relates to the <strong>compressed sensing</strong> methods that emerged in the mid-00s as one of the most popular research topics. The code for the picture below is available here: <a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Balls_p_norm.ipynb">👨‍💻</a></p>
 <div id="fig-p_balls" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="./p_balls.svg" class="img-fluid figure-img"></p>
@@ -927,7 +915,7 @@ Question
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-question">
-<p>Is it true, that all matrix norms satisfy submultiplicativity property: <span class="math inline">\Vert AB \Vert \leq \Vert A \Vert \Vert B \Vert</span>? Hint: consider Chebyshev matrix norm <span class="math inline">\Vert A \Vert_C = \max\limits_{i,j} \vert a_{ij}\vert</span>.</p>
+<p>Is it true, that all matrix norms satisfy the submultiplicativity property: <span class="math inline">\Vert AB \Vert \leq \Vert A \Vert \Vert B \Vert</span>? Hint: consider Chebyshev matrix norm <span class="math inline">\Vert A \Vert_C = \max\limits_{i,j} \vert a_{ij}\vert</span>.</p>
 </div>
 </div>
 </div>
@@ -965,7 +953,7 @@ Example
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-example">
-<p>Prove, that you can switch the position of a matrix inside scalar product with transposition: <span class="math inline">\langle x, Ay\rangle = \langle A^Tx, y\rangle</span> and <span class="math inline">\langle x, yB\rangle = \langle xB^T, y\rangle</span></p>
+<p>Prove, that you can switch the position of a matrix inside a scalar product with transposition: <span class="math inline">\langle x, Ay\rangle = \langle A^Tx, y\rangle</span> and <span class="math inline">\langle x, yB\rangle = \langle xB^T, y\rangle</span></p>
 </div>
 </div>
 </div>
@@ -1024,7 +1012,7 @@ Solution
 <li><p>Let <span class="math inline">A</span> be the matrix of columns vector <span class="math inline">a_i</span>, therefore matrix <span class="math inline">A^T</span> contains rows <span class="math inline">a_i^T</span></p></li>
 <li><p>Note, that, <span class="math inline">S = A A^T</span> - it is the skeleton decomposition from vectors <span class="math inline">a_i</span>. Also note, that <span class="math inline">A</span> is not symmetric, while <span class="math inline">S</span>, clearly, is.</p></li>
 <li><p>The target sum is <span class="math inline">\sum\limits_{i=1}^n a_i^T S^{-1} a_i</span>.</p></li>
-<li><p>The most important part of this exercise lies here: we’ll present this sum as the trace of some matrix <span class="math inline">M</span> in order to use trace cyclic property. <span class="math display">
+<li><p>The most important part of this exercise lies here: we’ll present this sum as the trace of some matrix <span class="math inline">M</span> to use trace cyclic property. <span class="math display">
 \sum\limits_{i=1}^n a_i^T S^{-1} a_i = \sum\limits_{i=1}^n m_{ii},
 </span> where <span class="math inline">m_{ii}</span> - i-th diagonal element of some matrix <span class="math inline">M</span>.</p></li>
 <li><p>Note, that <span class="math inline">M = A^T \left( S^{-1} A \right)</span> is the product of 2 matrices, because <span class="math inline">i</span>-th diagonal element of <span class="math inline">M</span> is the scalar product of <span class="math inline">i</span>-th row of the first matrix <span class="math inline">A^T</span> and <span class="math inline">i</span>-th column of the second matrix <span class="math inline">S^{-1} A</span>. <span class="math inline">i</span>-th row of matrix <span class="math inline">A^T</span>, by definition, is <span class="math inline">a_i^T</span>, while <span class="math inline">i</span>-th column of the matrix <span class="math inline">S^{-1} A</span> is clearly <span class="math inline">S^&gt;{-1} a_i</span>.</p>
@@ -1151,7 +1139,7 @@ Question
 <p><span class="math display">
 A = Q\Lambda Q^T,
 </span></p>
-<p>where <span class="math inline">Q \in \mathbb{R}^{n \times n}</span> is orthogonal, i.e., satisfies <span class="math inline">Q^T Q = I</span>, and <span class="math inline">\Lambda = \text{diag}(\lambda_1, \ldots , \lambda_n)</span>. The (real) numbers <span class="math inline">\lambda_i</span> are the eigenvalues of <span class="math inline">A</span>, and are the roots of the characteristic polynomial <span class="math inline">\text{det}(A - \lambda I)</span>. The columns of <span class="math inline">Q</span> form an orthonormal set of eigenvectors of <span class="math inline">A</span>. The factorization is called the spectral decomposition or (symmetric) eigenvalue decomposition of <span class="math inline">A</span>. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>where <span class="math inline">Q \in \mathbb{R}^{n \times n}</span> is orthogonal, i.e., satisfies <span class="math inline">Q^T Q = I</span>, and <span class="math inline">\Lambda = \text{diag}(\lambda_1, \ldots , \lambda_n)</span>. The (real) numbers <span class="math inline">\lambda_i</span> are the eigenvalues of <span class="math inline">A</span> and are the roots of the characteristic polynomial <span class="math inline">\text{det}(A - \lambda I)</span>. The columns of <span class="math inline">Q</span> form an orthonormal set of eigenvectors of <span class="math inline">A</span>. The factorization is called the spectral decomposition or (symmetric) eigenvalue decomposition of <span class="math inline">A</span>. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>We usually order the eigenvalues as <span class="math inline">\lambda_1 \geq \lambda_2 \geq \ldots \geq \lambda_n</span>. We use the notation <span class="math inline">\lambda_i(A)</span> to refer to the <span class="math inline">i</span>-th largest eigenvalue of <span class="math inline">A \in S</span>. We usually write the largest or maximum eigenvalue as <span class="math inline">\lambda_1(A) = \lambda_{\text{max}}(A)</span>, and the least or minimum eigenvalue as <span class="math inline">\lambda_n(A) = \lambda_{\text{min}}(A)</span>.</p>
 <p>The largest and smallest eigenvalues satisfy</p>
 <p><span class="math display">
@@ -1285,7 +1273,7 @@ Question
 <p><span class="math display">
 A = U V^T \quad A = \hat{C}\hat{A}^{-1}\hat{R}
 </span></p>
-<p>The latter expression refers to the fun fact: you can randomly choose <span class="math inline">r</span> linearly independent columns of a matrix and any <span class="math inline">r</span> linearly independent rows of a matrix and store only them with an ability to reconstruct the whole matrix exactly.</p>
+<p>The latter expression refers to the fun fact: you can randomly choose <span class="math inline">r</span> linearly independent columns of a matrix and any <span class="math inline">r</span> linearly independent rows of a matrix and store only them with the ability to reconstruct the whole matrix exactly.</p>
 <div id="fig-skeleton" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="./skeleton.svg" class="img-fluid figure-img"></p>
@@ -1319,7 +1307,7 @@ Question
 </section>
 <section id="canonical-tensor-decomposition" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="canonical-tensor-decomposition"><span class="header-section-number">1.5</span> Canonical tensor decomposition</h2>
-<p>One can consider the generalization of Skeleton decomposition to the higher order data structure, like tensors, which implies representing the tensor as sum of <span class="math inline">r</span> primitive tensors.</p>
+<p>One can consider the generalization of Skeleton decomposition to the higher order data structure, like tensors, which implies representing the tensor as a sum of <span class="math inline">r</span> primitive tensors.</p>
 <div id="fig-cp_decomposition" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="./cp.svg" class="img-fluid figure-img"></p>
@@ -1338,7 +1326,7 @@ Example
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-example">
-<p>Note, that there are many tensor decompositions: Canonical, Tucker, Tensor Train (TT), Tensor Ring (TR) and others. In tensor case we do not have the straightforward definition of <em>rank</em> for all type of decompositions. For example, for TT decomposition rank is not a scalar, but a vector.</p>
+<p>Note, that there are many tensor decompositions: Canonical, Tucker, Tensor Train (TT), Tensor Ring (TR), and others. In the tensor case, we do not have a straightforward definition of <em>rank</em> for all types of decompositions. For example, for TT decomposition rank is not a scalar, but a vector.</p>
 </div>
 </div>
 </div>
@@ -1370,10 +1358,10 @@ Question
 <p>The determinant has several appealing (and revealing) properties. For instance,</p>
 <ul>
 <li><span class="math inline">\text{det} A = 0</span> if and only if <span class="math inline">A</span> is singular;</li>
-<li><span class="math inline">\text{det} &nbsp;AB = (\text{det}&nbsp;A)(\text{det} &nbsp;B)</span>;</li>
-<li><span class="math inline">\text{det} &nbsp;A^{-1} = \frac{1}{\text{det} \ A}</span>.</li>
+<li><span class="math inline">\text{det} AB = (\text{det} A)(\text{det} B)</span>;</li>
+<li><span class="math inline">\text{det} A^{-1} = \frac{1}{\text{det} \ A}</span>.</li>
 </ul>
-<p>Don’t forget about the cyclic property of a trace for arbitrary matrices <span class="math inline">A, B, C, D</span> (assuming, that all dimensions are consistant):</p>
+<p>Don’t forget about the cyclic property of a trace for arbitrary matrices <span class="math inline">A, B, C, D</span> (assuming, that all dimensions are consistent):</p>
 <p><span class="math display">
 \text{tr} (ABCD) = \text{tr} (DABC) = \text{tr} (CDAB) = \text{tr} (BCDA)
 </span></p>
@@ -1440,7 +1428,7 @@ Question
 <h1 data-number="2"><span class="header-section-number">2</span> Optimization bingo</h1>
 <section id="gradient" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="gradient"><span class="header-section-number">2.1</span> Gradient</h2>
-<p>Let <span class="math inline">f(x):\mathbb{R}^n→\mathbb{R}</span>, then vector, which contains all first order partial derivatives:</p>
+<p>Let <span class="math inline">f(x):\mathbb{R}^n→\mathbb{R}</span>, then vector, which contains all first-order partial derivatives:</p>
 <p><span class="math display">
 \nabla f(x) = \dfrac{df}{dx} = \begin{pmatrix}
     \frac{\partial f}{\partial x_1} \\
@@ -1449,7 +1437,7 @@ Question
     \frac{\partial f}{\partial x_n}
 \end{pmatrix}
 </span></p>
-<p>named gradient of <span class="math inline">f(x)</span>. This vector indicates the direction of steepest ascent. Thus, vector <span class="math inline">−\nabla f(x)</span> means the direction of the steepest descent of the function in the point. Moreover, the gradient vector is always orthogonal to the contour line in the point.</p>
+<p>named gradient of <span class="math inline">f(x)</span>. This vector indicates the direction of the steepest ascent. Thus, vector <span class="math inline">−\nabla f(x)</span> means the direction of the steepest descent of the function in the point. Moreover, the gradient vector is always orthogonal to the contour line in the point.</p>
 <div class="callout callout-style-default callout-example no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1468,7 +1456,7 @@ Example
 2x \\
 2y \\
 \end{bmatrix}
-</span> This gradient points in the direction of steepest ascent of the function.</p>
+</span> This gradient points in the direction of the steepest ascent of the function.</p>
 </div>
 </div>
 </div>
@@ -1613,7 +1601,7 @@ Question
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-question">
-<p>Can we somehow connect those three definitions above (gradient, jacobian and hessian) using a single correct statement?</p>
+<p>Can we somehow connect those three definitions above (gradient, jacobian, and hessian) using a single correct statement?</p>
 </div>
 </div>
 </div>
@@ -1669,10 +1657,10 @@ f(x) : X \to Y; \qquad \frac{\partial f(x)}{\partial x} \in G
 </section>
 <section id="taylor-approximations" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="taylor-approximations"><span class="header-section-number">2.5</span> Taylor approximations</h2>
-<p>Taylor approximations provide a way to approximate functions locally by polynomials. The idea is that for a smooth function, we can approximate it by its tangent (for first order) or by its parabola (for the second order) at a point.</p>
+<p>Taylor approximations provide a way to approximate functions locally by polynomials. The idea is that for a smooth function, we can approximate it by its tangent (for the first order) or by its parabola (for the second order) at a point.</p>
 <section id="first-order-taylor-approximation" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="first-order-taylor-approximation"><span class="header-section-number">2.5.1</span> First order Taylor approximation</h3>
-<p>The first order Taylor approximation, also known as the linear approximation, is centered around some point <span class="math inline">x_0</span>. If <span class="math inline">f: \mathbb{R}^n \rightarrow \mathbb{R}</span> is a differentiable function, then its first order Taylor approximation is given by:</p>
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="first-order-taylor-approximation"><span class="header-section-number">2.5.1</span> First-order Taylor approximation</h3>
+<p>The first-order Taylor approximation, also known as the linear approximation, is centered around some point <span class="math inline">x_0</span>. If <span class="math inline">f: \mathbb{R}^n \rightarrow \mathbb{R}</span> is a differentiable function, then its first-order Taylor approximation is given by:</p>
 <p><span class="math display">
 f_{x_0}^I(x) = f(x_0) + \nabla f(x_0)^T (x - x_0)
 </span></p>
@@ -1702,7 +1690,7 @@ Example
 <div class="callout-example">
 <p>For the function <span class="math inline">f(x) = e^x</span> around the point <span class="math inline">x_0 = 0</span>, the first order Taylor approximation is: <span class="math display">
 f_{x_0}^I(x) = 1 + x
-</span> And the second order Taylor approximation is: <span class="math display">
+</span> The second-order Taylor approximation is: <span class="math display">
 f_{x_0}^{II}(x) = 1 + x + \frac{x^2}{2}
 </span> These approximations provide polynomial representations of the function near the point <span class="math inline">x_0</span>.</p>
 </div>
@@ -1711,8 +1699,8 @@ f_{x_0}^{II}(x) = 1 + x + \frac{x^2}{2}
 </div>
 </section>
 <section id="second-order-taylor-approximation" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="second-order-taylor-approximation"><span class="header-section-number">2.5.2</span> Second order Taylor approximation</h3>
-<p>The second order Taylor approximation, also known as the quadratic approximation, includes the curvature of the function. For a twice-differentiable function <span class="math inline">f: \mathbb{R}^n \rightarrow \mathbb{R}</span>, its second order Taylor approximation centered at some point <span class="math inline">x_0</span> is:</p>
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="second-order-taylor-approximation"><span class="header-section-number">2.5.2</span> Second-order Taylor approximation</h3>
+<p>The second-order Taylor approximation, also known as the quadratic approximation, includes the curvature of the function. For a twice-differentiable function <span class="math inline">f: \mathbb{R}^n \rightarrow \mathbb{R}</span>, its second-order Taylor approximation centered at some point <span class="math inline">x_0</span> is:</p>
 <p><span class="math display">
 f_{x_0}^{II}(x) = f(x_0) + \nabla f(x_0)^T (x - x_0) + \frac{1}{2} (x - x_0)^T \nabla^2 f(x_0) (x - x_0)
 </span></p>
@@ -1726,7 +1714,7 @@ f_{x_0}^{II}(x) = f(x_0) + \nabla f(x_0)^T (x - x_0) + \frac{1}{2} (x - x_0)^T \
 <figcaption class="figure-caption">Figure&nbsp;6: Second order Taylor approximation near the point <span class="math inline">x_0</span></figcaption>
 </figure>
 </div>
-<p>When using the linear approximation of the function not sufficient one can consider replacing the <span class="math inline">f(x)</span> with <span class="math inline">f_{x_0}^{II}(x)</span> near the point <span class="math inline">x_0</span>. In general, Taylor approximations give us a way to locally approximate functions. The first order approximation is a plane tangent to the function at the point <span class="math inline">x_0</span>, while the second order approximation includes the curvature and is represented by a parabola. These approximations are especially useful in optimization and numerical methods because they provide a tractable way to work with complex functions.</p>
+<p>When using the linear approximation of the function is not sufficient one can consider replacing the <span class="math inline">f(x)</span> with <span class="math inline">f_{x_0}^{II}(x)</span> near the point <span class="math inline">x_0</span>. In general, Taylor approximations give us a way to locally approximate functions. The first-order approximation is a plane tangent to the function at the point <span class="math inline">x_0</span>, while the second-order approximation includes the curvature and is represented by a parabola. These approximations are especially useful in optimization and numerical methods because they provide a tractable way to work with complex functions.</p>
 <div class="callout callout-style-default callout-example no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1781,7 +1769,7 @@ Question
 </div>
 </div>
 </div>
-<p>Note, that even the second order approximation could become inaccurate very quickly. The code for picture below is available here: <a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/taylor_inaccuracy.ipynb">👨‍💻</a></p>
+<p>Note, that even the second-order approximation could become inaccurate very quickly. The code for the picture below is available here: <a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/taylor_inaccuracy.ipynb">👨‍💻</a></p>
 <div class="responsive-video"><video autoplay="" loop="" class="video"><source src="inaccurate_taylor.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
 </section>
 </section>
@@ -1790,7 +1778,7 @@ Question
 <h1 data-number="3"><span class="header-section-number">3</span> Derivatives</h1>
 <section id="naive-approach" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="naive-approach"><span class="header-section-number">3.1</span> Naive approach</h2>
-<p>The basic idea of naive approach is to reduce matrix/vector derivatives to the well-known scalar derivatives. <img src="./matrix_calculus.svg" id="fig-naive_derivative" class="img-fluid" alt="Naive approach of taking derivatives"> One of the most important practical tricks here is to separate indices of sum (<span class="math inline">i</span>) and partial derivatives (<span class="math inline">k</span>). Ignoring this simple rule tends to produce mistakes.</p>
+<p>The basic idea of the naive approach is to reduce matrix/vector derivatives to the well-known scalar derivatives. <img src="./matrix_calculus.svg" id="fig-naive_derivative" class="img-fluid" alt="Naive approach of taking derivatives"> One of the most important practical tricks here is to separate indices of sum (<span class="math inline">i</span>) and partial derivatives (<span class="math inline">k</span>). Ignoring this simple rule tends to produce mistakes.</p>
 </section>
 <section id="differential-approach" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="differential-approach"><span class="header-section-number">3.2</span> Differential approach</h2>
@@ -1816,11 +1804,11 @@ f(x + h) = f(x) + D[h] + o(\|h\|)
 </div>
 <section id="differentials" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="differentials"><span class="header-section-number">3.2.1</span> Differentials</h3>
-<p>After obtaining the differential notation of <span class="math inline">df</span> we can retrieve the gradient using following formula:</p>
+<p>After obtaining the differential notation of <span class="math inline">df</span> we can retrieve the gradient using the following formula:</p>
 <p><span class="math display">
 df(x) = \langle \nabla f(x), dx\rangle
 </span></p>
-<p>Then, if we have differential of the above form and we need to calculate the second derivative of the matrix/vector function, we treat “old” <span class="math inline">dx</span> as the constant <span class="math inline">dx_1</span>, then calculate <span class="math inline">d(df) = d^2f(x)</span></p>
+<p>Then, if we have a differential of the above form and we need to calculate the second derivative of the matrix/vector function, we treat “old” <span class="math inline">dx</span> as the constant <span class="math inline">dx_1</span>, then calculate <span class="math inline">d(df) = d^2f(x)</span></p>
 <p><span class="math display">
 d^2f(x) = \langle \nabla^2 f(x) dx_1, dx\rangle = \langle H_f(x) dx_1, dx\rangle
 </span></p>
@@ -2063,8 +2051,8 @@ Solution
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Full introduction to applied linear algebra could be found in <a href="https://web.stanford.edu/~boyd/vmls/">Introduction to Applied Linear Algebra – Vectors, Matrices, and Least Squares</a> - book by Stephen Boyd &amp; Lieven Vandenberghe, which is indicated in the source. Also, useful refresher for linear algebra is in the appendix A of book Numerical Optimization by Jorge Nocedal Stephen J. Wright.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Good cheatsheet with matrix decomposition is available at NLA course <a href="https://nla.skoltech.ru/_files/decompositions.pdf">website</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>A full introduction to applied linear algebra can be found in <a href="https://web.stanford.edu/~boyd/vmls/">Introduction to Applied Linear Algebra – Vectors, Matrices, and Least Squares</a> - book by Stephen Boyd &amp; Lieven Vandenberghe, which is indicated in the source. Also, a useful refresher for linear algebra is in Appendix A of the book Numerical Optimization by Jorge Nocedal Stephen J. Wright.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A good cheat sheet with matrix decomposition is available at the NLA course <a href="https://nla.skoltech.ru/_files/decompositions.pdf">website</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>The most comprehensive and intuitive guide about the theory of taking matrix derivatives is presented in <a href="http://www.machinelearning.ru/wiki/images/a/ab/MOMO18_Seminar1.pdf">these notes</a> by Dmitry Kropotov team.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->

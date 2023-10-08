@@ -60,7 +60,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script defer="" type="text/javascript" src="../../../_assets/toggle_button.js"></script>
+<script defer="" type="text/javascript" src="../../../assets/toggle_button.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js" integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A" crossorigin="anonymous"></script>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
@@ -80,6 +80,9 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<meta property="og:title" content="Affine set">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://new.fmin.xyz/docs/theory/convex sets/line.svg">
 <meta name="twitter:title" content="Affine set">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://new.fmin.xyz/docs/theory/convex sets/line.svg">
@@ -739,21 +742,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Affine set</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
+<header id="title-block-header">
 </header>
 
 <section id="line" class="level1" data-number="1">
@@ -762,7 +751,12 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">
 x = \theta x_1 + (1 - \theta)x_2, \theta \in \mathbb{R}
 </span></p>
-<p><img src="./line.svg" class="img-fluid"></p>
+<div id="fig-line" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="line.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Illustration of a line between two vectors <span class="math inline">x_1</span> and <span class="math inline">x_2</span></figcaption>
+</figure>
+</div>
 </section>
 <section id="affine-set" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Affine set</h1>
@@ -770,7 +764,26 @@ x = \theta x_1 + (1 - \theta)x_2, \theta \in \mathbb{R}
 <p><span class="math display">
 \forall \theta \in \mathbb{R}, \forall x_1, x_2 \in A: \theta x_1 + (1- \theta) x_2 \in A
 </span></p>
-<p>{: .example} <span class="math inline">\mathbb{R}^n</span> is an affine set. The set of solutions <span class="math inline">\left\\{x \mid \mathbf{A}x = \mathbf{b} \right\\}</span> is also an affine set.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<ul>
+<li><span class="math inline">\mathbb{R}^n</span> is an affine set.</li>
+<li>The set of solutions <span class="math inline">\left\{x \mid \mathbf{A}x = \mathbf{b} \right\}</span> is also an affine set.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="related-definitions" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Related definitions</h1>
@@ -784,11 +797,23 @@ x = \theta x_1 + (1 - \theta)x_2, \theta \in \mathbb{R}
 <p><span class="math display">
 \mathbf{aff}(S) = \left\{ \sum\limits_{i=1}^k\theta_i x_i \mid x_i \in S, \sum\limits_{i=1}^k\theta_i = 1\right\}
 </span></p>
-<ul>
-<li>The set <span class="math inline">\mathbf{aff}(S)</span> is the smallest affine set containing <span class="math inline">S</span>.</li>
-</ul>
-<p>Certainly, let’s translate the last two subchapters and then provide an example for the affine set definition as you requested:</p>
-<hr>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>The set <span class="math inline">\mathbf{aff}(S)</span> is the smallest affine set containing <span class="math inline">S</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="interior" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="interior"><span class="header-section-number">3.3</span> Interior</h2>
@@ -804,14 +829,46 @@ x = \theta x_1 + (1 - \theta)x_2, \theta \in \mathbb{R}
 <p><span class="math display">
 \mathbf{relint} (S) = \{\mathbf{x} \in S \mid \exists \varepsilon &gt; 0, \; B(\mathbf{x}, \varepsilon) \cap \mathbf{aff} (S) \subseteq S\}
 </span></p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-rel_int" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="./rel_int.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Relative Interior</figcaption>
+<p><img src="rel_int.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Difference between interior and relative interior</figcaption>
 </figure>
 </div>
-<p>{: .example} Any non-empty convex set <span class="math inline">S \subseteq \mathbb{R}^n</span> has a non-empty relative interior <span class="math inline">\mathbf{relint}(S)</span>.</p>
-<p>{: .question} Give any example of a set <span class="math inline">S \subseteq \mathbb{R}^n</span>, which has an empty interior, but at the same time has a non-empty relative interior <span class="math inline">\mathbf{relint}(S)</span>.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Any non-empty convex set <span class="math inline">S \subseteq \mathbb{R}^n</span> has a non-empty relative interior <span class="math inline">\mathbf{relint}(S)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-question no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-question">
+<p>Give any example of a set <span class="math inline">S \subseteq \mathbb{R}^n</span>, which has an empty interior, but at the same time has a non-empty relative interior <span class="math inline">\mathbf{relint}(S)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
