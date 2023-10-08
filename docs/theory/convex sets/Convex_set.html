@@ -36,10 +36,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,6 +102,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="https://github.com/MerkulovDaniil/optim" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <a href="https://www.youtube.com/@fmin" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
     <a href="https://t.me/fminxyz" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
@@ -109,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/theory/index.html">Theory</a></li><li class="breadcrumb-item"><a href="../../../docs/theory/convex sets/index.html">Convex sets</a></li><li class="breadcrumb-item"><a href="../../../docs/theory/convex sets/Convex_set.html">Convex set</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/theory/Matrix_calculus.html">Theory</a></li><li class="breadcrumb-item"><a href="../../../docs/theory/convex sets/index.html">Convex sets</a></li><li class="breadcrumb-item"><a href="../../../docs/theory/convex sets/Convex_set.html">Convex set</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -123,125 +126,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../docs/theory/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Theory</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Matrix_calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matrix calculus</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/theory/convex sets/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Convex sets</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/convex sets/Affine_sets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Affine set</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/convex sets/Convex_set.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Convex set</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/convex sets/Conic_sets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conic set</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/convex sets/Projection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Projection</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Convex_function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Convex function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Conjugate_set.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conjugate set</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Conjugate function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conjugate function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Dual norm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dual norm</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Subgradient.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Subgradient and subdifferential</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Optimality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optimality conditions. KKT</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Convex_optimization_problem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Convex optimization problem</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Duality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Duality</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Balls_p_norm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Animation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/theory/Rates_of_convergence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rates of convergence</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
             <a href="../../../docs/methods/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Methods</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
@@ -256,13 +147,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Adaptive Metrics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
@@ -303,13 +194,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Fom</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/fom/fom.html" class="sidebar-item-text sidebar-link">
@@ -374,13 +265,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Line Search</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/line_search/line_search.html" class="sidebar-item-text sidebar-link">
@@ -415,13 +306,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Zom</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/zom/zom.html" class="sidebar-item-text sidebar-link">
@@ -454,11 +345,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../docs/exercises/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/exercises/matrix_calculus.html" class="sidebar-item-text sidebar-link">
@@ -567,11 +458,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../docs/applications/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Applications</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/applications/A-Star.html" class="sidebar-item-text sidebar-link">
@@ -662,11 +553,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../docs/benchmarks/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Benchmarks</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/benchmarks/CNN_on_Fashion_MNIST.html" class="sidebar-item-text sidebar-link">
@@ -685,20 +576,20 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../docs/materials/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Materials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
  <span class="menu-text">Tutorials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/materials/tutorials/Colab tutorial.html" class="sidebar-item-text sidebar-link">
@@ -715,6 +606,112 @@ ul.task-list li input[type="checkbox"] {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+ <span class="menu-text">Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Matrix_calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matrix calculus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/theory/convex sets/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convex sets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/convex sets/Affine_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Affine set</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/convex sets/Convex_set.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Convex set</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/convex sets/Conic_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conic set</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/convex sets/Projection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Convex_function.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convex function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Conjugate_set.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjugate set</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Conjugate function.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjugate function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Dual norm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dual norm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Subgradient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subgradient and subdifferential</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Optimality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimality conditions. KKT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Convex_optimization_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convex optimization problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Duality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Duality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/theory/Rates_of_convergence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rates of convergence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -725,22 +722,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#line-segment" id="toc-line-segment" class="nav-link active" data-scroll-target="#line-segment">Line segment</a></li>
-  <li><a href="#convex-set" id="toc-convex-set" class="nav-link" data-scroll-target="#convex-set">Convex set</a></li>
-  <li><a href="#related-definitions" id="toc-related-definitions" class="nav-link" data-scroll-target="#related-definitions">Related definitions</a>
+  <li><a href="#line-segment" id="toc-line-segment" class="nav-link active" data-scroll-target="#line-segment"><span class="header-section-number">1</span> Line segment</a></li>
+  <li><a href="#convex-set" id="toc-convex-set" class="nav-link" data-scroll-target="#convex-set"><span class="header-section-number">2</span> Convex set</a></li>
+  <li><a href="#related-definitions" id="toc-related-definitions" class="nav-link" data-scroll-target="#related-definitions"><span class="header-section-number">3</span> Related definitions</a>
   <ul class="collapse">
-  <li><a href="#convex-combination" id="toc-convex-combination" class="nav-link" data-scroll-target="#convex-combination">Convex combination</a></li>
-  <li><a href="#convex-hull" id="toc-convex-hull" class="nav-link" data-scroll-target="#convex-hull">Convex hull</a></li>
-  <li><a href="#minkowski-addition" id="toc-minkowski-addition" class="nav-link" data-scroll-target="#minkowski-addition">Minkowski addition</a></li>
+  <li><a href="#convex-combination" id="toc-convex-combination" class="nav-link" data-scroll-target="#convex-combination"><span class="header-section-number">3.1</span> Convex combination</a></li>
+  <li><a href="#convex-hull" id="toc-convex-hull" class="nav-link" data-scroll-target="#convex-hull"><span class="header-section-number">3.2</span> Convex hull</a></li>
+  <li><a href="#minkowski-addition" id="toc-minkowski-addition" class="nav-link" data-scroll-target="#minkowski-addition"><span class="header-section-number">3.3</span> Minkowski addition</a></li>
   </ul></li>
-  <li><a href="#finding-convexity" id="toc-finding-convexity" class="nav-link" data-scroll-target="#finding-convexity">Finding convexity</a>
+  <li><a href="#finding-convexity" id="toc-finding-convexity" class="nav-link" data-scroll-target="#finding-convexity"><span class="header-section-number">4</span> Finding convexity</a>
   <ul class="collapse">
-  <li><a href="#by-definition" id="toc-by-definition" class="nav-link" data-scroll-target="#by-definition">By definition</a></li>
-  <li><a href="#preserving-convexity" id="toc-preserving-convexity" class="nav-link" data-scroll-target="#preserving-convexity">Preserving convexity</a>
+  <li><a href="#by-definition" id="toc-by-definition" class="nav-link" data-scroll-target="#by-definition"><span class="header-section-number">4.1</span> By definition</a></li>
+  <li><a href="#preserving-convexity" id="toc-preserving-convexity" class="nav-link" data-scroll-target="#preserving-convexity"><span class="header-section-number">4.2</span> Preserving convexity</a>
   <ul class="collapse">
-  <li><a href="#the-linear-combination-of-convex-sets-is-convex" id="toc-the-linear-combination-of-convex-sets-is-convex" class="nav-link" data-scroll-target="#the-linear-combination-of-convex-sets-is-convex">The linear combination of convex sets is convex</a></li>
-  <li><a href="#the-intersection-of-any-number-of-convex-sets-is-convex" id="toc-the-intersection-of-any-number-of-convex-sets-is-convex" class="nav-link" data-scroll-target="#the-intersection-of-any-number-of-convex-sets-is-convex">The intersection of any (!) number of convex sets is convex</a></li>
-  <li><a href="#the-image-of-the-convex-set-under-affine-mapping-is-convex" id="toc-the-image-of-the-convex-set-under-affine-mapping-is-convex" class="nav-link" data-scroll-target="#the-image-of-the-convex-set-under-affine-mapping-is-convex">The image of the convex set under affine mapping is convex</a></li>
+  <li><a href="#the-linear-combination-of-convex-sets-is-convex" id="toc-the-linear-combination-of-convex-sets-is-convex" class="nav-link" data-scroll-target="#the-linear-combination-of-convex-sets-is-convex"><span class="header-section-number">4.2.1</span> The linear combination of convex sets is convex</a></li>
+  <li><a href="#the-intersection-of-any-number-of-convex-sets-is-convex" id="toc-the-intersection-of-any-number-of-convex-sets-is-convex" class="nav-link" data-scroll-target="#the-intersection-of-any-number-of-convex-sets-is-convex"><span class="header-section-number">4.2.2</span> The intersection of any (!) number of convex sets is convex</a></li>
+  <li><a href="#the-image-of-the-convex-set-under-affine-mapping-is-convex" id="toc-the-image-of-the-convex-set-under-affine-mapping-is-convex" class="nav-link" data-scroll-target="#the-image-of-the-convex-set-under-affine-mapping-is-convex"><span class="header-section-number">4.2.3</span> The image of the convex set under affine mapping is convex</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -770,16 +767,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="line-segment" class="level1">
-<h1>Line segment</h1>
+<section id="line-segment" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Line segment</h1>
 <p>Suppose $x_1, x_2 $ are two points in <span class="math inline">\mathbb{R^n}</span>. Then the line segment between them is defined as follows:</p>
 <p><span class="math display">
 x = \theta x_1 + (1 - \theta)x_2, \; \theta \in [0,1]
 </span></p>
 <p><img src="./line_segment.svg" class="img-fluid"></p>
 </section>
-<section id="convex-set" class="level1">
-<h1>Convex set</h1>
+<section id="convex-set" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Convex set</h1>
 <p>The set <span class="math inline">S</span> is called <strong>convex</strong> if for any <span class="math inline">x_1, x_2</span> from <span class="math inline">S</span> the line segment between them also lies in <span class="math inline">S</span>, i.e.&nbsp;</p>
 <p><span class="math display">
 \forall \theta \in [0,1], \; \forall x_1, x_2 \in S: \\ \theta x_1 + (1- \theta) x_2 \in S
@@ -789,14 +786,14 @@ x = \theta x_1 + (1 - \theta)x_2, \; \theta \in [0,1]
 <p><img src="./convex_1.svg" class="img-fluid"></p>
 <p><img src="./convex_2.svg" class="img-fluid"></p>
 </section>
-<section id="related-definitions" class="level1">
-<h1>Related definitions</h1>
-<section id="convex-combination" class="level2">
-<h2 class="anchored" data-anchor-id="convex-combination">Convex combination</h2>
+<section id="related-definitions" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Related definitions</h1>
+<section id="convex-combination" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="convex-combination"><span class="header-section-number">3.1</span> Convex combination</h2>
 <p>Let <span class="math inline">x_1, x_2, \ldots, x_k \in S</span>, then the point <span class="math inline">\theta_1 x_1 + \theta_2 x_2 + \ldots + \theta_k x_k</span> is called the convex combination of points <span class="math inline">x_1, x_2, \ldots, x_k</span> if <span class="math inline">\sum\limits_{i=1}^k\theta_i = 1, \; \theta_i \ge 0</span>.</p>
 </section>
-<section id="convex-hull" class="level2">
-<h2 class="anchored" data-anchor-id="convex-hull">Convex hull</h2>
+<section id="convex-hull" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="convex-hull"><span class="header-section-number">3.2</span> Convex hull</h2>
 <p>The set of all convex combinations of points from <span class="math inline">S</span> is called the convex hull of the set <span class="math inline">S</span>.</p>
 <p><span class="math display">
 \mathbf{conv}(S) = \left\{ \sum\limits_{i=1}^k\theta_i x_i \mid x_i \in S, \sum\limits_{i=1}^k\theta_i = 1, \; \theta_i \ge 0\right\}
@@ -807,8 +804,8 @@ x = \theta x_1 + (1 - \theta)x_2, \; \theta \in [0,1]
 </ul>
 <p>Examples: <img src="./convex_hull.svg" class="img-fluid"></p>
 </section>
-<section id="minkowski-addition" class="level2">
-<h2 class="anchored" data-anchor-id="minkowski-addition">Minkowski addition</h2>
+<section id="minkowski-addition" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="minkowski-addition"><span class="header-section-number">3.3</span> Minkowski addition</h2>
 <p>The Minkowski sum of two sets of vectors <span class="math inline">S_1</span> and <span class="math inline">S_2</span> in Euclidean space is formed by adding each vector in <span class="math inline">S_1</span> to each vector in <span class="math inline">S_2</span>:</p>
 <p><span class="math display">
 S_1+S_2=\{\mathbf {s_1} +\mathbf {s_2} \,|\,\mathbf {s_1} \in S_1,\ \mathbf {s_2} \in S_2\}
@@ -821,11 +818,11 @@ S_1+S_2=\{\mathbf {s_1} +\mathbf {s_2} \,|\,\mathbf {s_1} \in S_1,\ \mathbf {s_2
 &gt;</span> &gt; &gt;This represents a rectangle. The sum of the sets <span class="math inline">S_1</span> and <span class="math inline">S_2</span> will form an enlarged rectangle <span class="math inline">S_2</span> with rounded corners. The &gt;resulting set will be convex.</p>
 </section>
 </section>
-<section id="finding-convexity" class="level1">
-<h1>Finding convexity</h1>
+<section id="finding-convexity" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Finding convexity</h1>
 <p>In practice it is very important to understand whether a specific set is convex or not. Two approaches are used for this depending on the context. * By definition. * Show that <span class="math inline">S</span> is derived from simple convex sets using operations that preserve convexity.</p>
-<section id="by-definition" class="level2">
-<h2 class="anchored" data-anchor-id="by-definition">By definition</h2>
+<section id="by-definition" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="by-definition"><span class="header-section-number">4.1</span> By definition</h2>
 <p><span class="math display">
 x_1, x_2 \in S, \; 0 \le \theta \le 1 \;\; \rightarrow \;\; \theta x_1 + (1-\theta)x_2 \in S
 </span></p>
@@ -840,10 +837,10 @@ Solution
 
 <p>{: .question} &gt;Which of the sets are convex: &gt;<br> &gt;* Stripe, <span class="math inline">\{x \in \mathbb{R}^n \mid \alpha \leq a^\top x \leq \beta \}</span> &gt;<br> &gt;* Rectangle, <span class="math inline">\{x \in \mathbb{R}^n \mid \alpha_i \leq x_i \leq \beta_i, i = \overline{1,n} \}</span> &gt;<br> &gt;* Kleen, <span class="math inline">\{x \in \mathbb{R}^n \mid a_1^\top x \leq b_1, a_2^\top x \leq b_2 \}</span> &gt;<br> &gt;* A set of points closer to a given point than a given set that does not contain a point, <span class="math inline">\{x \in \mathbb{R}^n \mid \Vert x - &gt;x_0\Vert _2 \leq \Vert x-y\Vert _2, \forall y \in S \subseteq \mathbb{R}^n \}</span> &gt;<br> &gt;* A set of points, which are closer to one set than another, <span class="math inline">\{x \in \mathbb{R}^n \mid \mathbf{dist}(x,S) \leq \mathbf{dist}(x,T) , S,&gt;T \subseteq \mathbb{R}^n \}</span> &gt;<br> &gt;* A set of points, <span class="math inline">\{x \in \mathbb{R}^{n} \mid x + X \subseteq S\}</span>, where <span class="math inline">S \subseteq \mathbb{R}^{n}</span> is convex and <span class="math inline">X \subseteq &gt;\mathbb{R}^{n}</span> is arbitrary. &gt;<br> &gt;* A set of points whose distance to a given point does not exceed a certain part of the distance to another given point is <span class="math inline">\{x \in \mathbb{R}^n \mid \Vert x - a\Vert _2 \leq \theta\Vert xb\Vert _2, a,b \in \mathbb{R}^n, 0 \leq 1 \}</span></p>
 </section>
-<section id="preserving-convexity" class="level2">
-<h2 class="anchored" data-anchor-id="preserving-convexity">Preserving convexity</h2>
-<section id="the-linear-combination-of-convex-sets-is-convex" class="level3">
-<h3 class="anchored" data-anchor-id="the-linear-combination-of-convex-sets-is-convex">The linear combination of convex sets is convex</h3>
+<section id="preserving-convexity" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="preserving-convexity"><span class="header-section-number">4.2</span> Preserving convexity</h2>
+<section id="the-linear-combination-of-convex-sets-is-convex" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="the-linear-combination-of-convex-sets-is-convex"><span class="header-section-number">4.2.1</span> The linear combination of convex sets is convex</h3>
 <p>Let there be 2 convex sets <span class="math inline">S_x, S_y</span>, let the set</p>
 <p><span class="math display">
 S = \left\{s \mid s = c_1 x + c_2 y, \; x \in S_x, \; y \in S_y, \; c_1, c_2 \in \mathbb{R}\right\}
@@ -862,12 +859,12 @@ c_1 (\theta x_1 + (1 - \theta)x_2) + c_2 (\theta y_1 + (1 - \theta)y_2)
 c_1 x + c_2 y \in S
 </span></p>
 </section>
-<section id="the-intersection-of-any-number-of-convex-sets-is-convex" class="level3">
-<h3 class="anchored" data-anchor-id="the-intersection-of-any-number-of-convex-sets-is-convex">The intersection of any (!) number of convex sets is convex</h3>
+<section id="the-intersection-of-any-number-of-convex-sets-is-convex" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="the-intersection-of-any-number-of-convex-sets-is-convex"><span class="header-section-number">4.2.2</span> The intersection of any (!) number of convex sets is convex</h3>
 <p>If the desired intersection is empty or contains one point, the property is proved by definition. Otherwise, take 2 points and a segment between them. These points must lie in all intersecting sets, and since they are all convex, the segment between them lies in all sets and, therefore, in their intersection.</p>
 </section>
-<section id="the-image-of-the-convex-set-under-affine-mapping-is-convex" class="level3">
-<h3 class="anchored" data-anchor-id="the-image-of-the-convex-set-under-affine-mapping-is-convex">The image of the convex set under affine mapping is convex</h3>
+<section id="the-image-of-the-convex-set-under-affine-mapping-is-convex" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="the-image-of-the-convex-set-under-affine-mapping-is-convex"><span class="header-section-number">4.2.3</span> The image of the convex set under affine mapping is convex</h3>
 <p><span class="math display">
 S \subseteq \mathbb{R}^n \text{ convex}\;\; \rightarrow \;\; f(S) = \left\{ f(x) \mid x \in S \right\} \text{ convex} \;\;\;\; \left(f(x) = \mathbf{A}x + \mathbf{b}\right)
 </span></p>
@@ -914,6 +911,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1125,6 +1237,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/new\.fmin\.xyz");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->

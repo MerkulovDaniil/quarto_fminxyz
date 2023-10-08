@@ -36,10 +36,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,6 +102,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="https://github.com/MerkulovDaniil/optim" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <a href="https://www.youtube.com/@fmin" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
     <a href="https://t.me/fminxyz" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
@@ -109,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/theory/index.html">Theory</a></li><li class="breadcrumb-item"><a href="../../docs/theory/Subgradient.html">Subgradient and subdifferential</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/theory/Matrix_calculus.html">Theory</a></li><li class="breadcrumb-item"><a href="../../docs/theory/Subgradient.html">Subgradient and subdifferential</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -123,125 +126,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/theory/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Theory</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Matrix_calculus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matrix calculus</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../docs/theory/convex sets/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Convex sets</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/convex sets/Affine_sets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Affine set</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/convex sets/Convex_set.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Convex set</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/convex sets/Conic_sets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conic set</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/convex sets/Projection.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Projection</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Convex_function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Convex function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Conjugate_set.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conjugate set</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Conjugate function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conjugate function</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Dual norm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dual norm</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Subgradient.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Subgradient and subdifferential</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Optimality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optimality conditions. KKT</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Convex_optimization_problem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Convex optimization problem</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Duality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Duality</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Balls_p_norm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Animation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../docs/theory/Rates_of_convergence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rates of convergence</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
             <a href="../../docs/methods/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Methods</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
@@ -256,13 +147,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Adaptive Metrics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
@@ -303,13 +194,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Fom</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/methods/fom/fom.html" class="sidebar-item-text sidebar-link">
@@ -374,13 +265,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Line Search</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/methods/line_search/line_search.html" class="sidebar-item-text sidebar-link">
@@ -415,13 +306,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Zom</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/methods/zom/zom.html" class="sidebar-item-text sidebar-link">
@@ -454,11 +345,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../docs/exercises/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/exercises/matrix_calculus.html" class="sidebar-item-text sidebar-link">
@@ -567,11 +458,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../docs/applications/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Applications</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/applications/A-Star.html" class="sidebar-item-text sidebar-link">
@@ -662,11 +553,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../docs/benchmarks/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Benchmarks</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/benchmarks/CNN_on_Fashion_MNIST.html" class="sidebar-item-text sidebar-link">
@@ -685,20 +576,20 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../docs/materials/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Materials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
  <span class="menu-text">Tutorials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/materials/tutorials/Colab tutorial.html" class="sidebar-item-text sidebar-link">
@@ -715,6 +606,112 @@ ul.task-list li input[type="checkbox"] {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+ <span class="menu-text">Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Matrix_calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matrix calculus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../docs/theory/convex sets/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convex sets</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/convex sets/Affine_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Affine set</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/convex sets/Convex_set.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convex set</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/convex sets/Conic_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conic set</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/convex sets/Projection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Convex_function.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convex function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Conjugate_set.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjugate set</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Conjugate function.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjugate function</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Dual norm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dual norm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Subgradient.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Subgradient and subdifferential</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Optimality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimality conditions. KKT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Convex_optimization_problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convex optimization problem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Duality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Duality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/theory/Rates_of_convergence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rates of convergence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -725,25 +722,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#subgradient" id="toc-subgradient" class="nav-link" data-scroll-target="#subgradient">Subgradient</a></li>
-  <li><a href="#subdifferential" id="toc-subdifferential" class="nav-link" data-scroll-target="#subdifferential">Subdifferential</a>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">1</span> Motivation</a></li>
+  <li><a href="#subgradient" id="toc-subgradient" class="nav-link" data-scroll-target="#subgradient"><span class="header-section-number">2</span> Subgradient</a></li>
+  <li><a href="#subdifferential" id="toc-subdifferential" class="nav-link" data-scroll-target="#subdifferential"><span class="header-section-number">3</span> Subdifferential</a>
   <ul class="collapse">
-  <li><a href="#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" id="toc-moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="nav-link" data-scroll-target="#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination">Moreau - Rockafellar theorem (subdifferential of a linear combination)</a></li>
-  <li><a href="#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" id="toc-dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="nav-link" data-scroll-target="#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum">Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</a></li>
-  <li><a href="#chain-rule-for-subdifferentials" id="toc-chain-rule-for-subdifferentials" class="nav-link" data-scroll-target="#chain-rule-for-subdifferentials">Chain rule for subdifferentials</a></li>
-  <li><a href="#subdifferential-calculus" id="toc-subdifferential-calculus" class="nav-link" data-scroll-target="#subdifferential-calculus">Subdifferential calculus</a></li>
+  <li><a href="#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" id="toc-moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="nav-link" data-scroll-target="#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination"><span class="header-section-number">3.1</span> Moreau - Rockafellar theorem (subdifferential of a linear combination)</a></li>
+  <li><a href="#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" id="toc-dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="nav-link" data-scroll-target="#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum"><span class="header-section-number">3.2</span> Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</a></li>
+  <li><a href="#chain-rule-for-subdifferentials" id="toc-chain-rule-for-subdifferentials" class="nav-link" data-scroll-target="#chain-rule-for-subdifferentials"><span class="header-section-number">3.3</span> Chain rule for subdifferentials</a></li>
+  <li><a href="#subdifferential-calculus" id="toc-subdifferential-calculus" class="nav-link" data-scroll-target="#subdifferential-calculus"><span class="header-section-number">3.4</span> Subdifferential calculus</a></li>
   </ul></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">3</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">4</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">5</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">6</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">4.1</span> 1</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">4.2</span> 2</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"><span class="header-section-number">4.3</span> 3</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"><span class="header-section-number">4.4</span> 4</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"><span class="header-section-number">4.5</span> 5</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"><span class="header-section-number">4.6</span> 6</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/theory/Subgradient.md" class="toc-action">Edit this page</a></p></div></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
@@ -771,8 +768,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="motivation" class="level1">
-<h1>Motivation</h1>
+<section id="motivation" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Motivation</h1>
 <p>Важным свойством непрерывной выпуклой функции <span class="math display">f(x)</span> является то, что в выбранной точке <span class="math display">x_0</span> для всех <span class="math display">x \in \text{dom } f</span> выполнено неравенство:</p>
 <p><span class="math display">
 f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
@@ -785,35 +782,35 @@ f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 </ul>
 <p>Не хочется лишаться такого вкусного свойства.</p>
 </section>
-<section id="subgradient" class="level1">
-<h1>Subgradient</h1>
+<section id="subgradient" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Subgradient</h1>
 <p>Вектор <span class="math display">g</span> называется <strong>субградиентом</strong> функции <span class="math display">f(x): S \to \mathbb{R}</span> в точке <span class="math display">x_0</span>, если <span class="math display">\forall x \in S</span>:</p>
 <p><span class="math display">
 f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 </span></p>
 </section>
-<section id="subdifferential" class="level1">
-<h1>Subdifferential</h1>
+<section id="subdifferential" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Subdifferential</h1>
 <p>Множество всех субградиентов функции <span class="math display">f(x)</span> в точке <span class="math display">x_0</span> называется <strong>субдифференциалом</strong> <span class="math display">f</span> в <span class="math display">x_0</span> и обозначается <span class="math display">\partial f(x_0)</span>. * Если <span class="math display">x_0 \in \mathbf{ri } S</span>, то <span class="math display">\partial f(x_0)</span> выпуклое компактное множество. * Выпуклая функция <span class="math display">f(x)</span> дифференцируема в точке <span class="math display">x_0\Rightarrow \partial f(x_0) = \{\nabla f(x_0)\}</span> * Если <span class="math display">\partial f(x_0) \neq \emptyset \;\;\; \forall x_0 \in S</span>, то <span class="math display">f(x)</span> - выпукла на <span class="math display">S</span>.</p>
 <p><img src="./subgrad_calc.gif" class="img-fluid"></p>
-<section id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="level2">
-<h2 class="anchored" data-anchor-id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination">Moreau - Rockafellar theorem (subdifferential of a linear combination)</h2>
+<section id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination"><span class="header-section-number">3.1</span> Moreau - Rockafellar theorem (subdifferential of a linear combination)</h2>
 <p>Пусть <span class="math display">f_i(x)</span> - выпуклые функции на выпуклых множествах <span class="math display">S_i, \; i = \overline{1,n}</span>.<br>
 Тогда, если <span class="math display">\bigcap\limits_{i=1}^n \mathbf{ri } S_i \neq \emptyset</span> то функция <span class="math display">f(x) = \sum\limits_{i=1}^n a_i f_i(x), \; a_i &gt; 0</span> имеет субдифференциал <span class="math display">\partial_S f(x)</span> на множестве <span class="math display">S = \bigcap\limits_{i=1}^n S_i</span> и</p>
 <p><span class="math display">
 \partial_S f(x) = \sum\limits_{i=1}^n a_i \partial_{S_i} f_i(x)
 </span></p>
 </section>
-<section id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="level2">
-<h2 class="anchored" data-anchor-id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum">Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</h2>
+<section id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum"><span class="header-section-number">3.2</span> Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</h2>
 <p>Пусть <span class="math display">f_i(x)</span> - выпуклые функции на открытом выпуклом множестве <span class="math display">S  \subseteq \mathbb{R}^n, \; x_0 \in S</span>, а поточечный максимум определяется как <span class="math display">f(x)  = \underset{i}{\operatorname{max}} f_i(x)</span>. Тогда:</p>
 <p><span class="math display">
 \partial_S f(x_0) = \mathbf{conv}\left\{  \bigcup\limits_{i \in I(x_0)} \partial_S f_i(x_0) \right\},
 </span></p>
 <p>где <span class="math display">I(x) = \{ i \in [1:m]: f_i(x) = f(x)\}</span></p>
 </section>
-<section id="chain-rule-for-subdifferentials" class="level2">
-<h2 class="anchored" data-anchor-id="chain-rule-for-subdifferentials">Chain rule for subdifferentials</h2>
+<section id="chain-rule-for-subdifferentials" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="chain-rule-for-subdifferentials"><span class="header-section-number">3.3</span> Chain rule for subdifferentials</h2>
 <p>Пусть <span class="math display">g_1, \ldots, g_m</span> - выпуклые функции на открытом выпуклом множестве <span class="math display">S \subseteq \mathbb{R}^n</span>, <span class="math display">g = (g_1, \ldots, g_m)</span> - образованная из них вектор - функция, <span class="math display">\varphi</span> - монотонно неубывающая выпуклая функция на открытом выпуклом множестве <span class="math display">U \subseteq \mathbb{R}^m</span>, причем <span class="math display">g(S) \subseteq U</span>. Тогда субдифференциал функции <span class="math display">f(x) = \varphi \left( g(x)\right)</span> имеет вид:</p>
 <p><span class="math display">
 \partial f(x) = \bigcup\limits_{p \in \partial \varphi(u)} \left( \sum\limits_{i=1}^{m}p_i \partial g_i(x) \right),
@@ -824,8 +821,8 @@ f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 \partial f(x) = \sum\limits_{i=1}^{m}\dfrac{\partial \varphi}{\partial u_i}(u) \partial g_i(x)
 </span></p>
 </section>
-<section id="subdifferential-calculus" class="level2">
-<h2 class="anchored" data-anchor-id="subdifferential-calculus">Subdifferential calculus</h2>
+<section id="subdifferential-calculus" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="subdifferential-calculus"><span class="header-section-number">3.4</span> Subdifferential calculus</h2>
 <ul>
 <li><span class="math display">\partial (\alpha f)(x) = \alpha \partial f(x)</span>, for <span class="math display">\alpha \geq 0</span></li>
 <li><span class="math display">\partial (\sum f_i)(x) = \sum \partial f_i (x)</span>, <span class="math display">f_i</span> - выпуклые функции</li>
@@ -834,11 +831,11 @@ f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 </ul>
 </section>
 </section>
-<section id="examples" class="level1">
-<h1>Examples</h1>
+<section id="examples" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Examples</h1>
 <p>Концептуально, различают три способа решения задач на поиск субградиента: * Теоремы Моро - Рокафеллара, композиции, максимума * Геометрически * По определению</p>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">1</h2>
+<section id="section" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="section"><span class="header-section-number">4.1</span> 1</h2>
 <p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = |x|</span></p>
 <p>Решение:</p>
 <p>Решить задачу можно либо геометрически (в каждой точке числовой прямой указать угловые коэффициенты прямых, глобально подпирающих функцию снизу), либо по теореме Моро - Рокафеллара, рассмотрев <span class="math display">f(x)</span> как композицию выпуклых функций:</p>
@@ -847,8 +844,8 @@ f(x) = \max\{-x, x\}
 </span></p>
 <p><img src="./subgradmod.svg" class="img-fluid"></p>
 </section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1">2</h2>
+<section id="section-1" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">4.2</span> 2</h2>
 <p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = |x - 1| + |x + 1| </span></p>
 <p>Решение:</p>
 <p>Совершенно аналогично применяем теорему Моро - Рокафеллара, учитывая следующее:</p>
@@ -860,8 +857,8 @@ f(x) = \max\{-x, x\}
 \partial f(x) = \begin{cases} -2, &amp;x &lt; -1\\ [-2;0], &amp;x = -1 \\ 0,  &amp;-1 &lt; x &lt; 1 \\ [0;2], &amp;x = 1 \\ 2, &amp;x &gt; 1 \\ \end{cases}
 </span></p>
 </section>
-<section id="section-2" class="level2">
-<h2 class="anchored" data-anchor-id="section-2">3</h2>
+<section id="section-2" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="section-2"><span class="header-section-number">4.3</span> 3</h2>
 <p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = \left[ \max(0, f_0(x))\right]^q</span>. Здесь <span class="math display">f_0(x)</span> - выпуклая функция на открытом выпуклом множестве <span class="math display">S</span>, <span class="math display">q \geq 1</span>.</p>
 <p>Решение:<br>
 Согласно теореме о композиции (функция <span class="math display">\varphi (x) = x^q</span> - дифференцируема), а <span class="math display">g(x) = \max(0, f_0(x))</span> имеем: <span class="math display">\partial f(x) = q(g(x))^{q-1} \partial g(x)</span></p>
@@ -870,20 +867,20 @@ f(x) = \max\{-x, x\}
 \partial g(x) = \begin{cases} \partial f_0(x), \quad f_0(x) &gt; 0,\\ \{0\}, \quad f_0(x) &lt; 0 \\ \{a \mid a = \lambda a', \; 0 \le \lambda \le 1, \; a' \in \partial f_0(x)\}, \;\; f_0(x) = 0 \end{cases}
 </span></p>
 </section>
-<section id="section-3" class="level2">
-<h2 class="anchored" data-anchor-id="section-3">4</h2>
+<section id="section-3" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="section-3"><span class="header-section-number">4.4</span> 4</h2>
 <p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = \sin x, x \in [\pi/2; 2\pi]</span></p>
 <p><img src="./sin.png" class="img-fluid"></p>
 </section>
-<section id="section-4" class="level2">
-<h2 class="anchored" data-anchor-id="section-4">5</h2>
+<section id="section-4" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="section-4"><span class="header-section-number">4.5</span> 5</h2>
 <p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = |c_1^\top x| + |c_2^\top x| </span></p>
 <p>Решение: Пусть <span class="math display">f_1(x) = |c_1^\top x| </span>, а <span class="math display">f_2(x) = |c_2^\top x| </span>. Так как эти функции выпуклы, субдифференциал их суммы равен сумме субдифференциалов. Найдем каждый из них:</p>
 <p><span class="math display">\partial f_1(x) = \partial \left( \max \{c_1^\top x, -c_1^\top x\} \right) = \begin{cases} -c_1,  &amp;c_1^\top x &lt; 0\\ \mathbf{conv}(-c_1;c_1), &amp;c_1^\top x = 0 \\ c_1,  &amp;c_1^\top x &gt; 0 \end{cases}</span> <span class="math display">\partial f_2(x) = \partial \left( \max \{c_2^\top x, -c_2^\top x\} \right) = \begin{cases} -c_2,  &amp;c_2^\top x &lt; 0\\ \mathbf{conv}(-c_2;c_2), &amp;c_2^\top x = 0 \\ c_2,  &amp;c_2^\top x &gt; 0 \end{cases}</span></p>
 <p>Далее интересными представляются лишь различные взаимные расположения векторов <span class="math display">c_1</span> и <span class="math display">c_2</span>, рассмотрение которых предлагается читателю.</p>
 </section>
-<section id="section-5" class="level2">
-<h2 class="anchored" data-anchor-id="section-5">6</h2>
+<section id="section-5" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="section-5"><span class="header-section-number">4.6</span> 6</h2>
 <p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = \| x\|_1 </span></p>
 <p>Решение: По определению</p>
 <p><span class="math display">
@@ -899,8 +896,8 @@ f(x) = \max\{-x, x\}
 </span></p>
 </section>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="references" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> References</h1>
 <ul>
 <li><a href="https://people.orie.cornell.edu/dsd95/teaching/orie6300/ORIE6300Fall2019notes.pdf">Lecture Notes for ORIE 6300: Mathematical Programming I by Damek Davis</a></li>
 </ul>
@@ -929,6 +926,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1140,6 +1252,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/new\.fmin\.xyz");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
