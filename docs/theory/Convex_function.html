@@ -728,8 +728,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sublevel-set" id="toc-sublevel-set" class="nav-link" data-scroll-target="#sublevel-set"><span class="header-section-number">3</span> Sublevel set</a></li>
   <li><a href="#criteria-of-convexity" id="toc-criteria-of-convexity" class="nav-link" data-scroll-target="#criteria-of-convexity"><span class="header-section-number">4</span> Criteria of convexity</a>
   <ul class="collapse">
-  <li><a href="#first-order-differential-criterion-of-convexity" id="toc-first-order-differential-criterion-of-convexity" class="nav-link" data-scroll-target="#first-order-differential-criterion-of-convexity"><span class="header-section-number">4.1</span> First order differential criterion of convexity</a></li>
-  <li><a href="#second-order-differential-criterion-of-convexity" id="toc-second-order-differential-criterion-of-convexity" class="nav-link" data-scroll-target="#second-order-differential-criterion-of-convexity"><span class="header-section-number">4.2</span> Second order differential criterion of convexity</a></li>
+  <li><a href="#first-order-differential-criterion-of-convexity" id="toc-first-order-differential-criterion-of-convexity" class="nav-link" data-scroll-target="#first-order-differential-criterion-of-convexity"><span class="header-section-number">4.1</span> First-order differential criterion of convexity</a></li>
+  <li><a href="#second-order-differential-criterion-of-convexity" id="toc-second-order-differential-criterion-of-convexity" class="nav-link" data-scroll-target="#second-order-differential-criterion-of-convexity"><span class="header-section-number">4.2</span> Second-order differential criterion of convexity</a></li>
   <li><a href="#connection-with-epigraph" id="toc-connection-with-epigraph" class="nav-link" data-scroll-target="#connection-with-epigraph"><span class="header-section-number">4.3</span> Connection with epigraph</a></li>
   <li><a href="#connection-with-sublevel-set" id="toc-connection-with-sublevel-set" class="nav-link" data-scroll-target="#connection-with-sublevel-set"><span class="header-section-number">4.4</span> Connection with sublevel set</a></li>
   <li><a href="#reduction-to-a-line" id="toc-reduction-to-a-line" class="nav-link" data-scroll-target="#reduction-to-a-line"><span class="header-section-number">4.5</span> Reduction to a line</a></li>
@@ -737,8 +737,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#strong-convexity" id="toc-strong-convexity" class="nav-link" data-scroll-target="#strong-convexity"><span class="header-section-number">5</span> Strong convexity</a></li>
   <li><a href="#criteria-of-strong-convexity" id="toc-criteria-of-strong-convexity" class="nav-link" data-scroll-target="#criteria-of-strong-convexity"><span class="header-section-number">6</span> Criteria of strong convexity</a>
   <ul class="collapse">
-  <li><a href="#first-order-differential-criterion-of-strong-convexity" id="toc-first-order-differential-criterion-of-strong-convexity" class="nav-link" data-scroll-target="#first-order-differential-criterion-of-strong-convexity"><span class="header-section-number">6.1</span> First order differential criterion of strong convexity</a></li>
-  <li><a href="#second-order-differential-criterion-of-strong-convexity" id="toc-second-order-differential-criterion-of-strong-convexity" class="nav-link" data-scroll-target="#second-order-differential-criterion-of-strong-convexity"><span class="header-section-number">6.2</span> Second order differential criterion of strong convexity</a></li>
+  <li><a href="#first-order-differential-criterion-of-strong-convexity" id="toc-first-order-differential-criterion-of-strong-convexity" class="nav-link" data-scroll-target="#first-order-differential-criterion-of-strong-convexity"><span class="header-section-number">6.1</span> First-order differential criterion of strong convexity</a></li>
+  <li><a href="#second-order-differential-criterion-of-strong-convexity" id="toc-second-order-differential-criterion-of-strong-convexity" class="nav-link" data-scroll-target="#second-order-differential-criterion-of-strong-convexity"><span class="header-section-number">6.2</span> Second-order differential criterion of strong convexity</a></li>
   </ul></li>
   <li><a href="#facts" id="toc-facts" class="nav-link" data-scroll-target="#facts"><span class="header-section-number">7</span> Facts</a></li>
   <li><a href="#operations-that-preserve-convexity" id="toc-operations-that-preserve-convexity" class="nav-link" data-scroll-target="#operations-that-preserve-convexity"><span class="header-section-number">8</span> Operations that preserve convexity</a></li>
@@ -764,9 +764,39 @@ ul.task-list li input[type="checkbox"] {
 f(\lambda x_1 + (1 - \lambda)x_2) \le \lambda f(x_1) + (1 - \lambda)f(x_2)
 </span></p>
 <p>for any <span class="math inline">x_1, x_2 \in S</span> and <span class="math inline">0 \le \lambda \le 1</span>.<br>
-If above inequality holds as strict inequality <span class="math inline">x_1 \neq x_2</span> and <span class="math inline">0 &lt; \lambda &lt; 1</span>, then function is called strictly convex on <span class="math inline">S</span>.</p>
-<p><img src="./convex_function.svg" class="img-fluid"></p>
-<p>{: .example} &gt;* <span class="math inline">f(x) = x^p, \;\;\; p &gt; 1,\;\;\; x \in \mathbb{R}_+</span> &gt;<br> &gt;* $<span class="math inline">f(x) = \|x\|^p,\;\;\; p &gt; 1, x \in \mathbb{R}^n</span>$ &gt;<br> &gt;* <span class="math inline">f(x) = e^{cx},\;\;\; c \in \mathbb{R}, x \in \mathbb{R}</span> &gt;<br> &gt;* <span class="math inline">f(x) = -\ln x,\;\;\; x \in \mathbb{R}_{++}</span> &gt;<br> &gt;* <span class="math inline">f(x) = x\ln x,\;\;\; x \in \mathbb{R}_{++}</span> &gt;<br> &gt;* The sum of the largest <span class="math inline">k</span> coordinates <span class="math inline">f(x) = x_{(1)} + \ldots + x_{(k)},\;\;\;x \in \mathbb{R}^n</span> &gt;<br> &gt;* <span class="math inline">f(X) = \lambda_{max}(X),\;\;\; X = X^T</span> &gt;<br> &gt;* <span class="math inline">f(X) = - \log \det X, \;\;\; X \in S^n_{++}</span></p>
+If the above inequality holds as strict inequality <span class="math inline">x_1 \neq x_2</span> and <span class="math inline">0 &lt; \lambda &lt; 1</span>, then the function is called strictly convex on <span class="math inline">S</span>.</p>
+<div id="fig-convex_function" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="convex_function.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Difference between convex and non-convex function</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<ul>
+<li><span class="math inline">f(x) = x^p, \; p &gt; 1,\; x \in \mathbb{R}_+</span></li>
+<li><span class="math inline">f(x) = \|x\|^p,\; p &gt; 1, x \in \mathbb{R}^n</span></li>
+<li><span class="math inline">f(x) = e^{cx},\; c \in \mathbb{R}, x \in \mathbb{R}</span></li>
+<li><span class="math inline">f(x) = -\ln x,\; x \in \mathbb{R}_{++}</span></li>
+<li><span class="math inline">f(x) = x\ln x,\; x \in \mathbb{R}_{++}</span></li>
+<li>The sum of the largest <span class="math inline">k</span> coordinates <span class="math inline">f(x) = x_{(1)} + \ldots + x_{(k)},\; x \in \mathbb{R}^n</span></li>
+<li><span class="math inline">f(X) = \lambda_{max}(X),\; X = X^T</span></li>
+<li><span class="math inline">f(X) = - \log \det X, \; X \in S^n_{++}</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="epigraph" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Epigraph</h1>
@@ -775,7 +805,12 @@ If above inequality holds as strict inequality <span class="math inline">x_1 \ne
 \text{epi } f = \left\{[x,\mu] \in S \times \mathbb{R}: f(x) \le \mu\right\}
 </span></p>
 <p>is called <strong>epigraph</strong> of the function <span class="math inline">f(x)</span>.</p>
-<p><img src="./epigraph.svg" class="img-fluid"></p>
+<div id="fig-epigraph" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="epigraph.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Epigraph of a function</figcaption>
+</figure>
+</div>
 </section>
 <section id="sublevel-set" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Sublevel set</h1>
@@ -784,12 +819,17 @@ If above inequality holds as strict inequality <span class="math inline">x_1 \ne
 \mathcal{L}_\beta = \left\{ x\in S : f(x) \le \beta\right\}
 </span></p>
 <p>is called <strong>sublevel set</strong> or Lebesgue set of the function <span class="math inline">f(x)</span>.</p>
-<p><img src="./sublevel_set.svg" class="img-fluid"></p>
+<div id="fig-sublevel_set" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="sublevel_set.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Sublevel set of a function with respect to level <span class="math inline">\beta</span></figcaption>
+</figure>
+</div>
 </section>
 <section id="criteria-of-convexity" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Criteria of convexity</h1>
 <section id="first-order-differential-criterion-of-convexity" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="first-order-differential-criterion-of-convexity"><span class="header-section-number">4.1</span> First order differential criterion of convexity</h2>
+<h2 data-number="4.1" class="anchored" data-anchor-id="first-order-differential-criterion-of-convexity"><span class="header-section-number">4.1</span> First-order differential criterion of convexity</h2>
 <p>The differentiable function <span class="math inline">f(x)</span> defined on the convex set <span class="math inline">S \subseteq \mathbb{R}^n</span> is convex if and only if <span class="math inline">\forall x,y \in S</span>:</p>
 <p><span class="math display">
 f(y) \ge f(x) + \nabla f^T(x)(y-x)
@@ -798,10 +838,15 @@ f(y) \ge f(x) + \nabla f^T(x)(y-x)
 <p><span class="math display">
 f(x + \Delta x) \ge f(x) + \nabla f^T(x)\Delta x
 </span></p>
-<p><img src="./diff_conv.svg" class="img-fluid"></p>
+<div id="fig-convexity_criterion_1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="diff_conv.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Convex function is greater or equal than Taylor linear approximation at any point</figcaption>
+</figure>
+</div>
 </section>
 <section id="second-order-differential-criterion-of-convexity" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="second-order-differential-criterion-of-convexity"><span class="header-section-number">4.2</span> Second order differential criterion of convexity</h2>
+<h2 data-number="4.2" class="anchored" data-anchor-id="second-order-differential-criterion-of-convexity"><span class="header-section-number">4.2</span> Second-order differential criterion of convexity</h2>
 <p>Twice differentiable function <span class="math inline">f(x)</span> defined on the convex set <span class="math inline">S \subseteq \mathbb{R}^n</span> is convex if and only if <span class="math inline">\forall x \in \mathbf{int}(S) \neq \emptyset</span>:</p>
 <p><span class="math display">
 \nabla^2 f(x) \succeq 0
@@ -814,13 +859,31 @@ f(x + \Delta x) \ge f(x) + \nabla f^T(x)\Delta x
 <section id="connection-with-epigraph" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="connection-with-epigraph"><span class="header-section-number">4.3</span> Connection with epigraph</h2>
 <p>The function is convex if and only if its epigraph is a convex set.</p>
-<p>{: .example} &gt;Let a norm $ $ be defined in the space $ U <span class="math inline">. Consider the set: &gt; &gt;</span>$ &gt;K := {(x,t) U ^+ : x t } &gt;<span class="math display">
-&gt;
-&gt;which represents the epigraph of the function $ x \mapsto \Vert x \Vert $. This set is called the cone norm. According to statement above, the set $ K $ is convex.
-&gt;
-&gt;In the case where $ U = \mathbb{R}^n $ and $ \Vert x \Vert = \Vert x \Vert_2 $ (Euclidean norm), the abstract set $ K $ transitions into the set:
-&gt;
-&gt;</span> &gt;{(x,t) ^n ^+ : x _2 t } &gt;$$</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Let a norm <span class="math inline">\Vert \cdot \Vert</span> be defined in the space <span class="math inline">U</span>. Consider the set:</p>
+<p><span class="math display">
+K := \{(x,t) \in U \times \mathbb{R}^+ : \Vert x \Vert \leq t \}
+</span></p>
+<p>which represents the epigraph of the function <span class="math inline">x \mapsto \Vert x \Vert</span>. This set is called the cone norm. According to the statement above, the set <span class="math inline">K</span> is convex.</p>
+<p>In the case where <span class="math inline">U = \mathbb{R}^n</span> and <span class="math inline">\Vert x \Vert = \Vert x \Vert_2</span> (Euclidean norm), the abstract set <span class="math inline">K</span> transitions into the set:</p>
+<p><span class="math display">
+\{(x,t) \in \mathbb{R}^n \times \mathbb{R}^+ : \Vert x \Vert_2 \leq t \}
+</span></p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="connection-with-sublevel-set" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="connection-with-sublevel-set"><span class="header-section-number">4.4</span> Connection with sublevel set</h2>
@@ -829,7 +892,7 @@ f(x + \Delta x) \ge f(x) + \nabla f^T(x)\Delta x
 </section>
 <section id="reduction-to-a-line" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="reduction-to-a-line"><span class="header-section-number">4.5</span> Reduction to a line</h2>
-<p><span class="math inline">f: S \to \mathbb{R}</span> is convex if and only if <span class="math inline">S</span> is a convex set and the function <span class="math inline">g(t) = f(x + tv)</span> defined on <span class="math display">\left\{ t \mid x + tv \in S \right\}</span> is convex for any <span class="math inline">x \in S, v \in \mathbb{R}^n</span>, which allows to check convexity of the scalar function in order to establish convexity of the vector function.</p>
+<p><span class="math inline">f: S \to \mathbb{R}</span> is convex if and only if <span class="math inline">S</span> is a convex set and the function <span class="math inline">g(t) = f(x + tv)</span> defined on <span class="math inline">\left\{ t \mid x + tv \in S \right\}</span> is convex for any <span class="math inline">x \in S, v \in \mathbb{R}^n</span>, which allows checking convexity of the scalar function to establish convexity of the vector function.</p>
 </section>
 </section>
 <section id="strong-convexity" class="level1" data-number="5">
@@ -839,12 +902,17 @@ f(x + \Delta x) \ge f(x) + \nabla f^T(x)\Delta x
 f(\lambda x_1 + (1 - \lambda)x_2) \le \lambda f(x_1) + (1 - \lambda)f(x_2) - \mu \lambda (1 - \lambda)\|x_1 - x_2\|^2
 </span></p>
 <p>for any <span class="math inline">x_1, x_2 \in S</span> and <span class="math inline">0 \le \lambda \le 1</span> for some <span class="math inline">\mu &gt; 0</span>.</p>
-<p><img src="./strong_convexity.svg" class="img-fluid"></p>
+<div id="fig-strongly_convex" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="strong_convexity.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Strongly convex function is greater or equal than Taylor quadratic approximation at any point</figcaption>
+</figure>
+</div>
 </section>
 <section id="criteria-of-strong-convexity" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Criteria of strong convexity</h1>
 <section id="first-order-differential-criterion-of-strong-convexity" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="first-order-differential-criterion-of-strong-convexity"><span class="header-section-number">6.1</span> First order differential criterion of strong convexity</h2>
+<h2 data-number="6.1" class="anchored" data-anchor-id="first-order-differential-criterion-of-strong-convexity"><span class="header-section-number">6.1</span> First-order differential criterion of strong convexity</h2>
 <p>Differentiable <span class="math inline">f(x)</span> defined on the convex set <span class="math inline">S \subseteq \mathbb{R}^n</span> is <span class="math inline">\mu</span>-strongly convex if and only if <span class="math inline">\forall x,y \in S</span>:</p>
 <p><span class="math display">
 f(y) \ge f(x) + \nabla f^T(x)(y-x) + \dfrac{\mu}{2}\|y-x\|^2
@@ -855,7 +923,7 @@ f(x + \Delta x) \ge f(x) + \nabla f^T(x)\Delta x + \dfrac{\mu}{2}\|\Delta x\|^2
 </span></p>
 </section>
 <section id="second-order-differential-criterion-of-strong-convexity" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="second-order-differential-criterion-of-strong-convexity"><span class="header-section-number">6.2</span> Second order differential criterion of strong convexity</h2>
+<h2 data-number="6.2" class="anchored" data-anchor-id="second-order-differential-criterion-of-strong-convexity"><span class="header-section-number">6.2</span> Second-order differential criterion of strong convexity</h2>
 <p>Twice differentiable function <span class="math inline">f(x)</span> defined on the convex set <span class="math inline">S \subseteq \mathbb{R}^n</span> is called <span class="math inline">\mu</span>-strongly convex if and only if <span class="math inline">\forall x \in \mathbf{int}(S) \neq \emptyset</span>:</p>
 <p><span class="math display">
 \nabla^2 f(x) \succeq \mu I
@@ -874,12 +942,12 @@ f(x + \Delta x) \ge f(x) + \nabla f^T(x)\Delta x + \dfrac{\mu}{2}\|\Delta x\|^2
 <p><span class="math display">
   f \left( \sum\limits_{i=1}^n \alpha_i x_i \right) \leq \sum\limits_{i=1}^n \alpha_i f(x_i)
   </span></p>
-<p>for <span class="math inline">\alpha_i \geq 0; \;\;\; \sum\limits_{i=1}^n \alpha_i = 1</span> (probability simplex)<br>
+<p>for <span class="math inline">\alpha_i \geq 0; \quad \sum\limits_{i=1}^n \alpha_i = 1</span> (probability simplex)<br>
 For the infinite dimension case:</p>
 <p><span class="math display">
   f \left( \int\limits_{S} x p(x)dx \right) \leq \int\limits_{S} f(x)p(x)dx
   </span></p>
-<p>If the integrals exist and <span class="math display">p(x) \geq 0, \;\;\; \int\limits_{S} p(x)dx = 1</span></p></li>
+<p>If the integrals exist and <span class="math inline">p(x) \geq 0, \quad \int\limits_{S} p(x)dx = 1</span>.</p></li>
 <li><p>If the function <span class="math inline">f(x)</span> and the set <span class="math inline">S</span> are convex, then any local minimum <span class="math inline">x^* = \text{arg}\min\limits_{x \in S} f(x)</span> will be the global one. Strong convexity guarantees the uniqueness of the solution.</p></li>
 <li><p>Let <span class="math inline">f(x)</span> - be a convex function on a convex set <span class="math inline">S \subseteq \mathbb{R}^n</span>. Then <span class="math inline">f(x)</span> is continuous <span class="math inline">\forall x \in \textbf{ri}(S)</span>.</p></li>
 </ul>
@@ -889,7 +957,7 @@ For the infinite dimension case:</p>
 <ul>
 <li>Non-negative sum of the convex functions: <span class="math inline">\alpha f(x) + \beta g(x), (\alpha \geq 0 , \beta \geq 0)</span>.</li>
 <li>Composition with affine function <span class="math inline">f(Ax + b)</span> is convex, if <span class="math inline">f(x)</span> is convex.</li>
-<li>Pointwise maximum (supremum): If <span class="math inline">f_1(x), \ldots, f_m(x)</span> are convex, then <span class="math display">f(x) = \max \{f_1(x), \ldots, f_m(x)\}</span> is convex.</li>
+<li>Pointwise maximum (supremum) of any number of functions: If <span class="math inline">f_1(x), \ldots, f_m(x)</span> are convex, then <span class="math inline">f(x) = \max \{f_1(x), \ldots, f_m(x)\}</span> is convex.</li>
 <li>If <span class="math inline">f(x,y)</span> is convex on <span class="math inline">x</span> for any <span class="math inline">y \in Y</span>: <span class="math inline">g(x) = \underset{y \in Y}{\operatorname{sup}}f(x,y)</span> is convex.</li>
 <li>If <span class="math inline">f(x)</span> is convex on <span class="math inline">S</span>, then <span class="math inline">g(x,t) = t f(x/t)</span> - is convex with <span class="math inline">x/t \in S, t &gt; 0</span>.</li>
 <li>Let <span class="math inline">f_1: S_1 \to \mathbb{R}</span> and <span class="math inline">f_2: S_2 \to \mathbb{R}</span>, where <span class="math inline">\operatorname{range}(f_1) \subseteq S_2</span>. If <span class="math inline">f_1</span> and <span class="math inline">f_2</span> are convex, and <span class="math inline">f_2</span> is increasing, then <span class="math inline">f_2 \circ f_1</span> is convex on <span class="math inline">S_1</span>.</li>
@@ -906,37 +974,138 @@ For the infinite dimension case:</p>
 <li>Pseudoconvex: <span class="math inline">\langle \nabla f(y), x − y \rangle \geq 0 \longrightarrow f(x) \geq f(y)</span></li>
 <li>Discrete convexity: <span class="math inline">f : \mathbb{Z}^n \to \mathbb{Z}</span>; “convexity + matroid theory.”</li>
 </ul>
-{: .example} &gt;Show, that <span class="math inline">f(x) = c^\top x + b</span> is convex and concave. &gt;
-<details>
-<summary>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Show, that <span class="math inline">f(x) = c^\top x + b</span> is convex and concave.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
-<br><br> <br><br> <br><br> <br><br>
-</blockquote></details>
-
-{: .example} &gt;Show, that <span class="math inline">f(x) = x^\top Ax</span>, where <span class="math inline">A\succeq 0</span> - is convex on <span class="math inline">\mathbb{R}^n</span>. &gt;
-<details>
-<summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution">
+<p><br><br> <br><br> <br><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Show, that <span class="math inline">f(x) = x^\top Ax</span>, where <span class="math inline">A\succeq 0</span> - is convex on <span class="math inline">\mathbb{R}^n</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
-<br><br> <br><br> <br><br> <br><br>
-</blockquote></details>
-
-{: .example} &gt;Show, that <span class="math inline">f(A) = \lambda_{max}(A)</span> - is convex, if <span class="math inline">A \in S^n</span>. &gt;
-<details>
-<summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution">
+<p><br><br> <br><br> <br><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Show, that <span class="math inline">f(A) = \lambda_{max}(A)</span> - is convex, if <span class="math inline">A \in S^n</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
-<br><br> <br><br> <br><br> <br><br>
-</blockquote></details>
-
-<p>{: .example} &gt;PL inequality holds if the following condition is satisfied for some $ &gt; 0 <span class="math inline">, &gt; &gt;</span>$ &gt;f(x) ^2 (f(x) - f^*) x &gt;<span class="math display">
-&gt;
-&gt;The example of function, that satisfy PL-condition, but is not convex.
-&gt;</span> &gt;f(x,y) = &gt;$$</p>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution">
+<p><br><br> <br><br> <br><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>PL inequality holds if the following condition is satisfied for some $ &gt; 0 $, <span class="math display">
+\Vert \nabla f(x) \Vert^2 \geq \mu (f(x) - f^*) \forall x
+</span> The example of a function, that satisfies the PL-condition, but is not convex. <span class="math display">
+f(x,y) = \dfrac{(y - \sin x)^2}{2}
+</span></p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="references" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> References</h1>
@@ -944,7 +1113,7 @@ Solution
 <li><a href="http://web.stanford.edu/class/ee364a/lectures/functions.pdf">Steven Boyd lectures</a></li>
 <li><a href="http://suvrit.de/teach/ee227a/lect3.pdf">Suvrit Sra lectures</a></li>
 <li><a href="https://github.com/epfml/OptML_course/raw/master/slides/lecture01.pdf">Martin Jaggi lectures</a></li>
-<li>Example pf Pl non-convex function <a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/PL_function.ipynb">Open in Colab</a>{: .btn }</li>
+<li>Example of Pl non-convex function <a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/PL_function.ipynb">Open in Colab</a></li>
 </ul>
 
 
