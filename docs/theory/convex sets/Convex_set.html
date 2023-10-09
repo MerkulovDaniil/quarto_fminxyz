@@ -723,22 +723,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#line-segment" id="toc-line-segment" class="nav-link active" data-scroll-target="#line-segment"><span class="header-section-number">1</span> Line segment</a></li>
-  <li><a href="#convex-set" id="toc-convex-set" class="nav-link" data-scroll-target="#convex-set"><span class="header-section-number">2</span> Convex set</a></li>
-  <li><a href="#related-definitions" id="toc-related-definitions" class="nav-link" data-scroll-target="#related-definitions"><span class="header-section-number">3</span> Related definitions</a>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions"><span class="header-section-number">1</span> Definitions</a>
   <ul class="collapse">
-  <li><a href="#convex-combination" id="toc-convex-combination" class="nav-link" data-scroll-target="#convex-combination"><span class="header-section-number">3.1</span> Convex combination</a></li>
-  <li><a href="#convex-hull" id="toc-convex-hull" class="nav-link" data-scroll-target="#convex-hull"><span class="header-section-number">3.2</span> Convex hull</a></li>
-  <li><a href="#minkowski-addition" id="toc-minkowski-addition" class="nav-link" data-scroll-target="#minkowski-addition"><span class="header-section-number">3.3</span> Minkowski addition</a></li>
+  <li><a href="#line-segment" id="toc-line-segment" class="nav-link" data-scroll-target="#line-segment"><span class="header-section-number">1.1</span> Line segment</a></li>
+  <li><a href="#convex-set" id="toc-convex-set" class="nav-link" data-scroll-target="#convex-set"><span class="header-section-number">1.2</span> Convex set</a></li>
+  <li><a href="#convex-combination" id="toc-convex-combination" class="nav-link" data-scroll-target="#convex-combination"><span class="header-section-number">1.3</span> Convex combination</a></li>
+  <li><a href="#convex-hull" id="toc-convex-hull" class="nav-link" data-scroll-target="#convex-hull"><span class="header-section-number">1.4</span> Convex hull</a></li>
+  <li><a href="#minkowski-addition" id="toc-minkowski-addition" class="nav-link" data-scroll-target="#minkowski-addition"><span class="header-section-number">1.5</span> Minkowski addition</a></li>
   </ul></li>
-  <li><a href="#finding-convexity" id="toc-finding-convexity" class="nav-link" data-scroll-target="#finding-convexity"><span class="header-section-number">4</span> Finding convexity</a>
+  <li><a href="#finding-convexity" id="toc-finding-convexity" class="nav-link" data-scroll-target="#finding-convexity"><span class="header-section-number">2</span> Finding convexity</a>
   <ul class="collapse">
-  <li><a href="#by-definition" id="toc-by-definition" class="nav-link" data-scroll-target="#by-definition"><span class="header-section-number">4.1</span> By definition</a></li>
-  <li><a href="#preserving-convexity" id="toc-preserving-convexity" class="nav-link" data-scroll-target="#preserving-convexity"><span class="header-section-number">4.2</span> Preserving convexity</a>
+  <li><a href="#by-definition" id="toc-by-definition" class="nav-link" data-scroll-target="#by-definition"><span class="header-section-number">2.1</span> By definition</a></li>
+  <li><a href="#preserving-convexity" id="toc-preserving-convexity" class="nav-link" data-scroll-target="#preserving-convexity"><span class="header-section-number">2.2</span> Preserving convexity</a>
   <ul class="collapse">
-  <li><a href="#the-linear-combination-of-convex-sets-is-convex" id="toc-the-linear-combination-of-convex-sets-is-convex" class="nav-link" data-scroll-target="#the-linear-combination-of-convex-sets-is-convex"><span class="header-section-number">4.2.1</span> The linear combination of convex sets is convex</a></li>
-  <li><a href="#the-intersection-of-any-number-of-convex-sets-is-convex" id="toc-the-intersection-of-any-number-of-convex-sets-is-convex" class="nav-link" data-scroll-target="#the-intersection-of-any-number-of-convex-sets-is-convex"><span class="header-section-number">4.2.2</span> The intersection of any (!) number of convex sets is convex</a></li>
-  <li><a href="#the-image-of-the-convex-set-under-affine-mapping-is-convex" id="toc-the-image-of-the-convex-set-under-affine-mapping-is-convex" class="nav-link" data-scroll-target="#the-image-of-the-convex-set-under-affine-mapping-is-convex"><span class="header-section-number">4.2.3</span> The image of the convex set under affine mapping is convex</a></li>
+  <li><a href="#the-linear-combination-of-convex-sets-is-convex" id="toc-the-linear-combination-of-convex-sets-is-convex" class="nav-link" data-scroll-target="#the-linear-combination-of-convex-sets-is-convex"><span class="header-section-number">2.2.1</span> The linear combination of convex sets is convex</a></li>
+  <li><a href="#the-intersection-of-any-number-of-convex-sets-is-convex" id="toc-the-intersection-of-any-number-of-convex-sets-is-convex" class="nav-link" data-scroll-target="#the-intersection-of-any-number-of-convex-sets-is-convex"><span class="header-section-number">2.2.2</span> The intersection of any (!) number of convex sets is convex</a></li>
+  <li><a href="#the-image-of-the-convex-set-under-affine-mapping-is-convex" id="toc-the-image-of-the-convex-set-under-affine-mapping-is-convex" class="nav-link" data-scroll-target="#the-image-of-the-convex-set-under-affine-mapping-is-convex"><span class="header-section-number">2.2.3</span> The image of the convex set under affine mapping is convex</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -754,8 +754,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header">
 </header>
 
-<section id="line-segment" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Line segment</h1>
+<section id="definitions" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Definitions</h1>
+<section id="line-segment" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="line-segment"><span class="header-section-number">1.1</span> Line segment</h2>
 <p>Suppose <span class="math inline">x_1, x_2</span> are two points in <span class="math inline">\mathbb{R^n}</span>. Then the line segment between them is defined as follows:</p>
 <p><span class="math display">
 x = \theta x_1 + (1 - \theta)x_2, \; \theta \in [0,1]
@@ -767,8 +769,8 @@ x = \theta x_1 + (1 - \theta)x_2, \; \theta \in [0,1]
 </figure>
 </div>
 </section>
-<section id="convex-set" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Convex set</h1>
+<section id="convex-set" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="convex-set"><span class="header-section-number">1.2</span> Convex set</h2>
 <p>The set <span class="math inline">S</span> is called <strong>convex</strong> if for any <span class="math inline">x_1, x_2</span> from <span class="math inline">S</span> the line segment between them also lies in <span class="math inline">S</span>, i.e.&nbsp;</p>
 <p><span class="math display">
 \forall \theta \in [0,1], \; \forall x_1, x_2 \in S: \\ \theta x_1 + (1- \theta) x_2 \in S
@@ -807,17 +809,19 @@ Example
 </div>
 </div>
 </div>
-<p><img src="convex_1.svg" class="img-fluid"></p>
-<p><img src="convex_2.svg" class="img-fluid"></p>
+<div id="fig-convex_sets" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="convex_sets.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Top: examples of convex sets. Bottom: examples of non-convex sets.</figcaption>
+</figure>
+</div>
 </section>
-<section id="related-definitions" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Related definitions</h1>
-<section id="convex-combination" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="convex-combination"><span class="header-section-number">3.1</span> Convex combination</h2>
+<section id="convex-combination" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="convex-combination"><span class="header-section-number">1.3</span> Convex combination</h2>
 <p>Let <span class="math inline">x_1, x_2, \ldots, x_k \in S</span>, then the point <span class="math inline">\theta_1 x_1 + \theta_2 x_2 + \ldots + \theta_k x_k</span> is called the convex combination of points <span class="math inline">x_1, x_2, \ldots, x_k</span> if <span class="math inline">\sum\limits_{i=1}^k\theta_i = 1, \; \theta_i \ge 0</span>.</p>
 </section>
-<section id="convex-hull" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="convex-hull"><span class="header-section-number">3.2</span> Convex hull</h2>
+<section id="convex-hull" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="convex-hull"><span class="header-section-number">1.4</span> Convex hull</h2>
 <p>The set of all convex combinations of points from <span class="math inline">S</span> is called the convex hull of the set <span class="math inline">S</span>.</p>
 <p><span class="math display">
 \mathbf{conv}(S) = \left\{ \sum\limits_{i=1}^k\theta_i x_i \mid x_i \in S, \sum\limits_{i=1}^k\theta_i = 1, \; \theta_i \ge 0\right\}
@@ -826,45 +830,128 @@ Example
 <li>The set <span class="math inline">\mathbf{conv}(S)</span> is the smallest convex set containing <span class="math inline">S</span>.</li>
 <li>The set <span class="math inline">S</span> is convex if and only if <span class="math inline">S = \mathbf{conv}(S)</span>.</li>
 </ul>
-<p>Examples: <img src="./convex_hull.svg" class="img-fluid"></p>
+<p>Examples:</p>
+<div id="fig-convex_hull" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="convex_hull.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Top: convex hulls of the convex sets. Bottom: convex hull of the non-convex sets.</figcaption>
+</figure>
+</div>
 </section>
-<section id="minkowski-addition" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="minkowski-addition"><span class="header-section-number">3.3</span> Minkowski addition</h2>
+<section id="minkowski-addition" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="minkowski-addition"><span class="header-section-number">1.5</span> Minkowski addition</h2>
 <p>The Minkowski sum of two sets of vectors <span class="math inline">S_1</span> and <span class="math inline">S_2</span> in Euclidean space is formed by adding each vector in <span class="math inline">S_1</span> to each vector in <span class="math inline">S_2</span>:</p>
 <p><span class="math display">
 S_1+S_2=\{\mathbf {s_1} +\mathbf {s_2} \,|\,\mathbf {s_1} \in S_1,\ \mathbf {s_2} \in S_2\}
 </span></p>
 <p>Similarly, one can define linear combination of the sets.</p>
-<p>{: .example} &gt;We will work in the <span class="math inline">\mathbb{R}^2</span> space. Let’s define: &gt; &gt;<span class="math display">
-&gt;S_1 := \{x \in \mathbb{R}^2 : x_1^2 + x_2^2 \leq 1\}
-&gt;</span> &gt; &gt;This is a unit circle centered at the origin. And: &gt; &gt;<span class="math display">
-&gt;S_2 := \{x \in \mathbb{R}^2 : -1 \leq x_1 \leq 2, -3 \leq x_2 \leq 4\}
-&gt;</span> &gt; &gt;This represents a rectangle. The sum of the sets <span class="math inline">S_1</span> and <span class="math inline">S_2</span> will form an enlarged rectangle <span class="math inline">S_2</span> with rounded corners. The &gt;resulting set will be convex.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>We will work in the <span class="math inline">\mathbb{R}^2</span> space. Let’s define:</p>
+<p><span class="math display">
+S_1 := \{x \in \mathbb{R}^2 : x_1^2 + x_2^2 \leq 1\}
+</span></p>
+<p>This is a unit circle centered at the origin. And:</p>
+<p><span class="math display">
+S_2 := \{x \in \mathbb{R}^2 : -1 \leq x_1 \leq 2, -3 \leq x_2 \leq 4\}
+</span></p>
+<p>This represents a rectangle. The sum of the sets <span class="math inline">S_1</span> and <span class="math inline">S_2</span> will form an enlarged rectangle <span class="math inline">S_2</span> with rounded corners. The resulting set will be convex.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="finding-convexity" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Finding convexity</h1>
-<p>In practice it is very important to understand whether a specific set is convex or not. Two approaches are used for this depending on the context. * By definition. * Show that <span class="math inline">S</span> is derived from simple convex sets using operations that preserve convexity.</p>
-<section id="by-definition" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="by-definition"><span class="header-section-number">4.1</span> By definition</h2>
+<section id="finding-convexity" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Finding convexity</h1>
+<p>In practice it is very important to understand whether a specific set is convex or not. Two approaches are used for this depending on the context.</p>
+<ul>
+<li>By definition.</li>
+<li>Show that <span class="math inline">S</span> is derived from simple convex sets using operations that preserve convexity.</li>
+</ul>
+<section id="by-definition" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="by-definition"><span class="header-section-number">2.1</span> By definition</h2>
 <p><span class="math display">
 x_1, x_2 \in S, \; 0 \le \theta \le 1 \;\; \rightarrow \;\; \theta x_1 + (1-\theta)x_2 \in S
 </span></p>
-{: .example} &gt;Prove, that ball in <span class="math inline">\mathbb{R}^n</span> (i.e.&nbsp;the following set <span class="math inline">\{ \mathbf{x} \mid \Vert \mathbf{x} - \mathbf{x}_c \Vert \leq r \}</span>) - is convex. &gt;
-<details>
-<summary>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Prove, that ball in <span class="math inline">\mathbb{R}^n</span> (i.e.&nbsp;the following set <span class="math inline">\{ \mathbf{x} \mid \Vert \mathbf{x} - \mathbf{x}_c \Vert \leq r \}</span>) - is convex.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
-<br><br> <br><br> <br><br> <br><br>
-</blockquote></details>
-
-<p>{: .question} &gt;Which of the sets are convex: &gt;<br> &gt;* Stripe, <span class="math inline">\{x \in \mathbb{R}^n \mid \alpha \leq a^\top x \leq \beta \}</span> &gt;<br> &gt;* Rectangle, <span class="math inline">\{x \in \mathbb{R}^n \mid \alpha_i \leq x_i \leq \beta_i, i = \overline{1,n} \}</span> &gt;<br> &gt;* Kleen, <span class="math inline">\{x \in \mathbb{R}^n \mid a_1^\top x \leq b_1, a_2^\top x \leq b_2 \}</span> &gt;<br> &gt;* A set of points closer to a given point than a given set that does not contain a point, <span class="math inline">\{x \in \mathbb{R}^n \mid \Vert x - &gt;x_0\Vert _2 \leq \Vert x-y\Vert _2, \forall y \in S \subseteq \mathbb{R}^n \}</span> &gt;<br> &gt;* A set of points, which are closer to one set than another, <span class="math inline">\{x \in \mathbb{R}^n \mid \mathbf{dist}(x,S) \leq \mathbf{dist}(x,T) , S,&gt;T \subseteq \mathbb{R}^n \}</span> &gt;<br> &gt;* A set of points, <span class="math inline">\{x \in \mathbb{R}^{n} \mid x + X \subseteq S\}</span>, where <span class="math inline">S \subseteq \mathbb{R}^{n}</span> is convex and <span class="math inline">X \subseteq &gt;\mathbb{R}^{n}</span> is arbitrary. &gt;<br> &gt;* A set of points whose distance to a given point does not exceed a certain part of the distance to another given point is <span class="math inline">\{x \in \mathbb{R}^n \mid \Vert x - a\Vert _2 \leq \theta\Vert xb\Vert _2, a,b \in \mathbb{R}^n, 0 \leq 1 \}</span></p>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution">
+<p><br><br> <br><br> <br><br> <br><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-question no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-question">
+<p>Which of the sets are convex:</p>
+<ul>
+<li>Stripe, <span class="math inline">\{x \in \mathbb{R}^n \mid \alpha \leq a^\top x \leq \beta \}</span></li>
+<li>Rectangle, <span class="math inline">\{x \in \mathbb{R}^n \mid \alpha_i \leq x_i \leq \beta_i, i = \overline{1,n} \}</span></li>
+<li>Kleen, <span class="math inline">\{x \in \mathbb{R}^n \mid a_1^\top x \leq b_1, a_2^\top x \leq b_2 \}</span></li>
+<li>A set of points closer to a given point than a given set that does not contain a point, <span class="math inline">\{x \in \mathbb{R}^n \mid \Vert x - x_0\Vert _2 \leq \Vert x-y\Vert _2, \forall y \in S \subseteq \mathbb{R}^n \}</span></li>
+<li>A set of points, which are closer to one set than another, <span class="math inline">\{x \in \mathbb{R}^n \mid \mathbf{dist}(x,S) \leq \mathbf{dist}(x,T) , S,T \subseteq \mathbb{R}^n \}</span></li>
+<li>A set of points, <span class="math inline">\{x \in \mathbb{R}^{n} \mid x + X \subseteq S\}</span>, where <span class="math inline">S \subseteq \mathbb{R}^{n}</span> is convex and <span class="math inline">X \subseteq \mathbb{R}^{n}</span> is arbitrary.</li>
+<li>A set of points whose distance to a given point does not exceed a certain part of the distance to another given point is <span class="math inline">\{x \in \mathbb{R}^n \mid \Vert x - a\Vert _2 \leq \theta\Vert x - b\Vert _2, a,b \in \mathbb{R}^n, 0 \leq 1 \}</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="preserving-convexity" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="preserving-convexity"><span class="header-section-number">4.2</span> Preserving convexity</h2>
-<section id="the-linear-combination-of-convex-sets-is-convex" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="the-linear-combination-of-convex-sets-is-convex"><span class="header-section-number">4.2.1</span> The linear combination of convex sets is convex</h3>
+<section id="preserving-convexity" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="preserving-convexity"><span class="header-section-number">2.2</span> Preserving convexity</h2>
+<section id="the-linear-combination-of-convex-sets-is-convex" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="the-linear-combination-of-convex-sets-is-convex"><span class="header-section-number">2.2.1</span> The linear combination of convex sets is convex</h3>
 <p>Let there be 2 convex sets <span class="math inline">S_x, S_y</span>, let the set</p>
 <p><span class="math display">
 S = \left\{s \mid s = c_1 x + c_2 y, \; x \in S_x, \; y \in S_y, \; c_1, c_2 \in \mathbb{R}\right\}
@@ -883,31 +970,66 @@ c_1 (\theta x_1 + (1 - \theta)x_2) + c_2 (\theta y_1 + (1 - \theta)y_2)
 c_1 x + c_2 y \in S
 </span></p>
 </section>
-<section id="the-intersection-of-any-number-of-convex-sets-is-convex" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="the-intersection-of-any-number-of-convex-sets-is-convex"><span class="header-section-number">4.2.2</span> The intersection of any (!) number of convex sets is convex</h3>
+<section id="the-intersection-of-any-number-of-convex-sets-is-convex" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="the-intersection-of-any-number-of-convex-sets-is-convex"><span class="header-section-number">2.2.2</span> The intersection of any (!) number of convex sets is convex</h3>
 <p>If the desired intersection is empty or contains one point, the property is proved by definition. Otherwise, take 2 points and a segment between them. These points must lie in all intersecting sets, and since they are all convex, the segment between them lies in all sets and, therefore, in their intersection.</p>
 </section>
-<section id="the-image-of-the-convex-set-under-affine-mapping-is-convex" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="the-image-of-the-convex-set-under-affine-mapping-is-convex"><span class="header-section-number">4.2.3</span> The image of the convex set under affine mapping is convex</h3>
+<section id="the-image-of-the-convex-set-under-affine-mapping-is-convex" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="the-image-of-the-convex-set-under-affine-mapping-is-convex"><span class="header-section-number">2.2.3</span> The image of the convex set under affine mapping is convex</h3>
 <p><span class="math display">
 S \subseteq \mathbb{R}^n \text{ convex}\;\; \rightarrow \;\; f(S) = \left\{ f(x) \mid x \in S \right\} \text{ convex} \;\;\;\; \left(f(x) = \mathbf{A}x + \mathbf{b}\right)
 </span></p>
-<p>Examples of affine functions: extension, projection, transposition, set of solutions of linear matrix inequality <span class="math display">\left\{ x \mid x_1 A_1 + \ldots + x_m A_m \preceq B\right\}</span>. Here <span class="math inline">A_i, B \in \mathbf{S}^p</span> are symmetric matrices <span class="math inline">p \times p</span>.</p>
+<p>Examples of affine functions: extension, projection, transposition, set of solutions of linear matrix inequality <span class="math inline">\left\{ x \mid x_1 A_1 + \ldots + x_m A_m \preceq B\right\}</span>. Here <span class="math inline">A_i, B \in \mathbf{S}^p</span> are symmetric matrices <span class="math inline">p \times p</span>.</p>
 <p>Note also that the prototype of the convex set under affine mapping is also convex.</p>
 <p><span class="math display">
 S \subseteq \mathbb{R}^m \text{ convex}\; \rightarrow \; f^{-1}(S) = \left\{ x \in \mathbb{R}^n \mid f(x) \in S \right\} \text{ convex} \;\; \left(f(x) = \mathbf{A}x + \mathbf{b}\right)
 </span></p>
-{: .example} &gt;Let <span class="math inline">x \in \mathbb{R}</span> is a random variable with a given probability distribution of <span class="math inline">\mathbb{P}(x = a_i) = p_i</span>, where <span class="math inline">i = 1, &gt;\ldots, n</span>, and <span class="math inline">a_1 &lt; \ldots &lt; a_n</span>. It is said that the probability vector of outcomes of <span class="math inline">p \in \mathbb{R}^n</span> belongs to the &gt;probabilistic simplex, i.e.&nbsp; &gt; &gt;<span class="math display">
-&gt;P = \{ p \mid \mathbf{1}^Tp = 1, p \succeq 0 \} = \{ p \mid p_1 + \ldots + p_n = 1, p_i \ge 0 \}.
-&gt;</span> &gt; &gt;Determine if the following sets of <span class="math inline">p</span> are convex: &gt;<br> &gt;* <span class="math inline">\mathbb{P}(x &gt; \alpha) \le \beta</span> &gt;<br> &gt;* <span class="math inline">\mathbb{E} \vert x^{201}\vert \le \alpha \mathbb{E}\vert x \vert</span> &gt;<br> &gt;* <span class="math inline">\mathbb{E} \vert x^{2}\vert \ge \alpha</span><span class="math inline">\mathbb{V}x \ge \alpha</span> &gt;
-<details>
-<summary>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Let <span class="math inline">x \in \mathbb{R}</span> is a random variable with a given probability distribution of <span class="math inline">\mathbb{P}(x = a_i) = p_i</span>, where <span class="math inline">i = 1, \ldots, n</span>, and <span class="math inline">a_1 &lt; \ldots &lt; a_n</span>. It is said that the probability vector of outcomes of <span class="math inline">p \in \mathbb{R}^n</span> belongs to the probabilistic simplex, i.e.&nbsp;</p>
+<p><span class="math display">
+P = \{ p \mid \mathbf{1}^Tp = 1, p \succeq 0 \} = \{ p \mid p_1 + \ldots + p_n = 1, p_i \ge 0 \}.
+</span></p>
+<p>Determine if the following sets of <span class="math inline">p</span> are convex:</p>
+<ul>
+<li><span class="math inline">\mathbb{P}(x &gt; \alpha) \le \beta</span></li>
+<li><span class="math inline">\mathbb{E} \vert x^{201}\vert \le \alpha \mathbb{E}\vert x \vert</span></li>
+<li><span class="math inline">\mathbb{E} \vert x^{2}\vert \ge \alpha</span><span class="math inline">\mathbb{V} x \ge \alpha</span></li>
+</ul>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
-<br><br> <br><br> <br><br> <br><br>
-</blockquote></details>
-
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution">
+<p><br><br> <br><br> <br><br> <br><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
