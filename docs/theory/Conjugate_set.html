@@ -81,15 +81,9 @@ ul.task-list li input[type="checkbox"] {
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <meta property="og:title" content="Conjugate set">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://new.fmin.xyz/docs/theory/normal.png">
-<meta property="og:image:height" content="1369">
-<meta property="og:image:width" content="2000">
+<meta property="og:image" content="https://new.fmin.xyz/docs/theory/conjugate_set.svg">
 <meta name="twitter:title" content="Conjugate set">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://new.fmin.xyz/docs/theory/normal.png">
-<meta name="twitter:image-height" content="1369">
-<meta name="twitter:image-width" content="2000">
+<meta name="twitter:image" content="https://new.fmin.xyz/docs/theory/conjugate_set.svg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -727,26 +721,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#conjugate-dual-set" id="toc-conjugate-dual-set" class="nav-link active" data-scroll-target="#conjugate-dual-set"><span class="header-section-number">1</span> Conjugate (dual) set</a>
+  <li><a href="#conjugate-fenchel-conjugate-dual-fenchel-dual-set" id="toc-conjugate-fenchel-conjugate-dual-fenchel-dual-set" class="nav-link active" data-scroll-target="#conjugate-fenchel-conjugate-dual-fenchel-dual-set"><span class="header-section-number">1</span> Conjugate (Fenchel conjugate, dual, Fenchel dual) set</a>
   <ul class="collapse">
-  <li><a href="#double-conjugate-set" id="toc-double-conjugate-set" class="nav-link" data-scroll-target="#double-conjugate-set"><span class="header-section-number">1.1</span> Double conjugate set</a></li>
-  <li><a href="#inter-conjugate-and-self-conjugate-sets" id="toc-inter-conjugate-and-self-conjugate-sets" class="nav-link" data-scroll-target="#inter-conjugate-and-self-conjugate-sets"><span class="header-section-number">1.2</span> Inter-conjugate and self-conjugate sets</a></li>
-  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">1.3</span> Properties</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">1.4</span> Examples</a>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions"><span class="header-section-number">1.1</span> Definitions</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">1.2</span> Properties</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">1.3</span> Examples</a></li>
+  <li><a href="#dual-cones" id="toc-dual-cones" class="nav-link" data-scroll-target="#dual-cones"><span class="header-section-number">1.4</span> Dual cones</a></li>
+  <li><a href="#dual-cones-properties" id="toc-dual-cones-properties" class="nav-link" data-scroll-target="#dual-cones-properties"><span class="header-section-number">1.5</span> Dual cones properties</a></li>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">1.6</span> Examples</a></li>
+  <li><a href="#polyhedra" id="toc-polyhedra" class="nav-link" data-scroll-target="#polyhedra"><span class="header-section-number">1.7</span> Polyhedra</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">1.4.1</span> 1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">1.4.2</span> 2</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"><span class="header-section-number">1.4.3</span> 3</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#dual-cones" id="toc-dual-cones" class="nav-link" data-scroll-target="#dual-cones"><span class="header-section-number">2</span> Dual cones</a>
-  <ul class="collapse">
-  <li><a href="#dual-cones-properties" id="toc-dual-cones-properties" class="nav-link" data-scroll-target="#dual-cones-properties"><span class="header-section-number">2.1</span> Dual cones properties</a></li>
-  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">2.2</span> Examples</a></li>
-  <li><a href="#polyhedra" id="toc-polyhedra" class="nav-link" data-scroll-target="#polyhedra"><span class="header-section-number">2.3</span> Polyhedra</a>
-  <ul class="collapse">
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"><span class="header-section-number">2.3.1</span> 5</a></li>
-  <li><a href="#лемма-теорема-фаркаша-фаркаша---минковского" id="toc-лемма-теорема-фаркаша-фаркаша---минковского" class="nav-link" data-scroll-target="#лемма-теорема-фаркаша-фаркаша---минковского"><span class="header-section-number">2.3.2</span> Лемма (теорема) Фаркаша (Фаркаша - Минковского)</a></li>
+  <li><a href="#farkas-lemma" id="toc-farkas-lemma" class="nav-link" data-scroll-target="#farkas-lemma"><span class="header-section-number">1.7.1</span> Farkas’ Lemma</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -762,206 +747,384 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header">
 </header>
 
-<section id="conjugate-dual-set" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Conjugate (dual) set</h1>
-<p>Пусть <span class="math display">S \subseteq \mathbb{R}^n</span> - произвольное непустое множество. Тогда cопряженное к нему множество определяется, как:</p>
+<section id="conjugate-fenchel-conjugate-dual-fenchel-dual-set" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Conjugate (Fenchel conjugate, dual, Fenchel dual) set</h1>
+<section id="definitions" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">1.1</span> Definitions</h2>
+<p>Let <span class="math inline">S \subseteq \mathbb{R}^n</span> be an arbitrary non-empty set. Then its conjugate set is defined as:</p>
 <p><span class="math display">
-S^* = \{y \ \in \mathbb{R}^n \mid \langle y, x\rangle \ge -1 \;\; \forall x \in S\}
+S^* = \{y \in \mathbb{R}^n \mid \langle y, x\rangle \ge -1 \;\; \forall x \in S\}
 </span></p>
-<p><img src="./normal.png" class="img-fluid"></p>
-<section id="double-conjugate-set" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="double-conjugate-set"><span class="header-section-number">1.1</span> Double conjugate set</h2>
-<p>Множество <span class="math display">S^{**}</span> называется вторым сопряженным к множеству <span class="math display">S</span>, если:</p>
+<div id="fig-conjugate_set" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="conjugate_set.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Convex sets may be described in a dual way - through the elements of the set and through the set of hyperplanes supporting it</figcaption>
+</figure>
+</div>
+<p>A set <span class="math inline">S^{**}</span> is called double conjugate to a set <span class="math inline">S</span> if:</p>
 <p><span class="math display">
-S^{**} = \{y \ \in \mathbb{R}^n \mid \langle y, x\rangle \ge -1 \;\; \forall x \in S^*\}
+S^{**} = \{y \in \mathbb{R}^n \mid \langle y, x\rangle \ge -1 \;\; \forall x \in S^*\}
 </span></p>
-</section>
-<section id="inter-conjugate-and-self-conjugate-sets" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="inter-conjugate-and-self-conjugate-sets"><span class="header-section-number">1.2</span> Inter-conjugate and self-conjugate sets</h2>
 <ul>
-<li>Множества <span class="math display">S_1</span> и <span class="math display">S_2</span> называются <strong>взаимосопряженными</strong>, если <span class="math display">S_1^* = S_2, S_2^* = S_1</span>.</li>
-<li>Множество <span class="math display">S</span> называется <strong>самосопряженным</strong>, если <span class="math display">S^{*} = S</span>.</li>
+<li>The sets <span class="math inline">S_1</span> and <span class="math inline">S_2</span> are called <strong>inter-conjugate</strong> if <span class="math inline">S_1^* = S_2, S_2^* = S_1</span>.</li>
+<li>A set <span class="math inline">S</span> is called <strong>self-conjugate</strong> if <span class="math inline">S^{*} = S</span>.</li>
 </ul>
 </section>
-<section id="properties" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="properties"><span class="header-section-number">1.3</span> Properties</h2>
+<section id="properties" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="properties"><span class="header-section-number">1.2</span> Properties</h2>
 <ul>
-<li><p>Сопряженное множество всегда замкнуто, выпукло и содержит нуль.</p></li>
-<li><p>Для произвольного множества <span class="math display">S \subseteq \mathbb{R}^n</span>:</p>
+<li><p>A conjugate set is always closed, convex, and contains zero.</p></li>
+<li><p>For an arbitrary set <span class="math inline">S \subseteq \mathbb{R}^n</span>:</p>
 <p><span class="math display">
-   S^{**} = \overline{ \mathbf{conv} (S \cup  \{0\}) }
+   S^{**} = \overline{ \mathbf{conv} (S \cup \{0\}) }
   </span></p></li>
-<li><p>Если <span class="math display">S_1 \subseteq S_2</span>, то <span class="math display">S_2^* \subseteq S_1^*</span>.</p></li>
-<li><p><span class="math display">\left( \bigcup\limits_{i=1}^m S_i \right)^* = \bigcap\limits_{i=1}^m S_i^*</span></p></li>
-<li><p>Если <span class="math display">S</span> - замкнуто, выпукло, включает <span class="math display">0</span>, то <span class="math display">S^{**} = S</span>.</p></li>
-<li><p><span class="math display">S^* = \left(\overline{S}\right)^*</span></p></li>
+<li><p>If <span class="math inline">S_1 \subseteq S_2</span>, then <span class="math inline">S_2^* \subseteq S_1^*</span>.</p></li>
+<li><p><span class="math inline">\left( \bigcup\limits_{i=1}^m S_i \right)^* = \bigcap\limits_{i=1}^m S_i^*</span>.</p></li>
+<li><p>If <span class="math inline">S</span> is closed, convex, and includes <span class="math inline">0</span>, then <span class="math inline">S^{**} = S</span>.</p></li>
+<li><p><span class="math inline">S^* = \left(\overline{S}\right)^*</span>.</p></li>
 </ul>
 </section>
-<section id="examples" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="examples"><span class="header-section-number">1.4</span> Examples</h2>
-<section id="section" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="section"><span class="header-section-number">1.4.1</span> 1</h3>
-<p>Доказать, что <span class="math display">S^* = \left(\overline{S}\right)^*</span>.</p>
-<p>Решение:</p>
+<section id="examples" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="examples"><span class="header-section-number">1.3</span> Examples</h2>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Prove that <span class="math inline">S^* = \left(\overline{S}\right)^*</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ul>
-<li><span class="math display">S \subset \overline{S} \rightarrow \left(\overline{S}\right)^* \subset S^*</span></li>
-<li>Пусть <span class="math display">p \in S^*</span> и <span class="math display">x_0 \in \overline{S}, x_0 = \underset{k \to \infty}{\operatorname{lim}} x_k</span>. Тогда в силу непрерывности функции <span class="math display">f(x) = p^Tx</span>, имеем: <span class="math display">p^T x_k \ge -1 \to p^Tx_0 \ge -1</span>. Значит, <span class="math display">p \in  \left(\overline{S}\right)^*</span>, отсюда <span class="math display">S^* \subset \left(\overline{S}\right)^*</span></li>
+<li><span class="math inline">S \subset \overline{S}\rightarrow \left(\overline{S}\right)^* \subset S^*</span>.</li>
+<li>Let <span class="math inline">p \in S^*</span> and <span class="math inline">x_0 \in \overline{S}, x_0 = \underset{k \to \infty}{\operatorname{lim}} x_k</span>. Then by virtue of the continuity of the function <span class="math inline">f(x) = p^Tx</span>, we have: <span class="math inline">p^T x_k \ge -1 \to p^Tx_0 \ge -1</span>. So <span class="math inline">p \in \left(\overline{S}\right)^*</span>, hence <span class="math inline">S^* \subset \left(\overline{S}\right)^*</span>.</li>
 </ul>
-</section>
-<section id="section-1" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">1.4.2</span> 2</h3>
-<p>Доказать, что <span class="math display">\left( \mathbf{conv}(S) \right)^* = S^*</span>.</p>
-<p>Решение:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Prove that <span class="math inline">\left( \mathbf{conv}(S) \right)^* = S^*</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ul>
-<li><p><span class="math display">S \subset \mathbf{conv}(S) \to \left( \mathbf{conv}(S) \right)^* \subset S^*</span></p></li>
-<li><p>Пусть <span class="math display">p \in S^*</span>, <span class="math display">x_0 \in \mathbf{conv}(S)</span>, т.е. <span class="math display">x_0 = \sum\limits_{i=1}^k\theta_i x_i \mid x_i \in S, \sum\limits_{i=1}^k\theta_i = 1, \theta_i \ge 0</span>.</p>
-<p>Значит, <span class="math display">p^T x_0 = \sum\limits_{i=1}^k\theta_i p^Tx_i \ge \sum\limits_{i=1}^k\theta_i (-1) = 1 \cdot (-1) = -1</span>. Значит, <span class="math display">p \in  \left( \mathbf{conv}(S) \right)^*</span>, отсюда <span class="math display">S^* \subset \left( \mathbf{conv}(S) \right)^*</span></p></li>
+<li><p><span class="math inline">S \subset \mathbf{conv}(S) \to \left( \mathbf{conv}(S) \right)^* \subset S^*</span>.</p></li>
+<li><p>Let <span class="math inline">p \in S^*</span>, <span class="math inline">x_0 \in \mathbf{conv}(S)</span>, i.e., <span class="math inline">x_0 = \sum\limits_{i=1}^k\theta_i x_i \mid x_i \in S, \sum\limits_{i=1}^k\theta_i = 1, \theta_i \ge 0</span>.</p>
+<p>So <span class="math inline">p^T x_0 = \sum\limits_{i=1}^k\theta_i p^Tx_i \ge \sum\limits_{i=1}^k\theta_i (-1) = 1 \cdot (-1) = -1</span>. So <span class="math inline">p \in \left( \mathbf{conv}(S) \right)^*</span>, hence <span class="math inline">S^* \subset \left( \mathbf{conv}(S) \right)^*</span>.</p></li>
 </ul>
-</section>
-<section id="section-2" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="section-2"><span class="header-section-number">1.4.3</span> 3</h3>
-<p>Доказать, что если <span class="math display">B(0,r)</span> - шар радиуса <span class="math display">r</span> по некоторой норме с центром в нуле, то <span class="math display">\left( B(0,r) \right)^* = B(0,1/r)</span>.</p>
-<p>Решение:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Prove that if <span class="math inline">B(0,r)</span> is a ball of radius <span class="math inline">r</span> by some norm centered at zero, then <span class="math inline">\left( B(0,r) \right)^* = B(0,1/r)</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ul>
-<li><p>Пусть <span class="math display">B(0,r) = X, B(0,1/r) = Y</span>. Возьмем вектор нормали <span class="math display">p \in X^*</span>, тогда для любого <span class="math display">x \in X: p^Tx \ge -1</span>.</p></li>
-<li><p>Из всех точек шара <span class="math display">X</span> возьмем такую <span class="math display">x \in X</span>, что скалярное произведение её на <span class="math display">p</span>: <span class="math display">p^Tx</span> было бы минимально, тогда это точка <span class="math display">x = -\frac{p}{\|p\|}r</span></p>
+<li><p>Let <span class="math inline">B(0,r) = X, B(0,1/r) = Y</span>. Take the normal vector <span class="math inline">p \in X^*</span>, then for any <span class="math inline">x \in X: p^Tx \ge -1</span>.</p></li>
+<li><p>From all points of the ball <span class="math inline">X</span>, take such a point <span class="math inline">x \in X</span> that its scalar product of <span class="math inline">p</span>: <span class="math inline">p^Tx</span> is minimal, then this is the point <span class="math inline">x = -\frac{p}{\|p\|}r</span>.</p>
 <p><span class="math display">
-  p^T x = p^T \left(-\frac{p}{\|p\|}r \right) = -\|p\|r \ge -1
+  p^T x = p^T \left(-\frac{p}{\|p\||}r \right) = -\|p\|r \ge -1
   </span></p>
 <p><span class="math display">
   \|p\| \le \frac{1}{r} \in Y
   </span></p>
-<p>Значит, <span class="math display">X^* \subset Y</span>.</p></li>
-<li><p>Теперь пусть <span class="math display">p \in Y</span>. Нам надо показать, что <span class="math display">p \in X^*</span>, т.е. <span class="math display">\langle p, x\rangle \geq -1</span>. Достаточно применить неравенство Коши - Буняковского:</p>
+<p>So <span class="math inline">X^* \subset Y</span>.</p></li>
+<li><p>Now let <span class="math inline">p \in Y</span>. We need to show that <span class="math inline">p \in X^*</span>, i.e., <span class="math inline">\langle p, x\rangle \geq -1</span>. It’s enough to apply the Cauchy-Bunyakovsky inequality:</p>
 <p><span class="math display">
   \|\langle p, x\rangle\| \leq \|p\| \|x\| \leq \dfrac{1}{r} \cdot r = 1
   </span></p>
-<p>Последнее исходит из того, что <span class="math display">p \in B(0,1/r)</span>, а <span class="math display">x \in B(0,r)</span>.</p>
-<p>Значит, <span class="math display">Y \subset X^*</span>.</p></li>
+<p>The latter comes from the fact that <span class="math inline">p \in B(0,1/r)</span> and <span class="math inline">x \in B(0,r)</span>.</p>
+<p>So <span class="math inline">Y \subset X^*</span>.</p></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-</section>
-</section>
-<section id="dual-cones" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Dual cones</h1>
-<p>Сопряженным конусом к конусу <span class="math display">K</span> называется такое множество <span class="math display">K^*</span>, что:</p>
+<section id="dual-cones" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="dual-cones"><span class="header-section-number">1.4</span> Dual cones</h2>
+<p>A conjugate cone to a cone <span class="math inline">K</span> is a set <span class="math inline">K^*</span> such that:</p>
 <p><span class="math display">
-K^* = \left\{ y \mid \langle x, y\rangle \ge 0 \;\;\;\; \forall x \in K\right\}
+K^* = \left\{ y \mid \langle x, y\rangle \ge 0 \quad \forall x \in K\right\}
 </span></p>
-<p>Чтобы показать, что это определение непосредственно следует из теории выше, вспомним, что такое сопряженное множество и что такое конус <span class="math display">\forall \lambda &gt; 0</span></p>
+<p>To show that this definition follows directly from the theorem above, recall what a conjugate set is and what a cone <span class="math inline">\forall \lambda &gt; 0</span> is.</p>
 <p><span class="math display">
-\{y \ \in \mathbb{R}^n \mid \langle y, x\rangle \ge -1 \;\; \forall x \in S\} \to \{\lambda y \ \in \mathbb{R}^n \mid \langle y, x\rangle \ge -\dfrac{1}{\lambda} \;\; \forall x \in S\}
+\{y \in \mathbb{R}^n \mid \langle y, x\rangle \ge -1 \;\; \forall x \in S\} \to \to \{\lambda y \in \mathbb{R}^n \mid \langle y, x\rangle \ge -\dfrac{1}{\lambda} \;\; \forall x\in S\}
 </span></p>
-<p><img src="./dual_cone.gif" class="img-fluid"></p>
-<section id="dual-cones-properties" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="dual-cones-properties"><span class="header-section-number">2.1</span> Dual cones properties</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dual_cone.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of dual cone</figcaption>
+</figure>
+</div>
+</section>
+<section id="dual-cones-properties" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="dual-cones-properties"><span class="header-section-number">1.5</span> Dual cones properties</h2>
 <ul>
-<li><p>Пусть <span class="math display">K</span> - замкнутый выпуклый конус. Тогда <span class="math display">K^{**} = K</span>.</p></li>
-<li><p>Для произвольного множества <span class="math display">S \subseteq \mathbb{R}^n</span> и конуса <span class="math display">K \subseteq \mathbb{R}^n</span>:</p>
+<li><p>Let <span class="math inline">K</span> be a closed convex cone. Then <span class="math inline">K^{**} = K</span>.</p></li>
+<li><p>For an arbitrary set <span class="math inline">S \subseteq \mathbb{R}^n</span> and a cone <span class="math inline">K \subseteq \mathbb{R}^n</span>:</p>
 <p><span class="math display">
   \left( S + K \right)^* = S^* \cap K^*
   </span></p></li>
-<li><p>Пусть <span class="math display">K_1, \ldots, K_m</span> - конусы в <span class="math display">\mathbb{R}^n</span>, тогда:</p>
+<li><p>Let <span class="math inline">K_1, \ldots, K_m</span> be cones in <span class="math inline">\mathbb{R}^n</span>, then:</p>
 <p><span class="math display">
   \left( \sum\limits_{i=1}^m K_i \right)^* = \bigcap\limits_{i=1}^m K_i^*
   </span></p></li>
-<li><p>Пусть <span class="math display">K_1, \ldots, K_m</span> - конусы в <span class="math display">\mathbb{R}^n</span>. Пусть также их пересечение имеет внутреннюю точку, тогда:</p>
+<li><p>Let <span class="math inline">K_1, \ldots, K_m</span> be cones in <span class="math inline">\mathbb{R}^n</span>. Let also their intersection have an interior point, then:</p>
 <p><span class="math display">
   \left( \bigcap\limits_{i=1}^m K_i \right)^* = \sum\limits_{i=1}^m K_i^*
   </span></p></li>
 </ul>
 </section>
-<section id="examples-1" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">2.2</span> Examples</h2>
-<p>Найти сопряженнй конус для монотонного неотрицательного конуса:</p>
+<section id="examples-1" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">1.6</span> Examples</h2>
+<p>::: {.callout-example} Find the conjugate cone for a monotone nonnegative cone:</p>
 <p><span class="math display">
 K = \left\{ x \in \mathbb{R}^n \mid x_1 \ge x_2 \ge \ldots \ge x_n \ge 0\right\}
 </span></p>
-<p>Решение:</p>
-<p>Заметим, что:</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>Note that:</p>
 <p><span class="math display">
 \sum\limits_{i=1}^nx_iy_i = y_1 (x_1-x_2) + (y_1 + y_2)(x_2 - x_3) + \ldots + (y_1 + y_2 + \ldots + y_{n-1})(x_{n-1} - x_n) + (y_1 + \ldots + y_n)x_n
 </span></p>
-<p>Так как в представленной сумме в каждом слагаемом второй множитель неотрицательный, то:</p>
+<p>Since in the presented sum in each summand the second multiplier in each summand is non-negative, then:</p>
 <p><span class="math display">
-y_1 \ge 0, \;\; y_1 + y_2 \ge 0, \;\;\ldots, \;\;y_1 + \ldots + y_n \ge 0
+y_1 \ge 0, \;\; y_1 + y_2 \ge 0, \;\;\ldots, \;\;\;y_1 + \ldots + y_n \ge 0
 </span></p>
-<p>Значит, <span class="math display">K^* = \left\{ y \mid \sum\limits_{i=1}^k y_i \ge 0, k = \overline{1,n}\right\}</span></p>
+<p>So <span class="math inline">K^* = \left\{ y \mid \sum\limits_{i=1}^k y_i \ge 0, k = \overline{1,n}\right\}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="polyhedra" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="polyhedra"><span class="header-section-number">2.3</span> Polyhedra</h2>
-<p>Множество решений системы линейных неравенств и равенств представляет собой многогранник:</p>
+<section id="polyhedra" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="polyhedra"><span class="header-section-number">1.7</span> Polyhedra</h2>
+<p>The set of solutions to a system of linear inequalities and equalities is a polyhedron:</p>
 <p><span class="math display">
 Ax \preceq b, \;\;\; Cx = d
 </span></p>
-<p>Здесь <span class="math display">A \in \mathbb{R}^{m\times n}, C \in \mathbb{R}^{p \times n} </span>, а неравенство - поэлементное.</p>
-<p><img src="./polyhedra.svg" class="img-fluid"></p>
-<section id="теорема" class="level4" data-number="2.3.0.1">
-<h4 data-number="2.3.0.1" class="anchored" data-anchor-id="теорема"><span class="header-section-number">2.3.0.1</span> Теорема:</h4>
-<p>Пусть <span class="math display">x_1, \ldots, x_m \in \mathbb{R}^n</span>. Сопряженным к многогранному множеству:</p>
+<p>Here <span class="math inline">A \in \mathbb{R}^{m\times n}, C \in \mathbb{R}^{p \times n}</span>, and the inequality is a piecewise inequality.</p>
+<p><img src="polyhedra.svg" class="img-fluid"></p>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+<p>Let <span class="math inline">x_1, \ldots, x_m \in \mathbb{R}^n</span>. Conjugate to a polyhedral set:</p>
 <p><span class="math display">
 S = \mathbf{conv}(x_1, \ldots, x_k) + \mathbf{cone}(x_{k+1}, \ldots, x_m)
 </span></p>
-<p>является полиэдр (многогранник):</p>
+<p>is a polyhedron (polyhedron):</p>
 <p><span class="math display">
 S^* = \left\{ p \in \mathbb{R}^n \mid \langle p, x_i\rangle \ge -1, i = \overline{1,k} ; \langle p, x_i\rangle \ge 0, i = \overline{k+1,m} \right\}
 </span></p>
-</section>
-<section id="доказательство" class="level4" data-number="2.3.0.2">
-<h4 data-number="2.3.0.2" class="anchored" data-anchor-id="доказательство"><span class="header-section-number">2.3.0.2</span> Доказательство:</h4>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-proof" data-collapse="true">
 <ul>
-<li><p>Пусть <span class="math display">S = X, S^* = Y</span>. Возьмем некоторый <span class="math display">p \in X^*</span>, тогда <span class="math display">\langle p, x_i\rangle \ge -1,  i = \overline{1,k}</span>. В то же время для любых <span class="math display">\theta &gt; 0, i = \overline{k+1,m}</span>:</p>
+<li><p>Let <span class="math inline">S = X, S^* = Y</span>. Take some <span class="math inline">p \in X^*</span>, then <span class="math inline">\langle p, x_i\rangle \ge -1, i = \overline{1,k}</span>. At the same time, for any <span class="math inline">\theta &gt; 0, i = \overline{k+1,m}</span>:</p>
 <p><span class="math display">
   \langle p, x_i\rangle \ge -1 \to \langle p, \theta x_i\rangle \ge -1
   </span></p>
 <p><span class="math display">
-  \langle p, x_i\rangle \ge -\frac{1}{\theta} \to \langle p, x_i\rangle \ge 0
+  \langle p, x_i\rangle \ge -\frac{1}{\theta} \to \langle p, x_i\rangle 0.
   </span></p>
-<p>Значит, <span class="math display">p \in Y \to X^* \subset Y</span>.</p></li>
-<li><p>Пусть, напротив, <span class="math display">p \in Y</span>. Для любой точки <span class="math display">x \in X</span>:</p>
+<p>So <span class="math inline">p \in Y \to X^* \subset Y</span>.</p></li>
+<li><p>Suppose, on the other hand, that <span class="math inline">p \in Y</span>. For any point <span class="math inline">x \in X</span>:</p>
 <p><span class="math display">
-   x = \sum\limits_{i=1}^m\theta_i x_i \;\;\;\;\;\; \sum\limits_{i=1}^k\theta_i = 1, \theta_i \ge 0
+   x = \sum\limits_{i=1}^m\theta_i x_i \;\;\;\;\;\;\; \sum\limits_{i=1}^k\theta_i = 1, \theta_i \ge 0
   </span></p>
-<p>Значит:</p>
+<p>So:</p>
 <p><span class="math display">
-  \langle p, x\rangle = \sum\limits_{i=1}^m\theta_i \langle p, x_i\rangle  = \sum\limits_{i=1}^k\theta_i \langle p, x_i\rangle + \sum\limits_{i=k+1}^m\theta_i \langle p, x_i\rangle \ge \sum\limits_{i=1}^k\theta_i (-1) + \sum\limits_{i=1}^k\theta_i \cdot 0 = -1
+  \langle p, x\rangle = \sum\limits_{i=1}^m\theta_i \langle p, x_i\rangle = \sum\limits_{i=1}^k\theta_i \langle p, x_i\rangle + \sum\limits_{i=k+1}^m\theta_i \langle p, x_i\rangle \ge \sum\limits_{i=1}^k\theta_i (-1) + \sum\limits_{i=1}^k\theta_i \cdot 0 = -1.
   </span></p>
-<p>Значит, <span class="math display">p \in X^* \to Y \subset X^*</span>.</p></li>
+<p>So <span class="math inline">p \in X^* \to Y \subset X^*</span>.</p></li>
 </ul>
-</section>
-<section id="section-3" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="section-3"><span class="header-section-number">2.3.1</span> 5</h3>
-<p>Найти и изобразить на плоскости множество, сопряженное к многогранному конусу:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find and represent the set conjugate to a polyhedral cone in the plane:</p>
 <p><span class="math display">
 S = \mathbf{cone} \left\{ (-3,1), (2,3), (4,5)\right\}
 </span></p>
-<p>Решение:</p>
-<p>Используя теорему выше:</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>Using the theorem above:</p>
 <p><span class="math display">
 S^* = \left\{ -3p_1 + p_2 \ge 0, 2p_1 + 3p_2 \ge 0, 4p_1+5p_2 \ge 0 \right\}
 </span></p>
-</section>
-<section id="лемма-теорема-фаркаша-фаркаша---минковского" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="лемма-теорема-фаркаша-фаркаша---минковского"><span class="header-section-number">2.3.2</span> Лемма (теорема) Фаркаша (Фаркаша - Минковского)</h3>
-<p>Пусть <span class="math display">A \in \mathbb{R}^{m\times n}, b \in \mathbb{R}^m</span>. Тогда имеет решение одна и только одна из следующих двух систем:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="farkas-lemma" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="farkas-lemma"><span class="header-section-number">1.7.1</span> Farkas’ Lemma</h3>
+<p>Let <span class="math inline">A \in \mathbb{R}^{m\times n}, b \in \mathbb{R}^m</span>. Then one and only one of the following two systems has a solution:</p>
 <p><span class="math display">
-1) \; Ax = b, x \ge 0\;\;\;\;\;\;
+1) \; Ax = b, x \ge 0
 </span></p>
 <p><span class="math display">
-2) \; p^\top A \ge 0, \langle p,b\rangle &lt; 0
+2) \; p^\top A \ge 0, \langle p,b\rangle &lt; 0.
 </span></p>
-<p><span class="math display">Ax = b</span> при <span class="math display">x \geq 0</span> означает, что <span class="math display">b</span> лежит в конусе, натянутым на столбцы матрицы <span class="math display">A</span>.</p>
-<p><span class="math display">pA \geq 0, \; \langle p, b \rangle &lt; 0</span> означает, что существует разделяющая гиперплоскость между вектором <span class="math display">b</span> и конусом из столбцов матрицы <span class="math display">A</span>.</p>
-<section id="следствие" class="level4" data-number="2.3.2.1">
-<h4 data-number="2.3.2.1" class="anchored" data-anchor-id="следствие"><span class="header-section-number">2.3.2.1</span> Следствие:</h4>
-<p>Пусть <span class="math display">A \in \mathbb{R}^{m\times n}, b \in \mathbb{R}^m</span>. Тогда имеет решение одна и только одна из следующих двух систем:</p>
+<p><span class="math inline">Ax = b</span> when <span class="math inline">x \geq 0</span> means that <span class="math inline">b</span> lies in a cone stretched over the columns of the matrix <span class="math inline">A</span>.</p>
+<p><span class="math inline">pA \geq 0, \; \langle p, b \rangle &lt; 0</span> means that there exists a separating hyperplane between the vector <span class="math inline">b</span> and the cone of columns of the matrix <span class="math inline">A</span>.</p>
+<section id="corollary" class="level4" data-number="1.7.1.1">
+<h4 data-number="1.7.1.1" class="anchored" data-anchor-id="corollary"><span class="header-section-number">1.7.1.1</span> Corollary:</h4>
+<p>Let <span class="math inline">A \in \mathbb{R}^{m\times n}, b \in \mathbb{R}^m</span>. Then one and only one of the following two systems has a solution:</p>
 <p><span class="math display">
-1) \; Ax \le b \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
+1) Ax \leq b
 </span></p>
 <p><span class="math display">
-2) \; p^\top A = 0, \langle p,b\rangle &lt; 0, p \ge 0
+2) p^\top A = 0, \langle p,b\rangle &lt; 0, p \ge 0.
 </span></p>
-<p>Если в задаче линейного программирования на минимум допустимое множество непусто и целевая функция ограничена на нём снизу, то задача имеет решение.</p>
+<p>If in the minimum linear programming problem the admissible set is non-empty and the target function is bounded on it from below, then the problem has a solution.</p>
 
 
 </section>
