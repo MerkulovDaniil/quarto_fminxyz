@@ -931,10 +931,10 @@ K^* = \left\{ y \mid \langle x, y\rangle \ge 0 \quad \forall x \in K\right\}
 <p><span class="math display">
 \{y \in \mathbb{R}^n \mid \langle y, x\rangle \ge -1 \;\; \forall x \in S\} \to \to \{\lambda y \in \mathbb{R}^n \mid \langle y, x\rangle \ge -\dfrac{1}{\lambda} \;\; \forall x\in S\}
 </span></p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-conjugate_cone" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="dual_cone.gif" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Illustration of dual cone</figcaption>
+<p><img src="conjugate_cone.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Illustration of dual cone</figcaption>
 </figure>
 </div>
 </section>
@@ -958,7 +958,19 @@ K^* = \left\{ y \mid \langle x, y\rangle \ge 0 \quad \forall x \in K\right\}
 </section>
 <section id="examples-1" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">1.6</span> Examples</h2>
-<p>::: {.callout-example} Find the conjugate cone for a monotone nonnegative cone:</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find the conjugate cone for a monotone nonnegative cone:</p>
 <p><span class="math display">
 K = \left\{ x \in \mathbb{R}^n \mid x_1 \ge x_2 \ge \ldots \ge x_n \ge 0\right\}
 </span></p>
@@ -980,11 +992,15 @@ Solution
 <p><span class="math display">
 \sum\limits_{i=1}^nx_iy_i = y_1 (x_1-x_2) + (y_1 + y_2)(x_2 - x_3) + \ldots + (y_1 + y_2 + \ldots + y_{n-1})(x_{n-1} - x_n) + (y_1 + \ldots + y_n)x_n
 </span></p>
-<p>Since in the presented sum in each summand the second multiplier in each summand is non-negative, then:</p>
+<p>Since in the presented sum in each summand, the second multiplier in each summand is non-negative, then:</p>
 <p><span class="math display">
 y_1 \ge 0, \;\; y_1 + y_2 \ge 0, \;\;\ldots, \;\;\;y_1 + \ldots + y_n \ge 0
 </span></p>
 <p>So <span class="math inline">K^* = \left\{ y \mid \sum\limits_{i=1}^k y_i \ge 0, k = \overline{1,n}\right\}</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -998,7 +1014,12 @@ y_1 \ge 0, \;\; y_1 + y_2 \ge 0, \;\;\ldots, \;\;\;y_1 + \ldots + y_n \ge 0
 Ax \preceq b, \;\;\; Cx = d
 </span></p>
 <p>Here <span class="math inline">A \in \mathbb{R}^{m\times n}, C \in \mathbb{R}^{p \times n}</span>, and the inequality is a piecewise inequality.</p>
-<p><img src="polyhedra.svg" class="img-fluid"></p>
+<div id="fig-polyhedra" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="polyhedra.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Polyhedra</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-theorem no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1020,7 +1041,7 @@ S = \mathbf{conv}(x_1, \ldots, x_k) + \mathbf{cone}(x_{k+1}, \ldots, x_m)
 S^* = \left\{ p \in \mathbb{R}^n \mid \langle p, x_i\rangle \ge -1, i = \overline{1,k} ; \langle p, x_i\rangle \ge 0, i = \overline{k+1,m} \right\}
 </span></p>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1029,7 +1050,7 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-proof" data-collapse="true">
@@ -1078,7 +1099,7 @@ Example
 S = \mathbf{cone} \left\{ (-3,1), (2,3), (4,5)\right\}
 </span></p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1087,7 +1108,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-solution" data-collapse="true">
@@ -1124,7 +1145,7 @@ S^* = \left\{ -3p_1 + p_2 \ge 0, 2p_1 + 3p_2 \ge 0, 4p_1+5p_2 \ge 0 \right\}
 <p><span class="math display">
 2) p^\top A = 0, \langle p,b\rangle &lt; 0, p \ge 0.
 </span></p>
-<p>If in the minimum linear programming problem the admissible set is non-empty and the target function is bounded on it from below, then the problem has a solution.</p>
+<p>If in the minimization linear programming problem, the budget set is non-empty and the target function is bounded on it from below, then the problem has a solution.</p>
 
 
 </section>

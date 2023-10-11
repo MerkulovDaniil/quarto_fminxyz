@@ -748,10 +748,10 @@ ul.task-list li input[type="checkbox"] {
 f^*(y) = \sup\limits_{x \in \mathbf{dom} \; f} \left( \langle y,x\rangle - f(x)\right).
 </span></p>
 <p>Let’s notice, that the domain of the function <span class="math inline">f^*</span> is the set of those <span class="math inline">y</span>, where the supremum is finite.</p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-conjugate_function" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="conj.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Illustration of</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;1: Illustration of conjugate function</figcaption>
 </figure>
 </div>
 <section id="properties" class="level2" data-number="1.1">
@@ -765,7 +765,7 @@ f^*(y) = \sup\limits_{x \in \mathbf{dom} \; f} \left( \langle y,x\rangle - f(x)\
 <li><p>Let the functions <span class="math inline">f(x), f^\star(y), f^{\star\star}(x)</span> be defined on the <span class="math inline">\mathbb{R}^n</span>. Then <span class="math inline">f^{\star\star}(x) = f(x)</span> if and only if <span class="math inline">f(x)</span> - is a proper convex function (Fenchel - Moreau theorem). (proper convex function = closed convex function)</p></li>
 <li><p>Consequence from Fenchel–Young inequality: <span class="math inline">f(x) \ge f^{\star\star}(x)</span>.</p></li>
 </ul>
-<p><img src="./doubl_conj.svg" class="img-fluid"></p>
+<p><img src="doubl_conj.svg" id="fig-double_conjugate_function" class="img-fluid"></p>
 <ul>
 <li><p>In case of differentiable function, <span class="math inline">f(x)</span> - convex and differentiable, <span class="math inline">\mathbf{dom}\; f = \mathbb{R}^n</span>. Then <span class="math inline">x^\star = \underset{x}{\operatorname{argmin}} \langle x,y\rangle - f(x)</span>. Therefore <span class="math inline">y = \nabla f(x^\star)</span>. That’s why:</p>
 <p><span class="math display">
@@ -786,13 +786,34 @@ f^*(y) = \sup\limits_{x \in \mathbf{dom} \; f} \left( \langle y,x\rangle - f(x)\
 </section>
 <section id="examples" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="examples"><span class="header-section-number">1.2</span> Examples</h2>
-<p>The scheme of recovering the convex conjugate is pretty algorithmic: 1. Write down the definition <span class="math inline">f^\star(y) = \sup\limits_{x \in \mathbf{dom} \; f} \left( \langle y,x\rangle - f(x)\right) = \sup\limits_{x \in \mathbf{dom} \; g} g(x,y)</span>. 1. Find those <span class="math inline">y</span>, where $ _{x ; g} g(x,y)$ is finite. That’s the domain of the dual function <span class="math inline">f^\star(y)</span>. 1. Find <span class="math inline">x^\star</span>, which maximize <span class="math inline">g(x,y)</span> as a function on <span class="math inline">x</span>. <span class="math inline">f^\star(y) = g(x^\star, y)</span>.</p>
-{: .example} &gt;Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = ax + b</span>. &gt;
-<details>
-<summary>
+<p>The scheme of recovering the convex conjugate is pretty algorithmic: 1. Write down the definition <span class="math inline">f^\star(y) = \sup\limits_{x \in \mathbf{dom} \; f} \left( \langle y,x\rangle - f(x)\right) = \sup\limits_{x \in \mathbf{dom} \; g} g(x,y)</span>. 1. Find those <span class="math inline">y</span>, where <span class="math inline">\sup\limits_{x \in \mathbf{dom} \; g} g(x,y)</span> is finite. That’s the domain of the dual function <span class="math inline">f^\star(y)</span>. 1. Find <span class="math inline">x^\star</span>, which maximize <span class="math inline">g(x,y)</span> as a function on <span class="math inline">x</span>. <span class="math inline">f^\star(y) = g(x^\star, y)</span>.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = ax + b</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ol type="1">
 <li>By definition: <span class="math display">
 f^*(y) = \sup\limits_{x \in \mathbb{R}} [ yx - f(x) ]=\sup\limits_{x \in \mathbb{R}} g(x,y) \quad \mathbf{dom} \; f^* = \{y \in \mathbb{R} : \sup\limits_{x \in \mathbb{R}} g(x,y) \text{ is finite}\}
@@ -800,105 +821,286 @@ f^*(y) = \sup\limits_{x \in \mathbb{R}} [ yx - f(x) ]=\sup\limits_{x \in \mathbb
 <li>Consider the function whose supremum is the conjugate: <span class="math display">
 g(x,y) =  yx - f(x) = yx - ax - b = x(y - a) - b.
 </span></li>
-<li>Let’s determine the domain of the function (i.e.&nbsp;those <span class="math inline">y</span> for which <span class="math inline">\sup</span> is finite). This is a single point, <span class="math inline">y = a</span>. Otherwise one may choose such <span class="math inline">x</span> <br></li>
+<li>Let’s determine the domain of the function (i.e.&nbsp;those <span class="math inline">y</span> for which <span class="math inline">\sup</span> is finite). This is a single point, <span class="math inline">y = a</span>. Otherwise one may choose such <span class="math inline">x</span></li>
 <li>Thus, we have: <span class="math inline">\mathbf{dom} \; f^* = \{a\}; f^*(a) = -b</span></li>
 </ol>
-</blockquote></details>
-
-<p>{: .question} Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = \dfrac{1}{x}, \;\; x\in \mathbb{R}_{++}</span>.</p>
-{: .example} &gt;Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = -\log x, \;\; x\in \mathbb{R}_{++}</span>. &gt;
-<details>
-<summary>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-question no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-question">
+<p>Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = \dfrac{1}{x}, \;\; x\in \mathbb{R}_{++}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = -\log x, \;\; x\in \mathbb{R}_{++}</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ol type="1">
 <li>Consider the function whose supremum defines the conjugate: <span class="math display">
 g(x,y) = \langle y,x\rangle - f(x) = yx + \log x.
 </span></li>
-<li>This function is unbounded above when <span class="math inline">y \ge 0</span>. Therefore, the domain of <span class="math inline">f^*</span> is <span class="math inline">\mathbf{dom} \; f^* = \{y &lt; 0\}</span>. <br></li>
+<li>This function is unbounded above when <span class="math inline">y \ge 0</span>. Therefore, the domain of <span class="math inline">f^*</span> is <span class="math inline">\mathbf{dom} \; f^* = \{y &lt; 0\}</span>.</li>
 <li>This function is concave and its maximum is achieved at the point with zero gradient: <span class="math display">
 \dfrac{\partial}{\partial x} (yx + \log x) = \dfrac{1}{x} + y = 0.
 </span> Thus, we have <span class="math inline">x = -\dfrac1y</span> and the conjugate function is: <span class="math display">
 f^*(y) = -\log(-y) - 1.
 </span></li>
 </ol>
-</blockquote></details>
-
-{: .example} &gt;Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = e^x</span>. &gt;
-<details>
-<summary>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = e^x</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ol type="1">
 <li>Consider the function whose supremum defines the conjugate: <span class="math display">
 g(x,y) = \langle y,x\rangle - f(x) = yx - e^x.
 </span></li>
-<li>This function is unbounded above when <span class="math inline">y &lt; 0</span>. Thus, the domain of <span class="math inline">f^*</span> is <span class="math inline">\mathbf{dom} \; f^* = \{y \ge 0\}</span>. <br></li>
+<li>This function is unbounded above when <span class="math inline">y &lt; 0</span>. Thus, the domain of <span class="math inline">f^*</span> is <span class="math inline">\mathbf{dom} \; f^* = \{y \ge 0\}</span>.</li>
 <li>The maximum of this function is achieved when <span class="math inline">x = \log y</span>. Hence: <span class="math display">
 f^*(y) = y \log y - y,
 </span> assuming <span class="math inline">0 \log 0 = 0</span>.</li>
 </ol>
-</blockquote></details>
-
-{: .example} &gt;Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = x \log x, x \neq 0,</span> and <span class="math inline">f(0) = 0, \;\;\; x \in \mathbb{R}_+</span>. &gt;
-<details>
-<summary>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = x \log x, x \neq 0,</span> and <span class="math inline">f(0) = 0, \;\;\; x \in \mathbb{R}_+</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ol type="1">
 <li>Consider the function whose supremum defines the conjugate: <span class="math display">
 g(x,y) = \langle y,x\rangle - f(x) = xy - x \log x.
 </span></li>
-<li>This function is upper bounded for all <span class="math inline">y</span>. Therefore, <span class="math inline">\mathbf{dom} \; f^* = \mathbb{R}</span>. <br></li>
+<li>This function is upper bounded for all <span class="math inline">y</span>. Therefore, <span class="math inline">\mathbf{dom} \; f^* = \mathbb{R}</span>.</li>
 <li>The maximum of this function is achieved when <span class="math inline">x = e^{y-1}</span>. Hence: <span class="math display">
 f^*(y) = e^{y-1}.
 </span></li>
 </ol>
-</blockquote></details>
-
-{: .example} &gt;Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) =\frac{1}{2} x^T A x, \;\;\; A \in \mathbb{S}^n_{++}</span>. &gt;
-<details>
-<summary>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) =\frac{1}{2} x^T A x, \;\;\; A \in \mathbb{S}^n_{++}</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ol type="1">
 <li>Consider the function whose supremum defines the conjugate: <span class="math display">
 g(x,y) = \langle y,x\rangle - f(x) = y^T x - \frac{1}{2} x^T A x.
 </span></li>
-<li>This function is upper bounded for all <span class="math inline">y</span>. Thus, <span class="math inline">\mathbf{dom} \; f^* = \mathbb{R}</span>. <br></li>
+<li>This function is upper bounded for all <span class="math inline">y</span>. Thus, <span class="math inline">\mathbf{dom} \; f^* = \mathbb{R}</span>.</li>
 <li>The maximum of this function is achieved when <span class="math inline">x = A^{-1}y</span>. Hence: <span class="math display">
 f^*(y) =  \frac{1}{2} y^T A^{-1} y.
 </span></li>
 </ol>
-</blockquote></details>
-
-{: .example} &gt;Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = \max\limits_{i} x_i, \;\;\; x \in \mathbb{R}^n</span>. &gt;
-<details>
-<summary>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find <span class="math inline">f^*(y)</span>, if <span class="math inline">f(x) = \max\limits_{i} x_i, \;\;\; x \in \mathbb{R}^n</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <ol type="1">
 <li>Consider the function whose supremum defines the conjugate: <span class="math display">
 g(x,y) = \langle y,x\rangle - f(x) = y^T x - \max\limits_{i} x_i.
 </span></li>
-<li>Observe that if vector <span class="math inline">y</span> has at least one negative component, this function is not bounded by <span class="math inline">x</span>. <br></li>
-<li>If <span class="math inline">y \succeq 0</span> and <span class="math inline">1^T y &gt; 1</span>, then <span class="math inline">y \notin \mathbf{dom} \; f^*(y)</span>. <br></li>
-<li>If <span class="math inline">y \succeq 0</span> and <span class="math inline">1^T y &lt; 1</span>, then <span class="math inline">y \notin \mathbf{dom} \; f^*(y)</span>. <br></li>
-<li>Only left with <span class="math inline">y \succeq 0</span> and <span class="math inline">1^T y = 1</span>. In this case, <span class="math inline">x^T y \le \max\limits_i x_i</span>. <br></li>
+<li>Observe that if vector <span class="math inline">y</span> has at least one negative component, this function is not bounded by <span class="math inline">x</span>.</li>
+<li>If <span class="math inline">y \succeq 0</span> and <span class="math inline">1^T y &gt; 1</span>, then <span class="math inline">y \notin \mathbf{dom} \; f^*(y)</span>.</li>
+<li>If <span class="math inline">y \succeq 0</span> and <span class="math inline">1^T y &lt; 1</span>, then <span class="math inline">y \notin \mathbf{dom} \; f^*(y)</span>.</li>
+<li>Only left with <span class="math inline">y \succeq 0</span> and <span class="math inline">1^T y = 1</span>. In this case, <span class="math inline">x^T y \le \max\limits_i x_i</span>.</li>
 <li>Hence, <span class="math inline">f^*(y) = 0</span>.</li>
 </ol>
-</blockquote></details>
-
-<p>{: .example} &gt;<strong>Revenue and profit functions.</strong> We consider a business or enterprise that consumes n resources and produces a product that can be sold. We let <span class="math inline">r = (r_1, \ldots , r_n)</span> denote the vector of resource quantities consumed, and <span class="math inline">S(r)</span> denote the sales revenue derived from the product produced (as a function of the resources consumed). Now let <span class="math inline">p_i</span> denote the price (per unit) of resource <span class="math inline">i</span>, so the total amount paid for resources by the enterprise is <span class="math inline">p^\top r</span>. The profit derived by the firm is then <span class="math inline">S(r) − p^\top r</span>. Let us fix the prices of the resources, and ask what is the maximum profit that can be made, by wisely choosing the quantities of resources consumed. This maximum profit is given by &gt; &gt;<span class="math display">
-&gt;M(p) = \sup\limits_{r}\left( S(r) - p^\top r \right)
-&gt;</span> &gt; &gt;The function <span class="math inline">M(p)</span> gives the maximum profit attainable, as a function of the resource prices. In terms of conjugate functions, we can express <span class="math inline">M</span> as &gt;<span class="math display">
-&gt;M(p) = (−S)^*(−p).
-&gt;</span> &gt;Thus the maximum profit (as a function of resource prices) is closely related to the conjugate of gross sales (as a function of resources consumed).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p><strong>Revenue and profit functions.</strong> We consider a business or enterprise that consumes <span class="math inline">n</span> resources and produces a product that can be sold. We let <span class="math inline">r = (r_1, \ldots , r_n)</span> denote the vector of resource quantities consumed, and <span class="math inline">S(r)</span> denote the sales revenue derived from the product produced (as a function of the resources consumed). Now let <span class="math inline">p_i</span> denote the price (per unit) of resource <span class="math inline">i</span>, so the total amount paid for resources by the enterprise is <span class="math inline">p^\top r</span>. The profit derived by the firm is then <span class="math inline">S(r) − p^\top r</span>. Let us fix the prices of the resources, and ask what is the maximum profit that can be made, by wisely choosing the quantities of resources consumed. This maximum profit is given by</p>
+<p><span class="math display">
+M(p) = \sup\limits_{r}\left( S(r) - p^\top r \right)
+</span></p>
+<p>The function <span class="math inline">M(p)</span> gives the maximum profit attainable, as a function of the resource prices. In terms of conjugate functions, we can express <span class="math inline">M</span> as <span class="math display">
+M(p) = (−S)^*(−p).
+</span> Thus the maximum profit (as a function of resource prices) is closely related to the conjugate of gross sales (as a function of resources consumed).</p>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
