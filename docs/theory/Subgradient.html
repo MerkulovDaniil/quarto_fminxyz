@@ -732,15 +732,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#chain-rule-for-subdifferentials" id="toc-chain-rule-for-subdifferentials" class="nav-link" data-scroll-target="#chain-rule-for-subdifferentials"><span class="header-section-number">3.3</span> Chain rule for subdifferentials</a></li>
   <li><a href="#subdifferential-calculus" id="toc-subdifferential-calculus" class="nav-link" data-scroll-target="#subdifferential-calculus"><span class="header-section-number">3.4</span> Subdifferential calculus</a></li>
   </ul></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4</span> Examples</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">4.1</span> 1</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">4.2</span> 2</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"><span class="header-section-number">4.3</span> 3</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"><span class="header-section-number">4.4</span> 4</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"><span class="header-section-number">4.5</span> 5</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"><span class="header-section-number">4.6</span> 6</a></li>
-  </ul></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4</span> Examples</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/theory/Subgradient.md" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -757,53 +749,63 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Motivation</h1>
-<p>Важным свойством непрерывной выпуклой функции <span class="math display">f(x)</span> является то, что в выбранной точке <span class="math display">x_0</span> для всех <span class="math display">x \in \text{dom } f</span> выполнено неравенство:</p>
+<p>Важным свойством непрерывной выпуклой функции <span class="math inline">f(x)</span> является то, что в выбранной точке <span class="math inline">x_0</span> для всех <span class="math inline">x \in \text{dom } f</span> выполнено неравенство:</p>
 <p><span class="math display">
 f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 </span></p>
-<p>для некоторого вектора <span class="math display">g</span>, то есть касательная к графику функции является <em>глобальной</em> оценкой снизу для функции.</p>
-<p><img src="./conv_support.svg" class="img-fluid"></p>
+<p>для некоторого вектора <span class="math inline">g</span>, то есть касательная к графику функции является <em>глобальной</em> оценкой снизу для функции.</p>
+<div id="fig-conv_support" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="conv_support.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Taylor linear approximation serves as a global lower bound for a convex function</figcaption>
+</figure>
+</div>
 <ul>
-<li>Если <span class="math display">f(x)</span> - дифференцируема, то <span class="math display">g = \nabla f(x_0)</span></li>
+<li>Если <span class="math inline">f(x)</span> - дифференцируема, то <span class="math inline">g = \nabla f(x_0)</span></li>
 <li>Не все непрерывные выпуклые функции дифференцируемы :)</li>
 </ul>
 <p>Не хочется лишаться такого вкусного свойства.</p>
 </section>
 <section id="subgradient" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Subgradient</h1>
-<p>Вектор <span class="math display">g</span> называется <strong>субградиентом</strong> функции <span class="math display">f(x): S \to \mathbb{R}</span> в точке <span class="math display">x_0</span>, если <span class="math display">\forall x \in S</span>:</p>
+<p>Вектор <span class="math inline">g</span> называется <strong>субградиентом</strong> функции <span class="math inline">f(x): S \to \mathbb{R}</span> в точке <span class="math inline">x_0</span>, если <span class="math inline">\forall x \in S</span>:</p>
 <p><span class="math display">
 f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 </span></p>
 </section>
 <section id="subdifferential" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Subdifferential</h1>
-<p>Множество всех субградиентов функции <span class="math display">f(x)</span> в точке <span class="math display">x_0</span> называется <strong>субдифференциалом</strong> <span class="math display">f</span> в <span class="math display">x_0</span> и обозначается <span class="math display">\partial f(x_0)</span>. * Если <span class="math display">x_0 \in \mathbf{ri } S</span>, то <span class="math display">\partial f(x_0)</span> выпуклое компактное множество. * Выпуклая функция <span class="math display">f(x)</span> дифференцируема в точке <span class="math display">x_0\Rightarrow \partial f(x_0) = \{\nabla f(x_0)\}</span> * Если <span class="math display">\partial f(x_0) \neq \emptyset \;\;\; \forall x_0 \in S</span>, то <span class="math display">f(x)</span> - выпукла на <span class="math display">S</span>.</p>
-<p><img src="./subgrad_calc.gif" class="img-fluid"></p>
+<p>Множество всех субградиентов функции <span class="math inline">f(x)</span> в точке <span class="math inline">x_0</span> называется <strong>субдифференциалом</strong> <span class="math inline">f</span> в <span class="math inline">x_0</span> и обозначается <span class="math inline">\partial f(x_0)</span>. * Если <span class="math inline">x_0 \in \mathbf{ri } S</span>, то <span class="math inline">\partial f(x_0)</span> выпуклое компактное множество. * Выпуклая функция <span class="math inline">f(x)</span> дифференцируема в точке <span class="math inline">x_0\Rightarrow \partial f(x_0) = \{\nabla f(x_0)\}</span> * Если <span class="math inline">\partial f(x_0) \neq \emptyset \;\;\; \forall x_0 \in S</span>, то <span class="math inline">f(x)</span> - выпукла на <span class="math inline">S</span>.</p>
+<div id="fig-subgradient_calculus" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="subgrad_calc.gif" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Subgradient calculus</figcaption>
+</figure>
+</div>
 <section id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination"><span class="header-section-number">3.1</span> Moreau - Rockafellar theorem (subdifferential of a linear combination)</h2>
-<p>Пусть <span class="math display">f_i(x)</span> - выпуклые функции на выпуклых множествах <span class="math display">S_i, \; i = \overline{1,n}</span>.<br>
-Тогда, если <span class="math display">\bigcap\limits_{i=1}^n \mathbf{ri } S_i \neq \emptyset</span> то функция <span class="math display">f(x) = \sum\limits_{i=1}^n a_i f_i(x), \; a_i &gt; 0</span> имеет субдифференциал <span class="math display">\partial_S f(x)</span> на множестве <span class="math display">S = \bigcap\limits_{i=1}^n S_i</span> и</p>
+<p>Пусть <span class="math inline">f_i(x)</span> - выпуклые функции на выпуклых множествах <span class="math inline">S_i, \; i = \overline{1,n}</span>.<br>
+Тогда, если <span class="math inline">\bigcap\limits_{i=1}^n \mathbf{ri } S_i \neq \emptyset</span> то функция <span class="math inline">f(x) = \sum\limits_{i=1}^n a_i f_i(x), \; a_i &gt; 0</span> имеет субдифференциал <span class="math inline">\partial_S f(x)</span> на множестве <span class="math inline">S = \bigcap\limits_{i=1}^n S_i</span> и</p>
 <p><span class="math display">
 \partial_S f(x) = \sum\limits_{i=1}^n a_i \partial_{S_i} f_i(x)
 </span></p>
 </section>
 <section id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum"><span class="header-section-number">3.2</span> Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</h2>
-<p>Пусть <span class="math display">f_i(x)</span> - выпуклые функции на открытом выпуклом множестве <span class="math display">S  \subseteq \mathbb{R}^n, \; x_0 \in S</span>, а поточечный максимум определяется как <span class="math display">f(x)  = \underset{i}{\operatorname{max}} f_i(x)</span>. Тогда:</p>
+<p>Пусть <span class="math inline">f_i(x)</span> - выпуклые функции на открытом выпуклом множестве <span class="math inline">S \subseteq \mathbb{R}^n, \; x_0 \in S</span>, а поточечный максимум определяется как <span class="math inline">f(x) = \underset{i}{\operatorname{max}} f_i(x)</span>. Тогда:</p>
 <p><span class="math display">
 \partial_S f(x_0) = \mathbf{conv}\left\{  \bigcup\limits_{i \in I(x_0)} \partial_S f_i(x_0) \right\},
 </span></p>
-<p>где <span class="math display">I(x) = \{ i \in [1:m]: f_i(x) = f(x)\}</span></p>
+<p>где <span class="math inline">I(x) = \{ i \in [1:m]: f_i(x) = f(x)\}</span></p>
 </section>
 <section id="chain-rule-for-subdifferentials" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="chain-rule-for-subdifferentials"><span class="header-section-number">3.3</span> Chain rule for subdifferentials</h2>
-<p>Пусть <span class="math display">g_1, \ldots, g_m</span> - выпуклые функции на открытом выпуклом множестве <span class="math display">S \subseteq \mathbb{R}^n</span>, <span class="math display">g = (g_1, \ldots, g_m)</span> - образованная из них вектор - функция, <span class="math display">\varphi</span> - монотонно неубывающая выпуклая функция на открытом выпуклом множестве <span class="math display">U \subseteq \mathbb{R}^m</span>, причем <span class="math display">g(S) \subseteq U</span>. Тогда субдифференциал функции <span class="math display">f(x) = \varphi \left( g(x)\right)</span> имеет вид:</p>
+<p>Пусть <span class="math inline">g_1, \ldots, g_m</span> - выпуклые функции на открытом выпуклом множестве <span class="math inline">S \subseteq \mathbb{R}^n</span>, <span class="math inline">g = (g_1, \ldots, g_m)</span> - образованная из них вектор - функция, <span class="math inline">\varphi</span> - монотонно неубывающая выпуклая функция на открытом выпуклом множестве <span class="math inline">U \subseteq \mathbb{R}^m</span>, причем <span class="math inline">g(S) \subseteq U</span>. Тогда субдифференциал функции <span class="math inline">f(x) = \varphi \left( g(x)\right)</span>$ имеет вид:</p>
 <p><span class="math display">
 \partial f(x) = \bigcup\limits_{p \in \partial \varphi(u)} \left( \sum\limits_{i=1}^{m}p_i \partial g_i(x) \right),
 </span></p>
-<p>где <span class="math display">u = g(x)</span></p>
-<p>В частности, если функция <span class="math display">\varphi</span> дифференцируема в точке <span class="math display">u = g(x)</span>, то формула запишется так:</p>
+<p>где <span class="math inline">u = g(x)</span></p>
+<p>В частности, если функция <span class="math inline">\varphi</span> дифференцируема в точке <span class="math inline">u = g(x)</span>, то формула запишется так:</p>
 <p><span class="math display">
 \partial f(x) = \sum\limits_{i=1}^{m}\dfrac{\partial \varphi}{\partial u_i}(u) \partial g_i(x)
 </span></p>
@@ -811,30 +813,94 @@ f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 <section id="subdifferential-calculus" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="subdifferential-calculus"><span class="header-section-number">3.4</span> Subdifferential calculus</h2>
 <ul>
-<li><span class="math display">\partial (\alpha f)(x) = \alpha \partial f(x)</span>, for <span class="math display">\alpha \geq 0</span></li>
-<li><span class="math display">\partial (\sum f_i)(x) = \sum \partial f_i (x)</span>, <span class="math display">f_i</span> - выпуклые функции</li>
-<li><span class="math display">\partial (f(Ax + b))(x) = A^T\partial f(Ax + b) </span>, <span class="math display">f</span> - выпуклая функция</li>
-<li><span class="math display">z \in \partial f(x)</span> if and only if <span class="math display">x \in \partial f^∗(z)</span>.</li>
+<li><span class="math inline">\partial (\alpha f)(x) = \alpha \partial f(x)</span>, for <span class="math inline">\alpha \geq 0</span></li>
+<li><span class="math inline">\partial (\sum f_i)(x) = \sum \partial f_i (x)</span>, <span class="math inline">f_i</span> - выпуклые функции</li>
+<li><span class="math inline">\partial (f(Ax + b))(x) = A^T\partial f(Ax + b)</span>, <span class="math inline">f</span> - выпуклая функция</li>
+<li><span class="math inline">z \in \partial f(x)</span> if and only if <span class="math inline">x \in \partial f^*(z)</span>.</li>
 </ul>
 </section>
 </section>
 <section id="examples" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Examples</h1>
-<p>Концептуально, различают три способа решения задач на поиск субградиента: * Теоремы Моро - Рокафеллара, композиции, максимума * Геометрически * По определению</p>
-<section id="section" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="section"><span class="header-section-number">4.1</span> 1</h2>
-<p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = |x|</span></p>
-<p>Решение:</p>
-<p>Решить задачу можно либо геометрически (в каждой точке числовой прямой указать угловые коэффициенты прямых, глобально подпирающих функцию снизу), либо по теореме Моро - Рокафеллара, рассмотрев <span class="math display">f(x)</span> как композицию выпуклых функций:</p>
+<p>Концептуально, различают три способа решения задач на поиск субградиента:</p>
+<ul>
+<li>Теоремы Моро - Рокафеллара, композиции, максимума</li>
+<li>Геометрически</li>
+<li>По определению</li>
+</ul>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = |x|</span></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>Решить задачу можно либо геометрически (в каждой точке числовой прямой указать угловые коэффициенты прямых, глобально подпирающих функцию снизу), либо по теореме Моро - Рокафеллара, рассмотрев <span class="math inline">f(x)</span> как композицию выпуклых функций:</p>
 <p><span class="math display">
 f(x) = \max\{-x, x\}
 </span></p>
-<p><img src="./subgradmod.svg" class="img-fluid"></p>
-</section>
-<section id="section-1" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">4.2</span> 2</h2>
-<p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = |x - 1| + |x + 1| </span></p>
-<p>Решение:</p>
+<div id="fig-subgrad_abs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="subgradmod.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Subgradient of <span class="math inline">\vert x \vert</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = |x - 1| + |x + 1|</span></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
 <p>Совершенно аналогично применяем теорему Моро - Рокафеллара, учитывая следующее:</p>
 <p><span class="math display">
 \partial f_1(x) = \begin{cases} -1,  &amp;x &lt; 1\\ [-1;1], \;\;\;\;\; &amp;x = 1 \\ 1,  &amp;x &gt; 1 \end{cases} \qquad \partial f_2(x) = \begin{cases} -1,  &amp;x &lt; -1\\ [-1;1], &amp;x = -1 \\ 1,  &amp;x &gt; -1  \end{cases}
@@ -843,45 +909,161 @@ f(x) = \max\{-x, x\}
 <p><span class="math display">
 \partial f(x) = \begin{cases} -2, &amp;x &lt; -1\\ [-2;0], &amp;x = -1 \\ 0,  &amp;-1 &lt; x &lt; 1 \\ [0;2], &amp;x = 1 \\ 2, &amp;x &gt; 1 \\ \end{cases}
 </span></p>
-</section>
-<section id="section-2" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="section-2"><span class="header-section-number">4.3</span> 3</h2>
-<p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = \left[ \max(0, f_0(x))\right]^q</span>. Здесь <span class="math display">f_0(x)</span> - выпуклая функция на открытом выпуклом множестве <span class="math display">S</span>, <span class="math display">q \geq 1</span>.</p>
-<p>Решение:<br>
-Согласно теореме о композиции (функция <span class="math display">\varphi (x) = x^q</span> - дифференцируема), а <span class="math display">g(x) = \max(0, f_0(x))</span> имеем: <span class="math display">\partial f(x) = q(g(x))^{q-1} \partial g(x)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = \left[ \max(0, f_0(x))\right]^q</span>. Здесь <span class="math inline">f_0(x)</span> - выпуклая функция на открытом выпуклом множестве <span class="math inline">S</span>, <span class="math inline">q \geq 1</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>Согласно теореме о композиции (функция <span class="math inline">\varphi (x) = x^q</span> - дифференцируема), а <span class="math inline">g(x) = \max(0, f_0(x))</span> имеем: <span class="math inline">\partial f(x) = q(g(x))^{q-1} \partial g(x)</span></p>
 <p>По теореме о поточечном максимуме:</p>
 <p><span class="math display">
 \partial g(x) = \begin{cases} \partial f_0(x), \quad f_0(x) &gt; 0,\\ \{0\}, \quad f_0(x) &lt; 0 \\ \{a \mid a = \lambda a', \; 0 \le \lambda \le 1, \; a' \in \partial f_0(x)\}, \;\; f_0(x) = 0 \end{cases}
 </span></p>
-</section>
-<section id="section-3" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="section-3"><span class="header-section-number">4.4</span> 4</h2>
-<p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = \sin x, x \in [\pi/2; 2\pi]</span></p>
-<p><img src="./sin.png" class="img-fluid"></p>
-</section>
-<section id="section-4" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="section-4"><span class="header-section-number">4.5</span> 5</h2>
-<p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = |c_1^\top x| + |c_2^\top x| </span></p>
-<p>Решение: Пусть <span class="math display">f_1(x) = |c_1^\top x| </span>, а <span class="math display">f_2(x) = |c_2^\top x| </span>. Так как эти функции выпуклы, субдифференциал их суммы равен сумме субдифференциалов. Найдем каждый из них:</p>
-<p><span class="math display">\partial f_1(x) = \partial \left( \max \{c_1^\top x, -c_1^\top x\} \right) = \begin{cases} -c_1,  &amp;c_1^\top x &lt; 0\\ \mathbf{conv}(-c_1;c_1), &amp;c_1^\top x = 0 \\ c_1,  &amp;c_1^\top x &gt; 0 \end{cases}</span> <span class="math display">\partial f_2(x) = \partial \left( \max \{c_2^\top x, -c_2^\top x\} \right) = \begin{cases} -c_2,  &amp;c_2^\top x &lt; 0\\ \mathbf{conv}(-c_2;c_2), &amp;c_2^\top x = 0 \\ c_2,  &amp;c_2^\top x &gt; 0 \end{cases}</span></p>
-<p>Далее интересными представляются лишь различные взаимные расположения векторов <span class="math display">c_1</span> и <span class="math display">c_2</span>, рассмотрение которых предлагается читателю.</p>
-</section>
-<section id="section-5" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="section-5"><span class="header-section-number">4.6</span> 6</h2>
-<p>Найти <span class="math display">\partial f(x)</span>, если <span class="math display">f(x) = \| x\|_1 </span></p>
-<p>Решение: По определению</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = \sin x, x \in [\pi/2; 2\pi]</span></p>
+<p><img src="sin.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = |c_1^\top x| + |c_2^\top x|</span></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>Пусть $f_1(x) = |c_1^x| $, а <span class="math inline">f_2(x) = |c_2^\top x|</span>. Так как эти функции выпуклы, субдифференциал их суммы равен сумме субдифференциалов. Найдем каждый из них:</p>
+<p><span class="math inline">\partial f_1(x) = \partial \left( \max \{c_1^\top x, -c_1^\top x\} \right) = \begin{cases} -c_1, &amp;c_1^\top x &lt; 0\\ \mathbf{conv}(-c_1;c_1), &amp;c_1^\top x = 0 \\ c_1, &amp;c_1^\top x &gt; 0 \end{cases}</span> <span class="math inline">\partial f_2(x) = \partial \left( \max \{c_2^\top x, -c_2^\top x\} \right) = \begin{cases} -c_2, &amp;c_2^\top x &lt; 0\\ \mathbf{conv}(-c_2;c_2), &amp;c_2^\top x = 0 \\ c_2, &amp;c_2^\top x &gt; 0 \end{cases}</span></p>
+<p>Далее интересными представляются лишь различные взаимные расположения векторов <span class="math inline">c_1</span> и <span class="math inline">c_2</span>, рассмотрение которых предлагается читателю.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = \| x\|_1</span></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>По определению</p>
 <p><span class="math display">
 \|x\|_1 = |x_1| + |x_2| + \ldots + |x_n| = s_1 x_1 + s_2 x_2 + \ldots + s_n x_n
 </span></p>
-<p>Рассмотрим эту сумму как поточечный максимум линейных функций по <span class="math display">x</span>: <span class="math display">g(x) = s^\top x</span>, где <span class="math display">s_i = \{ -1, 1\}</span>. Каждая такая функция однозначно определяется набором коэффициентов <span class="math display">\{s_i\}_{i=1}^n</span>.</p>
-<p>Тогда по теореме Дубовицкого - Милютина, в каждой точке <span class="math display">\partial f = \mathbf{conv}\left(\bigcup\limits_{i \in I(x)} \partial g_i(x)\right)</span></p>
-<p>Заметим, что <span class="math display">\partial g(x) = \partial \left( \max \{s^\top x, -s^\top x\} \right) = \begin{cases} -s,  &amp;s^\top x &lt; 0\\ \mathbf{conv}(-s;s), &amp;s^\top x = 0 \\ s,  &amp;s^\top x &gt; 0 \end{cases}</span>.</p>
-<p>Причем, правило выбора “активной” функции поточечного максимума в каждой точке следующее: * Если j-ая координата точки отрицательна, <span class="math display">s_i^j = -1</span> * Если j-ая координата точки положительна, <span class="math display">s_i^j = 1</span> * Если j-ая координата точки равна нулю, то подходят оба варианта коэффициентов и соответствующих им функций, а значит, необходимо включать субградиенты этих функций в объединение в теореме Дубовицкого - Милютина.</p>
+<p>Рассмотрим эту сумму как поточечный максимум линейных функций по <span class="math inline">x</span>: <span class="math inline">g(x) = s^\top x</span>, где <span class="math inline">s_i = \{ -1, 1\}</span>. Каждая такая функция однозначно определяется набором коэффициентов <span class="math inline">\{s_i\}_{i=1}^n</span>.</p>
+<p>Тогда по теореме Дубовицкого - Милютина, в каждой точке <span class="math inline">\partial f = \mathbf{conv}\left(\bigcup\limits_{i \in I(x)} \partial g_i(x)\right)</span></p>
+<p>Заметим, что <span class="math inline">\partial g(x) = \partial \left( \max \{s^\top x, -s^\top x\} \right) = \begin{cases} -s, &amp;s^\top x &lt; 0\\ \mathbf{conv}(-s;s), &amp;s^\top x = 0 \\ s, &amp;s^\top x &gt; 0 \end{cases}</span>.</p>
+<p>Причем, правило выбора “активной” функции поточечного максимума в каждой точке следующее: * Если j-ая координата точки отрицательна, <span class="math inline">s_i^j = -1</span> * Если j-ая координата точки положительна, <span class="math inline">s_i^j = 1</span> * Если j-ая координата точки равна нулю, то подходят оба варианта коэффициентов и соответствующих им функций, а значит, необходимо включать субградиенты этих функций в объединение в теореме Дубовицкого - Милютина.</p>
 <p>В итоге получаем ответ:</p>
 <p><span class="math display">
 \partial f(x) = \left\{ g \; : \; \|g\|_\infty \leq 1, \quad g^\top x = \|x\|_1 \right\}
 </span></p>
-</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="references" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> References</h1>

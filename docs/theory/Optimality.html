@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -734,7 +768,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#general-formulations-and-conditions" id="toc-general-formulations-and-conditions" class="nav-link" data-scroll-target="#general-formulations-and-conditions"><span class="header-section-number">2</span> General formulations and conditions</a>
   <ul class="collapse">
-  <li><a href="#optimization-on-the-general-set-s." id="toc-optimization-on-the-general-set-s." class="nav-link" data-scroll-target="#optimization-on-the-general-set-s."><span class="header-section-number">2.1</span> Optimization on the general set <span class="math display">S</span>.</a></li>
+  <li><a href="#optimization-on-the-general-set-s." id="toc-optimization-on-the-general-set-s." class="nav-link" data-scroll-target="#optimization-on-the-general-set-s."><span class="header-section-number">2.1</span> Optimization on the general set <span class="math inline">S</span>.</a></li>
   <li><a href="#unconstrained-optimization" id="toc-unconstrained-optimization" class="nav-link" data-scroll-target="#unconstrained-optimization"><span class="header-section-number">2.2</span> Unconstrained optimization</a>
   <ul class="collapse">
   <li><a href="#general-case" id="toc-general-case" class="nav-link" data-scroll-target="#general-case"><span class="header-section-number">2.2.1</span> General case</a></li>
@@ -751,7 +785,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#general-formulation-1" id="toc-general-formulation-1" class="nav-link" data-scroll-target="#general-formulation-1"><span class="header-section-number">2.4.2</span> General formulation</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#karush-kuhn-tucker-conditions" id="toc-karush-kuhn-tucker-conditions" class="nav-link" data-scroll-target="#karush-kuhn-tucker-conditions"><span class="header-section-number">3</span> Karush-Kuhn-Tucker conditions</a>
+  <li><a href="#sec-KKT" id="toc-sec-KKT" class="nav-link" data-scroll-target="#sec-KKT"><span class="header-section-number">3</span> Karush-Kuhn-Tucker conditions</a>
   <ul class="collapse">
   <li><a href="#necessary-conditions" id="toc-necessary-conditions" class="nav-link" data-scroll-target="#necessary-conditions"><span class="header-section-number">3.1</span> Necessary conditions</a></li>
   <li><a href="#some-regularity-conditions" id="toc-some-regularity-conditions" class="nav-link" data-scroll-target="#some-regularity-conditions"><span class="header-section-number">3.2</span> Some regularity conditions</a></li>
@@ -775,8 +809,13 @@ ul.task-list li input[type="checkbox"] {
 <h1 data-number="1"><span class="header-section-number">1</span> Background</h1>
 <section id="extreme-value-weierstrass-theorem" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="extreme-value-weierstrass-theorem"><span class="header-section-number">1.1</span> Extreme value (Weierstrass) theorem</h2>
-<p>Let <span class="math display">S \subset \mathbb{R}^n</span> be a compact set and <span class="math display">f(x)</span> a continuous function on <span class="math display">S</span>. So that, the point of the global minimum of the function <span class="math display">f (x)</span> on <span class="math display">S</span> exists.</p>
-<p><img src="./goodnews.png" class="img-fluid"></p>
+<p>Let <span class="math inline">S \subset \mathbb{R}^n</span> be a compact set and <span class="math inline">f(x)</span> a continuous function on <span class="math inline">S</span>. So that, the point of the global minimum of the function <span class="math inline">f (x)</span> on <span class="math inline">S</span> exists.</p>
+<div id="fig-weierstrass" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="goodnews.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: A lot of practical problems are theoretically solvable</figcaption>
+</figure>
+</div>
 </section>
 <section id="lagrange-multipliers" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="lagrange-multipliers"><span class="header-section-number">1.2</span> Lagrange multipliers</h2>
@@ -800,48 +839,58 @@ f(x) \to \min\limits_{x \in S}
 </span></p>
 <p>We say that the problem has a solution if the budget set <strong>is not empty</strong>: <span class="math inline">x^* \in S</span>, in which the minimum or the infimum of the given function is achieved.</p>
 <section id="optimization-on-the-general-set-s." class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="optimization-on-the-general-set-s."><span class="header-section-number">2.1</span> Optimization on the general set <span class="math display">S</span>.</h2>
-<p>Direction <span class="math display">d \in \mathbb{R}^n</span> is a feasible direction at <span class="math display">x^* \in S \subseteq \mathbb{R}^n</span> if small steps along <span class="math display">d</span> do not take us outside of <span class="math display">S</span>.</p>
-<p>Consider a set <span class="math display">S \subseteq \mathbb{R}^n</span> and a function <span class="math display">f : \mathbb{R}^n \to \mathbb{R}</span>. Suppose that <span class="math display">x^* \in S</span> is a point of local minimum for <span class="math display">f</span> over <span class="math display">S</span>, and further assume that <span class="math display">f</span> is continuously differentiable around <span class="math display">x^*</span>.</p>
+<h2 data-number="2.1" class="anchored" data-anchor-id="optimization-on-the-general-set-s."><span class="header-section-number">2.1</span> Optimization on the general set <span class="math inline">S</span>.</h2>
+<p>Direction <span class="math inline">d \in \mathbb{R}^n</span> is a feasible direction at <span class="math inline">x^* \in S \subseteq \mathbb{R}^n</span> if small steps along <span class="math inline">d</span> do not take us outside of <span class="math inline">S</span>.</p>
+<p>Consider a set <span class="math inline">S \subseteq \mathbb{R}^n</span> and a function <span class="math inline">f : \mathbb{R}^n \to \mathbb{R}</span>. Suppose that <span class="math inline">x^* \in S</span> is a point of local minimum for <span class="math inline">f</span> over <span class="math inline">S</span>, and further assume that <span class="math inline">f</span> is continuously differentiable around <span class="math inline">x^*</span>.</p>
 <ol type="1">
-<li><p>Then for every feasible direction <span class="math display">d \in \mathbb{R}^n</span> at <span class="math display">x^*</span> it holds that <span class="math display">\nabla f(x^*)^\top d \geq 0</span>.</p></li>
-<li><p>If, additionally, <span class="math display">S</span> is convex then</p>
+<li><p>Then for every feasible direction <span class="math inline">d \in \mathbb{R}^n</span> at <span class="math inline">x^*</span> it holds that <span class="math inline">\nabla f(x^*)^\top d \geq 0</span>.</p></li>
+<li><p>If, additionally, <span class="math inline">S</span> is convex then</p>
 <p><span class="math display">
 \nabla f(x^*)^\top(x − x^*) \geq 0, \forall x \in S.
 </span></p></li>
 </ol>
-<p><img src="./general_first_order_local_optimality.svg" class="img-fluid"></p>
+<div id="fig-general_first_order_optimality" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="general_first_order_local_optimality.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: General first order local optimality condition</figcaption>
+</figure>
+</div>
 </section>
 <section id="unconstrained-optimization" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="unconstrained-optimization"><span class="header-section-number">2.2</span> Unconstrained optimization</h2>
 <section id="general-case" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="general-case"><span class="header-section-number">2.2.1</span> General case</h3>
-<p>Let <span class="math display">f(x): \mathbb{R}^n \to \mathbb{R}</span> be a twice differentiable function.</p>
+<p>Let <span class="math inline">f(x): \mathbb{R}^n \to \mathbb{R}</span> be a twice differentiable function.</p>
 <p><span class="math display">
 \tag{UP}
 f(x) \to \min\limits_{x \in \mathbb{R}^n}
 </span></p>
-<p>If <span class="math display">x^*</span> - is a local minimum of <span class="math display">f(x)</span>, then:</p>
+<p>If <span class="math inline">x^*</span> - is a local minimum of <span class="math inline">f(x)</span>, then:</p>
 <p><span class="math display">
 \tag{UP:Nec.}
 \nabla f(x^*) = 0
 </span></p>
-<p>If <span class="math display">f(x)</span> at some point <span class="math display">x^*</span> satisfies the following conditions:</p>
+<p>If <span class="math inline">f(x)</span> at some point <span class="math inline">x^*</span> satisfies the following conditions:</p>
 <p><span class="math display">
 \tag{UP:Suff.}
 H_f(x^*) = \nabla^2 f(x^*) \succ (\prec) 0,
 </span></p>
-<p>then (if necessary condition is also satisfied) <span class="math display">x^*</span> is a local minimum(maximum) of <span class="math display">f(x)</span>.</p>
-<p>Note, that if <span class="math display">\nabla f(x^*) = 0, \nabla^2 f(x^*) = 0</span>, i.e.&nbsp;the hessian is positive <em>semidefinite</em>, we cannot be sure if <span class="math display">x^*</span> is a local minimum (see <a href="https://en.wikipedia.org/wiki/Peano_surface">Peano surface</a> <span class="math display">f(x,y) = (2x^2 - y)(y - x^2)</span>).</p>
+<p>then (if necessary condition is also satisfied) <span class="math inline">x^*</span> is a local minimum(maximum) of <span class="math inline">f(x)</span>.</p>
+<p>Note, that if <span class="math inline">\nabla f(x^*) = 0, \nabla^2 f(x^*) = 0</span>, i.e.&nbsp;the hessian is positive <em>semidefinite</em>, we cannot be sure if <span class="math inline">x^*</span> is a local minimum (see <a href="https://en.wikipedia.org/wiki/Peano_surface">Peano surface</a> <span class="math inline">f(x,y) = (2x^2 - y)(y - x^2)</span>).</p>
 </section>
 <section id="convex-case" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="convex-case"><span class="header-section-number">2.2.2</span> Convex case</h3>
-<p>It should be mentioned, that in the <strong>convex</strong> case (i.e., <span class="math display">f(x)</span> is convex) necessary condition becomes sufficient. Moreover, we can generalize this result on the class of non-differentiable convex functions.</p>
-<p>Let <span class="math display">f(x): \mathbb{R}^n \to \mathbb{R}</span>, then the point <span class="math display">x^*</span> is the solution of <span class="math display">\text{(UP)}</span> if and only if:</p>
+<p>It should be mentioned, that in the <strong>convex</strong> case (i.e., <span class="math inline">f(x)</span> is convex) necessary condition becomes sufficient. Moreover, we can generalize this result on the class of non-differentiable convex functions.</p>
+<p>Let <span class="math inline">f(x): \mathbb{R}^n \to \mathbb{R}</span>, then the point <span class="math inline">x^*</span> is the solution of <span class="math inline">\text{(UP)}</span> if and only if:</p>
 <p><span class="math display">
 0_n \in \partial f(x^*)
 </span></p>
-<p>One more important result for convex unconstrained case sounds as follows. If <span class="math display">f(x): S \to \mathbb{R}</span> - convex function defined on the convex set <span class="math display">S</span>, then: * Any local minima is the global one. * The set of the local minimizers <span class="math display">S^*</span> is convex. * If <span class="math display">f(x)</span> - strictly or strongly (different cases 😀) convex function, then <span class="math display">S^*</span> contains only one single point <span class="math display">S^* = x^*</span>.</p>
+<p>One more important result for convex unconstrained case sounds as follows. If <span class="math inline">f(x): S \to \mathbb{R}</span> - convex function defined on the convex set <span class="math inline">S</span>, then:</p>
+<ul>
+<li>Any local minima is the global one.</li>
+<li>The set of the local minimizers <span class="math inline">S^*</span> is convex.</li>
+<li>If <span class="math inline">f(x)</span> - strictly or strongly (different cases 😀) convex function, then <span class="math inline">S^*</span> contains only one single point <span class="math inline">S^* = x^*</span>.</li>
+</ul>
 </section>
 </section>
 <section id="optimization-with-equality-conditions" class="level2" data-number="2.3">
@@ -855,17 +904,62 @@ H_f(x^*) = \nabla^2 f(x^*) \succ (\prec) 0,
 \text{s.t. } &amp; h(x) = 0
 \end{split}
 </span></p>
-<p>We will try to illustrate approach to solve this problem through the simple example with <span class="math display">f(x) = x_1 + x_2</span> and <span class="math display">h(x) = x_1^2 + x_2^2 - 2</span>.</p>
-<p><img src="./eq_constr_1.svg" class="img-fluid"></p>
-<p><img src="./eq_constr_2.svg" class="img-fluid"></p>
-<p><img src="./eq_constr_3.svg" class="img-fluid"></p>
-<p><img src="./eq_constr_4.svg" class="img-fluid"></p>
-<p><img src="./eq_constr_5.svg" class="img-fluid"></p>
-<p><img src="./eq_constr_6.svg" class="img-fluid"></p>
-<p><img src="./eq_constr_7.svg" class="img-fluid"></p>
-<p><img src="./eq_constr_8.svg" class="img-fluid"></p>
-<p><img src="./eq_constr_9.svg" class="img-fluid"></p>
-<p>Generally: in order to move from <span class="math display"> x_F </span> along the budget set towards decreasing the function, we need to guarantee two conditions:</p>
+<p>We will try to illustrate approach to solve this problem through the simple example with <span class="math inline">f(x) = x_1 + x_2</span> and <span class="math inline">h(x) = x_1^2 + x_2^2 - 2</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_1.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_2.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_3.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_4.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_5.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_6.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_7.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_8.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_9.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
+<p>Generally: in order to move from <span class="math inline">x_F</span> along the budget set towards decreasing the function, we need to guarantee two conditions:</p>
 <p><span class="math display">
 \langle \delta x, \nabla h(x_F) \rangle = 0
 </span></p>
@@ -878,12 +972,18 @@ H_f(x^*) = \nabla^2 f(x^*) \succ (\prec) 0,
 <p><span class="math display">
 \langle  \delta x, - \nabla f(x)\rangle = \langle  \delta x, \nu\nabla h(x)\rangle = 0  
 </span></p>
-<p>Then we came to the point of the budget set, moving from which it will not be possible to reduce our function. This is the local minimum in the constrained problem :) <img src="./eq_constr_10.svg" class="img-fluid"></p>
+<p>Then we came to the point of the budget set, moving from which it will not be possible to reduce our function. This is the local minimum in the constrained problem :)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eq_constr_10.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT</figcaption>
+</figure>
+</div>
 <p>So let’s define a Lagrange function (just for our convenience):</p>
 <p><span class="math display">
 L(x, \nu) = f(x) + \nu h(x)
 </span></p>
-<p>Then the point <span class="math display"> x^* </span> is the local minimum of the problem described above, if and only if:</p>
+<p>Then the point <span class="math inline">x^*</span> is the local minimum of the problem described above, if and only if:</p>
 <p><span class="math display">
 \begin{split}
 &amp; \text{Necessary conditions} \\
@@ -894,7 +994,7 @@ L(x, \nu) = f(x) + \nu h(x)
 &amp; \forall y \neq 0 \in \mathbb{R}^n : \nabla h(x^*)^\top y = 0
 \end{split}
 </span></p>
-<p>We should notice that <span class="math display">L(x^*, \nu^*) = f(x^*)</span>.</p>
+<p>We should notice that <span class="math inline">L(x^*, \nu^*) = f(x^*)</span>.</p>
 </section>
 <section id="general-formulation" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="general-formulation"><span class="header-section-number">2.3.2</span> General formulation</h3>
@@ -909,7 +1009,7 @@ L(x, \nu) = f(x) + \nu h(x)
 <p><span class="math display">
 L(x, \nu) = f(x) + \sum\limits_{i=1}^p\nu_i h_i(x) = f(x) + \nu^\top h(x)
 </span></p>
-<p>Let <span class="math display"> f(x) </span> and <span class="math display"> h_i(x) </span> be twice differentiable at the point <span class="math display"> x^* </span> and continuously differentiable in some neighborhood <span class="math display"> x^* </span>. The local minimum conditions for <span class="math display"> x \in \mathbb{R}^n, \nu \in \mathbb{R}^p </span> are written as</p>
+<p>Let <span class="math inline">f(x)</span> and <span class="math inline">h_i(x)</span> be twice differentiable at the point <span class="math inline">x^*</span> and continuously differentiable in some neighborhood <span class="math inline">x^*</span>. The local minimum conditions for <span class="math inline">x \in \mathbb{R}^n, \nu \in \mathbb{R}^p</span> are written as</p>
 <p><span class="math display">
 \begin{split}
 &amp; \text{ECP: Necessary conditions} \\
@@ -921,7 +1021,12 @@ L(x, \nu) = f(x) + \sum\limits_{i=1}^p\nu_i h_i(x) = f(x) + \nu^\top h(x)
 \end{split}
 </span></p>
 <p>Depending on the behavior of the Hessian, the critical points can have a different character.</p>
-<p><img src="./critical.png" class="img-fluid"></p>
+<div id="fig-critical_points" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="critical.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Different surfaces depending on the definiteness</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="optimization-with-inequality-conditions" class="level2" data-number="2.4">
@@ -937,10 +1042,30 @@ f(x) = x_1^2 + x_2^2 \;\;\;\; g(x) = x_1^2 + x_2^2 - 1
 \text{s.t. } &amp; g(x) \leq 0
 \end{split}
 </span></p>
-<p><img src="./ineq_constr_1.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_2.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_3.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_4.svg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_1.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_2.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_3.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_4.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
 <p>Thus, if the constraints of the type of inequalities are inactive in the constrained problem, then don’t worry and write out the solution to the unconstrained problem. However, this is not the whole story 🤔. Consider the second childish example</p>
 <p><span class="math display">
 f(x) = (x_1 - 1)^2 + (x_2 + 1)^2 \;\;\;\; g(x) = x_1^2 + x_2^2 - 1
@@ -951,13 +1076,48 @@ f(x) = (x_1 - 1)^2 + (x_2 + 1)^2 \;\;\;\; g(x) = x_1^2 + x_2^2 - 1
 \text{s.t. } &amp; g(x) \leq 0
 \end{split}
 </span></p>
-<p><img src="./ineq_constr_5.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_6.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_7.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_8.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_9.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_10.svg" class="img-fluid"></p>
-<p><img src="./ineq_constr_11.svg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_5.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_6.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_7.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_8.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_9.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_10.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ineq_constr_11.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Illustration of KKT (inequality case)</figcaption>
+</figure>
+</div>
 <p>So, we have a problem:</p>
 <p><span class="math display">
 \begin{split}
@@ -973,14 +1133,14 @@ f(x) = (x_1 - 1)^2 + (x_2 + 1)^2 \;\;\;\; g(x) = x_1^2 + x_2^2 - 1
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;"><span class="math display">g(x) \leq 0</span> is inactive. <span class="math display">g(x^*) &lt; 0</span></th>
-<th style="text-align: center;"><span class="math display">g(x) \leq 0</span> is active. <span class="math display">g(x^*) = 0</span></th>
+<th style="text-align: center;"><span class="math inline">g(x) \leq 0</span> is inactive. <span class="math inline">g(x^*) &lt; 0</span></th>
+<th style="text-align: center;"><span class="math inline">g(x) \leq 0</span> is active. <span class="math inline">g(x^*) = 0</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math display">g(x^*) &lt; 0</span> <br> <span class="math display"> \nabla f(x^*) = 0 </span><br> <span class="math display">\nabla^2 f(x^*) &gt; 0</span></td>
-<td style="text-align: center;">Necessary conditions <br> <span class="math display">g(x^*) = 0</span> <br> <span class="math display">- \nabla f(x^*) = \lambda \nabla g(x^*)</span>, <span class="math display">\lambda &gt; 0</span> <br> Sufficient conditions <br> <span class="math display">\langle y, \nabla^2_{xx} L(x^*, \lambda^*) y \rangle &gt; 0,</span> <br> <span class="math display">\forall y \neq 0 \in \mathbb{R}^n : \nabla g(x^*)^\top y = 0</span></td>
+<td style="text-align: center;"><span class="math inline">g(x^*) &lt; 0</span> <br> <span class="math inline">\nabla f(x^*) = 0</span><br> <span class="math inline">\nabla^2 f(x^*) &gt; 0</span></td>
+<td style="text-align: center;">Necessary conditions <br> <span class="math inline">g(x^*) = 0</span> <br> <span class="math inline">- \nabla f(x^*) = \lambda \nabla g(x^*)</span>, <span class="math inline">\lambda &gt; 0</span> <br> Sufficient conditions <br> <span class="math inline">\langle y, \nabla^2_{xx} L(x^*, \lambda^*) y \rangle &gt; 0,</span> <br> <span class="math inline">\forall y \neq 0 \in \mathbb{R}^n : \nabla g(x^*)^\top y = 0</span></td>
 </tr>
 </tbody>
 </table>
@@ -996,8 +1156,8 @@ f(x) = (x_1 - 1)^2 + (x_2 + 1)^2 \;\;\;\; g(x) = x_1^2 + x_2^2 - 1
 <p><span class="math display">
 L (x, \lambda) = f(x) + \lambda g(x)
 </span></p>
-<p>The classical Karush-Kuhn-Tucker first and second order optimality conditions for a local minimizer <span class="math display">x^*</span>, stated under the linear independence constraint qualification (LICQ), can be written as follows:</p>
-<p>If <span class="math display">x^*</span> is a local minimum of the problem described above, then there exists a unique Lagrange multiplier <span class="math inline">\lambda^*</span> such that:</p>
+<p>The classical Karush-Kuhn-Tucker first and second order optimality conditions for a local minimizer <span class="math inline">x^*</span>, stated under the linear independence constraint qualification (LICQ), can be written as follows:</p>
+<p>If <span class="math inline">x^*</span> is a local minimum of the problem described above, then there exists a unique Lagrange multiplier <span class="math inline">\lambda^*</span> such that:</p>
 <p><span class="math display">
 \begin{split}
     &amp; (1) \; \nabla_x L (x^*, \lambda^*) = 0 \\
@@ -1010,7 +1170,7 @@ L (x, \lambda) = f(x) + \lambda g(x)
     &amp; I(x^*) = \{i| g_i(x^*) = 0\} \\
 \end{split}
 </span></p>
-<p>It’s noticeable, that <span class="math display">L(x^*, \lambda^*) = f(x^*)</span>. Conditions <span class="math display">\lambda^* = 0 , (1), (4)</span> are the first scenario realization, and conditions <span class="math display">\lambda^* &gt; 0 , (1), (3)</span> - the second one.</p>
+<p>It’s noticeable, that <span class="math inline">L(x^*, \lambda^*) = f(x^*)</span>. Conditions <span class="math inline">\lambda^* = 0 , (1), (4)</span> are the first scenario realization, and conditions <span class="math inline">\lambda^* &gt; 0 , (1), (3)</span> - the second one.</p>
 </section>
 <section id="general-formulation-1" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="general-formulation-1"><span class="header-section-number">2.4.2</span> General formulation</h3>
@@ -1029,33 +1189,63 @@ L(x, \lambda, \nu) = f_0(x) + \sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits
 </section>
 </section>
 </section>
-<section id="karush-kuhn-tucker-conditions" class="level1" data-number="3">
+<section id="sec-KKT" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Karush-Kuhn-Tucker conditions</h1>
-<p>{% include tabs.html bibtex = ‘<span class="citation" data-cites="misc">@misc</span>{kuhn1951nonlinear, title={Nonlinear programming, in (J. Neyman, ed.) Proceedings of the Second Berkeley Symposium on Mathematical Statistics and Probability}, author={Kuhn, Harold W and Tucker, Albert W}, year={1951}, publisher={University of California Press, Berkeley} }’ file=‘/assets/files/kuhntucker.pdf’ inline = ‘True’%}</p>
-<p>{% include tabs.html bibtex = ‘<span class="citation" data-cites="article">@article</span>{karush1939minima, title={Minima of functions of several variables with inequalities as side constraints}, author={Karush, William}, journal={M. Sc. Dissertation. Dept. of Mathematics, Univ. of Chicago}, year={1939} }’ file=‘/assets/files/karush.pdf’ inline = ‘True’%}</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><span class="citation" data-cites="bibtex">@bibtex</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">file</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@misc</span>{<span class="ot">kuhn1951nonlinear</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={Nonlinear programming, in (J. Neyman, ed.) Proceedings of the Second Berkeley Symposium on Mathematical Statistics and Probability},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Kuhn, Harold W and Tucker, Albert W},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={1951},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span>={University of California Press, Berkeley}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><a href="../../assets/files/kuhntucker.pdf">📜 File</a></p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><span class="citation" data-cites="bibtex">@bibtex</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">file</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">karush1939minima</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={Minima of functions of several variables with inequalities as side constraints},</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Karush, William},</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span>={M. Sc. Dissertation. Dept. of Mathematics, Univ. of Chicago},</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={1939}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><a href="../../assets/files/karush.pdf">📜 File</a></p>
+</div>
+</div>
+</div>
 <section id="necessary-conditions" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="necessary-conditions"><span class="header-section-number">3.1</span> Necessary conditions</h2>
-<p>Let <span class="math display">x^*</span>, <span class="math display">(\lambda^*, \nu^*)</span> be a solution to a mathematical programming problem with zero duality gap (the optimal value for the primal problem <span class="math display">p^*</span> is equal to the optimal value for the dual problem <span class="math display">d^*</span>). Let also the functions <span class="math display"> f_0, f_i, h_i </span> be differentiable.</p>
+<p>Let <span class="math inline">x^*</span>, <span class="math inline">(\lambda^*, \nu^*)</span> be a solution to a mathematical programming problem with zero duality gap (the optimal value for the primal problem <span class="math inline">p^*</span> is equal to the optimal value for the dual problem <span class="math inline">d^*</span>). Let also the functions <span class="math inline">f_0, f_i, h_i</span> be differentiable.</p>
 <ul>
-<li>$<span class="math inline">\nabla_x L(x^*, \lambda^*, \nu^*) = 0</span>$</li>
-<li>$<span class="math inline">\nabla_\nu L(x^*, \lambda^*, \nu^*) = 0</span>$</li>
-<li>$$ ^*_i , i = 1,,m$$</li>
-<li>$<span class="math inline">\lambda^*_i f_i(x^*) = 0, i = 1,\ldots,m</span>$</li>
-<li>$<span class="math inline">f_i(x^*) \leq 0, i = 1,\ldots,m</span>$</li>
+<li><span class="math inline">\nabla_x L(x^*, \lambda^*, \nu^*) = 0</span></li>
+<li><span class="math inline">\nabla_\nu L(x^*, \lambda^*, \nu^*) = 0</span></li>
+<li>$ ^*_i , i = 1,,m$</li>
+<li><span class="math inline">\lambda^*_i f_i(x^*) = 0, i = 1,\ldots,m</span></li>
+<li><span class="math inline">f_i(x^*) \leq 0, i = 1,\ldots,m</span></li>
 </ul>
 </section>
 <section id="some-regularity-conditions" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="some-regularity-conditions"><span class="header-section-number">3.2</span> Some regularity conditions</h2>
-<p>These conditions are needed in order to make KKT solutions the necessary conditions. Some of them even turn necessary conditions into sufficient (for example, Slater’s). Moreover, if you have regularity, you can write down necessary second order conditions <span class="math display">\langle y , \nabla^2_{xx} L(x^*, \lambda^*, \nu^*) y \rangle \geq 0</span> with <em>semi-definite</em> hessian of Lagrangian.</p>
+<p>These conditions are needed in order to make KKT solutions the necessary conditions. Some of them even turn necessary conditions into sufficient (for example, Slater’s). Moreover, if you have regularity, you can write down necessary second order conditions <span class="math inline">\langle y , \nabla^2_{xx} L(x^*, \lambda^*, \nu^*) y \rangle \geq 0</span> with <em>semi-definite</em> hessian of Lagrangian.</p>
 <ul>
-<li><strong>Slater’s condition</strong>. If for a convex problem (i.e., assuming minimization, <span class="math display"> f_0,f_{i}</span> are convex and <span class="math display">h_{i}</span> are affine), there exists a point <span class="math display">x</span> such that <span class="math display">h(x)=0</span> and <span class="math display">f_{i}(x)&lt;0</span> (existance of a strictly feasible point), then we have a zero duality gap and KKT conditions become necessary and sufficient.</li>
-<li><strong>Linearity constraint qualification</strong> If <span class="math display">f_{i}</span> and <span class="math display">h_{i}</span> are affine functions, then no other condition is needed.</li>
+<li><strong>Slater’s condition</strong>. If for a convex problem (i.e., assuming minimization, <span class="math inline">f_0,f_{i}</span> are convex and <span class="math inline">h_{i}</span> are affine), there exists a point <span class="math inline">x</span> such that <span class="math inline">h(x)=0</span> and <span class="math inline">f_{i}(x)&lt;0</span> (existance of a strictly feasible point), then we have a zero duality gap and KKT conditions become necessary and sufficient.</li>
+<li><strong>Linearity constraint qualification</strong> If <span class="math inline">f_{i}</span> and <span class="math inline">h_{i}</span> are affine functions, then no other condition is needed.</li>
 <li>For other examples, see <a href="https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions#Regularity_conditions_(or_constraint_qualifications)">wiki</a>.</li>
 </ul>
 </section>
 <section id="sufficient-conditions" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="sufficient-conditions"><span class="header-section-number">3.3</span> Sufficient conditions</h2>
-<p>For smooth, non-linear optimization problems, a second order sufficient condition is given as follows. The solution <span class="math display"> x^{*},\lambda ^{*},\nu ^{*}</span>, which satisfies the KKT conditions (above) is a constrained local minimum if for the Lagrangian,</p>
+<p>For smooth, non-linear optimization problems, a second order sufficient condition is given as follows. The solution <span class="math inline">x^{*},\lambda ^{*},\nu ^{*}</span>, which satisfies the KKT conditions (above) is a constrained local minimum if for the Lagrangian,</p>
 <p><span class="math display">
 L(x, \lambda, \nu) = f_0(x) + \sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits_{i=1}^p\nu_i h_i(x)
 </span></p>

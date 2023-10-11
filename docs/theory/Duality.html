@@ -792,16 +792,16 @@ g(y) \leq f(x) \qquad \forall x \in S, \forall y \in \Omega
 <p><span class="math display">
 L(x, \lambda, \nu) = f_0(x) + \sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits_{i=1}^p\nu_i h_i(x) = f_0(x) + \lambda^\top f(x) + \nu^\top h(x)
 </span></p>
-<p>We define the Lagrange dual function (or just dual function) <span class="math display">g: \mathbb{R}^m \times \mathbb{R}^p \to \mathbb{R}</span> as the minimum value of the Lagrangian over <span class="math display">x</span>: for <span class="math display">\lambda \in \mathbb{R}^m, \nu \in \mathbb{R}^p</span></p>
+<p>We define the Lagrange dual function (or just dual function) <span class="math inline">g: \mathbb{R}^m \times \mathbb{R}^p \to \mathbb{R}</span> as the minimum value of the Lagrangian over <span class="math inline">x</span>: for <span class="math inline">\lambda \in \mathbb{R}^m, \nu \in \mathbb{R}^p</span></p>
 <p><span class="math display">
 g(\lambda, \nu) = \inf_{x\in \textbf{dom} f_0} L(x, \lambda, \nu) = \inf_{x\in \textbf{dom} f_0} \left( f_0(x) +\sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits_{i=1}^p\nu_i h_i(x) \right)
 </span></p>
-<p>When the Lagrangian is unbounded below in <span class="math display">x</span>, the dual function takes on the value <span class="math display">−\infty</span>. Since the dual function is the pointwise infimum of a family of affine functions of <span class="math display">(\lambda, \nu)</span>, it is concave, even when the original problem is not convex.</p>
-<p>The dual function yields lower bounds on the optimal value <span class="math display">p^*</span> of the original problem. For any <span class="math display">\lambda \succeq 0, \nu</span>:</p>
+<p>When the Lagrangian is unbounded below in <span class="math inline">x</span>, the dual function takes on the value <span class="math inline">−\infty</span>. Since the dual function is the pointwise infimum of a family of affine functions of <span class="math inline">(\lambda, \nu)</span>, it is concave, even when the original problem is not convex.</p>
+<p>The dual function yields lower bounds on the optimal value <span class="math inline">p^*</span> of the original problem. For any <span class="math inline">\lambda \succeq 0, \nu</span>:</p>
 <p><span class="math display">
 g(\lambda, \nu) \leq p^*
 </span></p>
-<p>Suppose some <span class="math display">\hat{x}</span> is a feasible point (<span class="math display">\hat{x} \in S</span>) for the original problem, i.e., <span class="math display">f_i(\hat{x}) \leq 0</span> and <span class="math display">h_i(\hat{x}) = 0, \; λ \succeq 0</span>. Then we have:</p>
+<p>Suppose some <span class="math inline">\hat{x}</span> is a feasible point (<span class="math inline">\hat{x} \in S</span>) for the original problem, i.e., <span class="math inline">f_i(\hat{x}) \leq 0</span> and <span class="math inline">h_i(\hat{x}) = 0, \; λ \succeq 0</span>. Then we have:</p>
 <p><span class="math display">
 L(\hat{x}, \lambda, \nu) = f_0(\hat{x}) + \lambda^\top f(\hat{x}) + \nu^\top h(\hat{x}) \leq f_0(\hat{x})
 </span></p>
@@ -816,7 +816,7 @@ g(\lambda, \nu) = \inf_{x\in \textbf{dom} f_0} L(x, \lambda, \nu) \leq L(\hat{x}
 \text{s.t. } &amp; \lambda \succeq 0
 \end{split}
 </span></p>
-<p>The term “dual feasible”, to describe a pair <span class="math display">(\lambda, \nu)</span> with <span class="math display">\lambda \succeq 0</span> and <span class="math display">g(\lambda, \nu) &gt; −\infty</span>, now makes sense. It means, as the name implies, that <span class="math display">(\lambda, \nu)</span> is feasible for the dual problem. We refer to <span class="math display">(\lambda^*, \nu^*)</span> as dual optimal or optimal Lagrange multipliers if they are optimal for the above problem.</p>
+<p>The term “dual feasible”, to describe a pair <span class="math inline">(\lambda, \nu)</span> with <span class="math inline">\lambda \succeq 0</span> and <span class="math inline">g(\lambda, \nu) &gt; −\infty</span>, now makes sense. It means, as the name implies, that <span class="math inline">(\lambda, \nu)</span> is feasible for the dual problem. We refer to <span class="math inline">(\lambda^*, \nu^*)</span> as dual optimal or optimal Lagrange multipliers if they are optimal for the above problem.</p>
 <section id="summary" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
 <table class="table">
@@ -835,28 +835,28 @@ g(\lambda, \nu) = \inf_{x\in \textbf{dom} f_0} L(x, \lambda, \nu) \leq L(\hat{x}
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Function</td>
-<td style="text-align: center;"><span class="math display">f_0(x)</span></td>
-<td style="text-align: center;"><span class="math display">g(\lambda, \nu) = \min\limits_{x \in \textbf{dom} f_0} L(x, \lambda, \nu)</span></td>
+<td style="text-align: center;"><span class="math inline">f_0(x)</span></td>
+<td style="text-align: center;"><span class="math inline">g(\lambda, \nu) = \min\limits_{x \in \textbf{dom} f_0} L(x, \lambda, \nu)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Variables</td>
-<td style="text-align: center;"><span class="math display">x \in \textbf{dom} f_0 \subseteq \mathbb{R^n}</span></td>
-<td style="text-align: center;"><span class="math display">\lambda \in \mathbb{R}^m_{+}, \nu \in \mathbb{R}^p</span></td>
+<td style="text-align: center;"><span class="math inline">x \in \textbf{dom} f_0 \subseteq \mathbb{R^n}</span></td>
+<td style="text-align: center;"><span class="math inline">\lambda \in \mathbb{R}^m_{+}, \nu \in \mathbb{R}^p</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Constraints</td>
-<td style="text-align: center;"><span class="math display">\begin{matrix} &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\ &amp; h_i(x) = 0, \; i = 1,\ldots, p \end{matrix}</span></td>
-<td style="text-align: center;"><span class="math display">\lambda_i \geq 0, \forall i \in \overline{1,m}</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{matrix} &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\ &amp; h_i(x) = 0, \; i = 1,\ldots, p \end{matrix}</span></td>
+<td style="text-align: center;"><span class="math inline">\lambda_i \geq 0, \forall i \in \overline{1,m}</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Problem</td>
-<td style="text-align: center;"><span class="math display">\begin{matrix}&amp; f_0(x) \to \min\limits_{x \in \mathbb{R}^n}\\ \text{s.t. } &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\ &amp; h_i(x) = 0, \; i = 1,\ldots, p \end{matrix}</span></td>
-<td style="text-align: center;"><span class="math display">\begin{matrix}  g(\lambda, \nu) &amp;\to \max\limits_{\lambda \in \mathbb{R}^m, \nu \in \mathbb{R}^p }\\ \text{s.t. } &amp; \lambda \succeq 0 \end{matrix}</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{matrix}&amp; f_0(x) \to \min\limits_{x \in \mathbb{R}^n}\\ \text{s.t. } &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\ &amp; h_i(x) = 0, \; i = 1,\ldots, p \end{matrix}</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{matrix} g(\lambda, \nu) &amp;\to \max\limits_{\lambda \in \mathbb{R}^m, \nu \in \mathbb{R}^p }\\ \text{s.t. } &amp; \lambda \succeq 0 \end{matrix}</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Optimal</td>
-<td style="text-align: center;"><span class="math display">\begin{matrix} &amp;x^* \text{ if feasible},  \\ &amp;p^* = f_0(x^*)\end{matrix}</span></td>
-<td style="text-align: center;"><span class="math display">\begin{matrix} &amp;\lambda^*, \nu^* \text{ if } \max \text{ is achieved},  \\ &amp;d^* = g(\lambda^*, \nu^*)\end{matrix}</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{matrix} &amp;x^* \text{ if feasible}, \\ &amp;p^* = f_0(x^*)\end{matrix}</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{matrix} &amp;\lambda^*, \nu^* \text{ if } \max \text{ is achieved}, \\ &amp;d^* = g(\lambda^*, \nu^*)\end{matrix}</span></td>
 </tr>
 </tbody>
 </table>
@@ -879,7 +879,7 @@ p^* - d^* \geq 0
 <p><span class="math display">
 p^∗ = d^*
 </span></p>
-<p>Notice: both <span class="math display">p^*</span> and <span class="math display">d^*</span> may be <span class="math display">+ \infty</span>. * Several sufficient conditions known! * “Easy” necessary and sufficient conditions: unknown.</p>
+<p>Notice: both <span class="math inline">p^*</span> and <span class="math inline">d^*</span> may be <span class="math inline">+ \infty</span>. * Several sufficient conditions known! * “Easy” necessary and sufficient conditions: unknown.</p>
 </section>
 <section id="useful-features" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="useful-features"><span class="header-section-number">1.4</span> Useful features</h2>
@@ -887,11 +887,11 @@ p^∗ = d^*
 <li><p><strong>Construction of lower bound on solution of the direct problem.</strong></p>
 <p>It could be very complicated to solve the initial problem. But if we have the dual problem, we can take an arbitrary <span class="math inline">y \in \Omega</span> and substitute it in <span class="math inline">g(y)</span> - we’ll immediately obtain some lower bound.</p></li>
 <li><p><strong>Checking for the problem’s solvability and attainability of the solution.</strong></p>
-<p>From the inequality $<em>{y } g(y) </em>{x S} f_0(x) $ follows: if <span class="math inline">\min\limits_{x \in S} f_0(x) = -\infty</span>, then <span class="math inline">\Omega = \varnothing</span> and vice versa.</p></li>
+<p>From the inequality <span class="math inline">\max\limits_{y \in \Omega} g(y) \leq \min\limits_{x \in S} f_0(x)</span> follows: if <span class="math inline">\min\limits_{x \in S} f_0(x) = -\infty</span>, then <span class="math inline">\Omega = \varnothing</span> and vice versa.</p></li>
 <li><p><strong>Sometimes it is easier to solve a dual problem than a primal one.</strong></p>
 <p>In this case, if the strong duality holds: <span class="math inline">g(y^∗) = f_0(x^∗)</span> we lose nothing.</p></li>
 <li><p><strong>Obtaining a lower bound on the function’s residual.</strong></p>
-<p><span class="math inline">f_0(x) - f_0^∗ \leq f_0(x) - g(y)</span> for an arbitrary <span class="math inline">y \in \Omega</span> (suboptimality certificate). Moreover, <span class="math display">p^* \in [g(y), f_0(x)], d^* \in [g(y), f_0(x)]</span></p></li>
+<p><span class="math inline">f_0(x) - f_0^∗ \leq f_0(x) - g(y)</span> for an arbitrary <span class="math inline">y \in \Omega</span> (suboptimality certificate). Moreover, <span class="math inline">p^* \in [g(y), f_0(x)], d^* \in [g(y), f_0(x)]</span></p></li>
 <li><p><strong>Dual function is always concave</strong></p>
 <p>As a pointwise minimum of affine functions.</p></li>
 </ul>
@@ -901,18 +901,18 @@ p^∗ = d^*
 <h1 data-number="2"><span class="header-section-number">2</span> Examples</h1>
 <section id="simple-projection-onto-simplex-with-duality" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="simple-projection-onto-simplex-with-duality"><span class="header-section-number">2.1</span> Simple projection onto simplex with duality</h2>
-<p>To find the Euclidean projection of <span class="math display">x \in \mathbb{R}^n</span> onto probability simplex <span class="math display">\mathcal{P} = \{z \in \mathbb{R}^n \mid z \succeq 0, \mathbf{1}^\top z = 1\}</span>, we solve the following problem:</p>
+<p>To find the Euclidean projection of <span class="math inline">x \in \mathbb{R}^n</span> onto probability simplex <span class="math inline">\mathcal{P} = \{z \in \mathbb{R}^n \mid z \succeq 0, \mathbf{1}^\top z = 1\}</span>, we solve the following problem:</p>
 <p><span class="math display">
 \begin{split}
 &amp; \dfrac{1}{2}\|y - x\|_2^2 \to \min\limits_{y \in \mathbb{R}^{n} \succeq 0}\\
 \text{s.t. } &amp; \mathbf{1}^\top y = 1
 \end{split}
 </span></p>
-<p><em>Hint:</em> Consider the problem of minimizing <span class="math display">\dfrac{1}{2}\|y - x\|_2^2 </span> subject to subject to <span class="math display">y \succeq 0, \mathbf{1}^\top y = 1</span>. Form the partial Lagrangian</p>
+<p><em>Hint:</em> Consider the problem of minimizing $|y - x|_2^2 $ subject to subject to <span class="math inline">y \succeq 0, \mathbf{1}^\top y = 1</span>. Form the partial Lagrangian</p>
 <p><span class="math display">
 L(y, \nu) = \dfrac{1}{2}\|y - x\|_2^2 +\nu(\mathbf{1}^\top y - 1),
 </span></p>
-<p>leaving the constraint <span class="math display">y \succeq 0</span> implicit. Show that <span class="math display">y = (x − \nu \mathbf{1})_+</span> minimizes <span class="math display">L(y, \nu)</span> over <span class="math display">y \succeq 0</span>.</p>
+<p>leaving the constraint <span class="math inline">y \succeq 0</span> implicit. Show that <span class="math inline">y = (x − \nu \mathbf{1})_+</span> minimizes <span class="math inline">L(y, \nu)</span> over <span class="math inline">y \succeq 0</span>.</p>
 </section>
 <section id="underdetermined-linear-least-squares" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="underdetermined-linear-least-squares"><span class="header-section-number">2.2</span> Underdetermined Linear least squares</h2>
@@ -982,7 +982,7 @@ d^* = b^\top \left( A A^\top \right)^{-1}b
 \text{s.t. } &amp; x^\top x \leq 1
 \end{split}
 </span></p>
-<p>where <span class="math display">A \in \mathbb{S}^n, A \nsucceq 0</span> and <span class="math display">b \in \mathbb{R}^n</span>. Since <span class="math display">A \nsucceq 0</span>, this is not a convex problem. This problem is sometimes called the trust region problem, and arises in minimizing a second-order approximation of a function over the unit ball, which is the region in which the approximation is assumed to be approximately valid.</p>
+<p>where <span class="math inline">A \in \mathbb{S}^n, A \nsucceq 0</span> and <span class="math inline">b \in \mathbb{R}^n</span>. Since <span class="math inline">A \nsucceq 0</span>, this is not a convex problem. This problem is sometimes called the trust region problem, and arises in minimizing a second-order approximation of a function over the unit ball, which is the region in which the approximation is assumed to be approximately valid.</p>
 <section id="lagrangian-and-dual-function" class="level3" data-number="2.5.1">
 <h3 data-number="2.5.1" class="anchored" data-anchor-id="lagrangian-and-dual-function"><span class="header-section-number">2.5.1</span> Lagrangian and dual function</h3>
 <p><span class="math display">
@@ -1023,17 +1023,17 @@ g(\lambda) = \begin{cases} -b^\top(A + \lambda I)^{\dagger}b - \lambda &amp;\tex
 \text{s.t. } &amp; \lambda \geq - \lambda_{min}(A)
 \end{split}
 </span></p>
-<p>with (scalar) variable <span class="math display">\nu \in \mathbb{R}</span>. Now suppose we have found an optimal dual variable <span class="math display">\nu^*</span> (There are several simple methods for solving a convex problem with one scalar variable, such as the bisection method.). It is very easy to recover the optimal value for the primal problem.</p>
+<p>with (scalar) variable <span class="math inline">\nu \in \mathbb{R}</span>. Now suppose we have found an optimal dual variable <span class="math inline">\nu^*</span> (There are several simple methods for solving a convex problem with one scalar variable, such as the bisection method.). It is very easy to recover the optimal value for the primal problem.</p>
 </section>
 <section id="fenchel---rockafellar-problem" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="fenchel---rockafellar-problem"><span class="header-section-number">2.7</span> Fenchel - Rockafellar problem</h2>
 <section id="problem-1" class="level3" data-number="2.7.1">
 <h3 data-number="2.7.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">2.7.1</span> Problem</h3>
-<p>Let <span class="math display">f: E \to \mathbb{R}</span> and <span class="math display">g: G \to \mathbb{R}</span> — function, defined on the sets <span class="math display">E</span> and <span class="math display">G</span> in Euclidian Spaces <span class="math display">V</span> and <span class="math display">W</span> respectively. Let <span class="math display">f^*:E_* \to \mathbb{R}, g^*:G_* \to \mathbb{R}</span> be the conjugate functions to the <span class="math display">f</span> and <span class="math display">g</span> respectively. Let <span class="math display">A: V \to W</span> — linear mapping. We call Fenchel - Rockafellar problem the following minimization task:</p>
+<p>Let <span class="math inline">f: E \to \mathbb{R}</span> and <span class="math inline">g: G \to \mathbb{R}</span> — function, defined on the sets <span class="math inline">E</span> and <span class="math inline">G</span> in Euclidian Spaces <span class="math inline">V</span> and <span class="math inline">W</span> respectively. Let <span class="math inline">f^*:E_* \to \mathbb{R}, g^*:G_* \to \mathbb{R}</span> be the conjugate functions to the <span class="math inline">f</span> and <span class="math inline">g</span> respectively. Let <span class="math inline">A: V \to W</span> — linear mapping. We call Fenchel - Rockafellar problem the following minimization task:</p>
 <p><span class="math display">
 f(x) + g(Ax) \to \min\limits_{x \in E \cap A^{-1}(G)}
 </span></p>
-<p>where <span class="math display">A^{-1}(G) := \{x \in V : Ax \in G\}</span> — preimage of <span class="math display">G</span>. We’ll build the dual problem using variable separation. Let’s introduce new variable <span class="math display">y = Ax</span>. The problem could be rewritten:</p>
+<p>where <span class="math inline">A^{-1}(G) := \{x \in V : Ax \in G\}</span> — preimage of <span class="math inline">G</span>. We’ll build the dual problem using variable separation. Let’s introduce new variable <span class="math inline">y = Ax</span>. The problem could be rewritten:</p>
 <p><span class="math display">
 \begin{split}
 &amp; f(x) + g(y) \to \min\limits_{x \in E, \; y \in G }\\
@@ -1071,21 +1071,21 @@ g_d(\lambda) &amp;= \min\limits_{x \in E, y \in G} L(x,y, \lambda) = \\
 \end{split}
 </span></p>
 <p>which allows us to formulate one of the most important theorems, that connects dual problems and conjugate functions:</p>
-<p><strong>Fenchel - Rockafellar theorem</strong> Let <span class="math display">f: E \to \mathbb{R}</span> and <span class="math display">g: G \to \mathbb{R}</span> — function, defined on the sets <span class="math display">E</span> and <span class="math display">G</span> in Euclidian Spaces <span class="math display">V</span> and <span class="math display">W</span> respectively. Let <span class="math display">f^*:E_* \to \mathbb{R}, g^*:G_* \to \mathbb{R}</span> be the conjugate functions to the <span class="math display">f</span> and <span class="math display">g</span> respectively. Let <span class="math display">A: V \to W</span> — linear mapping. Let <span class="math display">p^*, d^* \in [- \infty, + \infty]</span> - optimal values of primal and dual problems:</p>
+<p><strong>Fenchel - Rockafellar theorem</strong> Let <span class="math inline">f: E \to \mathbb{R}</span> and <span class="math inline">g: G \to \mathbb{R}</span> — function, defined on the sets <span class="math inline">E</span> and <span class="math inline">G</span> in Euclidian Spaces <span class="math inline">V</span> and <span class="math inline">W</span> respectively. Let <span class="math inline">f^*:E_* \to \mathbb{R}, g^*:G_* \to \mathbb{R}</span> be the conjugate functions to the <span class="math inline">f</span> and <span class="math inline">g</span> respectively. Let <span class="math inline">A: V \to W</span> — linear mapping. Let <span class="math inline">p^*, d^* \in [- \infty, + \infty]</span> - optimal values of primal and dual problems:</p>
 <p><span class="math display">
 p^* = f(x) + g(Ax) \to \min\limits_{x \in E \cap A^{-1}(G)}
 </span></p>
 <p><span class="math display">
 d^* = f^*(-A^*\lambda) + g^*(\lambda) \to \min\limits_{\lambda \in G_* \cap (-A^*)^{-1}(E_*)},
 </span></p>
-<p>Then we have weak duality: <span class="math display">p^* \geq d^*</span>. Furthermore, if the functions <span class="math display">f</span> and <span class="math display">g</span> are convex and <span class="math display">A(\mathbf{relint}(E)) \cap \mathbf{relint}(G) \neq \varnothing </span>, then we have strong duality: <span class="math display">p^* = d^*</span>. While points <span class="math display">x^* \in E \cap A^{-1}(G)</span> and <span class="math display">\lambda^* \in G_* \cap (-A^*)^{-1}(E_*)</span> are optimal values for primal and dual problem if and only if:</p>
+<p>Then we have weak duality: <span class="math inline">p^* \geq d^*</span>. Furthermore, if the functions <span class="math inline">f</span> and <span class="math inline">g</span> are convex and $A((E)) (G) $, then we have strong duality: <span class="math inline">p^* = d^*</span>. While points <span class="math inline">x^* \in E \cap A^{-1}(G)</span> and <span class="math inline">\lambda^* \in G_* \cap (-A^*)^{-1}(E_*)</span> are optimal values for primal and dual problem if and only if:</p>
 <p><span class="math display">
 \begin{split}
 -A^*\lambda^* &amp;\in \partial f(x^*) \\
 \lambda^* &amp;\in \partial g(Ax^*)
 \end{split}
 </span></p>
-<p>Convex case is especially important since if we have Fenchel - Rockafellar problem with parameters <span class="math display">(f, g, A)</span>, than the dual problem has the form <span class="math display">(f^*, g^*, -A^*)</span>.</p>
+<p>Convex case is especially important since if we have Fenchel - Rockafellar problem with parameters <span class="math inline">(f, g, A)</span>, than the dual problem has the form <span class="math inline">(f^*, g^*, -A^*)</span>.</p>
 </section>
 </section>
 </section>

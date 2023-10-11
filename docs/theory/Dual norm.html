@@ -739,11 +739,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="dual-norm" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Dual norm</h1>
-<p>Let <span class="math display">\Vert x\Vert </span> be the norm in the primal space <span class="math display">x \in S \subseteq \mathbb{R}^n</span>, then the following expression defines dual norm:</p>
+<p>Let $x$ be the norm in the primal space <span class="math inline">x \in S \subseteq \mathbb{R}^n</span>, then the following expression defines dual norm:</p>
 <p><span class="math display">
 \Vert x\Vert _\star = \sup\limits_{\Vert y\Vert  \leq 1} \langle y,x\rangle
 </span></p>
-<p>The intuition for the finite-dimensional space is how the linear function (element of the dual space) <span class="math display">f_y(\cdot)</span> could stretch the elements of the primal space with respect to their size, i.e.&nbsp;<span class="math display">\Vert y\Vert _* = \sup\limits_{x \neq 0} \dfrac{\langle y,x\rangle}{\Vert x\Vert }</span></p>
+<p>The intuition for the finite-dimensional space is how the linear function (element of the dual space) <span class="math inline">f_y(\cdot)</span> could stretch the elements of the primal space with respect to their size, i.e.&nbsp;<span class="math inline">\Vert y\Vert _* = \sup\limits_{x \neq 0} \dfrac{\langle y,x\rangle}{\Vert x\Vert }</span></p>
 </section>
 <section id="properties" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Properties</h1>
@@ -753,22 +753,50 @@ ul.task-list li input[type="checkbox"] {
   \Vert x\Vert _* = \sup\limits_{y \neq 0} \dfrac{\langle y,x\rangle}{\Vert y\Vert }
   </span></p></li>
 <li><p>The dual norm is also a norm itself</p></li>
-<li><p>For any <span class="math display">x \in E, y \in E^*</span>: <span class="math display">x^\top y \leq \Vert x\Vert  \cdot \Vert y\Vert _*</span></p></li>
-<li><p><span class="math display">\left(\Vert x\Vert _p\right)_* = \Vert x\Vert _q</span> if <span class="math display">\dfrac{1}{p} + \dfrac{1}{q} = 1</span>, where <span class="math display">p, q \geq 1</span></p></li>
+<li><p>For any <span class="math inline">x \in E, y \in E^*</span>: <span class="math inline">x^\top y \leq \Vert x\Vert \cdot \Vert y\Vert _*</span></p></li>
+<li><p><span class="math inline">\left(\Vert x\Vert _p\right)_* = \Vert x\Vert _q</span> if <span class="math inline">\dfrac{1}{p} + \dfrac{1}{q} = 1</span>, where <span class="math inline">p, q \geq 1</span></p></li>
 </ul>
-<p>{: .example} The Euclidian norm is self dual <span class="math inline">\left(\Vert x\Vert_2\right)_\star = \Vert x\Vert _2</span>.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>The Euclidian norm is self dual <span class="math inline">\left(\Vert x\Vert_2\right)_\star = \Vert x\Vert _2</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="examples" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Examples</h1>
-{: .example} &gt;Let $f(x) = x$. Prove that <span class="math inline">f^\star(y) = \mathbb{O}_{\Vert y\Vert _\star \leq 1}</span> &gt;
-<details>
-<summary>
+<p>::: {.callout-example} Let $f(x) = x$. Prove that <span class="math inline">f^\star(y) = \mathbb{O}_{\Vert y\Vert _\star \leq 1}</span></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solution
-</summary>
-<blockquote class="blockquote">
-<br> <br> <br>
-</blockquote></details>
-
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p><br> <br> <br> <br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
