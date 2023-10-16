@@ -1509,42 +1509,21 @@
     "href": "docs/theory/Subgradient.html",
     "title": "1 Definition",
     "section": "",
-    "text": "Важным свойством непрерывной выпуклой функции f(x) является то, что в выбранной точке x_0 для всех x \\in \\text{dom } f выполнено неравенство:\n\nf(x)  \\geq f(x_0) +  \\langle g, x - x_0 \\rangle\n\nдля некоторого вектора g, то есть касательная к графику функции является глобальной оценкой снизу для функции.\n\n\n\nFigure 1: Taylor linear approximation serves as a global lower bound for a convex function\n\n\n\nЕсли f(x) - дифференцируема, то g = \\nabla f(x_0)\nНе все непрерывные выпуклые функции дифференцируемы :)\n\nНе хочется лишаться такого вкусного свойства.\n\n\nВектор g называется субградиентом функции f(x): S \\to \\mathbb{R} в точке x_0, если \\forall x \\in S:\n\nf(x)  \\geq f(x_0) +  \\langle g, x - x_0 \\rangle\n\n\n\n\nМножество всех субградиентов функции f(x) в точке x_0 называется субдифференциалом f в x_0 и обозначается \\partial f(x_0). * Если x_0 \\in \\mathbf{ri } S, то \\partial f(x_0) выпуклое компактное множество. * Выпуклая функция f(x) дифференцируема в точке x_0\\Rightarrow \\partial f(x_0) = \\{\\nabla f(x_0)\\} * Если \\partial f(x_0) \\neq \\emptyset \\;\\;\\; \\forall x_0 \\in S, то f(x) - выпукла на S.\n\n\n\nFigure 2: Subgradient calculus"
+    "text": "An important property of a continuous convex function f(x) is that at any chosen point x_0 for all x \\in \\text{dom } f the inequality holds:\n\nf(x) \\geq f(x_0) + \\langle g, x - x_0 \\rangle\n\nfor some vector g, i.e., the tangent to the graph of the function is the global estimate from below for the function.\n\n\n\nFigure 1: Taylor linear approximation serves as a global lower bound for a convex function\n\n\n\nIf f(x) is differentiable, then g = \\nabla f(x_0)\nNot all continuous convex functions are differentiable 🐱\n\nWe wouldn’t want to lose such a nice property.\n\n\nA vector g is called the subgradient of a function f(x): S \\to \\mathbb{R} at a point x_0 if \\forall x \\in S:\n\nf(x) \\geq f(x_0) + \\langle g, x - x_0 \\rangle\n\n\n\n\nThe set of all subgradients of a function f(x) at a point x_0 is called the subdifferential of f at x_0 and is denoted by \\partial f(x_0).\n\n\n\nFigure 2: Subgradient calculus\n\n\n\nIf x_0 \\in \\mathbf{ri } S, then \\partial f(x_0) is a convex compact set.\nThe convex function f(x) is differentiable at the point x_0\\Rightarrow \\partial f(x_0) = \\{\\nabla f(x_0)\\}$\nIf \\partial f(x_0) \\neq \\emptyset \\quad \\forall x_0 \\in S, then f(x) is convex on S."
   },
   {
     "objectID": "docs/theory/Subgradient.html#subgradient",
     "href": "docs/theory/Subgradient.html#subgradient",
     "title": "1 Definition",
     "section": "",
-    "text": "Вектор g называется субградиентом функции f(x): S \\to \\mathbb{R} в точке x_0, если \\forall x \\in S:\n\nf(x)  \\geq f(x_0) +  \\langle g, x - x_0 \\rangle"
+    "text": "A vector g is called the subgradient of a function f(x): S \\to \\mathbb{R} at a point x_0 if \\forall x \\in S:\n\nf(x) \\geq f(x_0) + \\langle g, x - x_0 \\rangle"
   },
   {
     "objectID": "docs/theory/Subgradient.html#subdifferential",
     "href": "docs/theory/Subgradient.html#subdifferential",
     "title": "1 Definition",
     "section": "",
-    "text": "Множество всех субградиентов функции f(x) в точке x_0 называется субдифференциалом f в x_0 и обозначается \\partial f(x_0). * Если x_0 \\in \\mathbf{ri } S, то \\partial f(x_0) выпуклое компактное множество. * Выпуклая функция f(x) дифференцируема в точке x_0\\Rightarrow \\partial f(x_0) = \\{\\nabla f(x_0)\\} * Если \\partial f(x_0) \\neq \\emptyset \\;\\;\\; \\forall x_0 \\in S, то f(x) - выпукла на S.\n\n\n\nFigure 2: Subgradient calculus"
-  },
-  {
-    "objectID": "docs/theory/Subgradient.html#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination",
-    "href": "docs/theory/Subgradient.html#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination",
-    "title": "1 Definition",
-    "section": "2.1 Moreau - Rockafellar theorem (subdifferential of a linear combination)",
-    "text": "2.1 Moreau - Rockafellar theorem (subdifferential of a linear combination)\nПусть f_i(x) - выпуклые функции на выпуклых множествах S_i, \\; i = \\overline{1,n}.\nТогда, если \\bigcap\\limits_{i=1}^n \\mathbf{ri } S_i \\neq \\emptyset то функция f(x) = \\sum\\limits_{i=1}^n a_i f_i(x), \\; a_i &gt; 0 имеет субдифференциал \\partial_S f(x) на множестве S = \\bigcap\\limits_{i=1}^n S_i и\n\n\\partial_S f(x) = \\sum\\limits_{i=1}^n a_i \\partial_{S_i} f_i(x)"
-  },
-  {
-    "objectID": "docs/theory/Subgradient.html#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum",
-    "href": "docs/theory/Subgradient.html#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum",
-    "title": "1 Definition",
-    "section": "2.2 Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)",
-    "text": "2.2 Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)\nПусть f_i(x) - выпуклые функции на открытом выпуклом множестве S \\subseteq \\mathbb{R}^n, \\; x_0 \\in S, а поточечный максимум определяется как f(x) = \\underset{i}{\\operatorname{max}} f_i(x). Тогда:\n\n\\partial_S f(x_0) = \\mathbf{conv}\\left\\{  \\bigcup\\limits_{i \\in I(x_0)} \\partial_S f_i(x_0) \\right\\},\n\nгде I(x) = \\{ i \\in [1:m]: f_i(x) = f(x)\\}"
-  },
-  {
-    "objectID": "docs/theory/Subgradient.html#chain-rule-for-subdifferentials",
-    "href": "docs/theory/Subgradient.html#chain-rule-for-subdifferentials",
-    "title": "1 Definition",
-    "section": "2.3 Chain rule for subdifferentials",
-    "text": "2.3 Chain rule for subdifferentials\nПусть g_1, \\ldots, g_m - выпуклые функции на открытом выпуклом множестве S \\subseteq \\mathbb{R}^n, g = (g_1, \\ldots, g_m) - образованная из них вектор - функция, \\varphi - монотонно неубывающая выпуклая функция на открытом выпуклом множестве U \\subseteq \\mathbb{R}^m, причем g(S) \\subseteq U. Тогда субдифференциал функции f(x) = \\varphi \\left( g(x)\\right)$ имеет вид:\n\n\\partial f(x) = \\bigcup\\limits_{p \\in \\partial \\varphi(u)} \\left( \\sum\\limits_{i=1}^{m}p_i \\partial g_i(x) \\right),\n\nгде u = g(x)\nВ частности, если функция \\varphi дифференцируема в точке u = g(x), то формула запишется так:\n\n\\partial f(x) = \\sum\\limits_{i=1}^{m}\\dfrac{\\partial \\varphi}{\\partial u_i}(u) \\partial g_i(x)\n\n\n\\partial (\\alpha f)(x) = \\alpha \\partial f(x), for \\alpha \\geq 0\n\\partial (\\sum f_i)(x) = \\sum \\partial f_i (x), f_i - выпуклые функции\n\\partial (f(Ax + b))(x) = A^T\\partial f(Ax + b), f - выпуклая функция\nz \\in \\partial f(x) if and only if x \\in \\partial f^*(z)."
+    "text": "The set of all subgradients of a function f(x) at a point x_0 is called the subdifferential of f at x_0 and is denoted by \\partial f(x_0).\n\n\n\nFigure 2: Subgradient calculus\n\n\n\nIf x_0 \\in \\mathbf{ri } S, then \\partial f(x_0) is a convex compact set.\nThe convex function f(x) is differentiable at the point x_0\\Rightarrow \\partial f(x_0) = \\{\\nabla f(x_0)\\}$\nIf \\partial f(x_0) \\neq \\emptyset \\quad \\forall x_0 \\in S, then f(x) is convex on S."
   },
   {
     "objectID": "docs/theory/index.html",
