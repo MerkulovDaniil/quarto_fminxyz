@@ -728,9 +728,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#subgradient" id="toc-subgradient" class="nav-link" data-scroll-target="#subgradient"><span class="header-section-number">1.1</span> Subgradient</a></li>
   <li><a href="#subdifferential" id="toc-subdifferential" class="nav-link" data-scroll-target="#subdifferential"><span class="header-section-number">1.2</span> Subdifferential</a></li>
   </ul></li>
-  <li><a href="#subdifferential-calculus" id="toc-subdifferential-calculus" class="nav-link" data-scroll-target="#subdifferential-calculus"><span class="header-section-number">2</span> Subdifferential calculus</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3</span> Examples</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4</span> References</a></li>
+  <li><a href="#subdifferentiability-and-convexity" id="toc-subdifferentiability-and-convexity" class="nav-link" data-scroll-target="#subdifferentiability-and-convexity"><span class="header-section-number">2</span> Subdifferentiability and convexity</a></li>
+  <li><a href="#subdifferential-calculus" id="toc-subdifferential-calculus" class="nav-link" data-scroll-target="#subdifferential-calculus"><span class="header-section-number">3</span> Subdifferential calculus</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4</span> Examples</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/theory/Subgradient.md" class="toc-action">Edit this page</a></p></div></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
@@ -768,6 +769,52 @@ f(x) \geq f(x_0) + \langle g, x - x_0 \rangle
 <p><span class="math display">
 f(x) \geq f(x_0) + \langle g, x - x_0 \rangle
 </span></p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find <span class="math inline">\partial f(x)</span>, if <span class="math inline">f(x) = |x|</span></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>The problem can be solved either geometrically (at each point of the numerical line indicate the angular coefficients of the lines globally supporting the function from the bottom), or by the Moreau-Rockafellar theorem, considering <span class="math inline">f(x)</span> as a point-wise maximum of convex functions:</p>
+<p><span class="math display">
+f(x) = \max\{-x, x\}
+</span></p>
+<div id="fig-subgrad_abs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="subgradmod.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Subgradient of <span class="math inline">\vert x \vert</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="subdifferential" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="subdifferential"><span class="header-section-number">1.2</span> Subdifferential</h2>
@@ -775,7 +822,7 @@ f(x) \geq f(x_0) + \langle g, x - x_0 \rangle
 <div id="fig-subgradient_calculus" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="subgrad_calc.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Subgradient calculus</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3: Subgradient calculus</figcaption>
 </figure>
 </div>
 <ul>
@@ -785,8 +832,195 @@ f(x) \geq f(x_0) + \langle g, x - x_0 \rangle
 </ul>
 </section>
 </section>
-<section id="subdifferential-calculus" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Subdifferential calculus</h1>
+<section id="subdifferentiability-and-convexity" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Subdifferentiability and convexity</h1>
+<div class="callout callout-style-default callout-question no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-question">
+<p>Is it correct, that if the function has a subdifferential at some point, the function is convex?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find <span class="math inline">\partial f(x)</span>, if <span class="math inline">f(x) = \sin x, x \in [\pi/2; 2\pi]</span> <img src="sin.svg" class="img-fluid"></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p><span class="math display">
+\partial_S f(x) =
+\begin{cases}
+(-\infty ; \cos x_0], &amp;x = \frac\pi2 \\
+\emptyset, &amp;x \in \left(\frac\pi2; x_0\right) \\
+\cos x, &amp;x \in [x_0; 2\pi) \\
+[1; \infty), &amp;x = 2\pi
+\end{cases}
+</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+<p><strong>Subdifferential of a differentiable function</strong> Let <span class="math inline">f : S \to \mathbb{R}</span> be a function defined on the set <span class="math inline">S</span> in a Euclidean space <span class="math inline">\mathbb{R}^n</span>. If <span class="math inline">x_0 \in \mathbf{ri }(S)</span> and <span class="math inline">f</span> is differentiable at <span class="math inline">x_0</span>, then either <span class="math inline">\partial f(x_0) = \emptyset</span> or <span class="math inline">\partial f(x_0) = \{\nabla f(x_0)\}</span>. Moreover, if the function <span class="math inline">f</span> is convex, the first scenario is impossible.</p>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-proof" data-collapse="true">
+<ol type="1">
+<li>Assume, that <span class="math inline">s \in \partial f(x_0)</span> for some <span class="math inline">s \in \mathbb{R}^n</span> distinct from <span class="math inline">\nabla f(x_0)</span>. Let <span class="math inline">v \in \mathbb{R}^n</span> be a unit vector. Because <span class="math inline">x_0</span> is an interior point of <span class="math inline">S</span>, there exists <span class="math inline">\delta &gt; 0</span> such that <span class="math inline">x_0 + tv \in S</span> for all <span class="math inline">0 &lt; t &lt; \delta</span>. By the definition of the subgradient, we have <span class="math display">
+f(x_0 + tv) \geq f(x_0) + t \langle s, v \rangle
+</span> which implies: <span class="math display">
+\frac{f(x_0 + tv) - f(x_0)}{t} \geq \langle s, v \rangle
+</span> for all <span class="math inline">0 &lt; t &lt; \delta</span>. Taking the limit as <span class="math inline">t</span> approaches 0 and using the definition of the gradient, we get: <span class="math display">
+\langle \nabla f(x_0), v \rangle = \lim_{{t \to 0; 0 &lt; t &lt; \delta}} \frac{f(x_0 + tv) - f(x_0)}{t} \geq \langle s, v \rangle
+</span></li>
+<li>From this, <span class="math inline">\langle s - \nabla f(x_0), v \rangle \geq 0</span>. Due to the arbitrariness of <span class="math inline">v</span>, one can set <span class="math display">
+v = -\frac{s - \nabla f(x_0)}{\| s - \nabla f(x_0) \|},
+</span> leading to <span class="math inline">s = \nabla f(x_0)</span>.</li>
+<li>Furthermore, if the function <span class="math inline">f</span> is convex, then according to the differential condition of convexity <span class="math inline">f(x) \geq f(x_0) + \langle \nabla f(x_0), x - x_0 \rangle</span> for all <span class="math inline">x \in S</span>. But by definition, this means <span class="math inline">\nabla f(x_0) \in \partial f(x_0)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>It is interesting to mention, that the statement for the convex function could be strengthened. Let <span class="math inline">f : S \to \mathbb{R}</span> be a convex function defined on the set <span class="math inline">S</span> in a finite-dimensional Euclidean space <span class="math inline">\mathbb{R}^n</span>, and let <span class="math inline">x_0 \in \mathbf{ri }(S)</span>. Then, <span class="math inline">f</span> is differentiable at <span class="math inline">x_0</span> if and only if the subdifferential <span class="math inline">\partial f(x_0)</span> contains exactly one element. In this case, <span class="math inline">\partial f(x_0) = \{\nabla f(x_0)\}</span>.</p>
+<div class="callout callout-style-default callout-question no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-question">
+<p>Let <span class="math inline">f : S \to \mathbb{R}</span> be a function defined on the set <span class="math inline">S</span> in a Euclidean space, and let <span class="math inline">x_0 \in S</span>. Show that the point <span class="math inline">x_0</span> is a minimum of the function <span class="math inline">f</span> if and only if <span class="math inline">0 \in \partial f(x_0)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-question no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-question">
+<p>Is it correct, that if the function is convex, it has a subgradient at any point?</p>
+</div>
+</div>
+</div>
+</div>
+<p>Convexity follows from subdifferentiability at any point. A natural question to ask is whether the converse is true: is every convex function subdifferentiable? It turns out that, generally speaking, the answer to this question is negative.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Let <span class="math inline">f : [0,\infty) \to \mathbb{R}</span> be the function defined by <span class="math inline">f(x) := -\sqrt{x}</span>. Then, <span class="math inline">\partial f(0) = \emptyset</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>Assume, that <span class="math inline">s \in \partial f(0)</span> for some <span class="math inline">s \in \mathbb{R}</span>. Then, by definition, we must have <span class="math inline">sx \leq -\sqrt{x}</span> for all <span class="math inline">x \geq 0</span>. From this, we can deduce <span class="math inline">s \leq -\sqrt{1}</span> for all <span class="math inline">x &gt; 0</span>. Taking the limit as <span class="math inline">x</span> approaches <span class="math inline">0</span> from the right, we get <span class="math inline">s \leq -\infty</span>, which is impossible.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="subdifferential-calculus" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Subdifferential calculus</h1>
 <div class="callout callout-style-default callout-theorem no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -829,111 +1063,6 @@ Theorem
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-theorem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-theorem">
-<p><strong>Subdifferential of a differentiable function</strong> Let <span class="math inline">f : S \to \mathbb{R}</span> be a function defined on the set <span class="math inline">S</span> in a Euclidean space <span class="math inline">\mathbb{R}^n</span>. If <span class="math inline">x_0 \in \text{int}(S)</span> and <span class="math inline">f</span> is differentiable at <span class="math inline">x_0</span>, then either <span class="math inline">\partial f(x_0) = \emptyset</span> or <span class="math inline">\partial f(x_0) = \{\nabla f(x_0)\}</span>. Moreover, if the function <span class="math inline">f</span> is convex, the first scenario is impossible.</p>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-proof" data-collapse="true">
-<ol type="1">
-<li>Assume, that <span class="math inline">s \in \partial f(x_0)</span> for some <span class="math inline">s \in \mathbb{R}^n</span> distinct from <span class="math inline">\nabla f(x_0)</span>. Let <span class="math inline">v \in \mathbb{R}^n</span> be a unit vector. Because <span class="math inline">x_0</span> is an interior point of <span class="math inline">S</span>, there exists <span class="math inline">\delta &gt; 0</span> such that <span class="math inline">x_0 + tv \in S</span> for all <span class="math inline">0 &lt; t &lt; \delta</span>. By the definition of the subgradient, we have <span class="math display">
-f(x_0 + tv) \geq f(x_0) + t \langle s, v \rangle
-</span> which implies: <span class="math display">
-\frac{f(x_0 + tv) - f(x_0)}{t} \geq \langle s, v \rangle
-</span> for all <span class="math inline">0 &lt; t &lt; \delta</span>. Taking the limit as <span class="math inline">t</span> approaches 0 and using the definition of the gradient, we get: <span class="math display">
-\langle \nabla f(x_0), v \rangle = \lim_{{t \to 0; 0 &lt; t &lt; \delta}} \frac{f(x_0 + tv) - f(x_0)}{t} \geq \langle s, v \rangle
-</span></li>
-<li>From this, <span class="math inline">\langle s - \nabla f(x_0), v \rangle \geq 0</span>. Due to the arbitrariness of <span class="math inline">v</span>, one can set <span class="math display">
-v = -\frac{s - \nabla f(x_0)}{\| s - \nabla f(x_0) \|},
-</span> leading to <span class="math inline">s = \nabla f(x_0)</span>.</li>
-<li>Furthermore, if the function <span class="math inline">f</span> is convex, then according to the differential condition of convexity <span class="math inline">f(x) \geq f(x_0) + \langle \nabla f(x_0), x - x_0 \rangle</span> for all <span class="math inline">x \in S</span>. But by definition, this means <span class="math inline">\nabla f(x_0) \in \partial f(x_0)</span>.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>It is interesting to mention, that the statement for the convex function could be strengthened. Let <span class="math inline">f : S \to \mathbb{R}</span> be a convex function defined on the set <span class="math inline">S</span> in a finite-dimensional Euclidean space <span class="math inline">\mathbb{R}^n</span>, and let <span class="math inline">x_0 \in \text{int}(S)</span>. Then, <span class="math inline">f</span> is differentiable at <span class="math inline">x_0</span> if and only if the subdifferential <span class="math inline">\partial f(x_0)</span> contains exactly one element. In this case, <span class="math inline">\partial f(x_0) = \{\nabla f(x_0)\}</span>.</p>
-<div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-exercise">
-<p>Let <span class="math inline">f : S \to \mathbb{R}</span> be a function defined on the set <span class="math inline">S</span> in a Euclidean space, and let <span class="math inline">x_0 \in S</span>. Show that the point <span class="math inline">x_0</span> is a minimum of the function <span class="math inline">f</span> if and only if <span class="math inline">0 \in \partial f(x_0)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<p>Convexity follows from subdifferentiability at any point. A natural question to ask is whether the converse is true: is every convex function subdifferentiable? It turns out that, generally speaking, the answer to this question is negative.</p>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-example">
-<p>Let <span class="math inline">f : [0,\infty) \to \mathbb{R}</span> be the function defined by <span class="math inline">f(x) := -\sqrt{x}</span>. Then, <span class="math inline">\partial f(0) = \emptyset</span>.</p>
-<div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-solution" data-collapse="true">
-<p>Assume, for the sake of contradiction, that <span class="math inline">s \in \partial f(0)</span> for some <span class="math inline">s \in \mathbb{R}</span>. Then, by definition, we must have <span class="math inline">sx \leq -\sqrt{x}</span> for all <span class="math inline">x \geq 0</span>. From this, we can deduce <span class="math inline">s \leq -\sqrt{1}</span> for all <span class="math inline">x &gt; 0</span>. Taking the limit as <span class="math inline">x</span> approaches 0 from the right, we get <span class="math inline">s \leq -\infty</span>, which is impossible.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <p><strong>Chain rule for subdifferentials</strong> Пусть <span class="math inline">g_1, \ldots, g_m</span> - выпуклые функции на открытом выпуклом множестве <span class="math inline">S \subseteq \mathbb{R}^n</span>, <span class="math inline">g = (g_1, \ldots, g_m)</span> - образованная из них вектор - функция, <span class="math inline">\varphi</span> - монотонно неубывающая выпуклая функция на открытом выпуклом множестве <span class="math inline">U \subseteq \mathbb{R}^m</span>, причем <span class="math inline">g(S) \subseteq U</span>. Тогда субдифференциал функции <span class="math inline">f(x) = \varphi \left( g(x)\right)</span>$ имеет вид:</p>
 <p><span class="math display">
 \partial f(x) = \bigcup\limits_{p \in \partial \varphi(u)} \left( \sum\limits_{i=1}^{m}p_i \partial g_i(x) \right),
@@ -950,8 +1079,8 @@ Solution
 <li><span class="math inline">z \in \partial f(x)</span> if and only if <span class="math inline">x \in \partial f^*(z)</span>.</li>
 </ul>
 </section>
-<section id="examples" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Examples</h1>
+<section id="examples" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Examples</h1>
 <p>Концептуально, различают три способа решения задач на поиск субградиента:</p>
 <ul>
 <li>Теоремы Моро - Рокафеллара, композиции, максимума</li>
@@ -970,55 +1099,9 @@ Example
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-example">
-<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = |x|</span></p>
-<div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-solution" data-collapse="true">
-<p>Решить задачу можно либо геометрически (в каждой точке числовой прямой указать угловые коэффициенты прямых, глобально подпирающих функцию снизу), либо по теореме Моро - Рокафеллара, рассмотрев <span class="math inline">f(x)</span> как композицию выпуклых функций:</p>
-<p><span class="math display">
-f(x) = \max\{-x, x\}
-</span></p>
-<div id="fig-subgrad_abs" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="subgradmod.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Subgradient of <span class="math inline">\vert x \vert</span></figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-example">
 <p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = |x - 1| + |x + 1|</span></p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1027,7 +1110,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-solution" data-collapse="true">
@@ -1060,9 +1143,9 @@ Example
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-example">
-<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = \left[ \max(0, f_0(x))\right]^q</span>. Здесь <span class="math inline">f_0(x)</span> - выпуклая функция на открытом выпуклом множестве <span class="math inline">S</span>, <span class="math inline">q \geq 1</span>.</p>
+<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = |c_1^\top x| + |c_2^\top x|</span></p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1071,7 +1154,46 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>Пусть <span class="math inline">f_1(x) = |c_1^\top x|</span>, а <span class="math inline">f_2(x) = |c_2^\top x|</span>. Так как эти функции выпуклы, субдифференциал их суммы равен сумме субдифференциалов. Найдем каждый из них:</p>
+<p><span class="math inline">\partial f_1(x) = \partial \left( \max \{c_1^\top x, -c_1^\top x\} \right) = \begin{cases} -c_1, &amp;c_1^\top x &lt; 0\\ \mathbf{conv}(-c_1;c_1), &amp;c_1^\top x = 0 \\ c_1, &amp;c_1^\top x &gt; 0 \end{cases}</span> <span class="math inline">\partial f_2(x) = \partial \left( \max \{c_2^\top x, -c_2^\top x\} \right) = \begin{cases} -c_2, &amp;c_2^\top x &lt; 0\\ \mathbf{conv}(-c_2;c_2), &amp;c_2^\top x = 0 \\ c_2, &amp;c_2^\top x &gt; 0 \end{cases}</span></p>
+<p>Далее интересными представляются лишь различные взаимные расположения векторов <span class="math inline">c_1</span> и <span class="math inline">c_2</span>, рассмотрение которых предлагается читателю.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = \left[ \max(0, f_0(x))\right]^q</span>. Здесь <span class="math inline">f_0(x)</span> - выпуклая функция на открытом выпуклом множестве <span class="math inline">S</span>, <span class="math inline">q \geq 1</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-solution" data-collapse="true">
@@ -1101,74 +1223,9 @@ Example
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-example">
-<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = \sin x, x \in [\pi/2; 2\pi]</span> ::: {.callout-solution collapse=“true”} <img src="sin.svg" class="img-fluid"> <span class="math display">
-\partial_S f(x) =
-\begin{cases}
-(-\infty ; \cos x_0], &amp;x = \frac\pi2 \\
-\emptyset, &amp;x \in \left(\frac\pi2; x_0\right) \\
-\cos x, &amp;x \in [x_0; 2\pi) \\
-[1; \infty), &amp;x = 2\pi
-\end{cases}
-</span></p>
-</div>
-</div>
-</div>
-</div>
-<p>:::</p>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-example">
-<p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = |c_1^\top x| + |c_2^\top x|</span></p>
-<div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-solution" data-collapse="true">
-<p>Пусть <span class="math inline">f_1(x) = |c_1^\top x|</span>, а <span class="math inline">f_2(x) = |c_2^\top x|</span>. Так как эти функции выпуклы, субдифференциал их суммы равен сумме субдифференциалов. Найдем каждый из них:</p>
-<p><span class="math inline">\partial f_1(x) = \partial \left( \max \{c_1^\top x, -c_1^\top x\} \right) = \begin{cases} -c_1, &amp;c_1^\top x &lt; 0\\ \mathbf{conv}(-c_1;c_1), &amp;c_1^\top x = 0 \\ c_1, &amp;c_1^\top x &gt; 0 \end{cases}</span> <span class="math inline">\partial f_2(x) = \partial \left( \max \{c_2^\top x, -c_2^\top x\} \right) = \begin{cases} -c_2, &amp;c_2^\top x &lt; 0\\ \mathbf{conv}(-c_2;c_2), &amp;c_2^\top x = 0 \\ c_2, &amp;c_2^\top x &gt; 0 \end{cases}</span></p>
-<p>Далее интересными представляются лишь различные взаимные расположения векторов <span class="math inline">c_1</span> и <span class="math inline">c_2</span>, рассмотрение которых предлагается читателю.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-example">
 <p>Найти <span class="math inline">\partial f(x)</span>, если <span class="math inline">f(x) = \| x\|_1</span></p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1177,7 +1234,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-solution" data-collapse="true">
@@ -1202,9 +1259,140 @@ Solution
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p><strong>Subdifferential of the Norm.</strong> Let <span class="math inline">V</span> be a finite-dimensional Euclidean space, and <span class="math inline">x_0 \in V</span>. Let <span class="math inline">\lVert \cdot \rVert</span> be an arbitrary norm in <span class="math inline">V</span> (not necessarily induced by the scalar product), and let <span class="math inline">\lVert \cdot \rVert_*</span> be the corresponding conjugate norm. Then,</p>
+<p><span class="math display">
+\partial \lVert \cdot \rVert (x_0) =
+\begin{cases}
+B_{\lVert \cdot \rVert_*}(0, 1), &amp; \text{if } x_0 = 0, \\
+\{s \in V : \lVert s \rVert_* \leq 1; \langle s, x_0 \rangle = \lVert x_0 \rVert \} = \{s \in V : \lVert s \rVert_* = 1; \langle s, x_0 \rangle = \lVert x_0 \rVert \}, &amp; \text{otherwise.}
+\end{cases}
+</span></p>
+<p>Where <span class="math inline">B_{\lVert \cdot \rVert_*}(0,1)</span> is the closed unit ball centered at zero with respect to the conjugate norm. In other words, a vector <span class="math inline">s \in V</span> with <span class="math inline">\lVert s \rVert_* = 1</span> is a subgradient of the norm <span class="math inline">\lVert \cdot \rVert</span> at point <span class="math inline">x_0 \neq 0</span> if and only if the Hölder’s inequality <span class="math inline">\langle s, x_0 \rangle \leq \lVert x_0 \rVert</span> becomes an equality.</p>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-proof" data-collapse="true">
+<p>Let <span class="math inline">s \in V</span>. By definition, <span class="math inline">s \in \partial \lVert \cdot \rVert (x_0)</span> if and only if</p>
+<p><span class="math display">
+\langle s, x \rangle - \lVert x \rVert \leq \langle s, x_0 \rangle - \lVert x_0 \rVert, \text{ for all } x \in V,
+</span></p>
+<p>or equivalently,</p>
+<p><span class="math display">
+\sup_{x \in V} \{\langle s, x \rangle - \lVert x \rVert\} \leq \langle s, x_0 \rangle - \lVert x_0 \rVert.
+</span></p>
+<p>By the definition of the supremum, the latter is equivalent to</p>
+<p><span class="math display">
+\sup_{x \in V} \{\langle s, x \rangle - \lVert x \rVert\} = \langle s, x_0 \rangle - \lVert x_0 \rVert.
+</span></p>
+<p>It is important to note that the expression on the left side is the supremum from the definition of the Fenchel conjugate function for the norm, which is known to be</p>
+<p><span class="math display">
+\sup_{x \in V} \{\langle s, x \rangle - \lVert x \rVert\} =
+\begin{cases}
+0, &amp; \text{if } \lVert s \rVert_* \leq 1, \\
++\infty, &amp; \text{otherwise.}
+\end{cases}
+</span></p>
+<p>Thus, equation is equivalent to <span class="math inline">\lVert s \rVert_* \leq 1</span> and <span class="math inline">\langle s, x_0 \rangle = \lVert x_0 \rVert</span>.</p>
+<p>Consequently, it remains to note that for <span class="math inline">x_0 \neq 0</span>, the inequality <span class="math inline">\lVert s \rVert_* \leq 1</span> must become an equality since, when <span class="math inline">\lVert s \rVert_* &lt; 1</span>, Hölder’s inequality implies <span class="math inline">\langle s, x_0 \rangle \leq \lVert s \rVert_* \lVert x_0 \rVert &lt; \lVert x_0 \rVert</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The conjugate norm in Example above does not appear by chance. It turns out that, in a completely similar manner for an arbitrary function <span class="math inline">f</span> (not just for the norm), its subdifferential can be described in terms of the dual object — the Fenchel conjugate function.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p><strong>Characterization of the subdifferential through the conjugate function.</strong> Let <span class="math inline">f: E \to \mathbb{R}</span> be a function defined on the set <span class="math inline">E</span> in a Euclidean space. Let <span class="math inline">x_0 \in E</span> and let <span class="math inline">f^*: E^* \to \mathbb{R}</span> be the conjugate function. Show that</p>
+<p><span class="math display">
+\partial f(x_0) = \{s \in E^* : \langle s, x_0 \rangle = f^*(s) + f(x_0)\},
+</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>In other words, a vector <span class="math inline">s \in E^*</span> is a subgradient of the function <span class="math inline">f</span> at point <span class="math inline">x_0</span> if and only if the Fenchel-Young inequality <span class="math inline">\langle s, x_0 \rangle \leq f^*(s) + f(x_0)</span> becomes an equality.</p>
+<p>In the case <span class="math inline">f = \lVert \cdot \rVert</span>, we have <span class="math inline">f^* = \delta_{B_{\lVert \cdot \rVert_*}(0,1)}</span>, i.e., the conjugate function is equal to the indicator function of the ball <span class="math inline">B_{\lVert \cdot \rVert_*}(0,1)</span>, and equation becomes.</p>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+<p><strong>Criteria for equality in the Fenchel-Young inequality.</strong> Let <span class="math inline">f: E \to \mathbb{R}</span> be a convex closed function, <span class="math inline">f^*: E^* \to \mathbb{R}</span> the conjugate function, and let <span class="math inline">x \in E, s \in E^*</span>. The following statements are equivalent:</p>
+<ol type="a">
+<li><p><span class="math inline">\langle s, x \rangle = f^*(s) + f(x)</span>.</p></li>
+<li><p><span class="math inline">s \in \partial f(x)</span>.</p></li>
+<li><p><span class="math inline">x \in \partial f^*(s)</span>.</p></li>
+</ol>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-proof" data-collapse="true">
+<p>According to Exercise above, the condition <span class="math inline">\langle s, x \rangle = f^*(s) + f(x)</span> is equivalent to <span class="math inline">s \in \partial f(x)</span>. On the other hand, since <span class="math inline">f</span> is convex and closed, by the Fenchel-Moreau theorem, we have <span class="math inline">f^{**} = f</span>. Applying Exercise 1.13 to the function <span class="math inline">f^*</span>, it follows that the equality <span class="math inline">\langle s, x \rangle = f^*(s) + f(x)</span> is equivalent to <span class="math inline">x \in \partial f^*(s)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="references" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
+<section id="references" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> References</h1>
 <ul>
 <li><a href="https://people.orie.cornell.edu/dsd95/teaching/orie6300/ORIE6300Fall2019notes.pdf">Lecture Notes for ORIE 6300: Mathematical Programming I by Damek Davis</a></li>
 </ul>
