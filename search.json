@@ -1507,37 +1507,44 @@
   {
     "objectID": "docs/theory/Subgradient.html",
     "href": "docs/theory/Subgradient.html",
-    "title": "1 Motivation",
+    "title": "1 Definition",
     "section": "",
-    "text": "Важным свойством непрерывной выпуклой функции f(x) является то, что в выбранной точке x_0 для всех x \\in \\text{dom } f выполнено неравенство:\n\nf(x)  \\geq f(x_0) +  \\langle g, x - x_0 \\rangle\n\nдля некоторого вектора g, то есть касательная к графику функции является глобальной оценкой снизу для функции.\n\n\n\nFigure 1: Taylor linear approximation serves as a global lower bound for a convex function\n\n\n\nЕсли f(x) - дифференцируема, то g = \\nabla f(x_0)\nНе все непрерывные выпуклые функции дифференцируемы :)\n\nНе хочется лишаться такого вкусного свойства."
+    "text": "Важным свойством непрерывной выпуклой функции f(x) является то, что в выбранной точке x_0 для всех x \\in \\text{dom } f выполнено неравенство:\n\nf(x)  \\geq f(x_0) +  \\langle g, x - x_0 \\rangle\n\nдля некоторого вектора g, то есть касательная к графику функции является глобальной оценкой снизу для функции.\n\n\n\nFigure 1: Taylor linear approximation serves as a global lower bound for a convex function\n\n\n\nЕсли f(x) - дифференцируема, то g = \\nabla f(x_0)\nНе все непрерывные выпуклые функции дифференцируемы :)\n\nНе хочется лишаться такого вкусного свойства.\n\n\nВектор g называется субградиентом функции f(x): S \\to \\mathbb{R} в точке x_0, если \\forall x \\in S:\n\nf(x)  \\geq f(x_0) +  \\langle g, x - x_0 \\rangle\n\n\n\n\nМножество всех субградиентов функции f(x) в точке x_0 называется субдифференциалом f в x_0 и обозначается \\partial f(x_0). * Если x_0 \\in \\mathbf{ri } S, то \\partial f(x_0) выпуклое компактное множество. * Выпуклая функция f(x) дифференцируема в точке x_0\\Rightarrow \\partial f(x_0) = \\{\\nabla f(x_0)\\} * Если \\partial f(x_0) \\neq \\emptyset \\;\\;\\; \\forall x_0 \\in S, то f(x) - выпукла на S.\n\n\n\nFigure 2: Subgradient calculus"
+  },
+  {
+    "objectID": "docs/theory/Subgradient.html#subgradient",
+    "href": "docs/theory/Subgradient.html#subgradient",
+    "title": "1 Definition",
+    "section": "",
+    "text": "Вектор g называется субградиентом функции f(x): S \\to \\mathbb{R} в точке x_0, если \\forall x \\in S:\n\nf(x)  \\geq f(x_0) +  \\langle g, x - x_0 \\rangle"
+  },
+  {
+    "objectID": "docs/theory/Subgradient.html#subdifferential",
+    "href": "docs/theory/Subgradient.html#subdifferential",
+    "title": "1 Definition",
+    "section": "",
+    "text": "Множество всех субградиентов функции f(x) в точке x_0 называется субдифференциалом f в x_0 и обозначается \\partial f(x_0). * Если x_0 \\in \\mathbf{ri } S, то \\partial f(x_0) выпуклое компактное множество. * Выпуклая функция f(x) дифференцируема в точке x_0\\Rightarrow \\partial f(x_0) = \\{\\nabla f(x_0)\\} * Если \\partial f(x_0) \\neq \\emptyset \\;\\;\\; \\forall x_0 \\in S, то f(x) - выпукла на S.\n\n\n\nFigure 2: Subgradient calculus"
   },
   {
     "objectID": "docs/theory/Subgradient.html#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination",
     "href": "docs/theory/Subgradient.html#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination",
-    "title": "1 Motivation",
-    "section": "3.1 Moreau - Rockafellar theorem (subdifferential of a linear combination)",
-    "text": "3.1 Moreau - Rockafellar theorem (subdifferential of a linear combination)\nПусть f_i(x) - выпуклые функции на выпуклых множествах S_i, \\; i = \\overline{1,n}.\nТогда, если \\bigcap\\limits_{i=1}^n \\mathbf{ri } S_i \\neq \\emptyset то функция f(x) = \\sum\\limits_{i=1}^n a_i f_i(x), \\; a_i &gt; 0 имеет субдифференциал \\partial_S f(x) на множестве S = \\bigcap\\limits_{i=1}^n S_i и\n\n\\partial_S f(x) = \\sum\\limits_{i=1}^n a_i \\partial_{S_i} f_i(x)"
+    "title": "1 Definition",
+    "section": "2.1 Moreau - Rockafellar theorem (subdifferential of a linear combination)",
+    "text": "2.1 Moreau - Rockafellar theorem (subdifferential of a linear combination)\nПусть f_i(x) - выпуклые функции на выпуклых множествах S_i, \\; i = \\overline{1,n}.\nТогда, если \\bigcap\\limits_{i=1}^n \\mathbf{ri } S_i \\neq \\emptyset то функция f(x) = \\sum\\limits_{i=1}^n a_i f_i(x), \\; a_i &gt; 0 имеет субдифференциал \\partial_S f(x) на множестве S = \\bigcap\\limits_{i=1}^n S_i и\n\n\\partial_S f(x) = \\sum\\limits_{i=1}^n a_i \\partial_{S_i} f_i(x)"
   },
   {
     "objectID": "docs/theory/Subgradient.html#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum",
     "href": "docs/theory/Subgradient.html#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum",
-    "title": "1 Motivation",
-    "section": "3.2 Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)",
-    "text": "3.2 Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)\nПусть f_i(x) - выпуклые функции на открытом выпуклом множестве S \\subseteq \\mathbb{R}^n, \\; x_0 \\in S, а поточечный максимум определяется как f(x) = \\underset{i}{\\operatorname{max}} f_i(x). Тогда:\n\n\\partial_S f(x_0) = \\mathbf{conv}\\left\\{  \\bigcup\\limits_{i \\in I(x_0)} \\partial_S f_i(x_0) \\right\\},\n\nгде I(x) = \\{ i \\in [1:m]: f_i(x) = f(x)\\}"
+    "title": "1 Definition",
+    "section": "2.2 Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)",
+    "text": "2.2 Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)\nПусть f_i(x) - выпуклые функции на открытом выпуклом множестве S \\subseteq \\mathbb{R}^n, \\; x_0 \\in S, а поточечный максимум определяется как f(x) = \\underset{i}{\\operatorname{max}} f_i(x). Тогда:\n\n\\partial_S f(x_0) = \\mathbf{conv}\\left\\{  \\bigcup\\limits_{i \\in I(x_0)} \\partial_S f_i(x_0) \\right\\},\n\nгде I(x) = \\{ i \\in [1:m]: f_i(x) = f(x)\\}"
   },
   {
     "objectID": "docs/theory/Subgradient.html#chain-rule-for-subdifferentials",
     "href": "docs/theory/Subgradient.html#chain-rule-for-subdifferentials",
-    "title": "1 Motivation",
-    "section": "3.3 Chain rule for subdifferentials",
-    "text": "3.3 Chain rule for subdifferentials\nПусть g_1, \\ldots, g_m - выпуклые функции на открытом выпуклом множестве S \\subseteq \\mathbb{R}^n, g = (g_1, \\ldots, g_m) - образованная из них вектор - функция, \\varphi - монотонно неубывающая выпуклая функция на открытом выпуклом множестве U \\subseteq \\mathbb{R}^m, причем g(S) \\subseteq U. Тогда субдифференциал функции f(x) = \\varphi \\left( g(x)\\right)$ имеет вид:\n\n\\partial f(x) = \\bigcup\\limits_{p \\in \\partial \\varphi(u)} \\left( \\sum\\limits_{i=1}^{m}p_i \\partial g_i(x) \\right),\n\nгде u = g(x)\nВ частности, если функция \\varphi дифференцируема в точке u = g(x), то формула запишется так:\n\n\\partial f(x) = \\sum\\limits_{i=1}^{m}\\dfrac{\\partial \\varphi}{\\partial u_i}(u) \\partial g_i(x)"
-  },
-  {
-    "objectID": "docs/theory/Subgradient.html#subdifferential-calculus",
-    "href": "docs/theory/Subgradient.html#subdifferential-calculus",
-    "title": "1 Motivation",
-    "section": "3.4 Subdifferential calculus",
-    "text": "3.4 Subdifferential calculus\n\n\\partial (\\alpha f)(x) = \\alpha \\partial f(x), for \\alpha \\geq 0\n\\partial (\\sum f_i)(x) = \\sum \\partial f_i (x), f_i - выпуклые функции\n\\partial (f(Ax + b))(x) = A^T\\partial f(Ax + b), f - выпуклая функция\nz \\in \\partial f(x) if and only if x \\in \\partial f^*(z)."
+    "title": "1 Definition",
+    "section": "2.3 Chain rule for subdifferentials",
+    "text": "2.3 Chain rule for subdifferentials\nПусть g_1, \\ldots, g_m - выпуклые функции на открытом выпуклом множестве S \\subseteq \\mathbb{R}^n, g = (g_1, \\ldots, g_m) - образованная из них вектор - функция, \\varphi - монотонно неубывающая выпуклая функция на открытом выпуклом множестве U \\subseteq \\mathbb{R}^m, причем g(S) \\subseteq U. Тогда субдифференциал функции f(x) = \\varphi \\left( g(x)\\right)$ имеет вид:\n\n\\partial f(x) = \\bigcup\\limits_{p \\in \\partial \\varphi(u)} \\left( \\sum\\limits_{i=1}^{m}p_i \\partial g_i(x) \\right),\n\nгде u = g(x)\nВ частности, если функция \\varphi дифференцируема в точке u = g(x), то формула запишется так:\n\n\\partial f(x) = \\sum\\limits_{i=1}^{m}\\dfrac{\\partial \\varphi}{\\partial u_i}(u) \\partial g_i(x)\n\n\n\\partial (\\alpha f)(x) = \\alpha \\partial f(x), for \\alpha \\geq 0\n\\partial (\\sum f_i)(x) = \\sum \\partial f_i (x), f_i - выпуклые функции\n\\partial (f(Ax + b))(x) = A^T\\partial f(Ax + b), f - выпуклая функция\nz \\in \\partial f(x) if and only if x \\in \\partial f^*(z)."
   },
   {
     "objectID": "docs/theory/index.html",
@@ -1551,7 +1558,7 @@
     "href": "docs/theory/Dual norm.html",
     "title": "1 Dual norm",
     "section": "",
-    "text": "1 Dual norm\nLet $x$ be the norm in the primal space x \\in S \\subseteq \\mathbb{R}^n, then the following expression defines dual norm:\n\n\\Vert x\\Vert _\\star = \\sup\\limits_{\\Vert y\\Vert  \\leq 1} \\langle y,x\\rangle\n\nThe intuition for the finite-dimensional space is how the linear function (element of the dual space) f_y(\\cdot) could stretch the elements of the primal space with respect to their size, i.e. \\Vert y\\Vert _* = \\sup\\limits_{x \\neq 0} \\dfrac{\\langle y,x\\rangle}{\\Vert x\\Vert }\n\n\n2 Properties\n\nOne can easily define the dual norm as:\n\n  \\Vert x\\Vert _* = \\sup\\limits_{y \\neq 0} \\dfrac{\\langle y,x\\rangle}{\\Vert y\\Vert }\n  \nThe dual norm is also a norm itself\nFor any x \\in E, y \\in E^*: x^\\top y \\leq \\Vert x\\Vert \\cdot \\Vert y\\Vert _*\n\\left(\\Vert x\\Vert _p\\right)_* = \\Vert x\\Vert _q if \\dfrac{1}{p} + \\dfrac{1}{q} = 1, where p, q \\geq 1\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nThe Euclidian norm is self dual \\left(\\Vert x\\Vert_2\\right)_\\star = \\Vert x\\Vert _2.\n\n\n\n\n\n\n3 Examples\n::: {.callout-example} Let $f(x) = x$. Prove that f^\\star(y) = \\mathbb{O}_{\\Vert y\\Vert _\\star \\leq 1}\n\n\n\n\n\n\nSolution"
+    "text": "1 Dual norm\nLet $x$ be the norm in the primal space x \\in S \\subseteq \\mathbb{R}^n, then the following expression defines dual norm:\n\n\\Vert x\\Vert _\\star = \\sup\\limits_{\\Vert y\\Vert  \\leq 1} \\langle y,x\\rangle\n\nThe intuition for the finite-dimensional space is how the linear function (element of the dual space) f_y(\\cdot) could stretch the elements of the primal space with respect to their size, i.e. \\Vert y\\Vert _* = \\sup\\limits_{x \\neq 0} \\dfrac{\\langle y,x\\rangle}{\\Vert x\\Vert }\n\n\n2 Properties\n\nOne can easily define the dual norm as:\n\n  \\Vert x\\Vert _* = \\sup\\limits_{y \\neq 0} \\dfrac{\\langle y,x\\rangle}{\\Vert y\\Vert }\n  \nThe dual norm is also a norm itself\nFor any x \\in E, y \\in E^*: x^\\top y \\leq \\Vert x\\Vert \\cdot \\Vert y\\Vert _*\n\\left(\\Vert x\\Vert _p\\right)_* = \\Vert x\\Vert _q if \\dfrac{1}{p} + \\dfrac{1}{q} = 1, where p, q \\geq 1\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nThe Euclidian norm is self dual \\left(\\Vert x\\Vert_2\\right)_\\star = \\Vert x\\Vert _2.\n\n\n\n\n\n\n3 Examples\n\n\n\n\n\n\nExample\n\n\n\n\n\nLet f(x) = \\Vert x\\Vert. Prove that f^\\star(y) = \\mathbb{O}_{\\Vert y\\Vert _\\star \\leq 1}\n\n\n\n\n\n\nSolution"
   },
   {
     "objectID": "docs/theory/Matrix_calculus.html",

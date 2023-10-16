@@ -723,17 +723,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">1</span> Motivation</a></li>
-  <li><a href="#subgradient" id="toc-subgradient" class="nav-link" data-scroll-target="#subgradient"><span class="header-section-number">2</span> Subgradient</a></li>
-  <li><a href="#subdifferential" id="toc-subdifferential" class="nav-link" data-scroll-target="#subdifferential"><span class="header-section-number">3</span> Subdifferential</a>
+  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition"><span class="header-section-number">1</span> Definition</a>
   <ul class="collapse">
-  <li><a href="#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" id="toc-moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="nav-link" data-scroll-target="#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination"><span class="header-section-number">3.1</span> Moreau - Rockafellar theorem (subdifferential of a linear combination)</a></li>
-  <li><a href="#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" id="toc-dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="nav-link" data-scroll-target="#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum"><span class="header-section-number">3.2</span> Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</a></li>
-  <li><a href="#chain-rule-for-subdifferentials" id="toc-chain-rule-for-subdifferentials" class="nav-link" data-scroll-target="#chain-rule-for-subdifferentials"><span class="header-section-number">3.3</span> Chain rule for subdifferentials</a></li>
-  <li><a href="#subdifferential-calculus" id="toc-subdifferential-calculus" class="nav-link" data-scroll-target="#subdifferential-calculus"><span class="header-section-number">3.4</span> Subdifferential calculus</a></li>
+  <li><a href="#subgradient" id="toc-subgradient" class="nav-link" data-scroll-target="#subgradient"><span class="header-section-number">1.1</span> Subgradient</a></li>
+  <li><a href="#subdifferential" id="toc-subdifferential" class="nav-link" data-scroll-target="#subdifferential"><span class="header-section-number">1.2</span> Subdifferential</a></li>
   </ul></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4</span> Examples</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
+  <li><a href="#subdifferential-calculus" id="toc-subdifferential-calculus" class="nav-link" data-scroll-target="#subdifferential-calculus"><span class="header-section-number">2</span> Subdifferential calculus</a>
+  <ul class="collapse">
+  <li><a href="#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" id="toc-moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="nav-link" data-scroll-target="#moreau---rockafellar-theorem-subdifferential-of-a-linear-combination"><span class="header-section-number">2.1</span> Moreau - Rockafellar theorem (subdifferential of a linear combination)</a></li>
+  <li><a href="#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" id="toc-dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="nav-link" data-scroll-target="#dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum"><span class="header-section-number">2.2</span> Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</a></li>
+  <li><a href="#chain-rule-for-subdifferentials" id="toc-chain-rule-for-subdifferentials" class="nav-link" data-scroll-target="#chain-rule-for-subdifferentials"><span class="header-section-number">2.3</span> Chain rule for subdifferentials</a></li>
+  </ul></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3</span> Examples</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4</span> References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/theory/Subgradient.md" class="toc-action">Edit this page</a></p></div></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
@@ -747,8 +749,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header">
 </header>
 
-<section id="motivation" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Motivation</h1>
+<section id="definition" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Definition</h1>
 <p>Важным свойством непрерывной выпуклой функции <span class="math inline">f(x)</span> является то, что в выбранной точке <span class="math inline">x_0</span> для всех <span class="math inline">x \in \text{dom } f</span> выполнено неравенство:</p>
 <p><span class="math display">
 f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
@@ -765,41 +767,44 @@ f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 <li>Не все непрерывные выпуклые функции дифференцируемы :)</li>
 </ul>
 <p>Не хочется лишаться такого вкусного свойства.</p>
-</section>
-<section id="subgradient" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Subgradient</h1>
+<section id="subgradient" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="subgradient"><span class="header-section-number">1.1</span> Subgradient</h2>
 <p>Вектор <span class="math inline">g</span> называется <strong>субградиентом</strong> функции <span class="math inline">f(x): S \to \mathbb{R}</span> в точке <span class="math inline">x_0</span>, если <span class="math inline">\forall x \in S</span>:</p>
 <p><span class="math display">
 f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 </span></p>
 </section>
-<section id="subdifferential" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Subdifferential</h1>
+<section id="subdifferential" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="subdifferential"><span class="header-section-number">1.2</span> Subdifferential</h2>
 <p>Множество всех субградиентов функции <span class="math inline">f(x)</span> в точке <span class="math inline">x_0</span> называется <strong>субдифференциалом</strong> <span class="math inline">f</span> в <span class="math inline">x_0</span> и обозначается <span class="math inline">\partial f(x_0)</span>. * Если <span class="math inline">x_0 \in \mathbf{ri } S</span>, то <span class="math inline">\partial f(x_0)</span> выпуклое компактное множество. * Выпуклая функция <span class="math inline">f(x)</span> дифференцируема в точке <span class="math inline">x_0\Rightarrow \partial f(x_0) = \{\nabla f(x_0)\}</span> * Если <span class="math inline">\partial f(x_0) \neq \emptyset \;\;\; \forall x_0 \in S</span>, то <span class="math inline">f(x)</span> - выпукла на <span class="math inline">S</span>.</p>
 <div id="fig-subgradient_calculus" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="subgrad_calc.gif" class="img-fluid figure-img"></p>
+<p><img src="subgrad_calc.svg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;2: Subgradient calculus</figcaption>
 </figure>
 </div>
-<section id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination"><span class="header-section-number">3.1</span> Moreau - Rockafellar theorem (subdifferential of a linear combination)</h2>
+</section>
+</section>
+<section id="subdifferential-calculus" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Subdifferential calculus</h1>
+<section id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="moreau---rockafellar-theorem-subdifferential-of-a-linear-combination"><span class="header-section-number">2.1</span> Moreau - Rockafellar theorem (subdifferential of a linear combination)</h2>
 <p>Пусть <span class="math inline">f_i(x)</span> - выпуклые функции на выпуклых множествах <span class="math inline">S_i, \; i = \overline{1,n}</span>.<br>
 Тогда, если <span class="math inline">\bigcap\limits_{i=1}^n \mathbf{ri } S_i \neq \emptyset</span> то функция <span class="math inline">f(x) = \sum\limits_{i=1}^n a_i f_i(x), \; a_i &gt; 0</span> имеет субдифференциал <span class="math inline">\partial_S f(x)</span> на множестве <span class="math inline">S = \bigcap\limits_{i=1}^n S_i</span> и</p>
 <p><span class="math display">
 \partial_S f(x) = \sum\limits_{i=1}^n a_i \partial_{S_i} f_i(x)
 </span></p>
 </section>
-<section id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum"><span class="header-section-number">3.2</span> Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</h2>
+<section id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="dubovitsky---milutin-theorem-subdifferential-of-a-point-wise-maximum"><span class="header-section-number">2.2</span> Dubovitsky - Milutin theorem (subdifferential of a point-wise maximum)</h2>
 <p>Пусть <span class="math inline">f_i(x)</span> - выпуклые функции на открытом выпуклом множестве <span class="math inline">S \subseteq \mathbb{R}^n, \; x_0 \in S</span>, а поточечный максимум определяется как <span class="math inline">f(x) = \underset{i}{\operatorname{max}} f_i(x)</span>. Тогда:</p>
 <p><span class="math display">
 \partial_S f(x_0) = \mathbf{conv}\left\{  \bigcup\limits_{i \in I(x_0)} \partial_S f_i(x_0) \right\},
 </span></p>
 <p>где <span class="math inline">I(x) = \{ i \in [1:m]: f_i(x) = f(x)\}</span></p>
 </section>
-<section id="chain-rule-for-subdifferentials" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="chain-rule-for-subdifferentials"><span class="header-section-number">3.3</span> Chain rule for subdifferentials</h2>
+<section id="chain-rule-for-subdifferentials" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="chain-rule-for-subdifferentials"><span class="header-section-number">2.3</span> Chain rule for subdifferentials</h2>
 <p>Пусть <span class="math inline">g_1, \ldots, g_m</span> - выпуклые функции на открытом выпуклом множестве <span class="math inline">S \subseteq \mathbb{R}^n</span>, <span class="math inline">g = (g_1, \ldots, g_m)</span> - образованная из них вектор - функция, <span class="math inline">\varphi</span> - монотонно неубывающая выпуклая функция на открытом выпуклом множестве <span class="math inline">U \subseteq \mathbb{R}^m</span>, причем <span class="math inline">g(S) \subseteq U</span>. Тогда субдифференциал функции <span class="math inline">f(x) = \varphi \left( g(x)\right)</span>$ имеет вид:</p>
 <p><span class="math display">
 \partial f(x) = \bigcup\limits_{p \in \partial \varphi(u)} \left( \sum\limits_{i=1}^{m}p_i \partial g_i(x) \right),
@@ -809,9 +814,6 @@ f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 <p><span class="math display">
 \partial f(x) = \sum\limits_{i=1}^{m}\dfrac{\partial \varphi}{\partial u_i}(u) \partial g_i(x)
 </span></p>
-</section>
-<section id="subdifferential-calculus" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="subdifferential-calculus"><span class="header-section-number">3.4</span> Subdifferential calculus</h2>
 <ul>
 <li><span class="math inline">\partial (\alpha f)(x) = \alpha \partial f(x)</span>, for <span class="math inline">\alpha \geq 0</span></li>
 <li><span class="math inline">\partial (\sum f_i)(x) = \sum \partial f_i (x)</span>, <span class="math inline">f_i</span> - выпуклые функции</li>
@@ -820,8 +822,8 @@ f(x)  \geq f(x_0) +  \langle g, x - x_0 \rangle
 </ul>
 </section>
 </section>
-<section id="examples" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Examples</h1>
+<section id="examples" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Examples</h1>
 <p>Концептуально, различают три способа решения задач на поиск субградиента:</p>
 <ul>
 <li>Теоремы Моро - Рокафеллара, композиции, максимума</li>
@@ -903,7 +905,7 @@ Solution
 <div class="callout-solution" data-collapse="true">
 <p>Совершенно аналогично применяем теорему Моро - Рокафеллара, учитывая следующее:</p>
 <p><span class="math display">
-\partial f_1(x) = \begin{cases} -1,  &amp;x &lt; 1\\ [-1;1], \;\;\;\;\; &amp;x = 1 \\ 1,  &amp;x &gt; 1 \end{cases} \qquad \partial f_2(x) = \begin{cases} -1,  &amp;x &lt; -1\\ [-1;1], &amp;x = -1 \\ 1,  &amp;x &gt; -1  \end{cases}
+\partial f_1(x) = \begin{cases} -1,  &amp;x &lt; 1\\ [-1;1], \quad &amp;x = 1 \\ 1,  &amp;x &gt; 1 \end{cases} \qquad \partial f_2(x) = \begin{cases} -1,  &amp;x &lt; -1\\ [-1;1], &amp;x = -1 \\ 1,  &amp;x &gt; -1  \end{cases}
 </span></p>
 <p>Таким образом:</p>
 <p><span class="math display">
@@ -1065,8 +1067,8 @@ Solution
 </div>
 </div>
 </section>
-<section id="references" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> References</h1>
+<section id="references" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
 <ul>
 <li><a href="https://people.orie.cornell.edu/dsd95/teaching/orie6300/ORIE6300Fall2019notes.pdf">Lecture Notes for ORIE 6300: Mathematical Programming I by Damek Davis</a></li>
 </ul>
