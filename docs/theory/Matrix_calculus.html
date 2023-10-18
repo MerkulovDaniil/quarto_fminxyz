@@ -1153,6 +1153,9 @@ A = Q\Lambda Q^T,
 <p><span class="math display">
 \kappa(A) = \|A\|\|A^{-1}\|
 </span></p>
+</section>
+<section id="singular-value-decomposition" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="singular-value-decomposition"><span class="header-section-number">1.4.2</span> Singular value decomposition</h3>
 <p>Suppose <span class="math inline">A \in \mathbb{R}^{m \times n}</span> with rank <span class="math inline">A = r</span>. Then <span class="math inline">A</span> can be factored as</p>
 <p><span class="math display">
 A = U \Sigma V^T , \quad (A.12)
@@ -1161,9 +1164,6 @@ A = U \Sigma V^T , \quad (A.12)
 <p><span class="math display">
 \sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_r &gt; 0.
 </span></p>
-</section>
-<section id="singular-value-decomposition" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="singular-value-decomposition"><span class="header-section-number">1.4.2</span> Singular value decomposition</h3>
 <p>This factorization is called the <strong>singular value decomposition (SVD)</strong> of <span class="math inline">A</span>. The columns of <span class="math inline">U</span> are called left singular vectors of <span class="math inline">A</span>, the columns of <span class="math inline">V</span> are right singular vectors, and the numbers <span class="math inline">\sigma_i</span> are the singular values. The singular value decomposition can be written as</p>
 <p><span class="math display">
 A = \sum_{i=1}^{r} \sigma_i u_i v_i^T,
@@ -1221,8 +1221,12 @@ Solution
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
-<div class="callout-solution" data-collapse="&quot;true">
-<p><br> <br> <br></p>
+<div class="callout-solution" data-collapse="true">
+<ol type="1">
+<li><span class="math inline">\|A\|_F^2 = \langle A, A\rangle = \text{tr }(A^T A)</span></li>
+<li>Using SVD: <span class="math inline">A = U \Sigma V^T \quad A^T = V \Sigma U^T</span></li>
+<li><span class="math inline">\|A\|_F^2 = \text{tr }(V \Sigma U^T U \Sigma V^T) = \text{tr }(V \Sigma^2 V^T) = \text{tr }(V^T V \Sigma^2) = \text{tr }(\Sigma^2) = \sum\limits_{1}^q \sigma_i^2</span></li>
+</ol>
 </div>
 </div>
 </div>
@@ -1483,13 +1487,61 @@ Question
 <h2 data-number="2.2" class="anchored" data-anchor-id="hessian"><span class="header-section-number">2.2</span> Hessian</h2>
 <p>Let <span class="math inline">f(x):\mathbb{R}^n→\mathbb{R}</span>, then matrix, containing all the second order partial derivatives:</p>
 <p><span class="math display">
-f''(x) = \dfrac{\partial^2 f}{\partial x_i \partial x_j} = \begin{pmatrix}
+f''(x) = \nabla^2 f(x) = \dfrac{\partial^2 f}{\partial x_i \partial x_j} = \begin{pmatrix}
     \frac{\partial^2 f}{\partial x_1 \partial x_1} &amp; \frac{\partial^2 f}{\partial x_1 \partial x_2} &amp; \dots  &amp; \frac{\partial^2 f}{\partial x_1\partial x_n} \\
     \frac{\partial^2 f}{\partial x_2 \partial x_1} &amp; \frac{\partial^2 f}{\partial x_2 \partial x_2} &amp; \dots  &amp; \frac{\partial^2 f}{\partial x_2 \partial x_n} \\
     \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
     \frac{\partial^2 f}{\partial x_n \partial x_1} &amp; \frac{\partial^2 f}{\partial x_n \partial x_2} &amp; \dots  &amp; \frac{\partial^2 f}{\partial x_n \partial x_n}
 \end{pmatrix}
 </span></p>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schwartz theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+<p>Let <span class="math inline">f: \mathbb{R}^n \rightarrow \mathbb{R}</span> be a function. If the mixed partial derivatives <span class="math inline">\frac{\partial^2 f}{\partial x_i \partial x_j}</span> and <span class="math inline">\frac{\partial^2 f}{\partial x_j \partial x_i}</span> are both continuous on an open set containing a point <span class="math inline">a</span>, then they are equal at the point <span class="math inline">a</span>. That is, <span class="math display">
+\frac{\partial^2 f}{\partial x_i \partial x_j} (a) = \frac{\partial^2 f}{\partial x_j \partial x_i} (a)
+</span></p>
+<p>Given the Schwartz theorem, if the mixed partials are continuous on an open set, the Hessian matrix is symmetric. That means the entries above the main diagonal mirror those below the main diagonal:</p>
+<p><span class="math display">
+\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i} \quad \nabla^2 f(x)  =(\nabla^2 f(x))^T
+</span></p>
+<p>This symmetry simplifies computations and analysis involving the Hessian matrix in various applications, particularly in optimization.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schwartz counter-example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p><span class="math display">
+f(x,y) =
+\begin{cases}
+    \frac{xy\left(x^2 - y^2\right)}{x^2 + y^2} &amp; \mbox{ for } (x,\, y) \ne (0,\, 0),\\
+    0 &amp; \mbox{ for } (x, y) = (0, 0).
+\end{cases}
+</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="responsive-plotly"><iframe class="plotly-graph" src="schwartz_counterexample.html" frameborder="0" scrolling="no"></iframe></div>
 <p>In fact, Hessian could be a tensor in such a way: <span class="math inline">\left(f(x): \mathbb{R}^n \to \mathbb{R}^m \right)</span> is just 3d tensor, every slice is just hessian of corresponding scalar function <span class="math inline">\left( H\left(f_1(x)\right), H\left(f_2(x)\right), \ldots, H\left(f_m(x)\right)\right)</span>.</p>
 <div class="callout callout-style-default callout-example no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1537,10 +1589,10 @@ Question
 <p>The extension of the gradient of multidimensional <span class="math inline">f(x):\mathbb{R}^n\to\mathbb{R}^m</span> is the following matrix:</p>
 <p><span class="math display">
 J_f = f'(x) = \dfrac{df}{dx^T} = \begin{pmatrix}
-    \frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \dots  &amp; \frac{\partial f_m}{\partial x_n} \\
-    \frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \dots  &amp; \frac{\partial f_m}{\partial x_n} \\
+    \frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_1} &amp; \dots  &amp; \frac{\partial f_m}{\partial x_1} \\
+    \frac{\partial f_1}{\partial x_2} &amp; \frac{\partial f_2}{\partial x_2} &amp; \dots  &amp; \frac{\partial f_m}{\partial x_2} \\
     \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-    \frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \dots  &amp; \frac{\partial f_m}{\partial x_n}
+    \frac{\partial f_1}{\partial x_n} &amp; \frac{\partial f_2}{\partial x_n} &amp; \dots  &amp; \frac{\partial f_m}{\partial x_n}
 \end{pmatrix}
 </span></p>
 <div class="callout callout-style-default callout-example no-icon callout-titled">
@@ -1643,13 +1695,13 @@ f(x) : X \to Y; \qquad \frac{\partial f(x)}{\partial x} \in G
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\mathbb{R}^n</span></td>
 <td style="text-align: center;"><span class="math inline">\mathbb{R}^m</span></td>
-<td style="text-align: center;"><span class="math inline">\mathbb{R}^{m \times n}</span></td>
+<td style="text-align: center;"><span class="math inline">\mathbb{R}^{n \times m}</span></td>
 <td style="text-align: center;"><span class="math inline">\dfrac{\partial f_i}{\partial x_j}</span> (jacobian)</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\mathbb{R}^{m \times n}</span></td>
 <td style="text-align: center;"><span class="math inline">\mathbb{R}</span></td>
-<td style="text-align: center;"><span class="math inline">\mathbb{R}^{n \times m}</span></td>
+<td style="text-align: center;"><span class="math inline">\mathbb{R}^{m \times n}</span></td>
 <td style="text-align: center;"><span class="math inline">\dfrac{\partial f}{\partial x_{ij}}</span></td>
 </tr>
 </tbody>
@@ -1729,7 +1781,7 @@ Example
 <div class="callout-example">
 <p>Calculate first and second order Taylor approximation of the function <span class="math inline">f(x) = \dfrac{1}{2}x^T A x - b^T x + c</span></p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1738,7 +1790,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-solution" data-collapse="true">
@@ -1845,7 +1897,7 @@ Example
 <div class="callout-example">
 <p>Find <span class="math inline">\nabla^2 f(x)</span>, if <span class="math inline">f(x) = \dfrac12 \langle Ax, x\rangle - \langle b, x\rangle + c</span>.</p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1854,7 +1906,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-solution" data-collapse="true">
@@ -1882,7 +1934,7 @@ Example
 <div class="callout-example">
 <p>Find <span class="math inline">df, \nabla f(x)</span>, if <span class="math inline">f(x) = \ln \langle x, Ax\rangle</span>.</p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1891,7 +1943,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-solution" data-collapse="true">
@@ -1929,43 +1981,6 @@ Example
 <div class="callout-example">
 <p>Find <span class="math inline">df, \nabla f(X)</span>, if <span class="math inline">f(X) = \Vert AX - B\Vert_F</span>.</p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-solution" data-collapse="true">
-<p><br><br><br></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-example">
-<p>Find <span class="math inline">df, \nabla f(X)</span>, if <span class="math inline">f(X) = \langle S, X\rangle - \log \det X</span>.</p>
-<div class="callout callout-style-default callout-solution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -2001,7 +2016,7 @@ Example
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-example">
-<p>Find the gradient <span class="math inline">\nabla f(x)</span> and hessian <span class="math inline">\nabla^2f(x)</span>, if <span class="math inline">f(x) = \ln \left( 1 + \exp\langle a,x\rangle\right)</span></p>
+<p>Find <span class="math inline">df, \nabla f(X)</span>, if <span class="math inline">f(X) = \langle S, X\rangle - \log \det X</span>.</p>
 <div class="callout callout-style-default callout-solution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2013,6 +2028,43 @@ Solution
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p><br><br><br></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Find the gradient <span class="math inline">\nabla f(x)</span> and hessian <span class="math inline">\nabla^2f(x)</span>, if <span class="math inline">f(x) = \ln \left( 1 + \exp\langle a,x\rangle\right)</span></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-solution" data-collapse="true">
