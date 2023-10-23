@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Theory</title>
+<title>critical_points_illustration</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -62,35 +94,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-theory .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-theory'] = new List('listing-theory', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script defer="" type="text/javascript" src="../../assets/toggle_button.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js" integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A" crossorigin="anonymous"></script>
 
@@ -111,11 +114,6 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
-<meta property="og:title" content="Theory">
-<meta property="og:description" content="">
-<meta name="twitter:title" content="Theory">
-<meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -142,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/theory/index.html">Theory</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -156,13 +154,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/theory/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../docs/theory/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Theory</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../docs/theory/Matrix_calculus.html" class="sidebar-item-text sidebar-link">
@@ -757,245 +755,111 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header">
-</header>
 
-<p>This chapter provides the information about foundation terms and notations for optimization.</p>
-<div id="listing-theory" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-4">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1697059241592" data-listing-reading-time-sort="2">
-<a href="../../docs/theory/convex sets/Affine_sets.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="convex sets/line.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Affine set
-</h5>
-<div class="card-text listing-description">
-Suppose <span class="math inline">x_1, x_2</span> are two points in <span class="math inline">\mathbb{R^n}</span>. Then the line passing through them is defined as follows:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1697630975802" data-listing-reading-time-sort="24">
-<a href="../../docs/theory/Matrix_calculus.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="vector_im.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Matrix calculus
-</h5>
-<div class="card-text listing-description">
-We will treat all vectors as column vectors by default. The space of real vectors of length <span class="math inline">n</span> is denoted by <span class="math inline">\mathbb{R}^n</span>, while the space of real-valued <span class="math inline">m \times n</span> matrices…<span class="math inline"></span><sup></sup>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1697059241593" data-listing-reading-time-sort="6">
-<a href="../../docs/theory/convex sets/Convex_set.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="convex sets/line_segment.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Convex set
-</h5>
-<div class="card-text listing-description">
-Suppose <span class="math inline">x_1, x_2</span> are two points in <span class="math inline">\mathbb{R^n}</span>. Then the line segment between them is defined as follows:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1697059241595" data-listing-reading-time-sort="1">
-<a href="../../docs/theory/convex sets/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="convex sets/line.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Convex sets
-</h5>
-<div class="card-text listing-description">
-In this chapter, a variety of convex sets and related definitions are described.
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1697059241592" data-listing-reading-time-sort="1">
-<a href="../../docs/theory/convex sets/Conic_sets.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="convex sets/cone.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Conic set
-</h5>
-<div class="card-text listing-description">
-A non-empty set <span class="math inline">S</span> is called a cone, if:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1697059241590" data-listing-reading-time-sort="7">
-<a href="../../docs/theory/Convex_function.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="convex_function.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Convex function
-</h5>
-<div class="card-text listing-description">
-The function <span class="math inline">f(x)</span>, <strong>which is defined on the convex set</strong> <span class="math inline">S \subseteq \mathbb{R}^n</span>, is called <strong>convex</strong> on <span class="math inline">S</span>, if:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1697059241589" data-listing-reading-time-sort="7">
-<a href="../../docs/theory/Conjugate_set.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="conjugate_set.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Conjugate set
-</h5>
-<div class="card-text listing-description">
-Let <span class="math inline">S \subseteq \mathbb{R}^n</span> be an arbitrary non-empty set. Then its conjugate set is defined as:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1697447638739" data-listing-reading-time-sort="6">
-<a href="../../docs/theory/Conjugate function.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="conj.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Conjugate function
-</h5>
-<div class="card-text listing-description">
-Let <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}</span>. The function <span class="math inline">f^*: \mathbb{R}^n \to \mathbb{R}</span> is called convex conjugate (Fenchel’s conjugate, dual, Legendre transform) <span class="math inline">f(x)</span> and is…
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1697059278103" data-listing-reading-time-sort="6">
-<a href="../../docs/theory/convex sets/Projection.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="convex sets/proj_cir.gif" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Projection
-</h5>
-<div class="card-text listing-description">
-The distance <span class="math inline">d</span> from point <span class="math inline">\mathbf{y} \in \mathbb{R}^n</span> to closed set <span class="math inline">S \subset \mathbb{R}^n</span>:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1697452015704" data-listing-reading-time-sort="1">
-<a href="../../docs/theory/Dual norm.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Dual norm
-</h5>
-<div class="card-text listing-description">
-Let $x$ be the norm in the primal space <span class="math inline">x \in S \subseteq \mathbb{R}^n</span>, then the following expression defines dual norm:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1697480543849" data-listing-reading-time-sort="12">
-<a href="../../docs/theory/Subgradient.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="conv_support.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Subgradient and subdifferential
-</h5>
-<div class="card-text listing-description">
-An important property of a continuous convex function <span class="math inline">f(x)</span> is that at any chosen point <span class="math inline">x_0</span> for all <span class="math inline">x \in \text{dom } f</span> the inequality holds:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1698074892921" data-listing-reading-time-sort="13">
-<a href="../../docs/theory/Optimality.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="critical_points.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Optimality conditions. KKT
-</h5>
-<div class="card-text listing-description">
-<span class="math display">
-f(x) \to \min\limits_{x \in S}
-</span>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1697063704101" data-listing-reading-time-sort="1">
-<a href="../../docs/theory/Convex_optimization_problem.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Convex optimization problem
-</h5>
-<div class="card-text listing-description">
-Note, that there is an agreement in notation of mathematical programming. The problems of the following type are called <strong>Convex optimization problem</strong>:
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1697063785676" data-listing-reading-time-sort="10">
-<a href="../../docs/theory/Duality.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Duality
-</h5>
-<div class="card-text listing-description">
-Duality lets us associate to any constrained optimization problem a concave maximization problem, whose solutions lower bound the optimal value of the original…
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1697063901850" data-listing-reading-time-sort="3">
-<a href="../../docs/theory/Rates_of_convergence.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="convergence.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Rates of convergence
-</h5>
-<div class="card-text listing-description">
-In order to compare perfomance of algorithms we need to define a terminology for different types of convergence. Let <span class="math inline">\{x_k\}</span> be a sequence in <span class="math inline">\mathbb{R}^n</span> that…<span class="math inline"></span>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
 
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the initial data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> X<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> Y<span class="op">**</span><span class="dv">2</span>  <span class="co"># Just a placeholder, initial Z data doesn't matter</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the initial surface plot</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[go.Surface(z<span class="op">=</span>Z, x<span class="op">=</span>X, y<span class="op">=</span>Y)])</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Inject custom JavaScript</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>js_code <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="st">window.updatePlot = function(l1, l2) {</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="st">    var x = Array.from({ length: 100 }, (_, i) =&gt; -5 + i * 0.1);</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st">    var y = Array.from({ length: 100 }, (_, i) =&gt; -5 + i * 0.1);</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st">    function f(x, y, l1, l2) {</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">        return l1 * x * x + l2 * y * y;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st">    }</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st">    var newZ = x.map(xVal =&gt; y.map(yVal =&gt; f(xVal, yVal, l1, l2)));</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">    Plotly.update('plotlyDiv', { z: [newZ] });</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="st">};</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">document.getElementById('l1Slider').addEventListener('input', function() {</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="st">    updatePlot(parseFloat(this.value), parseFloat(document.getElementById('l2Slider').value));</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">});</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">document.getElementById('l2Slider').addEventListener('input', function() {</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="st">    updatePlot(parseFloat(document.getElementById('l1Slider').value), parseFloat(this.value));</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="st">});</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    updatemenus<span class="op">=</span>[{</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">'buttons'</span>: [{</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>            <span class="st">'args'</span>: [<span class="va">None</span>, {<span class="st">'frame'</span>: {<span class="st">'duration'</span>: <span class="dv">0</span>, <span class="st">'redraw'</span>: <span class="va">True</span>}, <span class="st">'fromcurrent'</span>: <span class="va">True</span>}],</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>            <span class="st">'label'</span>: <span class="st">'Play'</span>,</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>            <span class="st">'method'</span>: <span class="st">'animate'</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        }, {</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>            <span class="st">'args'</span>: [[<span class="va">None</span>], {<span class="st">'frame'</span>: {<span class="st">'duration'</span>: <span class="dv">0</span>, <span class="st">'redraw'</span>: <span class="va">True</span>}, <span class="st">'mode'</span>: <span class="st">'immediate'</span>, <span class="st">'transition'</span>: {<span class="st">'duration'</span>: <span class="dv">0</span>}}],</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>            <span class="st">'label'</span>: <span class="st">'Pause'</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>            <span class="st">'method'</span>: <span class="st">'animate'</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        }],</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">'direction'</span>: <span class="st">'left'</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'pad'</span>: {<span class="st">'r'</span>: <span class="dv">10</span>, <span class="st">'t'</span>: <span class="dv">87</span>},</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">'showactive'</span>: <span class="va">False</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">'type'</span>: <span class="st">'buttons'</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">'x'</span>: <span class="fl">0.1</span>,</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">'xanchor'</span>: <span class="st">'right'</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">'y'</span>: <span class="dv">0</span>,</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">'yanchor'</span>: <span class="st">'top'</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    }],</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    sliders<span class="op">=</span>[{</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">'active'</span>: <span class="dv">0</span>,</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">'yanchor'</span>: <span class="st">'top'</span>,</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        <span class="st">'xanchor'</span>: <span class="st">'left'</span>,</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        <span class="st">'currentvalue'</span>: {</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>            <span class="st">'font'</span>: {<span class="st">'size'</span>: <span class="dv">20</span>},</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>            <span class="st">'prefix'</span>: <span class="st">'l1:'</span>,</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>            <span class="st">'visible'</span>: <span class="va">True</span>,</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>            <span class="st">'xanchor'</span>: <span class="st">'right'</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">'transition'</span>: {<span class="st">'duration'</span>: <span class="dv">300</span>, <span class="st">'easing'</span>: <span class="st">'cubic-in-out'</span>},</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        <span class="st">'pad'</span>: {<span class="st">'b'</span>: <span class="dv">10</span>, <span class="st">'t'</span>: <span class="dv">50</span>},</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        <span class="st">'len'</span>: <span class="fl">0.9</span>,</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        <span class="st">'x'</span>: <span class="fl">0.1</span>,</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        <span class="st">'y'</span>: <span class="dv">0</span>,</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        <span class="st">'steps'</span>: [{</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>            <span class="st">'args'</span>: [{<span class="st">'visible'</span>: [<span class="va">True</span>]}],</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>            <span class="st">'label'</span>: <span class="bu">str</span>(val),</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>            <span class="st">'method'</span>: <span class="st">'restyle'</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">for</span> val <span class="kw">in</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">20</span>)]</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    }, {</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>        <span class="st">'active'</span>: <span class="dv">0</span>,</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>        <span class="st">'yanchor'</span>: <span class="st">'top'</span>,</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>        <span class="st">'xanchor'</span>: <span class="st">'left'</span>,</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>        <span class="st">'currentvalue'</span>: {</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>            <span class="st">'font'</span>: {<span class="st">'size'</span>: <span class="dv">20</span>},</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>            <span class="st">'prefix'</span>: <span class="st">'l2:'</span>,</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>            <span class="st">'visible'</span>: <span class="va">True</span>,</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>            <span class="st">'xanchor'</span>: <span class="st">'right'</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>        <span class="st">'transition'</span>: {<span class="st">'duration'</span>: <span class="dv">300</span>, <span class="st">'easing'</span>: <span class="st">'cubic-in-out'</span>},</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>        <span class="st">'pad'</span>: {<span class="st">'b'</span>: <span class="dv">10</span>, <span class="st">'t'</span>: <span class="dv">50</span>},</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>        <span class="st">'len'</span>: <span class="fl">0.9</span>,</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>        <span class="st">'x'</span>: <span class="fl">0.1</span>,</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>        <span class="st">'y'</span>: <span class="fl">0.1</span>,</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>        <span class="st">'steps'</span>: [{</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>            <span class="st">'args'</span>: [{<span class="st">'visible'</span>: [<span class="va">True</span>]}],</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>            <span class="st">'label'</span>: <span class="bu">str</span>(val),</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>            <span class="st">'method'</span>: <span class="st">'restyle'</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">for</span> val <span class="kw">in</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">20</span>)]</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    }],</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Scatter(x<span class="op">=</span>[<span class="va">None</span>], y<span class="op">=</span>[<span class="va">None</span>], mode<span class="op">=</span><span class="st">'lines'</span>, line<span class="op">=</span>{<span class="st">'color'</span>: <span class="st">'white'</span>}, hoverinfo<span class="op">=</span><span class="st">'none'</span>, showlegend<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">"interactive_3d_plot.html"</span>, include_plotlyjs<span class="op">=</span><span class="st">'cdn'</span>, post_script<span class="op">=</span>js_code, full_html<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
 
 
 
@@ -1251,4 +1115,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/theory/index.md" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/MerkulovDaniil/optim/blob/master/assets/Notebooks/Critical_points_illustration.ipynb" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
