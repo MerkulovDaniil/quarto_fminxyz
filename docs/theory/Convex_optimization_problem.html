@@ -741,18 +741,18 @@ ul.task-list li input[type="checkbox"] {
 <p>Note, that there is an agreement in notation of mathematical programming. The problems of the following type are called <strong>Convex optimization problem</strong>:</p>
 <p><span class="math display">
 \begin{split}
-&amp; f(x) \to \min\limits_{x \in \mathbb{R}^n}\\
-\text{s.t. } &amp; g_i(x) \leq 0, \; i = 1,\ldots,m\\
+&amp; f_0(x) \to \min\limits_{x \in \mathbb{R}^n}\\
+\text{s.t. } &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\
 &amp; Ax = b,
 \end{split}
 \tag{COP}
 </span></p>
-<p>where all the functions <span class="math inline">f(x), g_1(x), \ldots, g_m(x)</span> are convex and all the equality constraints are affine. It sounds a bit strange, but not all convex problems are convex optimization problems.</p>
+<p>where all the functions <span class="math inline">f_0(x), f_1(x), \ldots, f_m(x)</span> are convex and all the equality constraints are affine. It sounds a bit strange, but not all convex problems are convex optimization problems.</p>
 <p><span class="math display">
 \tag{CP}
-f(x) \to \min\limits_{x \in S},
+f_0(x) \to \min\limits_{x \in S},
 </span></p>
-<p>where <span class="math inline">f(x)</span> is a convex function, defined on the convex set <span class="math inline">S</span>. The necessity of affine equality constraint is essential.</p>
+<p>where <span class="math inline">f_0(x)</span> is a convex function, defined on the convex set <span class="math inline">S</span>. The necessity of affine equality constraint is essential.</p>
 <div class="callout callout-style-default callout-example no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

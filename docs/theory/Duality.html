@@ -729,7 +729,10 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#strong-duality" id="toc-strong-duality" class="nav-link" data-scroll-target="#strong-duality"><span class="header-section-number">2</span> Strong duality</a></li>
   <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features"><span class="header-section-number">3</span> Useful features</a></li>
-  <li><a href="#slaters-condition" id="toc-slaters-condition" class="nav-link" data-scroll-target="#slaters-condition"><span class="header-section-number">4</span> Slater’s condition</a></li>
+  <li><a href="#slaters-condition" id="toc-slaters-condition" class="nav-link" data-scroll-target="#slaters-condition"><span class="header-section-number">4</span> Slater’s condition</a>
+  <ul class="collapse">
+  <li><a href="#reminder-of-kkt-statements" id="toc-reminder-of-kkt-statements" class="nav-link" data-scroll-target="#reminder-of-kkt-statements"><span class="header-section-number">4.1</span> Reminder of KKT statements:</a></li>
+  </ul></li>
   <li><a href="#connection-between-fenchel-duality-and-lagrange-duality" id="toc-connection-between-fenchel-duality-and-lagrange-duality" class="nav-link" data-scroll-target="#connection-between-fenchel-duality-and-lagrange-duality"><span class="header-section-number">5</span> Connection between Fenchel duality and Lagrange duality</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a></li>
   </ul>
@@ -1037,45 +1040,22 @@ L(y, \nu) = \dfrac{1}{2}\|y - x\|_2^2 +\nu(\mathbf{1}^\top y - 1),
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout callout-style-default callout-question no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-LP duality. Standard form
+Projection on the Euclidian Ball
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div>
-<div class="callout-example">
-<p><span class="math display">
+<div class="callout-question">
+<p>Find the projection of a point <span class="math inline">x</span> on the Euclidian ball <span class="math display">
 \begin{split}
-&amp; c^\top x \to \min\limits_{x \in \mathbb{R}^{n} }\\
-\text{s.t. } &amp; Ax = b \\
-&amp; x \succeq 0 \\
-\end{split}
-</span></p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-LP duality. Inequality form
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-example">
-<p><span class="math display">
-\begin{split}
-&amp; c^\top x \to \min\limits_{x \in \mathbb{R}^{n} }\\
-\text{s.t. } &amp; Ax \preceq b
+&amp; \dfrac{1}{2}\|y - x\|_2^2 \to \min\limits_{y \in \mathbb{R}^{n}}\\
+\text{s.t. } &amp; \|y\|_2^2 \leq 1
 \end{split}
 </span></p>
 </div>
@@ -1098,6 +1078,28 @@ Theorem
 <div>
 <div class="callout-theorem">
 <p>If for a convex optimization problem (i.e., assuming minimization, <span class="math inline">f_0,f_{i}</span> are convex and <span class="math inline">h_{i}</span> are affine), there exists a point <span class="math inline">x</span> such that <span class="math inline">h(x)=0</span> and <span class="math inline">f_{i}(x)&lt;0</span> (existance of a strictly feasible point), then we have a zero duality gap and KKT conditions become necessary and sufficient.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+An example of convex problem, when Slater’s condition does not hold
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p><span class="math display">
+\min \{ f_0(x) = x \mid f_1(x) = \frac{x^2}{2} \leq 0 \},
+</span></p>
+<p>The only point in the budget set is: <span class="math inline">x^* = 0</span>. However, it is impossible to find a non-negative <span class="math inline">\lambda^* \geq 0</span>, such that <span class="math display">
+\nabla f_0(0) + \lambda^* \nabla f_1(0) = 1 + \lambda^* x = 0.
+</span></p>
 </div>
 </div>
 </div>
@@ -1165,6 +1167,93 @@ g(\lambda) = \begin{cases} -b^\top(A + \lambda I)^{\dagger}b - \lambda &amp;\tex
 </div>
 </div>
 </div>
+<section id="reminder-of-kkt-statements" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="reminder-of-kkt-statements"><span class="header-section-number">4.1</span> Reminder of KKT statements:</h2>
+<p>Suppose we have a general optimization problem (from the <a href="../../docs/theory/Optimality.html">chapter</a>)</p>
+<p><span class="math display">
+\begin{split}
+&amp; f_0(x) \to \min\limits_{x \in \mathbb{R}^n}\\
+\text{s.t. } &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\
+&amp; h_i(x) = 0, \; i = 1,\ldots, p
+\end{split}
+\tag{GOP}
+</span></p>
+<p>and convex optimization problem (see corresponding <a href="../../docs/theory/Convex_optimization_problem.html">chapter</a>), where all equality constraints are affine: <span class="math inline">h_i(x) = a_i^Tx - b_i, i \in 1, \ldots p</span></p>
+<p><span class="math display">
+\begin{split}
+&amp; f_0(x) \to \min\limits_{x \in \mathbb{R}^n}\\
+\text{s.t. } &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\
+&amp; Ax = b,
+\end{split}
+\tag{COP}
+</span></p>
+<p>The Lagrangian is</p>
+<p><span class="math display">
+L(x, \lambda, \nu) = f_0(x) + \sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits_{i=1}^p\nu_i h_i(x)
+</span></p>
+<p>The KKT system is:</p>
+<p><span class="math display">
+\tag{KKT}
+\begin{split}
+&amp; \nabla_x L(x^*, \lambda^*, \nu^*) = 0 \\
+&amp; \nabla_\nu L(x^*, \lambda^*, \nu^*) = 0 \\
+&amp; \lambda^*_i \geq 0, i = 1,\ldots,m \\
+&amp; \lambda^*_i f_i(x^*) = 0, i = 1,\ldots,m \\
+&amp; f_i(x^*) \leq 0, i = 1,\ldots,m \\
+\end{split}
+</span></p>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+<p>If</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="connection-between-fenchel-duality-and-lagrange-duality" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Connection between Fenchel duality and Lagrange duality</h1>
@@ -1190,7 +1279,7 @@ Example
 <p><span class="math display">
 \begin{split}
 &amp; -b \nu - \sum_{i=1}^n f_i^*(-\nu a_i)  \to \max\limits_{\nu \in \mathbb{R}}\\
-\text{s.t. } &amp; \lambda \geq - \lambda_{min}(A)
+\text{s.t. } &amp; \nu \geq - \lambda_{\text{min}}(A)
 \end{split}
 </span></p>
 <p>with (scalar) variable <span class="math inline">\nu \in \mathbb{R}</span>. Now suppose we have found an optimal dual variable <span class="math inline">\nu^*</span> (There are several simple methods for solving a convex problem with one scalar variable, such as the bisection method.). It is very easy to recover the optimal value for the primal problem.</p>
@@ -1267,6 +1356,23 @@ d^* = f^*(-A^*\lambda) + g^*(\lambda) \to \min\limits_{\lambda \in G_* \cap (-A^
 </div>
 </div>
 <p>Convex case is especially important since if we have Fenchel - Rockafellar problem with parameters <span class="math inline">(f, g, A)</span>, than the dual problem has the form <span class="math inline">(f^*, g^*, -A^*)</span>.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="references" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> References</h1>
