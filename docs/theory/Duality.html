@@ -82,9 +82,11 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Duality">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://new.fmin.xyz/docs/theory/partition.svg">
 <meta name="twitter:title" content="Duality">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://new.fmin.xyz/docs/theory/partition.svg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -721,38 +723,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#duality" id="toc-duality" class="nav-link active" data-scroll-target="#duality"><span class="header-section-number">1</span> Duality</a>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">1</span> Motivation</a>
   <ul class="collapse">
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.1</span> Summary</a></li>
-  <li><a href="#weak-duality" id="toc-weak-duality" class="nav-link" data-scroll-target="#weak-duality"><span class="header-section-number">1.2</span> Weak duality</a></li>
-  <li><a href="#strong-duality" id="toc-strong-duality" class="nav-link" data-scroll-target="#strong-duality"><span class="header-section-number">1.3</span> Strong duality</a></li>
-  <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features"><span class="header-section-number">1.4</span> Useful features</a></li>
   </ul></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2</span> Examples</a>
-  <ul class="collapse">
-  <li><a href="#simple-projection-onto-simplex-with-duality" id="toc-simple-projection-onto-simplex-with-duality" class="nav-link" data-scroll-target="#simple-projection-onto-simplex-with-duality"><span class="header-section-number">2.1</span> Simple projection onto simplex with duality</a></li>
-  <li><a href="#underdetermined-linear-least-squares" id="toc-underdetermined-linear-least-squares" class="nav-link" data-scroll-target="#underdetermined-linear-least-squares"><span class="header-section-number">2.2</span> Underdetermined Linear least squares</a>
-  <ul class="collapse">
-  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem"><span class="header-section-number">2.2.1</span> Problem</a></li>
-  <li><a href="#lagrangian" id="toc-lagrangian" class="nav-link" data-scroll-target="#lagrangian"><span class="header-section-number">2.2.2</span> Lagrangian</a></li>
-  <li><a href="#dual-function" id="toc-dual-function" class="nav-link" data-scroll-target="#dual-function"><span class="header-section-number">2.2.3</span> Dual function</a></li>
-  </ul></li>
-  <li><a href="#lp-duality.-standard-form" id="toc-lp-duality.-standard-form" class="nav-link" data-scroll-target="#lp-duality.-standard-form"><span class="header-section-number">2.3</span> LP duality. Standard form</a></li>
-  <li><a href="#lp-duality.-inequality-form" id="toc-lp-duality.-inequality-form" class="nav-link" data-scroll-target="#lp-duality.-inequality-form"><span class="header-section-number">2.4</span> LP duality. Inequality form</a></li>
-  <li><a href="#a-nonconvex-quadratic-problem-with-strong-duality" id="toc-a-nonconvex-quadratic-problem-with-strong-duality" class="nav-link" data-scroll-target="#a-nonconvex-quadratic-problem-with-strong-duality"><span class="header-section-number">2.5</span> A nonconvex quadratic problem with strong duality</a>
-  <ul class="collapse">
-  <li><a href="#lagrangian-and-dual-function" id="toc-lagrangian-and-dual-function" class="nav-link" data-scroll-target="#lagrangian-and-dual-function"><span class="header-section-number">2.5.1</span> Lagrangian and dual function</a></li>
-  <li><a href="#dual-problem" id="toc-dual-problem" class="nav-link" data-scroll-target="#dual-problem"><span class="header-section-number">2.5.2</span> Dual problem</a></li>
-  </ul></li>
-  <li><a href="#connection-of-fenchel-and-lagrange-duality" id="toc-connection-of-fenchel-and-lagrange-duality" class="nav-link" data-scroll-target="#connection-of-fenchel-and-lagrange-duality"><span class="header-section-number">2.6</span> Connection of Fenchel and Lagrange duality</a></li>
-  <li><a href="#fenchel---rockafellar-problem" id="toc-fenchel---rockafellar-problem" class="nav-link" data-scroll-target="#fenchel---rockafellar-problem"><span class="header-section-number">2.7</span> Fenchel - Rockafellar problem</a>
-  <ul class="collapse">
-  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">2.7.1</span> Problem</a></li>
-  <li><a href="#lagrangian-1" id="toc-lagrangian-1" class="nav-link" data-scroll-target="#lagrangian-1"><span class="header-section-number">2.7.2</span> Lagrangian</a></li>
-  <li><a href="#dual-function-1" id="toc-dual-function-1" class="nav-link" data-scroll-target="#dual-function-1"><span class="header-section-number">2.7.3</span> Dual function</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
+  <li><a href="#strong-duality" id="toc-strong-duality" class="nav-link" data-scroll-target="#strong-duality"><span class="header-section-number">2</span> Strong duality</a></li>
+  <li><a href="#useful-features" id="toc-useful-features" class="nav-link" data-scroll-target="#useful-features"><span class="header-section-number">3</span> Useful features</a></li>
+  <li><a href="#slaters-condition" id="toc-slaters-condition" class="nav-link" data-scroll-target="#slaters-condition"><span class="header-section-number">4</span> Slater’s condition</a></li>
+  <li><a href="#connection-between-fenchel-duality-and-lagrange-duality" id="toc-connection-between-fenchel-duality-and-lagrange-duality" class="nav-link" data-scroll-target="#connection-between-fenchel-duality-and-lagrange-duality"><span class="header-section-number">5</span> Connection between Fenchel duality and Lagrange duality</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/theory/Duality.md" class="toc-action">Edit this page</a></p></div></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
@@ -766,8 +745,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header">
 </header>
 
-<section id="duality" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Duality</h1>
+<section id="motivation" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Motivation</h1>
 <p>Duality lets us associate to any constrained optimization problem a concave maximization problem, whose solutions lower bound the optimal value of the original problem. What is interesting is that there are cases, when one can solve the primal problem by first solving the dual one. Now, consider a general constrained optimization problem:</p>
 <p><span class="math display">
 \text{ Primal: }f(x) \to \min\limits_{x \in S}  \qquad \text{ Dual: } g(y) \to \max\limits_{y \in \Omega}
@@ -792,22 +771,21 @@ g(y) \leq f(x) \qquad \forall x \in S, \forall y \in \Omega
 <p><span class="math display">
 L(x, \lambda, \nu) = f_0(x) + \sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits_{i=1}^p\nu_i h_i(x) = f_0(x) + \lambda^\top f(x) + \nu^\top h(x)
 </span></p>
-<p>We define the Lagrange dual function (or just dual function) <span class="math inline">g: \mathbb{R}^m \times \mathbb{R}^p \to \mathbb{R}</span> as the minimum value of the Lagrangian over <span class="math inline">x</span>: for <span class="math inline">\lambda \in \mathbb{R}^m, \nu \in \mathbb{R}^p</span></p>
+<p>We assume <span class="math inline">S = \bigcap\limits_{i=0}^m\textbf{dom } f_i \cap \bigcap\limits_{i=1}^p\textbf{dom } h_i</span> is nonempty. We define the Lagrange dual function (or just dual function) <span class="math inline">g: \mathbb{R}^m \times \mathbb{R}^p \to \mathbb{R}</span> as the minimum value of the Lagrangian over <span class="math inline">x</span>: for <span class="math inline">\lambda \in \mathbb{R}^m, \nu \in \mathbb{R}^p</span></p>
 <p><span class="math display">
-g(\lambda, \nu) = \inf_{x\in \textbf{dom} f_0} L(x, \lambda, \nu) = \inf_{x\in \textbf{dom} f_0} \left( f_0(x) +\sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits_{i=1}^p\nu_i h_i(x) \right)
+g(\lambda, \nu) = \inf_{x \in S} L(x, \lambda, \nu) = \inf_{x \in S} \left( f_0(x) +\sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits_{i=1}^p\nu_i h_i(x) \right)
 </span></p>
 <p>When the Lagrangian is unbounded below in <span class="math inline">x</span>, the dual function takes on the value <span class="math inline">−\infty</span>. Since the dual function is the pointwise infimum of a family of affine functions of <span class="math inline">(\lambda, \nu)</span>, it is concave, even when the original problem is not convex.</p>
-<p>The dual function yields lower bounds on the optimal value <span class="math inline">p^*</span> of the original problem. For any <span class="math inline">\lambda \succeq 0, \nu</span>:</p>
+<p>Let us show, that the dual function yields lower bounds on the optimal value <span class="math inline">p^*</span> of the original problem for any <span class="math inline">\lambda \succeq 0, \nu</span>. Suppose some <span class="math inline">\hat{x}</span> is a feasible point (<span class="math inline">\hat{x} \in S</span>) for the original problem, i.e., <span class="math inline">f_i(\hat{x}) \leq 0</span> and <span class="math inline">h_i(\hat{x}) = 0, \; λ \succeq 0</span>. Then we have:</p>
 <p><span class="math display">
-g(\lambda, \nu) \leq p^*
-</span></p>
-<p>Suppose some <span class="math inline">\hat{x}</span> is a feasible point (<span class="math inline">\hat{x} \in S</span>) for the original problem, i.e., <span class="math inline">f_i(\hat{x}) \leq 0</span> and <span class="math inline">h_i(\hat{x}) = 0, \; λ \succeq 0</span>. Then we have:</p>
-<p><span class="math display">
-L(\hat{x}, \lambda, \nu) = f_0(\hat{x}) + \lambda^\top f(\hat{x}) + \nu^\top h(\hat{x}) \leq f_0(\hat{x})
+L(\hat{x}, \lambda, \nu) = f_0(\hat{x}) + \underbrace{\lambda^\top f(\hat{x})}_{\leq 0} + \underbrace{\nu^\top h(\hat{x})}_{= 0} \leq f_0(\hat{x})
 </span></p>
 <p>Hence</p>
 <p><span class="math display">
-g(\lambda, \nu) = \inf_{x\in \textbf{dom} f_0} L(x, \lambda, \nu) \leq L(\hat{x}, \lambda, \nu)  \leq f_0(\hat{x})
+g(\lambda, \nu) = \inf_{x \in S} L(x, \lambda, \nu) \leq L(\hat{x}, \lambda, \nu)  \leq f_0(\hat{x})
+</span></p>
+<p><span class="math display">
+g(\lambda, \nu) \leq p^*
 </span></p>
 <p>A natural question is: what is the <em>best</em> lower bound that can be obtained from the Lagrange dual function? This leads to the following optimization problem:</p>
 <p><span class="math display">
@@ -836,11 +814,11 @@ g(\lambda, \nu) = \inf_{x\in \textbf{dom} f_0} L(x, \lambda, \nu) \leq L(\hat{x}
 <tr class="odd">
 <td style="text-align: center;">Function</td>
 <td style="text-align: center;"><span class="math inline">f_0(x)</span></td>
-<td style="text-align: center;"><span class="math inline">g(\lambda, \nu) = \min\limits_{x \in \textbf{dom} f_0} L(x, \lambda, \nu)</span></td>
+<td style="text-align: center;"><span class="math inline">g(\lambda, \nu) = \min\limits_{x \in S} L(x, \lambda, \nu)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Variables</td>
-<td style="text-align: center;"><span class="math inline">x \in \textbf{dom} f_0 \subseteq \mathbb{R^n}</span></td>
+<td style="text-align: center;"><span class="math inline">x \in S \subseteq \mathbb{R^n}</span></td>
 <td style="text-align: center;"><span class="math inline">\lambda \in \mathbb{R}^m_{+}, \nu \in \mathbb{R}^p</span></td>
 </tr>
 <tr class="odd">
@@ -860,10 +838,128 @@ g(\lambda, \nu) = \inf_{x\in \textbf{dom} f_0} L(x, \lambda, \nu) \leq L(\hat{x}
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Least-squares solution of linear equations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>We are addressing a problem within a non-empty budget set, defined as follows: <span class="math display">
+\begin{aligned}
+    &amp; \text{min} \quad x^T x \\
+    &amp; \text{s.t.} \quad Ax = b,
+\end{aligned}
+</span> with the matrix <span class="math inline">A \in \mathbb{R}^{m \times n}</span>.</p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>This problem is devoid of inequality constraints, presenting <span class="math inline">m</span> linear equality constraints instead. The Lagrangian is expressed as <span class="math inline">L(x, \nu) = x^T x + \nu^T (Ax - b)</span>, spanning the domain <span class="math inline">\mathbb{R}^n \times \mathbb{R}^m</span>. The dual function is denoted by <span class="math inline">g(\nu) = \inf_x L(x, \nu)</span>. Given that <span class="math inline">L(x, \nu)</span> manifests as a convex quadratic function in terms of <span class="math inline">x</span>, the minimizing <span class="math inline">x</span> can be derived from the optimality condition <span class="math display">
+\nabla_x L(x, \nu) = 2x + A^T \nu = 0,
+</span> leading to <span class="math inline">x = -(1/2)A^T \nu</span>. As a result, the dual function is articulated as <span class="math display">
+    g(\nu) = L(-(1/2)A^T \nu, \nu) = -(1/4)\nu^T A A^T \nu - b^T \nu,
+</span> emerging as a concave quadratic function within the domain <span class="math inline">\mathbb{R}^p</span>. According to the lower bound property (5.2), for any <span class="math inline">\nu \in \mathbb{R}^p</span>, the following holds true: <span class="math display">
+    -(1/4)\nu^T A A^T \nu - b^T \nu \leq \inf\{x^T x \,|\, Ax = b\}.
+</span> Which is a simple non-trivial lower bound without any problem solving.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Two-way partitioning problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p><img src="partition.svg" class="img-fluid"></p>
+<p>We are examining a (nonconvex) problem: <span class="math display">
+\begin{aligned}
+    &amp; \text{minimize} \quad x^T W x \\
+    &amp; \text{subject to} \quad x_i^2 =1, \quad i=1,\ldots,n,
+\end{aligned}
+</span></p>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>The matrix <span class="math inline">W</span> belongs to <span class="math inline">S_n</span>. The constraints stipulate that the values of <span class="math inline">x_i</span> can only be 1 or <span class="math inline">-1</span>, rendering this problem analogous to finding a vector, with components <span class="math inline">\pm1</span>, that minimizes <span class="math inline">x^T W x</span>. The set of feasible solutions is finite, encompassing <span class="math inline">2^n</span> points, thereby allowing, in theory, for the resolution of this problem by evaluating the objective value at each feasible point. However, as the count of feasible points escalates exponentially, this approach is viable only for modest-sized problems (for instance, when <span class="math inline">n \leq 30</span>). Generally, and especially when <span class="math inline">n</span> exceeds 50, the problem poses a formidable challenge to solve.</p>
+<p>This problem can be construed as a two-way partitioning problem over a set of <span class="math inline">n</span> elements, denoted as <span class="math inline">\{1, \ldots , n\}</span>: A viable <span class="math inline">x</span> corresponds to the partition <span class="math display">
+\{1,\ldots,n\} = \{i|x_i =-1\} \cup \{i|x_i =1\}.
+</span> The coefficient <span class="math inline">W_{ij}</span> in the matrix represents the expense associated with placing elements <span class="math inline">i</span> and <span class="math inline">j</span> in the same partition, while <span class="math inline">-W_{ij}</span> signifies the cost of segregating them. The objective encapsulates the aggregate cost across all pairs of elements, and the challenge posed by problem is to find the partition that minimizes the total cost.</p>
+<p>We now derive the dual function for this problem. The Lagrangian is expressed as <span class="math display">
+L(x,\nu) = x^T W x + \sum_{i=1}^n \nu_i (x_i^2 -1) = x^T (W + \text{diag}(\nu)) x - \mathbf{1}^T \nu.
+</span> By minimizing over <span class="math inline">x</span>, we procure the Lagrange dual function: <span class="math display">
+g(\nu) = \inf_x x^T (W + \text{diag}(\nu)) x - \mathbf{1}^T \nu
+= \begin{cases}\begin{array}{ll}
+    -\mathbf{1}^T\nu &amp; \text{if } W+\text{diag}(\nu) \succeq 0 \\
+    -\infty &amp; \text{otherwise},
+\end{array} \end{cases}
+</span></p>
+<p>exploiting the realization that the infimum of a quadratic form is either zero (when the form is positive semidefinite) or <span class="math inline">-\infty</span> (when it’s not).</p>
+<p>This dual function furnishes lower bounds on the optimal value of the problem. For instance, we can adopt the particular value of the dual variable</p>
+<p><span class="math display">
+\nu = -\lambda_{\text{min}}(W) \mathbf{1}
+</span></p>
+<p>which is dual feasible, since</p>
+<p><span class="math display">
+W +\text{diag}(\nu)=W -\lambda_{\text{min}}(W) I \succeq 0.
+</span></p>
+<p>This renders a simple bound on the optimal value <span class="math inline">p^*</span></p>
+<p><span class="math display">
+p^* \geq -\mathbf{1}^T\nu = n \lambda_{\text{min}}(W).
+</span></p>
+<p>The code for the problem is available here <a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Partitioning.ipynb">🧑‍💻</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="weak-duality" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="weak-duality"><span class="header-section-number">1.2</span> Weak duality</h2>
-<p>It is common to name this relation between optimals of primal and dual problems as weak duality. For problem, we have:</p>
+</section>
+<section id="strong-duality" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Strong duality</h1>
+<p>It is common to name this relation between optimals of primal and dual problems as <strong>weak duality</strong>. For problem, we have:</p>
 <p><span class="math display">
 p^* \geq d^*
 </span></p>
@@ -871,18 +967,36 @@ p^* \geq d^*
 <p><span class="math display">
 p^* - d^* \geq 0
 </span></p>
-<p>Note, that we always have weak duality, if we’ve formulated primal and dual problem. It means, that if we have managed to solve the dual problem (which is always convex, no matter whether the initial problem was or not), then we have some lower bound. Surprisingly, there are some notable cases, when these solutions are equal.</p>
-</section>
-<section id="strong-duality" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="strong-duality"><span class="header-section-number">1.3</span> Strong duality</h2>
-<p>Strong duality happens if duality gap is zero:</p>
+<p>Note, that we always have weak duality, if we’ve formulated primal and dual problem. It means, that if we have managed to solve the dual problem (which is always concave, no matter whether the initial problem was or not), then we have some lower bound. Surprisingly, there are some notable cases, when these solutions are equal.</p>
+<p><strong>Strong duality</strong> happens if duality gap is zero:</p>
 <p><span class="math display">
 p^∗ = d^*
 </span></p>
-<p>Notice: both <span class="math inline">p^*</span> and <span class="math inline">d^*</span> may be <span class="math inline">+ \infty</span>. * Several sufficient conditions known! * “Easy” necessary and sufficient conditions: unknown.</p>
+<p>Notice: both <span class="math inline">p^*</span> and <span class="math inline">d^*</span> may be <span class="math inline">+ \infty</span>.</p>
+<ul>
+<li>Several sufficient conditions known!</li>
+<li>“Easy” necessary and sufficient conditions: unknown.</li>
+</ul>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>In the Least-squares solution of linear equations example above calculate the primal optimum <span class="math inline">p^*</span> and the dual optimum <span class="math inline">d^*</span> and check whether this problem has strong duality or not.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="useful-features" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="useful-features"><span class="header-section-number">1.4</span> Useful features</h2>
+<section id="useful-features" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Useful features</h1>
 <ul>
 <li><p><strong>Construction of lower bound on solution of the direct problem.</strong></p>
 <p>It could be very complicated to solve the initial problem. But if we have the dual problem, we can take an arbitrary <span class="math inline">y \in \Omega</span> and substitute it in <span class="math inline">g(y)</span> - we’ll immediately obtain some lower bound.</p></li>
@@ -895,12 +1009,18 @@ p^∗ = d^*
 <li><p><strong>Dual function is always concave</strong></p>
 <p>As a pointwise minimum of affine functions.</p></li>
 </ul>
-</section>
-</section>
-<section id="examples" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Examples</h1>
-<section id="simple-projection-onto-simplex-with-duality" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="simple-projection-onto-simplex-with-duality"><span class="header-section-number">2.1</span> Simple projection onto simplex with duality</h2>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Projection onto probability simplex
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
 <p>To find the Euclidean projection of <span class="math inline">x \in \mathbb{R}^n</span> onto probability simplex <span class="math inline">\mathcal{P} = \{z \in \mathbb{R}^n \mid z \succeq 0, \mathbf{1}^\top z = 1\}</span>, we solve the following problem:</p>
 <p><span class="math display">
 \begin{split}
@@ -913,49 +1033,22 @@ p^∗ = d^*
 L(y, \nu) = \dfrac{1}{2}\|y - x\|_2^2 +\nu(\mathbf{1}^\top y - 1),
 </span></p>
 <p>leaving the constraint <span class="math inline">y \succeq 0</span> implicit. Show that <span class="math inline">y = (x − \nu \mathbf{1})_+</span> minimizes <span class="math inline">L(y, \nu)</span> over <span class="math inline">y \succeq 0</span>.</p>
-</section>
-<section id="underdetermined-linear-least-squares" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="underdetermined-linear-least-squares"><span class="header-section-number">2.2</span> Underdetermined Linear least squares</h2>
-<section id="problem" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="problem"><span class="header-section-number">2.2.1</span> Problem</h3>
-<p><span class="math display">
-\begin{split}
-&amp; x^\top x \to \min\limits_{x \in \mathbb{R}^{n} }\\
-\text{s.t. } &amp; Ax = b
-\end{split}
-</span></p>
-</section>
-<section id="lagrangian" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="lagrangian"><span class="header-section-number">2.2.2</span> Lagrangian</h3>
-<p><span class="math display">
-L(x,\nu) = x^\top x + \nu^\top (Ax - b)
-</span></p>
-</section>
-<section id="dual-function" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="dual-function"><span class="header-section-number">2.2.3</span> Dual function</h3>
-<p><span class="math display">
-g(\nu) = \min\limits_{x \in \mathbb{R}^n} L(x, \nu)
-</span></p>
-<p>Setting gradient to zero to find minimum 🤔:</p>
-<p><span class="math display">
-\nabla_x L (x, \nu) = 2x + \nu^\top A = 2x + A^\top \nu = 0 \; \to \; x = -\frac{1}{2}A^\top \nu
-</span></p>
-<p><span class="math display">
-g(\nu) = \frac{1}{4} \nu^\top A A^\top \nu + \nu^\top (-\frac{1}{2} A A^\top \nu - b) = -\frac{1}{4} \nu^\top A A^\top \nu - b^\top \nu
-</span></p>
-<p>Here we see lower bound property:</p>
-<p><span class="math display">
-p^* \geq -\frac{1}{4} \nu^\top A A^\top \nu - b^\top \nu, \quad \forall \nu
-</span></p>
-<p>Let’s solve the dual problem:</p>
-<p><span class="math display">
-d^* = b^\top \left( A A^\top \right)^{-1}b
-</span></p>
-<p>Calculate the primal optimal and check whether this problem has strong duality or not.</p>
-</section>
-</section>
-<section id="lp-duality.-standard-form" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="lp-duality.-standard-form"><span class="header-section-number">2.3</span> LP duality. Standard form</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LP duality. Standard form
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
 <p><span class="math display">
 \begin{split}
 &amp; c^\top x \to \min\limits_{x \in \mathbb{R}^{n} }\\
@@ -963,18 +1056,64 @@ d^* = b^\top \left( A A^\top \right)^{-1}b
 &amp; x \succeq 0 \\
 \end{split}
 </span></p>
-</section>
-<section id="lp-duality.-inequality-form" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="lp-duality.-inequality-form"><span class="header-section-number">2.4</span> LP duality. Inequality form</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LP duality. Inequality form
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
 <p><span class="math display">
 \begin{split}
 &amp; c^\top x \to \min\limits_{x \in \mathbb{R}^{n} }\\
 \text{s.t. } &amp; Ax \preceq b
 \end{split}
 </span></p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="a-nonconvex-quadratic-problem-with-strong-duality" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="a-nonconvex-quadratic-problem-with-strong-duality"><span class="header-section-number">2.5</span> A nonconvex quadratic problem with strong duality</h2>
+<section id="slaters-condition" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Slater’s condition</h1>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+<p>If for a convex optimization problem (i.e., assuming minimization, <span class="math inline">f_0,f_{i}</span> are convex and <span class="math inline">h_{i}</span> are affine), there exists a point <span class="math inline">x</span> such that <span class="math inline">h(x)=0</span> and <span class="math inline">f_{i}(x)&lt;0</span> (existance of a strictly feasible point), then we have a zero duality gap and KKT conditions become necessary and sufficient.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A nonconvex quadratic problem with strong duality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
 <p>On rare occasions strong duality obtains for a nonconvex problem. As an important example, we consider the problem of minimizing a nonconvex quadratic function over the unit ball</p>
 <p><span class="math display">
 \begin{split}
@@ -983,17 +1122,28 @@ d^* = b^\top \left( A A^\top \right)^{-1}b
 \end{split}
 </span></p>
 <p>where <span class="math inline">A \in \mathbb{S}^n, A \nsucceq 0</span> and <span class="math inline">b \in \mathbb{R}^n</span>. Since <span class="math inline">A \nsucceq 0</span>, this is not a convex problem. This problem is sometimes called the trust region problem, and arises in minimizing a second-order approximation of a function over the unit ball, which is the region in which the approximation is assumed to be approximately valid.</p>
-<section id="lagrangian-and-dual-function" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="lagrangian-and-dual-function"><span class="header-section-number">2.5.1</span> Lagrangian and dual function</h3>
+<div class="callout callout-style-default callout-solution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-solution" data-collapse="true">
+<p>Lagrangian and dual function</p>
 <p><span class="math display">
 L(x, \lambda) = x^\top A x + 2 b^\top x + \lambda (x^\top x - 1) = x^\top( A + \lambda I)x + 2 b^\top x - \lambda
 </span></p>
 <p><span class="math display">
 g(\lambda) = \begin{cases} -b^\top(A + \lambda I)^{\dagger}b - \lambda &amp;\text{ if } A + \lambda I \succeq 0 \\ -\infty, &amp;\text{ otherwise}  \end{cases}
 </span></p>
-</section>
-<section id="dual-problem" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="dual-problem"><span class="header-section-number">2.5.2</span> Dual problem</h3>
+<p>Dual problem:</p>
 <p><span class="math display">
 \begin{split}
 &amp; -b^\top(A + \lambda I)^{\dagger}b - \lambda \to \max\limits_{\lambda \in \mathbb{R}}\\
@@ -1006,10 +1156,30 @@ g(\lambda) = \begin{cases} -b^\top(A + \lambda I)^{\dagger}b - \lambda &amp;\tex
 \text{s.t. } &amp; \lambda \geq - \lambda_{min}(A)
 \end{split}
 </span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-</section>
-<section id="connection-of-fenchel-and-lagrange-duality" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="connection-of-fenchel-and-lagrange-duality"><span class="header-section-number">2.6</span> Connection of Fenchel and Lagrange duality</h2>
+<section id="connection-between-fenchel-duality-and-lagrange-duality" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Connection between Fenchel duality and Lagrange duality</h1>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
 <p><span class="math display">
 \begin{split}
 &amp; f_0(x) = \sum_{i=1}^n f_i(x_i)\to \min\limits_{x \in \mathbb{R}^{n} }\\
@@ -1024,11 +1194,10 @@ g(\lambda) = \begin{cases} -b^\top(A + \lambda I)^{\dagger}b - \lambda &amp;\tex
 \end{split}
 </span></p>
 <p>with (scalar) variable <span class="math inline">\nu \in \mathbb{R}</span>. Now suppose we have found an optimal dual variable <span class="math inline">\nu^*</span> (There are several simple methods for solving a convex problem with one scalar variable, such as the bisection method.). It is very easy to recover the optimal value for the primal problem.</p>
-</section>
-<section id="fenchel---rockafellar-problem" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="fenchel---rockafellar-problem"><span class="header-section-number">2.7</span> Fenchel - Rockafellar problem</h2>
-<section id="problem-1" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">2.7.1</span> Problem</h3>
+</div>
+</div>
+</div>
+</div>
 <p>Let <span class="math inline">f: E \to \mathbb{R}</span> and <span class="math inline">g: G \to \mathbb{R}</span> — function, defined on the sets <span class="math inline">E</span> and <span class="math inline">G</span> in Euclidian Spaces <span class="math inline">V</span> and <span class="math inline">W</span> respectively. Let <span class="math inline">f^*:E_* \to \mathbb{R}, g^*:G_* \to \mathbb{R}</span> be the conjugate functions to the <span class="math inline">f</span> and <span class="math inline">g</span> respectively. Let <span class="math inline">A: V \to W</span> — linear mapping. We call Fenchel - Rockafellar problem the following minimization task:</p>
 <p><span class="math display">
 f(x) + g(Ax) \to \min\limits_{x \in E \cap A^{-1}(G)}
@@ -1040,15 +1209,11 @@ f(x) + g(Ax) \to \min\limits_{x \in E \cap A^{-1}(G)}
 \text{s.t. } &amp; Ax = y
 \end{split}
 </span></p>
-</section>
-<section id="lagrangian-1" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="lagrangian-1"><span class="header-section-number">2.7.2</span> Lagrangian</h3>
+<p>Lagrangian</p>
 <p><span class="math display">
 L(x,y, \lambda) =  f(x) + g(y) + \lambda^\top (Ax - y)
 </span></p>
-</section>
-<section id="dual-function-1" class="level3" data-number="2.7.3">
-<h3 data-number="2.7.3" class="anchored" data-anchor-id="dual-function-1"><span class="header-section-number">2.7.3</span> Dual function</h3>
+<p>Dual function</p>
 <p><span class="math display">
 \begin{split}
 g_d(\lambda) &amp;= \min\limits_{x \in E, \; y \in G} L(x,y, \lambda) \\
@@ -1056,7 +1221,7 @@ g_d(\lambda) &amp;= \min\limits_{x \in E, \; y \in G} L(x,y, \lambda) \\
 &amp;= -\max\limits_{x \in E}\left[(-A^*\lambda)^\top x - f(x) \right] - \max\limits_{y \in G} \left[\lambda^\top y - g(y)\right]
 \end{split}
 </span></p>
-<p>Now, we need to remember the definition of the {% include link.html title=‘Conjugate function’%}:</p>
+<p>Now, we need to remember the definition of the conjugate function:</p>
 <p><span class="math display">
 \sup_{y \in G}\left[\lambda^\top y - g(y)\right] = \begin{cases} g^*(\lambda), &amp;\text{ if } \lambda \in G_*\\ +\infty, &amp;\text{ otherwise} \end{cases}
 </span></p>
@@ -1071,7 +1236,19 @@ g_d(\lambda) &amp;= \min\limits_{x \in E, y \in G} L(x,y, \lambda) = \\
 \end{split}
 </span></p>
 <p>which allows us to formulate one of the most important theorems, that connects dual problems and conjugate functions:</p>
-<p><strong>Fenchel - Rockafellar theorem</strong> Let <span class="math inline">f: E \to \mathbb{R}</span> and <span class="math inline">g: G \to \mathbb{R}</span> — function, defined on the sets <span class="math inline">E</span> and <span class="math inline">G</span> in Euclidian Spaces <span class="math inline">V</span> and <span class="math inline">W</span> respectively. Let <span class="math inline">f^*:E_* \to \mathbb{R}, g^*:G_* \to \mathbb{R}</span> be the conjugate functions to the <span class="math inline">f</span> and <span class="math inline">g</span> respectively. Let <span class="math inline">A: V \to W</span> — linear mapping. Let <span class="math inline">p^*, d^* \in [- \infty, + \infty]</span> - optimal values of primal and dual problems:</p>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fenchel - Rockafellar theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+<p>Let <span class="math inline">f: E \to \mathbb{R}</span> and <span class="math inline">g: G \to \mathbb{R}</span> — function, defined on the sets <span class="math inline">E</span> and <span class="math inline">G</span> in Euclidian Spaces <span class="math inline">V</span> and <span class="math inline">W</span> respectively. Let <span class="math inline">f^*:E_* \to \mathbb{R}, g^*:G_* \to \mathbb{R}</span> be the conjugate functions to the <span class="math inline">f</span> and <span class="math inline">g</span> respectively. Let <span class="math inline">A: V \to W</span> — linear mapping. Let <span class="math inline">p^*, d^* \in [- \infty, + \infty]</span> - optimal values of primal and dual problems:</p>
 <p><span class="math display">
 p^* = f(x) + g(Ax) \to \min\limits_{x \in E \cap A^{-1}(G)}
 </span></p>
@@ -1085,17 +1262,19 @@ d^* = f^*(-A^*\lambda) + g^*(\lambda) \to \min\limits_{\lambda \in G_* \cap (-A^
 \lambda^* &amp;\in \partial g(Ax^*)
 \end{split}
 </span></p>
+</div>
+</div>
+</div>
+</div>
 <p>Convex case is especially important since if we have Fenchel - Rockafellar problem with parameters <span class="math inline">(f, g, A)</span>, than the dual problem has the form <span class="math inline">(f^*, g^*, -A^*)</span>.</p>
 </section>
-</section>
-</section>
-<section id="references" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> References</h1>
+<section id="references" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> References</h1>
 <ul>
 <li><a href="http://web.stanford.edu/class/ee364a/lectures/duality.pdf">Convex Optimization — Boyd &amp; Vandenberghe @ Stanford</a></li>
 <li><a href="https://ee227c.github.io/notes/ee227c-lecture13.pdf">Course Notes for EE227C. Lecture 13</a></li>
 <li><a href="https://ee227c.github.io/notes/ee227c-lecture14.pdf">Course Notes for EE227C. Lecture 14</a></li>
-<li>{% include link.html title=‘Optimality conditions. KKT’ %}</li>
+<li><a href="../../docs/theory/Optimality.html">Optimality conditions</a></li>
 <li><a href="http://www.machinelearning.ru/wiki/images/7/7f/MOMO18_Seminar7.pdf">Seminar 7 @ CMC MSU</a></li>
 <li><a href="http://www.machinelearning.ru/wiki/images/1/15/MOMO18_Seminar8.pdf">Seminar 8 @ CMC MSU</a></li>
 <li><a href="http://optml.mit.edu/teach/ee227a/lect10.pdf">Convex Optimization @ Berkeley - 10th lecture</a></li>
