@@ -980,18 +980,18 @@ p^∗ = d^*
 <li>Several sufficient conditions known!</li>
 <li>“Easy” necessary and sufficient conditions: unknown.</li>
 </ul>
-<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout callout-style-default callout-question no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div>
-<div class="callout-example">
+<div class="callout-question">
 <p>In the Least-squares solution of linear equations example above calculate the primal optimum <span class="math inline">p^*</span> and the dual optimum <span class="math inline">d^*</span> and check whether this problem has strong duality or not.</p>
 </div>
 </div>
@@ -1170,30 +1170,27 @@ g(\lambda) = \begin{cases} -b^\top(A + \lambda I)^{\dagger}b - \lambda &amp;\tex
 <section id="reminder-of-kkt-statements" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="reminder-of-kkt-statements"><span class="header-section-number">4.1</span> Reminder of KKT statements:</h2>
 <p>Suppose we have a general optimization problem (from the <a href="../../docs/theory/Optimality.html">chapter</a>)</p>
-<p><span class="math display">
+<p><span id="eq-gop"><span class="math display">
 \begin{split}
 &amp; f_0(x) \to \min\limits_{x \in \mathbb{R}^n}\\
 \text{s.t. } &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\
 &amp; h_i(x) = 0, \; i = 1,\ldots, p
 \end{split}
-\tag{GOP}
-</span></p>
+\tag{1}</span></span></p>
 <p>and convex optimization problem (see corresponding <a href="../../docs/theory/Convex_optimization_problem.html">chapter</a>), where all equality constraints are affine: <span class="math inline">h_i(x) = a_i^Tx - b_i, i \in 1, \ldots p</span></p>
-<p><span class="math display">
+<p><span id="eq-cop"><span class="math display">
 \begin{split}
 &amp; f_0(x) \to \min\limits_{x \in \mathbb{R}^n}\\
 \text{s.t. } &amp; f_i(x) \leq 0, \; i = 1,\ldots,m\\
 &amp; Ax = b,
 \end{split}
-\tag{COP}
-</span></p>
+\tag{2}</span></span></p>
 <p>The Lagrangian is</p>
 <p><span class="math display">
 L(x, \lambda, \nu) = f_0(x) + \sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits_{i=1}^p\nu_i h_i(x)
 </span></p>
 <p>The KKT system is:</p>
-<p><span class="math display">
-\tag{KKT}
+<p><span id="eq-kkt"><span class="math display">
 \begin{split}
 &amp; \nabla_x L(x^*, \lambda^*, \nu^*) = 0 \\
 &amp; \nabla_\nu L(x^*, \lambda^*, \nu^*) = 0 \\
@@ -1201,37 +1198,27 @@ L(x, \lambda, \nu) = f_0(x) + \sum\limits_{i=1}^m \lambda_i f_i(x) + \sum\limits
 &amp; \lambda^*_i f_i(x^*) = 0, i = 1,\ldots,m \\
 &amp; f_i(x^*) \leq 0, i = 1,\ldots,m \\
 \end{split}
-</span></p>
+\tag{3}</span></span></p>
 <div class="callout callout-style-default callout-theorem no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+KKT becomes necessary
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-theorem">
-<p>If</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-theorem no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div>
-<div class="callout-theorem">
-
+<p>If <span class="math inline">x^*</span> is a solution of the original problem <a href="#eq-gop">Equation&nbsp;1</a>, then if any of the following regularity conditions is satisfied:</p>
+<ul>
+<li><strong>Strong duality</strong> If <span class="math inline">f_1, \ldots f_m, h_1, \ldots h_p</span> are differentiable functions and we have a problem <a href="#eq-gop">Equation&nbsp;1</a> with zero duality gap, then <a href="#eq-kkt">Equation&nbsp;3</a> are necessary (i.e.&nbsp;any optimal set <span class="math inline">x^*, \lambda^*, \nu^*</span> should satisfy <a href="#eq-kkt">Equation&nbsp;3</a>)</li>
+<li><strong>LCQ</strong> (Linearity constraint qualification). If <span class="math inline">f_1, \ldots f_m, h_1, \ldots h_p</span> are affine functions, then no other condition is needed.</li>
+<li><strong>LICQ</strong> (Linear independence constraint qualification). The gradients of the active inequality constraints and the gradients of the equality constraints are linearly independent at <span class="math inline">x^*</span></li>
+<li><strong>SC</strong> (Slater’s condition) For a convex optimization problem <a href="#eq-cop">Equation&nbsp;2</a> (i.e., assuming minimization, <span class="math inline">f_i</span> are convex and <span class="math inline">h_j</span> is affine), there exists a point <span class="math inline">x</span> such that <span class="math inline">h_j(x)=0</span> and $ g_i(x) &lt; 0$.</li>
+</ul>
+<p>Than it should satisfy <a href="#eq-kkt">Equation&nbsp;3</a></p>
 </div>
 </div>
 </div>
@@ -1242,13 +1229,13 @@ Theorem
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+KKT in convex case
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-theorem">
-
+<p>If a convex optimization problem <a href="#eq-cop">Equation&nbsp;2</a> with differentiable objective and constraint functions satisfies Slater’s condition, then the KKT conditions provide necessary and sufficient conditions for optimality: Slater’s condition implies that the optimal duality gap is zero and the dual optimum is attained, so <span class="math inline">x^*</span> is optimal if and only if there are <span class="math inline">(\lambda^*,\nu^*)</span> that, together with <span class="math inline">x^*</span>, satisfy the KKT conditions.</p>
 </div>
 </div>
 </div>
