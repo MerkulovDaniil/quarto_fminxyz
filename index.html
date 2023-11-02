@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.467">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,10 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    null
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -72,8 +75,8 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 4,
+      valueNames: ['listing-image','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 8,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
     };
@@ -237,36 +240,36 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     <img src="./logo.svg" alt="fmin.xyz" class="navbar-logo">
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto tools-wide">
-    <a href="https://github.com/MerkulovDaniil/optim" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-    <a href="https://www.youtube.com/@fmin" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
-    <a href="https://t.me/fminxyz" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
+        <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/MerkulovDaniil/optim" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://www.youtube.com/@fmin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
+    <a href="https://t.me/fminxyz" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -384,22 +387,10 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LP and simplex algorithm</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Automatic differentiation</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Adaptive Metrics</span></a>
+            <a href="./docs/methods/zom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zero order methods</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -407,46 +398,28 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Newton method</span></a>
+  <a href="./docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bee algorithm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quasi Newton methods</span></a>
+  <a href="./docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nelder–Mead</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/methods/adaptive_metrics/adaptive_metric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adaptive metric methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conjugate gradients</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">KFAC</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Natural gradient descent</span></a>
+  <a href="./docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulated annealing</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Fom</span></a>
+            <a href="./docs/methods/line_search/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Line search</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -454,10 +427,39 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/methods/fom/fom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">First order methods</span></a>
+  <a href="./docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Binary search</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Golden search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inexact line search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Successive parabolic interpolation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./docs/methods/fom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First order methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./docs/methods/fom/GD.html" class="sidebar-item-text sidebar-link">
@@ -516,49 +518,8 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Line Search</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/line_search/line_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Line search</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Binary search</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Golden search</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inexact line search</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Successive parabolic interpolation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
- <span class="menu-text">Zom</span></a>
+            <a href="./docs/methods/adaptive_metrics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adaptive metric methods</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -566,30 +527,48 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/methods/zom/zom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Zero order methods</span></a>
+  <a href="./docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Newton method</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bee algorithm</span></a>
+  <a href="./docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quasi Newton methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nelder–Mead</span></a>
+  <a href="./docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjugate gradients</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulated annealing</span></a>
+  <a href="./docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KFAC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Natural gradient descent</span></a>
   </div>
 </li>
       </ul>
   </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LP and simplex algorithm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic differentiation</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -860,7 +839,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     <div class="quarto-margin-footer"><div class="margin-footer-item">
@@ -873,6 +852,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header">
 </header>
+
 
 <section id="welcome-to-fmin.xyz" class="level1">
 <h1>Welcome to 💎fmin.xyz!</h1>
@@ -889,7 +869,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="listing-theory" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-4">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1697630975802" data-listing-reading-time-sort="24">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1697630975802" data-listing-reading-time-sort="24" data-listing-word-count-sort="4609">
 <a href="./docs/theory/Matrix_calculus.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img src="docs/theory/vector_im.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -897,19 +877,11 @@ ul.task-list li input[type="checkbox"] {
 <h5 class="no-anchor card-title listing-title">
 Matrix calculus
 </h5>
-<div class="card-text listing-description">
-We will treat all vectors as column vectors by default. The space of real vectors of length <span class="math inline">n</span> is denoted by <span class="math inline">\mathbb{R}^n</span>, while the space of real-valued <span class="math inline">m \times n</span> matrices…<span class="math inline"></span><sup></sup>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1697059241590" data-listing-reading-time-sort="7">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1697059241590" data-listing-reading-time-sort="7" data-listing-word-count-sort="1225">
 <a href="./docs/theory/Convex_function.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img src="docs/theory/convex_function.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -917,19 +889,11 @@ We will treat all vectors as column vectors by default. The space of real vector
 <h5 class="no-anchor card-title listing-title">
 Convex function
 </h5>
-<div class="card-text listing-description">
-The function <span class="math inline">f(x)</span>, <strong>which is defined on the convex set</strong> <span class="math inline">S \subseteq \mathbb{R}^n</span>, is called <strong>convex</strong> on <span class="math inline">S</span>, if:
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1697059241589" data-listing-reading-time-sort="7">
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1697059241589" data-listing-reading-time-sort="7" data-listing-word-count-sort="1264">
 <a href="./docs/theory/Conjugate_set.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img src="docs/theory/conjugate_set.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -937,19 +901,11 @@ The function <span class="math inline">f(x)</span>, <strong>which is defined on 
 <h5 class="no-anchor card-title listing-title">
 Conjugate set
 </h5>
-<div class="card-text listing-description">
-Let <span class="math inline">S \subseteq \mathbb{R}^n</span> be an arbitrary non-empty set. Then its conjugate set is defined as:
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1697447638739" data-listing-reading-time-sort="6">
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1698937481127" data-listing-reading-time-sort="6" data-listing-word-count-sort="1111">
 <a href="./docs/theory/Conjugate function.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img src="docs/theory/conj.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -957,101 +913,61 @@ Let <span class="math inline">S \subseteq \mathbb{R}^n</span> be an arbitrary no
 <h5 class="no-anchor card-title listing-title">
 Conjugate function
 </h5>
-<div class="card-text listing-description">
-Let <span class="math inline">f: \mathbb{R}^n \to \mathbb{R}</span>. The function <span class="math inline">f^*: \mathbb{R}^n \to \mathbb{R}</span> is called convex conjugate (Fenchel’s conjugate, dual, Legendre transform) <span class="math inline">f(x)</span> and is…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1698166097223" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1698947722102" data-listing-reading-time-sort="1" data-listing-word-count-sort="172">
 <a href="./docs/theory/Dual norm.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top">
+<img src="./docs/theory/dual_balls.svg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Dual norm
 </h5>
-<div class="card-text listing-description">
-Let <span class="math inline">\Vert x\Vert</span> be the norm in the primal space <span class="math inline">x \in S \subseteq \mathbb{R}^n</span>, then the following expression defines dual norm:
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1697480543849" data-listing-reading-time-sort="12">
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1698934237812" data-listing-reading-time-sort="12" data-listing-word-count-sort="2300">
 <a href="./docs/theory/Subgradient.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top"><img data-src="docs/theory/conv_support.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="docs/theory/conv_support.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Subgradient and subdifferential
 </h5>
-<div class="card-text listing-description">
-An important property of a continuous convex function <span class="math inline">f(x)</span> is that at any chosen point <span class="math inline">x_0</span> for all <span class="math inline">x \in \text{dom } f</span> the inequality holds:
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1698074892921" data-listing-reading-time-sort="13">
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1698074892921" data-listing-reading-time-sort="13" data-listing-word-count-sort="2403">
 <a href="./docs/theory/Optimality.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top"><img data-src="docs/theory/critical_points.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="docs/theory/critical_points.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Optimality conditions. KKT
 </h5>
-<div class="card-text listing-description">
-<span class="math display">
-f(x) \to \min\limits_{x \in S}
-</span>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1698676324932" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1698943195142" data-listing-reading-time-sort="1" data-listing-word-count-sort="194">
 <a href="./docs/theory/Convex_optimization_problem.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="docs/theory/cop.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Convex optimization problem
 </h5>
-<div class="card-text listing-description">
-Note, that there is an agreement in notation of mathematical programming. The problems of the following type are called <strong>Convex optimization problem</strong>:
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1698680080344" data-listing-reading-time-sort="15">
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1698680080344" data-listing-reading-time-sort="15" data-listing-word-count-sort="2831">
 <a href="./docs/theory/Duality.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/theory/partition.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1059,19 +975,11 @@ Note, that there is an agreement in notation of mathematical programming. The pr
 <h5 class="no-anchor card-title listing-title">
 Duality
 </h5>
-<div class="card-text listing-description">
-Duality lets us associate to any constrained optimization problem a concave maximization problem, whose solutions lower bound the optimal value of the original…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1697063901850" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1697063901850" data-listing-reading-time-sort="3" data-listing-word-count-sort="506">
 <a href="./docs/theory/Rates_of_convergence.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/theory/convergence.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1079,14 +987,6 @@ Duality lets us associate to any constrained optimization problem a concave maxi
 <h5 class="no-anchor card-title listing-title">
 Rates of convergence
 </h5>
-<div class="card-text listing-description">
-In order to compare perfomance of algorithms we need to define a terminology for different types of convergence. Let <span class="math inline">\{x_k\}</span> be a sequence in <span class="math inline">\mathbb{R}^n</span> that…<span class="math inline"></span>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
 </div>
 </div>
 </a>
@@ -1103,8 +1003,8 @@ No matching items
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div id="listing-methods" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-4">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1697059241587" data-listing-reading-time-sort="1">
-<a href="./docs/methods/line_search/line_search.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1698945048966" data-listing-reading-time-sort="1" data-listing-word-count-sort="170">
+<a href="./docs/methods/line_search/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img src="docs/methods/line_search/unimodal.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
@@ -1112,7 +1012,7 @@ No matching items
 Line search
 </h5>
 <div class="card-text listing-description">
-Suppose, we have a problem of minimization of a function <span class="math display">f(x): \mathbb{R} \to \mathbb{R}</span> of scalar variable:
+Suppose, we have a problem of minimization of a function <span class="math inline">f(x): \mathbb{R} \to \mathbb{R}</span> of scalar variable:
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1123,8 +1023,8 @@ Suppose, we have a problem of minimization of a function <span class="math displ
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1697059241589" data-listing-reading-time-sort="1">
-<a href="./docs/methods/zom/zom.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1698945368007" data-listing-reading-time-sort="1" data-listing-word-count-sort="57">
+<a href="./docs/methods/zom/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img src="docs/methods/zom/zero_order_oracle.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
@@ -1132,7 +1032,7 @@ Suppose, we have a problem of minimization of a function <span class="math displ
 Zero order methods
 </h5>
 <div class="card-text listing-description">
-Now we have only…
+Now we have only zero order information from the oracle. Typical speed of convergence of these methods is sublinear. A lot of methods are referred both to zero order methods…
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1143,10 +1043,10 @@ Now we have only…
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1697059241586" data-listing-reading-time-sort="1">
-<a href="./docs/methods/fom/fom.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1698943696617" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
+<a href="./docs/methods/fom/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 First order methods
@@ -1163,7 +1063,7 @@ Now we have only first order information from the oracle.
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1697059241583" data-listing-reading-time-sort="7">
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1697059241583" data-listing-reading-time-sort="7" data-listing-word-count-sort="1254">
 <a href="./docs/methods/fom/GD.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img src="docs/methods/fom/lipschitz_parabola.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1183,7 +1083,7 @@ A classical problem of function minimization is considered.
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1697059241582" data-listing-reading-time-sort="5">
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1698944405684" data-listing-reading-time-sort="5" data-listing-word-count-sort="948">
 <a href="./docs/methods/adaptive_metrics/Newton.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/adaptive_metrics/newton_1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1192,7 +1092,7 @@ A classical problem of function minimization is considered.
 Newton method
 </h5>
 <div class="card-text listing-description">
-Consider the function <span class="math display">\varphi(x): \mathbb{R} \to \mathbb{R}</span>. Let there be equation <span class="math display">\varphi(x^*) = 0</span>. Consider a linear approximation of the function <span class="math display">\varphi(x)</span> ne…<span class="math display"></span>
+Consider the function <span class="math inline">\varphi(x): \mathbb{R} \to \mathbb{R}</span>. Let there be equation <span class="math inline">\varphi(x^*) = 0</span>. Consider a linear approximation of the function <span class="math inline">\varphi(x)</span> near the…<span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1203,7 +1103,7 @@ Consider the function <span class="math display">\varphi(x): \mathbb{R} \to \mat
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1697059241586" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1698943638687" data-listing-reading-time-sort="3" data-listing-word-count-sort="464">
 <a href="./docs/methods/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/iterative.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1229,16 +1129,16 @@ h_j(x) =&amp; 0, \; j = 1,\ldots,k\\
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1697059241582" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1698944340780" data-listing-reading-time-sort="3" data-listing-word-count-sort="445">
 <a href="./docs/methods/adaptive_metrics/Quasi_newton.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Quasi Newton methods
 </h5>
 <div class="card-text listing-description">
-For the classic task of unconditional optimization <span class="math display">f(x) \to \min\limits_{x \in \mathbb{R}^n}</span> the general scheme of iteration method is written as:
+For the classic task of unconditional optimization <span class="math inline">f(x) \to \min\limits_{x \in \mathbb{R}^n}</span> the general scheme of iteration method is written as:
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1249,7 +1149,7 @@ For the classic task of unconditional optimization <span class="math display">f(
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1697059241585" data-listing-reading-time-sort="7">
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1698944912204" data-listing-reading-time-sort="7" data-listing-word-count-sort="1229">
 <a href="./docs/methods/fom/Subgradient descent.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/fom/SD.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1269,16 +1169,16 @@ Subgradient descent
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1697059241582" data-listing-reading-time-sort="2">
-<a href="./docs/methods/adaptive_metrics/adaptive_metric.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1698944038482" data-listing-reading-time-sort="2" data-listing-word-count-sort="260">
+<a href="./docs/methods/adaptive_metrics/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Adaptive metric methods
 </h5>
 <div class="card-text listing-description">
-It is known, that antigradient <span class="math display">-\nabla f (x_0)</span> is the direction of the steepest descent of the function <span class="math display">f(x)</span> at point <span class="math display">x_0</span>. However, we can introduce another concept…
+It is known, that antigradient <span class="math inline">-\nabla f (x_0)</span> is the direction of the steepest descent of the function <span class="math inline">f(x)</span> at point <span class="math inline">x_0</span>. However, we can introduce another concept for…
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1289,7 +1189,7 @@ It is known, that antigradient <span class="math display">-\nabla f (x_0)</span>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1697059241584" data-listing-reading-time-sort="7">
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1698944741369" data-listing-reading-time-sort="7" data-listing-word-count-sort="1305">
 <a href="./docs/methods/fom/Projected_subgradient_descent.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/fom/geom_bound.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1309,7 +1209,7 @@ Suppose, we are to solve the following problem:
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1697059241584" data-listing-reading-time-sort="9">
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1698944658012" data-listing-reading-time-sort="9" data-listing-word-count-sort="1705">
 <a href="./docs/methods/fom/Mirror_descent.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/fom/bregman.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1318,7 +1218,7 @@ Suppose, we are to solve the following problem:
 Mirror descent
 </h5>
 <div class="card-text listing-description">
-Метод зеркального спуска является естественным обобщением метода проекции субградиента в случае обобщения <span class="math display">l_2</span> нормы на более общий случай какой-то функции расстояния.
+Метод зеркального спуска является естественным обобщением метода проекции субградиента в случае обобщения <span class="math inline">l_2</span> нормы на более общий случай какой-то функции расстояния.
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1329,7 +1229,7 @@ Mirror descent
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1697059241581" data-listing-reading-time-sort="6">
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1698943978975" data-listing-reading-time-sort="6" data-listing-word-count-sort="1065">
 <a href="./docs/methods/Simplex.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/LP.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1338,7 +1238,7 @@ Mirror descent
 LP and simplex algorithm
 </h5>
 <div class="card-text listing-description">
-Generall…
+Generally speaking, all problems with linear objective and linear equalitiesconstraints could be considered as Linear Programming. However, there are some widely accepted…
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1349,10 +1249,10 @@ Generall…
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1697059241585" data-listing-reading-time-sort="4">
+<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1698944789787" data-listing-reading-time-sort="4" data-listing-word-count-sort="609">
 <a href="./docs/methods/fom/SGD.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Stochastic gradient descent
@@ -1369,7 +1269,7 @@ Suppose, our target function is the sum of functions.
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1698305839940" data-listing-reading-time-sort="5">
+<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1698305839940" data-listing-reading-time-sort="5" data-listing-word-count-sort="938">
 <a href="./docs/methods/Autograd.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/differentiation_scheme.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1378,7 +1278,7 @@ Suppose, our target function is the sum of functions.
 Automatic differentiation
 </h5>
 <div class="card-text listing-description">
- Automatic differentiation is a scheme, that allows you to compute a value of gradient of function with a cost of computing…<span class="math inline"></span><span class="math inline"></span>
+ Automatic differentiation is a scheme, that allows you to compute a value of gradient of function with a cost of computing function itself only twice. ## Chain rule We will…<span class="math inline"></span><span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1389,10 +1289,10 @@ Automatic differentiation
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1697059241585" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1698944766407" data-listing-reading-time-sort="2" data-listing-word-count-sort="298">
 <a href="./docs/methods/fom/SAG.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Stochastic average gradient
@@ -1409,16 +1309,16 @@ A classical problem of minimizing finite sum of the smooth and convex functions 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="15" data-listing-file-modified-sort="1697059241583" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="15" data-listing-file-modified-sort="1698944484893" data-listing-reading-time-sort="2" data-listing-word-count-sort="253">
 <a href="./docs/methods/fom/ADAM.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 ADAM: A Method for Stochastic Optimization
 </h5>
 <div class="card-text listing-description">
-Adam is the stochastic first…
+Adam is the stochastic first order optimization algorithm, that uses historical information about stochastic gradients and incorporates it in attempt to estimate second…
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1429,10 +1329,10 @@ Adam is the stochastic first…
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1697059241584" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1698944521350" data-listing-reading-time-sort="2" data-listing-word-count-sort="225">
 <a href="./docs/methods/fom/Lookahead.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top"><img data-src="docs/methods/fom/fast_vs_slow.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="docs/methods/fom/fast_vs_slow.png" alt="Illustration" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Lookahead Optimizer: <span class="math inline">k</span> steps forward, <span class="math inline">1</span> step back
@@ -1449,10 +1349,10 @@ The lookahead method provides an interesting way to accelerate and stabilize alg
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1697059241585" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1697059241585" data-listing-reading-time-sort="1" data-listing-word-count-sort="61">
 <a href="./docs/methods/fom/Shampoo.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Shampoo: Preconditioned Stochastic Tensor Optimization
@@ -1469,7 +1369,7 @@ The idea of maintaining second order statistics from accumulated stochastic grad
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1697059241588" data-listing-reading-time-sort="6">
+<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1698945167718" data-listing-reading-time-sort="6" data-listing-word-count-sort="1002">
 <a href="./docs/methods/zom/bee_algorithm.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/zom/Schwefel_function_plot.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1489,7 +1389,7 @@ The Bee Algorithm was mathematically first described relatively recently. It is 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="19" data-listing-file-modified-sort="1697059241586" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="19" data-listing-file-modified-sort="1698944933012" data-listing-reading-time-sort="2" data-listing-word-count-sort="343">
 <a href="./docs/methods/line_search/binary_search.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/line_search/binary_search.gif" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1509,7 +1409,7 @@ We divide a segment into two equal parts and choose the one that contains the so
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="20" data-listing-file-modified-sort="1697059241581" data-listing-reading-time-sort="5">
+<div class="g-col-1" data-index="20" data-listing-file-modified-sort="1698944164806" data-listing-reading-time-sort="5" data-listing-word-count-sort="924">
 <a href="./docs/methods/adaptive_metrics/CG.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/adaptive_metrics/cg_win.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1529,7 +1429,7 @@ Originally, the conjugate gradients method was created to solve a system of line
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="21" data-listing-file-modified-sort="1697059241587" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="21" data-listing-file-modified-sort="1698944951650" data-listing-reading-time-sort="2" data-listing-word-count-sort="296">
 <a href="./docs/methods/line_search/golden_search.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/line_search/golden_search.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1538,7 +1438,7 @@ Originally, the conjugate gradients method was created to solve a system of line
 Golden search
 </h5>
 <div class="card-text listing-description">
-The idea is quite similar to the…
+The idea is quite similar to the dichotomy method. There are two golden points on the line segment (left and right) and the insightful idea is, that on the next iteration…
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1549,7 +1449,7 @@ The idea is quite similar to the…
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="22" data-listing-file-modified-sort="1697059241587" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="22" data-listing-file-modified-sort="1698944993472" data-listing-reading-time-sort="2" data-listing-word-count-sort="323">
 <a href="./docs/methods/line_search/inexact.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/line_search/backtracking.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1569,15 +1469,17 @@ This strategy of inexact line search works well in practice, as well as it has t
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="23" data-listing-file-modified-sort="1697059241581" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="23" data-listing-file-modified-sort="1697059241581" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
 <a href="./docs/methods/adaptive_metrics/KFAC.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top"><img data-src="https://colab.research.google.com/assets/colab-badge.svg#button" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 KFAC
 </h5>
 <div class="card-text listing-description">
+
+
 
 </div>
 <div class="card-attribution card-text-small start">
@@ -1589,10 +1491,10 @@ KFAC
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="24" data-listing-file-modified-sort="1697059241582" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="24" data-listing-file-modified-sort="1698944201875" data-listing-reading-time-sort="2" data-listing-word-count-sort="294">
 <a href="./docs/methods/adaptive_metrics/Natural_gradient.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Natural gradient descent
@@ -1609,7 +1511,7 @@ Let’s consider illustrative example of a simple function of 2 variables:
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="25" data-listing-file-modified-sort="1697059241588" data-listing-reading-time-sort="4">
+<div class="g-col-1" data-index="25" data-listing-file-modified-sort="1698945279248" data-listing-reading-time-sort="4" data-listing-word-count-sort="779">
 <a href="./docs/methods/zom/nelder-mead.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/zom/nm_mishra3d.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1618,7 +1520,7 @@ Let’s consider illustrative example of a simple function of 2 variables:
 Nelder–Mead
 </h5>
 <div class="card-text listing-description">
-Sometimes the multidimensional function is so difficult to evaluate that even expressing the <span class="math display">1^{\text{st}}</span> derivative for gradient-based methods of finding optimum becomes an impossible task. In this case, we can only rely…<span class="math display"></span>
+Sometimes the multidimensional function is so difficult to evaluate that even expressing the <span class="math inline">1^{\text{st}}</span> derivative for gradient-based methods of finding optimum becomes…<span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1629,7 +1531,7 @@ Sometimes the multidimensional function is so difficult to evaluate that even ex
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="26" data-listing-file-modified-sort="1697059241588" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="26" data-listing-file-modified-sort="1698945346448" data-listing-reading-time-sort="3" data-listing-word-count-sort="545">
 <a href="./docs/methods/zom/simulated-annealing.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/methods/zom/sa_wiki.gif" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1649,16 +1551,16 @@ We need to optimize the global optimum of a given function on some space using o
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="27" data-listing-file-modified-sort="1697059241587" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="27" data-listing-file-modified-sort="1698945120033" data-listing-reading-time-sort="3" data-listing-word-count-sort="477">
 <a href="./docs/methods/line_search/parabola.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Successive parabolic interpolation
 </h5>
 <div class="card-text listing-description">
-Sampling 3 points of a function determines unique parabola. Using this information we will go directly to its minimum. Suppose, we have 3 points <span class="math display">x_1 &lt; x_2 &lt; x_3</span> such…<span class="math display"></span><span class="math display"></span>
+Sampling 3 points of a function determines unique parabola. Using this information we will go directly to its minimum. Suppose, we have 3 points <span class="math inline">x_1 &lt; x_2 &lt; x_3</span> such that…<span class="math inline"></span><span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -1669,7 +1571,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="28" data-listing-file-modified-sort="1698680249318">
+<div class="g-col-1" data-index="28" data-listing-file-modified-sort="1698947814988">
 <a href="./docs/methods/Autograd.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1749,7 +1651,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="33" data-listing-file-modified-sort="1698680248863">
+<div class="g-col-1" data-index="33" data-listing-file-modified-sort="1698947814682">
 <a href="./docs/methods/Simplex.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1765,7 +1667,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="34" data-listing-file-modified-sort="1698680257415">
+<div class="g-col-1" data-index="34" data-listing-file-modified-sort="1698947820909">
 <a href="./docs/methods/adaptive_metrics/CG.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1781,7 +1683,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="35" data-listing-file-modified-sort="1698680256614">
+<div class="g-col-1" data-index="35" data-listing-file-modified-sort="1698947820321">
 <a href="./docs/methods/adaptive_metrics/KFAC.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1797,7 +1699,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="36" data-listing-file-modified-sort="1698680256243">
+<div class="g-col-1" data-index="36" data-listing-file-modified-sort="1698947820041">
 <a href="./docs/methods/adaptive_metrics/Natural_gradient.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1813,7 +1715,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="37" data-listing-file-modified-sort="1698680258232">
+<div class="g-col-1" data-index="37" data-listing-file-modified-sort="1698947821543">
 <a href="./docs/methods/adaptive_metrics/Newton.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1829,7 +1731,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="38" data-listing-file-modified-sort="1698680257787">
+<div class="g-col-1" data-index="38" data-listing-file-modified-sort="1698947821196">
 <a href="./docs/methods/adaptive_metrics/Quasi_newton.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1845,23 +1747,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="39" data-listing-file-modified-sort="1698680256970">
-<a href="./docs/methods/adaptive_metrics/adaptive_metric.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left borderless">
-<div class="card-body post-contents">
-<div class="card-text listing-description">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="40" data-listing-file-modified-sort="1696706817070">
+<div class="g-col-1" data-index="39" data-listing-file-modified-sort="1696706817070">
 <a href="./docs/methods/adaptive_metrics/approx_taylor.mp4" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1877,7 +1763,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="41" data-listing-file-modified-sort="1696706817070">
+<div class="g-col-1" data-index="40" data-listing-file-modified-sort="1696706817070">
 <a href="./docs/methods/adaptive_metrics/cg_win.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -1893,8 +1779,24 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="42" data-listing-file-modified-sort="1696706817071">
+<div class="g-col-1" data-index="41" data-listing-file-modified-sort="1696706817071">
 <a href="./docs/methods/adaptive_metrics/eigenvectors.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="42" data-listing-file-modified-sort="1698947820593">
+<a href="./docs/methods/adaptive_metrics/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
 <div class="card-text listing-description">
@@ -2037,7 +1939,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="51" data-listing-file-modified-sort="1698680250050">
+<div class="g-col-1" data-index="51" data-listing-file-modified-sort="1698947815548">
 <a href="./docs/methods/fom/ADAM.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2053,7 +1955,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="52" data-listing-file-modified-sort="1698680251451">
+<div class="g-col-1" data-index="52" data-listing-file-modified-sort="1698947816493">
 <a href="./docs/methods/fom/GD.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2069,7 +1971,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="53" data-listing-file-modified-sort="1698680251855">
+<div class="g-col-1" data-index="53" data-listing-file-modified-sort="1698947816768">
 <a href="./docs/methods/fom/Lookahead.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2117,7 +2019,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="56" data-listing-file-modified-sort="1698680250543">
+<div class="g-col-1" data-index="56" data-listing-file-modified-sort="1698947815884">
 <a href="./docs/methods/fom/Mirror_descent.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2133,7 +2035,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="57" data-listing-file-modified-sort="1698680252337">
+<div class="g-col-1" data-index="57" data-listing-file-modified-sort="1698947817077">
 <a href="./docs/methods/fom/Projected_subgradient_descent.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2149,7 +2051,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="58" data-listing-file-modified-sort="1698680250937">
+<div class="g-col-1" data-index="58" data-listing-file-modified-sort="1698947816165">
 <a href="./docs/methods/fom/SAG.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2181,7 +2083,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="60" data-listing-file-modified-sort="1698680253584">
+<div class="g-col-1" data-index="60" data-listing-file-modified-sort="1698947817971">
 <a href="./docs/methods/fom/SGD.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2197,7 +2099,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="61" data-listing-file-modified-sort="1698680249667">
+<div class="g-col-1" data-index="61" data-listing-file-modified-sort="1698947815258">
 <a href="./docs/methods/fom/Shampoo.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2213,7 +2115,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="62" data-listing-file-modified-sort="1698680253149">
+<div class="g-col-1" data-index="62" data-listing-file-modified-sort="1698947817669">
 <a href="./docs/methods/fom/Subgradient descent.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2261,23 +2163,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="65" data-listing-file-modified-sort="1698680252665">
-<a href="./docs/methods/fom/fom.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left borderless">
-<div class="card-body post-contents">
-<div class="card-text listing-description">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="66" data-listing-file-modified-sort="1696706817080">
+<div class="g-col-1" data-index="65" data-listing-file-modified-sort="1696706817080">
 <a href="./docs/methods/fom/geom_bound.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2293,8 +2179,24 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="67" data-listing-file-modified-sort="1696706817080">
+<div class="g-col-1" data-index="66" data-listing-file-modified-sort="1696706817080">
 <a href="./docs/methods/fom/imagenet_train_loss.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="67" data-listing-file-modified-sort="1698947817338">
+<a href="./docs/methods/fom/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
 <div class="card-text listing-description">
@@ -2341,7 +2243,23 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="70" data-listing-file-modified-sort="1698680255860">
+<div class="g-col-1" data-index="70" data-listing-file-modified-sort="1698947819732">
+<a href="./docs/methods/index-listing.json" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="71" data-listing-file-modified-sort="1698947819759">
 <a href="./docs/methods/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2357,7 +2275,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="71" data-listing-file-modified-sort="1696706817081">
+<div class="g-col-1" data-index="72" data-listing-file-modified-sort="1696706817081">
 <a href="./docs/methods/iterative.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2373,7 +2291,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="72" data-listing-file-modified-sort="1696706817081">
+<div class="g-col-1" data-index="73" data-listing-file-modified-sort="1696706817081">
 <a href="./docs/methods/line_search/backtracking.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2389,7 +2307,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="73" data-listing-file-modified-sort="1696706817082">
+<div class="g-col-1" data-index="74" data-listing-file-modified-sort="1696706817082">
 <a href="./docs/methods/line_search/binary_search.gif" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2405,7 +2323,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="74" data-listing-file-modified-sort="1698680254686">
+<div class="g-col-1" data-index="75" data-listing-file-modified-sort="1698947819054">
 <a href="./docs/methods/line_search/binary_search.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2421,7 +2339,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="75" data-listing-file-modified-sort="1698680255102">
+<div class="g-col-1" data-index="76" data-listing-file-modified-sort="1698947819321">
 <a href="./docs/methods/line_search/golden_search.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2437,7 +2355,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="76" data-listing-file-modified-sort="1696706817083">
+<div class="g-col-1" data-index="77" data-listing-file-modified-sort="1696706817083">
 <a href="./docs/methods/line_search/golden_search.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2453,7 +2371,23 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="77" data-listing-file-modified-sort="1698680254325">
+<div class="g-col-1" data-index="78" data-listing-file-modified-sort="1698947818786">
+<a href="./docs/methods/line_search/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="79" data-listing-file-modified-sort="1698947818516">
 <a href="./docs/methods/line_search/inexact.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2469,23 +2403,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="78" data-listing-file-modified-sort="1698680255460">
-<a href="./docs/methods/line_search/line_search.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left borderless">
-<div class="card-body post-contents">
-<div class="card-text listing-description">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="79" data-listing-file-modified-sort="1698680253944">
+<div class="g-col-1" data-index="80" data-listing-file-modified-sort="1698947818240">
 <a href="./docs/methods/line_search/parabola.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2501,7 +2419,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="80" data-listing-file-modified-sort="1696706817084">
+<div class="g-col-1" data-index="81" data-listing-file-modified-sort="1696706817084">
 <a href="./docs/methods/line_search/unimodal.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2517,7 +2435,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="81" data-listing-file-modified-sort="1696706817086">
+<div class="g-col-1" data-index="82" data-listing-file-modified-sort="1696706817086">
 <a href="./docs/methods/line_search/unimodal_pro.gif" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2533,7 +2451,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="82" data-listing-file-modified-sort="1696706817086">
+<div class="g-col-1" data-index="83" data-listing-file-modified-sort="1696706817086">
 <a href="./docs/methods/line_search/wolfe_fmin.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2549,7 +2467,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="83" data-listing-file-modified-sort="1696706817086">
+<div class="g-col-1" data-index="84" data-listing-file-modified-sort="1696706817086">
 <a href="./docs/methods/oracle.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2565,7 +2483,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="84" data-listing-file-modified-sort="1696706817086">
+<div class="g-col-1" data-index="85" data-listing-file-modified-sort="1696706817086">
 <a href="./docs/methods/zom/Rosenbrock_average.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2581,7 +2499,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="85" data-listing-file-modified-sort="1696706817086">
+<div class="g-col-1" data-index="86" data-listing-file-modified-sort="1696706817086">
 <a href="./docs/methods/zom/Rosenbrock_dimension.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2597,7 +2515,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="86" data-listing-file-modified-sort="1696706817095">
+<div class="g-col-1" data-index="87" data-listing-file-modified-sort="1696706817095">
 <a href="./docs/methods/zom/Rosenbrock_function_plot.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2613,7 +2531,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="87" data-listing-file-modified-sort="1696706817095">
+<div class="g-col-1" data-index="88" data-listing-file-modified-sort="1696706817095">
 <a href="./docs/methods/zom/Schwefel_average.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2629,7 +2547,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="88" data-listing-file-modified-sort="1696706817096">
+<div class="g-col-1" data-index="89" data-listing-file-modified-sort="1696706817096">
 <a href="./docs/methods/zom/Schwefel_function.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2645,7 +2563,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="89" data-listing-file-modified-sort="1696706817112">
+<div class="g-col-1" data-index="90" data-listing-file-modified-sort="1696706817112">
 <a href="./docs/methods/zom/Schwefel_function_plot.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2661,7 +2579,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="90" data-listing-file-modified-sort="1698680248376">
+<div class="g-col-1" data-index="91" data-listing-file-modified-sort="1698947814087">
 <a href="./docs/methods/zom/bee_algorithm.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2677,7 +2595,23 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="91" data-listing-file-modified-sort="1698680247438">
+<div class="g-col-1" data-index="92" data-listing-file-modified-sort="1698947814362">
+<a href="./docs/methods/zom/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="93" data-listing-file-modified-sort="1698947813462">
 <a href="./docs/methods/zom/nelder-mead.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2693,7 +2627,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="92" data-listing-file-modified-sort="1696706817149">
+<div class="g-col-1" data-index="94" data-listing-file-modified-sort="1696706817149">
 <a href="./docs/methods/zom/nm_RoundDomain.gif" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2709,7 +2643,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="93" data-listing-file-modified-sort="1696706817151">
+<div class="g-col-1" data-index="95" data-listing-file-modified-sort="1696706817151">
 <a href="./docs/methods/zom/nm_RoundDomain.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2725,7 +2659,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="94" data-listing-file-modified-sort="1696706817193">
+<div class="g-col-1" data-index="96" data-listing-file-modified-sort="1696706817193">
 <a href="./docs/methods/zom/nm_SquareDomain1.gif" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2741,7 +2675,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="95" data-listing-file-modified-sort="1696706817196">
+<div class="g-col-1" data-index="97" data-listing-file-modified-sort="1696706817196">
 <a href="./docs/methods/zom/nm_SquareDomain1.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2757,7 +2691,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="96" data-listing-file-modified-sort="1696706817237">
+<div class="g-col-1" data-index="98" data-listing-file-modified-sort="1696706817237">
 <a href="./docs/methods/zom/nm_SquareDomain2.gif" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2773,7 +2707,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="97" data-listing-file-modified-sort="1696706817239">
+<div class="g-col-1" data-index="99" data-listing-file-modified-sort="1696706817239">
 <a href="./docs/methods/zom/nm_SquareDomain2.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2789,7 +2723,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="98" data-listing-file-modified-sort="1696706817269">
+<div class="g-col-1" data-index="100" data-listing-file-modified-sort="1696706817269">
 <a href="./docs/methods/zom/nm_SquareDomain3.gif" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2805,7 +2739,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="99" data-listing-file-modified-sort="1696706817273">
+<div class="g-col-1" data-index="101" data-listing-file-modified-sort="1696706817273">
 <a href="./docs/methods/zom/nm_SquareDomain3.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2821,7 +2755,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="100" data-listing-file-modified-sort="1696706817277">
+<div class="g-col-1" data-index="102" data-listing-file-modified-sort="1696706817277">
 <a href="./docs/methods/zom/nm_domains.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2837,7 +2771,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="101" data-listing-file-modified-sort="1696706817281">
+<div class="g-col-1" data-index="103" data-listing-file-modified-sort="1696706817281">
 <a href="./docs/methods/zom/nm_mishra3d.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2853,7 +2787,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="102" data-listing-file-modified-sort="1696706817281">
+<div class="g-col-1" data-index="104" data-listing-file-modified-sort="1696706817281">
 <a href="./docs/methods/zom/queens.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2869,7 +2803,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="103" data-listing-file-modified-sort="1696706817281">
+<div class="g-col-1" data-index="105" data-listing-file-modified-sort="1696706817281">
 <a href="./docs/methods/zom/sa-example.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2885,7 +2819,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="104" data-listing-file-modified-sort="1696706817281">
+<div class="g-col-1" data-index="106" data-listing-file-modified-sort="1696706817281">
 <a href="./docs/methods/zom/sa-runs.svg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2901,7 +2835,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="105" data-listing-file-modified-sort="1696706817285">
+<div class="g-col-1" data-index="107" data-listing-file-modified-sort="1696706817285">
 <a href="./docs/methods/zom/sa_wiki.gif" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2917,7 +2851,7 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="106" data-listing-file-modified-sort="1698680247846">
+<div class="g-col-1" data-index="108" data-listing-file-modified-sort="1698947813757">
 <a href="./docs/methods/zom/simulated-annealing.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -2933,24 +2867,8 @@ Sampling 3 points of a function determines unique parabola. Using this informati
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="107" data-listing-file-modified-sort="1696706817285">
+<div class="g-col-1" data-index="109" data-listing-file-modified-sort="1696706817285">
 <a href="./docs/methods/zom/zero_order_oracle.svg" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left borderless">
-<div class="card-body post-contents">
-<div class="card-text listing-description">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="108" data-listing-file-modified-sort="1698680246976">
-<a href="./docs/methods/zom/zom.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
 <div class="card-text listing-description">
@@ -2992,7 +2910,6 @@ No matching items
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-
 <table class="quarto-listing-table table table-hover">
 <thead>
 <tr>
@@ -3002,109 +2919,109 @@ No matching items
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1697059241578" data-listing-reading-time-sort="4" data-listing-title-sort="Matrix calculus" data-listing-filename-sort="matrix_calculus.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="0" data-listing-file-modified-sort="1698946423894" data-listing-reading-time-sort="4" data-listing-word-count-sort="748" data-listing-title-sort="Matrix calculus" data-listing-filename-sort="matrix_calculus.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/matrix_calculus.html" class="title listing-title">Matrix calculus</a>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1697059241576" data-listing-reading-time-sort="11" data-listing-title-sort="Convex sets" data-listing-filename-sort="convex_sets.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="1" data-listing-file-modified-sort="1698946096501" data-listing-reading-time-sort="11" data-listing-word-count-sort="2011" data-listing-title-sort="Convex sets" data-listing-filename-sort="convex_sets.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/convex_sets.html" class="title listing-title">Convex sets</a>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1697059241578" data-listing-reading-time-sort="3" data-listing-title-sort="Projection" data-listing-filename-sort="projection.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="2" data-listing-file-modified-sort="1698946448853" data-listing-reading-time-sort="3" data-listing-word-count-sort="419" data-listing-title-sort="Projection" data-listing-filename-sort="projection.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/projection.html" class="title listing-title">Projection</a>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1697059241578" data-listing-reading-time-sort="1" data-listing-title-sort="Exercises" data-listing-filename-sort="index.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="3" data-listing-file-modified-sort="1698946356275" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Exercises" data-listing-filename-sort="index.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/index.html" class="title listing-title">Exercises</a>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1697059241579" data-listing-reading-time-sort="2" data-listing-title-sort="Separation" data-listing-filename-sort="separation.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="4" data-listing-file-modified-sort="1698946479181" data-listing-reading-time-sort="2" data-listing-word-count-sort="335" data-listing-title-sort="Separation" data-listing-filename-sort="separation.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/separation.html" class="title listing-title">Separation</a>
 </td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1697059241575" data-listing-reading-time-sort="5" data-listing-title-sort="Conjugate sets" data-listing-filename-sort="conjugate_sets.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="5" data-listing-file-modified-sort="1698946076324" data-listing-reading-time-sort="5" data-listing-word-count-sort="850" data-listing-title-sort="Conjugate sets" data-listing-filename-sort="conjugate_sets.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/conjugate_sets.html" class="title listing-title">Conjugate sets</a>
 </td>
 </tr>
-<tr data-index="6" data-listing-file-modified-sort="1697059241576" data-listing-reading-time-sort="5" data-listing-title-sort="Convex functions" data-listing-filename-sort="convex_functions.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="6" data-listing-file-modified-sort="1698946092225" data-listing-reading-time-sort="5" data-listing-word-count-sort="866" data-listing-title-sort="Convex functions" data-listing-filename-sort="convex_functions.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/convex_functions.html" class="title listing-title">Convex functions</a>
 </td>
 </tr>
-<tr data-index="7" data-listing-file-modified-sort="1697059241579" data-listing-reading-time-sort="2" data-listing-title-sort="Subgradient and subdifferential" data-listing-filename-sort="subgradient.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="7" data-listing-file-modified-sort="1698946499966" data-listing-reading-time-sort="2" data-listing-word-count-sort="337" data-listing-title-sort="Subgradient and subdifferential" data-listing-filename-sort="subgradient.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/subgradient.html" class="title listing-title">Subgradient and subdifferential</a>
 </td>
 </tr>
-<tr data-index="8" data-listing-file-modified-sort="1697059241575" data-listing-reading-time-sort="2" data-listing-title-sort="Conjugate functions" data-listing-filename-sort="conjugate_functions.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="8" data-listing-file-modified-sort="1698946081587" data-listing-reading-time-sort="2" data-listing-word-count-sort="244" data-listing-title-sort="Conjugate functions" data-listing-filename-sort="conjugate_functions.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/conjugate_functions.html" class="title listing-title">Conjugate functions</a>
 </td>
 </tr>
-<tr data-index="9" data-listing-file-modified-sort="1697059241577" data-listing-reading-time-sort="4" data-listing-title-sort="General optimization problems" data-listing-filename-sort="gop.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="9" data-listing-file-modified-sort="1698946352324" data-listing-reading-time-sort="4" data-listing-word-count-sort="786" data-listing-title-sort="General optimization problems" data-listing-filename-sort="gop.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/gop.html" class="title listing-title">General optimization problems</a>
 </td>
 </tr>
-<tr data-index="10" data-listing-file-modified-sort="1697059241576" data-listing-reading-time-sort="6" data-listing-title-sort="Duality" data-listing-filename-sort="duality.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="10" data-listing-file-modified-sort="1698946242727" data-listing-reading-time-sort="6" data-listing-word-count-sort="1114" data-listing-title-sort="Duality" data-listing-filename-sort="duality.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/duality.html" class="title listing-title">Duality</a>
 </td>
 </tr>
-<tr data-index="11" data-listing-file-modified-sort="1697059241575" data-listing-reading-time-sort="2" data-listing-title-sort="Rates of convergence" data-listing-filename-sort="convergence.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="11" data-listing-file-modified-sort="1698946087521" data-listing-reading-time-sort="2" data-listing-word-count-sort="258" data-listing-title-sort="Rates of convergence" data-listing-filename-sort="convergence.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/convergence.html" class="title listing-title">Rates of convergence</a>
 </td>
 </tr>
-<tr data-index="12" data-listing-file-modified-sort="1697059241578" data-listing-reading-time-sort="3" data-listing-title-sort="Line search" data-listing-filename-sort="line_search.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="12" data-listing-file-modified-sort="1698946397537" data-listing-reading-time-sort="3" data-listing-word-count-sort="427" data-listing-title-sort="Line search" data-listing-filename-sort="line_search.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/line_search.html" class="title listing-title">Line search</a>
 </td>
 </tr>
-<tr data-index="13" data-listing-file-modified-sort="1697059241576" data-listing-reading-time-sort="3" data-listing-title-sort="CVXPY library" data-listing-filename-sort="cvxpy.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="13" data-listing-file-modified-sort="1698946123685" data-listing-reading-time-sort="3" data-listing-word-count-sort="525" data-listing-title-sort="CVXPY library" data-listing-filename-sort="cvxpy.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/cvxpy.html" class="title listing-title">CVXPY library</a>
 </td>
 </tr>
-<tr data-index="14" data-listing-file-modified-sort="1697059241575" data-listing-reading-time-sort="4" data-listing-title-sort="Automatic differentiation" data-listing-filename-sort="automatic_differentiation.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="14" data-listing-file-modified-sort="1698945567461" data-listing-reading-time-sort="4" data-listing-word-count-sort="613" data-listing-title-sort="Automatic differentiation" data-listing-filename-sort="automatic_differentiation.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/automatic_differentiation.html" class="title listing-title">Automatic differentiation</a>
 </td>
 </tr>
-<tr data-index="15" data-listing-file-modified-sort="1697059241580" data-listing-reading-time-sort="13" data-listing-title-sort="Zero order methods" data-listing-filename-sort="zom.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="15" data-listing-file-modified-sort="1698946564347" data-listing-reading-time-sort="13" data-listing-word-count-sort="2528" data-listing-title-sort="Zero order methods" data-listing-filename-sort="zom.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/zom.html" class="title listing-title">Zero order methods</a>
 </td>
 </tr>
-<tr data-index="16" data-listing-file-modified-sort="1697059241577" data-listing-reading-time-sort="8" data-listing-title-sort="First order methods" data-listing-filename-sort="fom.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="16" data-listing-file-modified-sort="1698946247849" data-listing-reading-time-sort="8" data-listing-word-count-sort="1491" data-listing-title-sort="First order methods" data-listing-filename-sort="fom.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/fom.html" class="title listing-title">First order methods</a>
 </td>
 </tr>
-<tr data-index="17" data-listing-file-modified-sort="1697059241579" data-listing-reading-time-sort="2" data-listing-title-sort="Uncategorized" data-listing-filename-sort="uncategorized.md" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="17" data-listing-file-modified-sort="1698946549085" data-listing-reading-time-sort="2" data-listing-word-count-sort="338" data-listing-title-sort="Uncategorized" data-listing-filename-sort="uncategorized.md" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
 <a href="./docs/exercises/uncategorized.html" class="title listing-title">Uncategorized</a>
@@ -3113,125 +3030,124 @@ No matching items
 <tr data-index="18" data-listing-file-modified-sort="1696706817056" data-listing-filename-sort="Unimodal.svg" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/Unimodal.svg" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="19" data-listing-file-modified-sort="1698680274662" data-listing-filename-sort="automatic_differentiation.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="19" data-listing-file-modified-sort="1698947832008" data-listing-filename-sort="automatic_differentiation.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/automatic_differentiation.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="20" data-listing-file-modified-sort="1698680273861" data-listing-filename-sort="conjugate_functions.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="20" data-listing-file-modified-sort="1698947831427" data-listing-filename-sort="conjugate_functions.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/conjugate_functions.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="21" data-listing-file-modified-sort="1698680268472" data-listing-filename-sort="conjugate_sets.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="21" data-listing-file-modified-sort="1698947827708" data-listing-filename-sort="conjugate_sets.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/conjugate_sets.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="22" data-listing-file-modified-sort="1698680272420" data-listing-filename-sort="convergence.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="22" data-listing-file-modified-sort="1698947830342" data-listing-filename-sort="convergence.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/convergence.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="23" data-listing-file-modified-sort="1698680275485" data-listing-filename-sort="convex_functions.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="23" data-listing-file-modified-sort="1698947832613" data-listing-filename-sort="convex_functions.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/convex_functions.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="24" data-listing-file-modified-sort="1698680269990" data-listing-filename-sort="convex_sets.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="24" data-listing-file-modified-sort="1698947828649" data-listing-filename-sort="convex_sets.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/convex_sets.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="25" data-listing-file-modified-sort="1698680268864" data-listing-filename-sort="cvxpy.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="25" data-listing-file-modified-sort="1698947827991" data-listing-filename-sort="cvxpy.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/cvxpy.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="26" data-listing-file-modified-sort="1698680270525" data-listing-filename-sort="duality.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="26" data-listing-file-modified-sort="1698947828978" data-listing-filename-sort="duality.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/duality.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="27" data-listing-file-modified-sort="1698680272825" data-listing-filename-sort="fom.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="27" data-listing-file-modified-sort="1698947830646" data-listing-filename-sort="fom.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/fom.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="28" data-listing-file-modified-sort="1698680272043" data-listing-filename-sort="gop.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="28" data-listing-file-modified-sort="1698947830069" data-listing-filename-sort="gop.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/gop.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="29" data-listing-file-modified-sort="1698680273151" data-listing-filename-sort="index.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="29" data-listing-file-modified-sort="1698947830891" data-listing-filename-sort="index.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/index.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="30" data-listing-file-modified-sort="1698680275042" data-listing-filename-sort="line_search.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="30" data-listing-file-modified-sort="1698947832283" data-listing-filename-sort="line_search.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/line_search.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="31" data-listing-file-modified-sort="1698680274265" data-listing-filename-sort="matrix_calculus.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="31" data-listing-file-modified-sort="1698947831715" data-listing-filename-sort="matrix_calculus.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/matrix_calculus.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="32" data-listing-file-modified-sort="1698680271626" data-listing-filename-sort="projection.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="32" data-listing-file-modified-sort="1698947829775" data-listing-filename-sort="projection.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/projection.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="33" data-listing-file-modified-sort="1698680273504" data-listing-filename-sort="separation.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="33" data-listing-file-modified-sort="1698947831153" data-listing-filename-sort="separation.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/separation.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
 <tr data-index="34" data-listing-file-modified-sort="1696706817058" data-listing-filename-sort="simple_learning.svg" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/simple_learning.svg" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="35" data-listing-file-modified-sort="1698680271261" data-listing-filename-sort="subgradient.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="35" data-listing-file-modified-sort="1698947829508" data-listing-filename-sort="subgradient.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/subgradient.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="36" data-listing-file-modified-sort="1698680270879" data-listing-filename-sort="uncategorized.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="36" data-listing-file-modified-sort="1698947829241" data-listing-filename-sort="uncategorized.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/uncategorized.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
-<tr data-index="37" data-listing-file-modified-sort="1698680269353" data-listing-filename-sort="zom.html" onclick="href = this.querySelector('a').getAttribute('href');
+<tr data-index="37" data-listing-file-modified-sort="1698947828327" data-listing-filename-sort="zom.html" onclick="href = this.querySelector('a').getAttribute('href');
  if (href) { window.location=href ; return false; }">
 <td>
-<span class="listing-title">undefined</span>
+<a href="./docs/exercises/zom.html" class="title listing-title">&nbsp;</a>
 </td>
 </tr>
 </tbody>
-
 </table>
 <div class="listing-no-matching d-none">
 No matching items
@@ -3244,10 +3160,10 @@ No matching items
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div id="listing-applications" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-4">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1697059241572" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1698946748715" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
 <a href="./docs/applications/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Applications
@@ -3264,10 +3180,10 @@ This section contains self-sufficient examples of numerical applications with Py
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1697059241570" data-listing-reading-time-sort="6">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1698946696289" data-listing-reading-time-sort="6" data-listing-word-count-sort="1163">
 <a href="./docs/applications/A-Star.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/MapGermanyGraph.svg/250px-MapGermanyGraph.svg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 <span class="math inline">A^*</span> algorithm for path finding
@@ -3284,7 +3200,7 @@ The <strong>graph</strong> is one of the most significant structures in the algo
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1697059241571" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1698946756417" data-listing-reading-time-sort="2" data-listing-word-count-sort="220">
 <a href="./docs/applications/deep_learning.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img src="docs/applications/dl.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3293,7 +3209,7 @@ The <strong>graph</strong> is one of the most significant structures in the algo
 Deep learning
 </h5>
 <div class="card-text listing-description">
-A lot of practical tasks nowadays are being solved using the deep learning approach, which is usually implies finding local…
+A lot of practical tasks nowadays are being solved using the deep learning approach, which is usually implies finding local minimum of a non-convex function, that…
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -3304,10 +3220,10 @@ A lot of practical tasks nowadays are being solved using the deep learning appro
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1697059241572" data-listing-reading-time-sort="4">
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1698946778677" data-listing-reading-time-sort="4" data-listing-word-count-sort="755">
 <a href="./docs/applications/knapsack_problem.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Knapsack.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Knapsack problem
@@ -3324,7 +3240,7 @@ The knapsack problem or rucksack problem is a problem in combinatorial optimizat
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1697059241572" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1698946898530" data-listing-reading-time-sort="3" data-listing-word-count-sort="456">
 <a href="./docs/applications/least_squares.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/lls_idea.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3333,7 +3249,7 @@ The knapsack problem or rucksack problem is a problem in combinatorial optimizat
 Linear least squares
 </h5>
 <div class="card-text listing-description">
- In a least-squares, or linear regression, problem, we have measurements <span class="math display"> X \in \mathbb{R}^{m \times n} </span> and <span class="math display"> y \in \mathbb{R}^{m} </span> and seek a vector <span class="math display"> …</span><span class="math display"></span><span class="math display"></span>
+In a least-squares, or linear regression, problem, we have measurements <span class="math inline">X \in \mathbb{R}^{m \times n}</span> and <span class="math inline">y \in \mathbb{R}^{m}</span> and seek a vector <span class="math inline">\theta \in \mathbb{R}^{n}</span> suc…<span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -3344,7 +3260,7 @@ Linear least squares
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1697059241571" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1698946945588" data-listing-reading-time-sort="3" data-listing-word-count-sort="480">
 <a href="./docs/applications/MLE.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/mle.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3353,7 +3269,7 @@ Linear least squares
 Maximum likelihood estimation
 </h5>
 <div class="card-text listing-description">
-We need to estimate probability density <span class="math display">p(x)</span> of a random variable from observed values.
+We need to estimate probability density <span class="math inline">p(x)</span> of a random variable from observed values.
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -3364,7 +3280,7 @@ We need to estimate probability density <span class="math display">p(x)</span> o
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1697059241572" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1698946752748" data-listing-reading-time-sort="1" data-listing-word-count-sort="188">
 <a href="./docs/applications/ellipsoid.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/ellipsoid.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3373,7 +3289,7 @@ We need to estimate probability density <span class="math display">p(x)</span> o
 Minimum volume ellipsoid
 </h5>
 <div class="card-text listing-description">
-Let <span class="math display">x_1, \ldots, x_n</span> be the points in <span class="math display">\mathbb{R}^2</span>. Given these points we need…
+Let <span class="math inline">x_1, \ldots, x_n</span> be the points in <span class="math inline">\mathbb{R}^2</span>. Given these points we need to find an ellipsoid, that contains all points with the minimum volume (in 2d case volume of…
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -3384,7 +3300,7 @@ Let <span class="math display">x_1, \ldots, x_n</span> be the points in <span cl
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1697059241571" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1698946992988" data-listing-reading-time-sort="2" data-listing-word-count-sort="345">
 <a href="./docs/applications/NN_Loss_Surface.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/nn_vis_CNN_line_no_drop.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3404,7 +3320,7 @@ Let’s consider the training of our neural network by solving the following opt
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1697059241571" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1697059241571" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
 <a href="./docs/applications/Neural_Lipschitz_constant.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/adv_attack.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3424,10 +3340,10 @@ It was observed, that small perturbation in Neural Network input could lead to s
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1697059241573" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1698947063465" data-listing-reading-time-sort="3" data-listing-word-count-sort="520">
 <a href="./docs/applications/pca.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top"><img data-src="https://i.stack.imgur.com/lNHqt.gif" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Principal component analysis
@@ -3444,7 +3360,7 @@ Imagine, that you have a dataset of points. Your goal is to choose orthogonal ax
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1697059241573" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1698947085803" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
 <a href="./docs/applications/rendezvous.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/rendezvous.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3453,7 +3369,7 @@ Imagine, that you have a dataset of points. Your goal is to choose orthogonal ax
 Rendezvous problem
 </h5>
 <div class="card-text listing-description">
-We have two bodies in discrete time: the first is described by its coordinate <span class="math display">x_i</span> and its speed <span class="math display">v_i</span>, the second has coordinate <span class="math display">z_i</span> and speed <span class="math display">u_i</span>. Each body has its own dynamics, which we denote…<span class="math display"></span>
+We have two bodies in discrete time: the first is described by its coordinate <span class="math inline">x_i</span> and its speed <span class="math inline">v_i</span>, the second has coordinate <span class="math inline">z_i</span> and speed <span class="math inline">u_i</span>. Each body has its own…<span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -3464,7 +3380,7 @@ We have two bodies in discrete time: the first is described by its coordinate <s
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1697059241574" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1698947169544" data-listing-reading-time-sort="3" data-listing-word-count-sort="407">
 <a href="./docs/applications/total_variation_inpainting.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/tv_start.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3473,7 +3389,7 @@ We have two bodies in discrete time: the first is described by its coordinate <s
 Total variation in-painting
 </h5>
 <div class="card-text listing-description">
-A grayscale image is represented as an <span class="math display">m \times n</span> matrix of intensities <span class="math display">U^{orig}</span> (typically between the values <span class="math display">0</span> and <span class="math display">255</span>). We are given all the values of corrupted picture, but some of them…<span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span><span class="math display"></span>
+A grayscale image is represented as an <span class="math inline">m \times n</span> matrix of intensities <span class="math inline">U^{orig}</span> (typically between the values <span class="math inline">0</span> and <span class="math inline">255</span>). We are given all the values of corrupted picture…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -3484,7 +3400,7 @@ A grayscale image is represented as an <span class="math display">m \times n</sp
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1697059241573" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1698947127487" data-listing-reading-time-sort="3" data-listing-word-count-sort="425">
 <a href="./docs/applications/salesman_problem.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/salesman_problem.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3493,7 +3409,7 @@ A grayscale image is represented as an <span class="math display">m \times n</sp
 Travelling salesman problem
 </h5>
 <div class="card-text listing-description">
-Suppose, we have <span class="math display">N</span> points in <span class="math display">\mathbb{R}^d</span> Euclidian space (for simplicity, we’ll consider and plot case with <span class="math display">d=2</span>). Let’s imagine, that these points are nothing else but houses in some 2d village. Salesman…
+Suppose, we have <span class="math inline">N</span> points in <span class="math inline">\mathbb{R}^d</span> Euclidian space (for simplicity, we’ll consider and plot case with <span class="math inline">d=2</span>). Let’s imagine, that these points are nothing else but…
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -3504,7 +3420,7 @@ Suppose, we have <span class="math display">N</span> points in <span class="math
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1698666572593" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1698947211817" data-listing-reading-time-sort="3" data-listing-word-count-sort="412">
 <a href="./docs/applications/two_way_partitioning.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top"><img data-src="docs/applications/partition.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -3513,7 +3429,7 @@ Suppose, we have <span class="math display">N</span> points in <span class="math
 Two way partitioning problem
 </h5>
 <div class="card-text listing-description">
-Suppose, we have a set of <span class="math inline">n</span> objects, which are needed to be split into two groups. Moreover, we…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span>
+Suppose, we have a set of <span class="math inline">n</span> objects, which are needed to be split into two groups. Moreover, we have information about the preferences of all possible pairs of objects to be…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -3524,7 +3440,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1698680280045">
+<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1698947836009">
 <a href="./docs/applications/A-Star.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3556,7 +3472,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1698680280713">
+<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1698947836518">
 <a href="./docs/applications/Eigenfaces.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3572,10 +3488,10 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1697059072506" data-listing-reading-time-sort="0">
+<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1697059072506">
 <a href="./docs/applications/Eigenfaces.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img data-src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <div class="card-text listing-description">
 
@@ -3589,7 +3505,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1698680278462">
+<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1698947834865">
 <a href="./docs/applications/MLE.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3621,7 +3537,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="20" data-listing-file-modified-sort="1698680277681">
+<div class="g-col-1" data-index="20" data-listing-file-modified-sort="1698947834284">
 <a href="./docs/applications/NN_Loss_Surface.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3637,7 +3553,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="21" data-listing-file-modified-sort="1698680276819">
+<div class="g-col-1" data-index="21" data-listing-file-modified-sort="1698947833658">
 <a href="./docs/applications/Neural_Lipschitz_constant.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3685,7 +3601,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="24" data-listing-file-modified-sort="1698680279496">
+<div class="g-col-1" data-index="24" data-listing-file-modified-sort="1698947835652">
 <a href="./docs/applications/deep_learning.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3717,7 +3633,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="26" data-listing-file-modified-sort="1698680278818">
+<div class="g-col-1" data-index="26" data-listing-file-modified-sort="1698947835132">
 <a href="./docs/applications/ellipsoid.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3765,7 +3681,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="29" data-listing-file-modified-sort="1698680279138">
+<div class="g-col-1" data-index="29" data-listing-file-modified-sort="1698947835384">
 <a href="./docs/applications/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3781,7 +3697,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="30" data-listing-file-modified-sort="1698680277282">
+<div class="g-col-1" data-index="30" data-listing-file-modified-sort="1698947833977">
 <a href="./docs/applications/knapsack_problem.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -3845,7 +3761,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="34" data-listing-file-modified-sort="1698680281480">
+<div class="g-col-1" data-index="34" data-listing-file-modified-sort="1698947837098">
 <a href="./docs/applications/least_squares.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4037,7 +3953,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="46" data-listing-file-modified-sort="1698680278077">
+<div class="g-col-1" data-index="46" data-listing-file-modified-sort="1698947834572">
 <a href="./docs/applications/pca.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4085,7 +4001,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="49" data-listing-file-modified-sort="1698680280388">
+<div class="g-col-1" data-index="49" data-listing-file-modified-sort="1698947836269">
 <a href="./docs/applications/rendezvous.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4149,7 +4065,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="53" data-listing-file-modified-sort="1698680282250">
+<div class="g-col-1" data-index="53" data-listing-file-modified-sort="1698947837674">
 <a href="./docs/applications/salesman_problem.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4197,7 +4113,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="56" data-listing-file-modified-sort="1698680281099">
+<div class="g-col-1" data-index="56" data-listing-file-modified-sort="1698947836805">
 <a href="./docs/applications/total_variation_inpainting.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4373,7 +4289,7 @@ Suppose, we have a set of <span class="math inline">n</span> objects, which are 
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="67" data-listing-file-modified-sort="1698680281860">
+<div class="g-col-1" data-index="67" data-listing-file-modified-sort="1698947837383">
 <a href="./docs/applications/two_way_partitioning.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4401,10 +4317,10 @@ No matching items
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <div id="listing-benchmarks" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-4">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1697059241574" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1698946575168" data-listing-reading-time-sort="1" data-listing-word-count-sort="15">
 <a href="./docs/benchmarks/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Benchmarks
@@ -4421,10 +4337,10 @@ Here you can find comparison of different algorithms with respect to the differe
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1697059241574" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1698946633815" data-listing-reading-time-sort="1" data-listing-word-count-sort="26">
 <a href="./docs/benchmarks/CNN_on_Fashion_MNIST.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 CNN on FashionMNIST
@@ -4441,16 +4357,16 @@ This chapter is WIP. We will make interactive graphs with benchmarx library, whi
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1697059241574" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1698946614782" data-listing-reading-time-sort="1" data-listing-word-count-sort="63">
 <a href="./docs/benchmarks/linear_least_squares.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="/favicon.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Linear Least Squares
 </h5>
 <div class="card-text listing-description">
-In a least-squares, or linear regression, problem, we have measurements <span class="math display"> A \in \mathbb{R}^{m \times n} </span> and <span class="math display"> b \in \mathbb{R}^{m} </span> and seek a vector <span class="math display"> x \in \mathbb{R}^{n} </span> such…<span class="math display"></span><span class="math display"></span>
+In a least-squares, or linear regression, problem, we have measurements <span class="math inline">A \in \mathbb{R}^{m \times n}</span> and <span class="math inline">b \in \mathbb{R}^{m}</span> and seek a vector <span class="math inline">x \in \mathbb{R}^{n}</span> such…<span class="math inline"></span><span class="math inline"></span>
 </div>
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
@@ -4477,7 +4393,7 @@ In a least-squares, or linear regression, problem, we have measurements <span cl
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1698680276466">
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1698947833398">
 <a href="./docs/benchmarks/CNN_on_Fashion_MNIST.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4493,7 +4409,7 @@ In a least-squares, or linear regression, problem, we have measurements <span cl
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1698680276138">
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1698947833137">
 <a href="./docs/benchmarks/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4509,7 +4425,7 @@ In a least-squares, or linear regression, problem, we have measurements <span cl
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1698680275816">
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1698947832890">
 <a href="./docs/benchmarks/linear_least_squares.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <div class="card-body post-contents">
@@ -4648,10 +4564,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -4661,8 +4576,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -4675,6 +4599,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -4718,6 +4764,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -4743,6 +4790,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -4801,17 +4874,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/new\.fmin\.xyz");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
 });
@@ -4820,4 +4897,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/index.md" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/MerkulovDaniil/optim/edit/master/index.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

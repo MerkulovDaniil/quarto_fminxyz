@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.467">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,7 +46,10 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    null
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -82,47 +85,45 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Conjugate gradients">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://new.fmin.xyz/docs/methods/adaptive_metrics/cg_win.svg">
 <meta name="twitter:title" content="Conjugate gradients">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://new.fmin.xyz/docs/methods/adaptive_metrics/cg_win.svg">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../../logo.svg" alt="fmin.xyz" class="navbar-logo">
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto tools-wide">
-    <a href="https://github.com/MerkulovDaniil/optim" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-    <a href="https://www.youtube.com/@fmin" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
-    <a href="https://t.me/fminxyz" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
+        <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/MerkulovDaniil/optim" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://www.youtube.com/@fmin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
+    <a href="https://t.me/fminxyz" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/methods/index.html">Methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/adaptive_metrics/Newton.html">Adaptive Metrics</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/adaptive_metrics/CG.html">Conjugate gradients</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/methods/index.html">Methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/adaptive_metrics/index.html">Adaptive metric methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/adaptive_metrics/CG.html">Conjugate gradients</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -240,69 +241,39 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LP and simplex algorithm</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Automatic differentiation</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Adaptive Metrics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <a href="../../../docs/methods/zom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zero order methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Newton method</span></a>
+  <a href="../../../docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bee algorithm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quasi Newton methods</span></a>
+  <a href="../../../docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nelder–Mead</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/adaptive_metric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adaptive metric methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Conjugate gradients</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">KFAC</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Natural gradient descent</span></a>
+  <a href="../../../docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulated annealing</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Fom</span></a>
+            <a href="../../../docs/methods/line_search/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Line search</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -310,10 +281,39 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/fom/fom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">First order methods</span></a>
+  <a href="../../../docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Binary search</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Golden search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inexact line search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Successive parabolic interpolation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/methods/fom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First order methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/fom/GD.html" class="sidebar-item-text sidebar-link">
@@ -372,80 +372,57 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Line Search</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <a href="../../../docs/methods/adaptive_metrics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adaptive metric methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/line_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Line search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Newton method</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Binary search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quasi Newton methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Golden search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Conjugate gradients</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inexact line search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KFAC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Successive parabolic interpolation</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Natural gradient descent</span></a>
   </div>
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
- <span class="menu-text">Zom</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/zom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Zero order methods</span></a>
+  <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LP and simplex algorithm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bee algorithm</span></a>
+  <a href="../../../docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic differentiation</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nelder–Mead</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulated annealing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -716,7 +693,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -733,7 +710,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">6</span> Code</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/methods/adaptive_metrics/CG.md" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/methods/adaptive_metrics/CG.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
 <button type="button" name="button" class="btn" id="toggleSpoilers">
 🔽
@@ -745,9 +722,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header">
 </header>
 
+
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p><img src="./cg_win.svg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cg_win.svg" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 <p>Originally, the conjugate gradients method was created to solve a system of linear equations.</p>
 <p><span class="math display">
 Ax = b
@@ -756,15 +739,15 @@ Ax = b
 <p><span class="math display">
 f(x) = \frac{1}{2}x^\top A x - b^\top x + c \to \min\limits_{x \in \mathbb{R}^n }
 </span></p>
-<p>Here <span class="math display">x \in \mathbb{R}^n, A \in \mathbb{R}^{n \times n}</span>, <span class="math display">b \in \mathbb{R}^n, c \in \mathbb{R}</span>.</p>
+<p>Here <span class="math inline">x \in \mathbb{R}^n, A \in \mathbb{R}^{n \times n}</span>, <span class="math inline">b \in \mathbb{R}^n, c \in \mathbb{R}</span>.</p>
 </section>
 <section id="method-of-conjugate-gradients-for-the-quadratic-function" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Method of conjugate gradients for the quadratic function</h1>
-<p>We will consider symmetric matrices <span class="math display">A \in \mathbb{S}^n</span> (otherwise, replacing <span class="math display">A' = \frac{A + A^\top}{2}</span> leads to the same optimization problem). Then:</p>
+<p>We will consider symmetric matrices <span class="math inline">A \in \mathbb{S}^n</span> (otherwise, replacing <span class="math inline">A' = \frac{A + A^\top}{2}</span> leads to the same optimization problem). Then:</p>
 <p><span class="math display">
 \nabla f = Ax - b
 </span></p>
-<p>Then having an initial guess <span class="math display">x_0</span>, vector <span class="math display">d_0 = -\nabla f(x_0)</span> is the direction of the fastest decrease. The procedure of the steepest descent in this direction is provided by the procedure of line search:</p>
+<p>Then having an initial guess <span class="math inline">x_0</span>, vector <span class="math inline">d_0 = -\nabla f(x_0)</span> is the direction of the fastest decrease. The procedure of the steepest descent in this direction is provided by the procedure of line search:</p>
 <p><span class="math display">
 \begin{align*}
 g(\alpha) &amp;= f(x_0 + \alpha d_0) \\
@@ -772,7 +755,7 @@ g(\alpha) &amp;= f(x_0 + \alpha d_0) \\
           &amp;= \frac{1}{2}\alpha^2 {d_0}^\top A d_0 + {d_0}^\top (A x_0 - b) \alpha + (\frac{1}{2} {x_0}^\top A x_0 + {x_0}^\top d_0 + c)
 \end{align*}
 </span></p>
-<p>Assuming that the point of the zero derivative in this parabola is the minimum (for positive matrices it is guaranteed, otherwise it is not a fact), and also, rewriting this problem for the arbitrary (<span class="math display">k</span>) direction of the method, we have:</p>
+<p>Assuming that the point of the zero derivative in this parabola is the minimum (for positive matrices it is guaranteed, otherwise it is not a fact), and also, rewriting this problem for the arbitrary (<span class="math inline">k</span>) direction of the method, we have:</p>
 <p><span class="math display">
 g'(\alpha_k) = (d_k^\top A d_k)\alpha_k + d_k^\top(A x_k - b) = 0
 </span></p>
@@ -787,33 +770,38 @@ x_1 = x_0 - \alpha_0 \nabla f(x_0)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./steepest.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">http://fourier.eng.hmc.edu/e176/lectures/</figcaption>
+<figcaption>http://fourier.eng.hmc.edu/e176/lectures/</figcaption>
 </figure>
 </div>
-<p>In order to avoid this, we introduce the concept of <span class="math display">A</span>-conjugate vectors: let’s say that two vectors <span class="math display">x</span>, <span class="math display">y</span> are <span class="math display">A</span>-conjugate relative to each other if they are executed:</p>
+<p>In order to avoid this, we introduce the concept of <span class="math inline">A</span>-conjugate vectors: let’s say that two vectors <span class="math inline">x</span>, <span class="math inline">y</span> are <span class="math inline">A</span>-conjugate relative to each other if they are executed:</p>
 <p><span class="math display">
 x^\top A y = 0
 </span></p>
-<p>This concept becomes particularly interesting when matrix <span class="math display">A</span> is positive defined, then <span class="math display">x,y</span> vectors will be orthogonal if the scalar product is defined by the matrix <span class="math display">A</span>. Therefore, this property is also called <span class="math display">A</span> - orthogonality.</p>
-<p><img src="./eigenvectors.png" class="img-fluid"></p>
-<p>Then we will build the method in such a way that the next direction is <span class="math display">A</span> - orthogonal with the previous one:</p>
+<p>This concept becomes particularly interesting when matrix <span class="math inline">A</span> is positive defined, then <span class="math inline">x,y</span> vectors will be orthogonal if the scalar product is defined by the matrix <span class="math inline">A</span>. Therefore, this property is also called <span class="math inline">A</span> - orthogonality.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="eigenvectors.png" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
+<p>Then we will build the method in such a way that the next direction is <span class="math inline">A</span> - orthogonal with the previous one:</p>
 <p><span class="math display">
 d_1 = -\nabla f(x_1) + \beta_0 d_0,
 </span></p>
-<p>where <span class="math display">\beta_0</span> is selected in a way that <span class="math display">d_1 \perp_A d_0</span>:</p>
+<p>where <span class="math inline">\beta_0</span> is selected in a way that <span class="math inline">d_1 \perp_A d_0</span>:</p>
 <p><span class="math display">
 d_1^\top A d_0 = -\nabla f(x_1)^\top Ad_0 + \beta_0 d_0^\top A d_0 = 0
 </span></p>
 <p><span class="math display">
 \beta_0 = \frac{\nabla f(x_1)^\top A d_0}{d_0^\top A d_0}
 </span></p>
-<p>It’s interesting that all received <span class="math display">A</span> directions are <span class="math display">A</span>- orthogonal to each other. (proved by induction)</p>
+<p>It’s interesting that all received <span class="math inline">A</span> directions are <span class="math inline">A</span>- orthogonal to each other. (proved by induction)</p>
 <p>Thus, we formulate an algorithm:</p>
 <ol type="1">
-<li><p>Let <span class="math display">k = 0</span> and <span class="math display">x_k = x_0</span>, count <span class="math display">d_k = d_0 = -\nabla f(x_0)</span>.</p></li>
+<li><p>Let <span class="math inline">k = 0</span> and <span class="math inline">x_k = x_0</span>, count <span class="math inline">d_k = d_0 = -\nabla f(x_0)</span>.</p></li>
 <li><p>By the procedure of line search we find the optimal length of step:</p></li>
 </ol>
-<p>Calculate <span class="math display">\alpha</span> minimizing <span class="math display">f(x_k + \alpha_k d_k)</span> by the formula</p>
+<p>Calculate <span class="math inline">\alpha</span> minimizing <span class="math inline">f(x_k + \alpha_k d_k)</span> by the formula</p>
 <p><span class="math display">
   \alpha_k = -\frac{d_k^\top (A x_k - b)}{d_k^\top A d_k}
   </span></p>
@@ -824,13 +812,13 @@ d_1^\top A d_0 = -\nabla f(x_1)^\top Ad_0 + \beta_0 d_0^\top A d_0 = 0
   x_{k+1} = x_k + \alpha_k d_k
   </span></p>
 <ol start="4" type="1">
-<li>update the direction: <span class="math display">d_{k+1} = -\nabla f(x_{k+1}) + \beta_k d_k</span>, where <span class="math display">\beta_k</span> is calculated by the formula:</li>
+<li>update the direction: <span class="math inline">d_{k+1} = -\nabla f(x_{k+1}) + \beta_k d_k</span>, where <span class="math inline">\beta_k</span> is calculated by the formula:</li>
 </ol>
 <p><span class="math display">
   \beta_k = \frac{\nabla f(x_{k+1})^\top A d_k}{d_k^\top A d_k}.
   </span></p>
 <ol start="5" type="1">
-<li>Repeat steps 2-4 until <span class="math display">n</span> directions are built, where <span class="math display">n</span> is the dimension of space (dimension of <span class="math display">x</span>).</li>
+<li>Repeat steps 2-4 until <span class="math inline">n</span> directions are built, where <span class="math inline">n</span> is the dimension of space (dimension of <span class="math inline">x</span>).</li>
 </ol>
 </section>
 <section id="method-of-conjugate-gradients-for-non-quadratic-function" class="level1" data-number="3">
@@ -840,11 +828,11 @@ d_1^\top A d_0 = -\nabla f(x_1)^\top Ad_0 + \beta_0 d_0^\top A d_0 = 0
 <p><span class="math display">
 x_{k+1} - x_k = c d_k,
 </span></p>
-<p>where <span class="math display">c</span> is some kind of constant. Then for the quadratic case, we have:</p>
+<p>where <span class="math inline">c</span> is some kind of constant. Then for the quadratic case, we have:</p>
 <p><span class="math display">
 \nabla f(x_{k+1}) - \nabla f(x_k) = (A x_{k+1} - b) - (A x_k - b) = A(x_{k+1}-x_k) = cA d_k
 </span></p>
-<p>Expressing from this equation the work <span class="math display">Ad_k = \dfrac{1}{c} \left( \nabla f(x_{k+1}) - \nabla f(x_k)\right)</span>, we get rid of the “knowledge” of the function in step definition <span class="math display">\beta_k</span>, then point 4 will be rewritten as:</p>
+<p>Expressing from this equation the work <span class="math inline">Ad_k = \dfrac{1}{c} \left( \nabla f(x_{k+1}) - \nabla f(x_k)\right)</span>, we get rid of the “knowledge” of the function in step definition <span class="math inline">\beta_k</span>, then point 4 will be rewritten as:</p>
 <p><span class="math display">
 \beta_k = \frac{\nabla f(x_{k+1})^\top (\nabla f(x_{k+1}) - \nabla f(x_k))}{d_k^\top (\nabla f(x_{k+1}) - \nabla f(x_k))}.
 </span></p>
@@ -854,9 +842,9 @@ x_{k+1} - x_k = c d_k,
 <h1 data-number="4"><span class="header-section-number">4</span> Examples</h1>
 <section id="example-1" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">4.1</span> Example 1</h2>
-<p>Prove that if a set of vectors <span class="math display">d_1, \ldots, d_k</span> - are <span class="math display">A</span>-conjugate (each pair of vectors is <span class="math display">A</span>-conjugate), these vectors are linearly independent. <span class="math display">A \in \mathbb{S}^n_{++}</span>.</p>
+<p>Prove that if a set of vectors <span class="math inline">d_1, \ldots, d_k</span> - are <span class="math inline">A</span>-conjugate (each pair of vectors is <span class="math inline">A</span>-conjugate), these vectors are linearly independent. <span class="math inline">A \in \mathbb{S}^n_{++}</span>.</p>
 <p>Solution:</p>
-<p>We’ll show, that if <span class="math display">\sum\limits_{i=1}^k\alpha_k d_k = 0</span>, than all coefficients should be equal to zero:</p>
+<p>We’ll show, that if <span class="math inline">\sum\limits_{i=1}^k\alpha_k d_k = 0</span>, than all coefficients should be equal to zero:</p>
 <p><span class="math display">
   \begin{align*}
   0 &amp;= \sum\limits_{i=1}^n\alpha_k d_k \\
@@ -865,7 +853,7 @@ x_{k+1} - x_k = c d_k,
     &amp;=  \alpha_j d_j^\top A d_j  + 0 + \ldots + 0\\
   \end{align*}
   </span></p>
-<p>Thus, <span class="math display">\alpha_j = 0</span>, for all other indices one have perform the same process</p>
+<p>Thus, <span class="math inline">\alpha_j = 0</span>, for all other indices one have perform the same process</p>
 </section>
 </section>
 <section id="references" class="level1" data-number="5">
@@ -963,10 +951,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -976,8 +963,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -990,6 +986,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1033,6 +1151,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1058,6 +1177,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1116,22 +1261,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/new\.fmin\.xyz");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

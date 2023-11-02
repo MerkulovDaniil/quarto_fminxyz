@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.467">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,7 +46,10 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    null
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -82,51 +85,45 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Newton method">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://new.fmin.xyz/docs/methods/adaptive_metrics/newton_1.png">
-<meta property="og:image:height" content="314">
-<meta property="og:image:width" content="627">
 <meta name="twitter:title" content="Newton method">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://new.fmin.xyz/docs/methods/adaptive_metrics/newton_1.png">
-<meta name="twitter:image-height" content="314">
-<meta name="twitter:image-width" content="627">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../../logo.svg" alt="fmin.xyz" class="navbar-logo">
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto tools-wide">
-    <a href="https://github.com/MerkulovDaniil/optim" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-    <a href="https://www.youtube.com/@fmin" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
-    <a href="https://t.me/fminxyz" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
+        <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/MerkulovDaniil/optim" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://www.youtube.com/@fmin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
+    <a href="https://t.me/fminxyz" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/methods/index.html">Methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/adaptive_metrics/Newton.html">Adaptive Metrics</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/adaptive_metrics/Newton.html">Newton method</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/methods/index.html">Methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/adaptive_metrics/index.html">Adaptive metric methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/adaptive_metrics/Newton.html">Newton method</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -244,69 +241,39 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LP and simplex algorithm</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Automatic differentiation</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Adaptive Metrics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <a href="../../../docs/methods/zom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zero order methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Newton method</span></a>
+  <a href="../../../docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bee algorithm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quasi Newton methods</span></a>
+  <a href="../../../docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nelder–Mead</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/adaptive_metric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adaptive metric methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conjugate gradients</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">KFAC</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Natural gradient descent</span></a>
+  <a href="../../../docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulated annealing</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Fom</span></a>
+            <a href="../../../docs/methods/line_search/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Line search</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -314,10 +281,39 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/fom/fom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">First order methods</span></a>
+  <a href="../../../docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Binary search</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Golden search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inexact line search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Successive parabolic interpolation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/methods/fom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First order methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/fom/GD.html" class="sidebar-item-text sidebar-link">
@@ -376,80 +372,57 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Line Search</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <a href="../../../docs/methods/adaptive_metrics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adaptive metric methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/line_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Line search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Newton method</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Binary search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quasi Newton methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Golden search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjugate gradients</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inexact line search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KFAC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Successive parabolic interpolation</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Natural gradient descent</span></a>
   </div>
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
- <span class="menu-text">Zom</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/zom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Zero order methods</span></a>
+  <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LP and simplex algorithm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bee algorithm</span></a>
+  <a href="../../../docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic differentiation</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nelder–Mead</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulated annealing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -720,7 +693,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -743,7 +716,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials"><span class="header-section-number">4</span> Materials</a></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">5</span> Code</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/methods/adaptive_metrics/Newton.md" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/methods/adaptive_metrics/Newton.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
 <button type="button" name="button" class="btn" id="toggleSpoilers">
 🔽
@@ -755,11 +728,12 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header">
 </header>
 
+
 <section id="intuition" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Intuition</h1>
 <section id="newtons-method-to-find-the-equation-roots" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="newtons-method-to-find-the-equation-roots"><span class="header-section-number">1.1</span> Newton’s method to find the equation’ roots</h2>
-<p>Consider the function <span class="math display">\varphi(x): \mathbb{R} \to \mathbb{R}</span>. Let there be equation <span class="math display">\varphi(x^*) = 0</span>. Consider a linear approximation of the function <span class="math display">\varphi(x)</span> near the solution (<span class="math display">x^* - x = \Delta x</span>):</p>
+<p>Consider the function <span class="math inline">\varphi(x): \mathbb{R} \to \mathbb{R}</span>. Let there be equation <span class="math inline">\varphi(x^*) = 0</span>. Consider a linear approximation of the function <span class="math inline">\varphi(x)</span> near the solution (<span class="math inline">x^* - x = \Delta x</span>):</p>
 <p><span class="math display">
 \varphi(x^*) = \varphi(x + \Delta x) \approx \varphi(x) + \varphi'(x)\Delta x.
 </span></p>
@@ -767,31 +741,41 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">
 \varphi(x) + \varphi'(x) \Delta x = 0
 </span></p>
-<p>We can assume that the solution to equation <span class="math display">\Delta x = - \dfrac{\varphi(x)}{\varphi'(x)}</span> will be close to the optimal <span class="math display">\Delta x^* = x^* - x</span>.</p>
+<p>We can assume that the solution to equation <span class="math inline">\Delta x = - \dfrac{\varphi(x)}{\varphi'(x)}</span> will be close to the optimal <span class="math inline">\Delta x^* = x^* - x</span>.</p>
 <p>We get an iterative scheme:</p>
 <p><span class="math display">
 x_{k+1} = x_k - \dfrac{\varphi(x_k)}{\varphi'(x_k)}.
 </span></p>
-<p><img src="./newton_1.png" class="img-fluid"></p>
-<p>This reasoning can be applied to the unconditional minimization task of the <span class="math display">f(x)</span> function by writing down the necessary extremum condition:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="newton_1.png" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
+<p>This reasoning can be applied to the unconditional minimization task of the <span class="math inline">f(x)</span> function by writing down the necessary extremum condition:</p>
 <p><span class="math display">
 f'(x^*) = 0
 </span></p>
-<p>Here <span class="math display">\varphi(x) = f'(x), \; \varphi'(x) = f''(x)</span>. Thus, we get the Newton optimization method in its classic form:</p>
+<p>Here <span class="math inline">\varphi(x) = f'(x), \; \varphi'(x) = f''(x)</span>. Thus, we get the Newton optimization method in its classic form:</p>
 <p><span class="math display">
 \tag{Newton}
 x_{k+1} = x_k - \left[ f''(x_k)\right]^{-1}f'(x_k).
 </span></p>
-<p>With the only clarification that in the multidimensional case: <span class="math display">x \in \mathbb{R}^n, \; f'(x) = \nabla f(x) \in \mathbb{R}^n, \; f''(x) = \nabla^2 f(x) \in \mathbb{R}^{n \times n}</span>.</p>
+<p>With the only clarification that in the multidimensional case: <span class="math inline">x \in \mathbb{R}^n, \; f'(x) = \nabla f(x) \in \mathbb{R}^n, \; f''(x) = \nabla^2 f(x) \in \mathbb{R}^{n \times n}</span>.</p>
 </section>
 <section id="second-order-taylor-approximation-of-the-function" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="second-order-taylor-approximation-of-the-function"><span class="header-section-number">1.2</span> Second order Taylor approximation of the function</h2>
-<p>Let us now give us the function <span class="math display">f(x)</span> and a certain point <span class="math display">x_k</span>. Let us consider the square approximation of this function near <span class="math display">x_k</span>:</p>
+<p>Let us now give us the function <span class="math inline">f(x)</span> and a certain point <span class="math inline">x_k</span>. Let us consider the square approximation of this function near <span class="math inline">x_k</span>:</p>
 <p><span class="math display">
 \tilde{f}(x) = f(x_k) + \langle f'(x_k), x - x_k\rangle + \frac{1}{2} \langle f''(x_k)(x-x_k), x-x_k \rangle.
 </span></p>
-<p>The idea of the method is to find the point <span class="math display">x_{k+1}</span>, that minimizes the function <span class="math display">\tilde{f}(x)</span>, i.e.&nbsp;<span class="math display">\nabla \tilde{f}(x_{k+1}) = 0</span>.</p>
-<p><img src="./newton.svg" class="img-fluid"></p>
+<p>The idea of the method is to find the point <span class="math inline">x_{k+1}</span>, that minimizes the function <span class="math inline">\tilde{f}(x)</span>, i.e.&nbsp;<span class="math inline">\nabla \tilde{f}(x_{k+1}) = 0</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="newton.svg" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 <p><span class="math display">
 \begin{align*}
 \nabla \tilde{f}(x_{k+1}) &amp;= f'(x_{k}) + f''(x_{k})(x_{k+1} - x_k) = 0 \\
@@ -801,15 +785,13 @@ x_{k+1} &amp;= x_k -\left[ f''(x_k)\right]^{-1} f'(x_{k}).
 \end{align*}
 </span></p>
 <p>Let us immediately note the limitations related to the necessity of the Hessian’s non-degeneracy (for the method to exist), as well as its positive definiteness (for the convergence guarantee).</p>
-<video autoplay="" loop="" muted="" playsinline="" src="./approx_taylor.mp4">
-</video>
+<div class="responsive-video"><video autoplay="" loop="" class="video"><source src="../../theory/inaccurate_taylor.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
 <p>Quadratic approximation and Newton step (in green) for varying starting points (in red). Note that when the starting point is far from the global minimizer (in 0), the Newton step totally overshoots the global minimizer. Picture was taken from the <a href="https://francisbach.com/self-concordant-analysis-newton/">post</a>.</p>
 </section>
 </section>
 <section id="convergence" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Convergence</h1>
-<video autoplay="" loop="" muted="" playsinline="" src="./newton_field.mp4">
-</video>
+<div class="responsive-video"><video autoplay="" loop="" class="video"><source src="newton_field.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
 <p>Let’s try to get an estimate of how quickly the classical Newton method converges. We will try to enter the necessary data and constants as needed in the conclusion (to illustrate the methodology of obtaining such estimates).</p>
 <p><span class="math display">
 \begin{align*}
@@ -821,7 +803,7 @@ x_{k+1} - x^* = x_k -\left[ f''(x_k)\right]^{-1} f'(x_{k}) - x^* = x_k - x^* -\l
 = \left[ f''(x_k)\right]^{-1} G_k (x_k - x^*)
 \end{align*}
 </span></p>
-<p>Used here is: <span class="math display">G_k = \int_0^1 \left( f''(x_k) - f''(x^* + \tau (x_k - x^*)) d \tau\right)</span>. Let’s try to estimate the size of <span class="math display">G_k</span>:</p>
+<p>Used here is: <span class="math inline">G_k = \int_0^1 \left( f''(x_k) - f''(x^* + \tau (x_k - x^*)) d \tau\right)</span>. Let’s try to estimate the size of <span class="math inline">G_k</span>:</p>
 <p><span class="math display">
 \begin{align*}
 \| G_k\| = \left\| \int_0^1 \left( f''(x_k) - f''(x^* + \tau (x_k - x^*)) d \tau\right)\right\| \leq \\
@@ -829,7 +811,7 @@ x_{k+1} - x^* = x_k -\left[ f''(x_k)\right]^{-1} f'(x_{k}) - x^* = x_k - x^* -\l
 \leq \int_0^1 M\|x_k - x^* - \tau (x_k - x^*)\| d \tau = \int_0^1 M\|x_k - x^*\|(1- \tau)d \tau = \frac{r_k}{2}M,
 \end{align*}
 </span></p>
-<p>where <span class="math display">r_k = \| x_k - x^* \|</span>.</p>
+<p>where <span class="math inline">r_k = \| x_k - x^* \|</span>.</p>
 <p>So, we have:</p>
 <p><span class="math display">
 r_{k+1}  \leq \left\|\left[ f''(x_k)\right]^{-1}\right\| \cdot \frac{r_k}{2}M \cdot r_k
@@ -844,7 +826,7 @@ f''(x_k) \succeq \mu I_n - Mr_k I_n \\
 f''(x_k) \succeq (\mu- Mr_k )I_n \\
 \end{align*}
 </span></p>
-<p>So, (here we should already limit the necessity of being <span class="math display">f''(x_k) \succ 0</span> for such estimations, i.e.&nbsp;<span class="math display">r_k &lt; \frac{\mu}{M}</span>).</p>
+<p>So, (here we should already limit the necessity of being <span class="math inline">f''(x_k) \succ 0</span> for such estimations, i.e.&nbsp;<span class="math inline">r_k &lt; \frac{\mu}{M}</span>).</p>
 <p><span class="math display">
 \begin{align*}
 \left\|\left[ f''(x_k)\right]^{-1}\right\| \leq (\mu - Mr_k)^{-1}
@@ -853,27 +835,27 @@ f''(x_k) \succeq (\mu- Mr_k )I_n \\
 <p><span class="math display">
 r_{k+1}  \leq \dfrac{r_k^2 M}{2(\mu - Mr_k)}
 </span></p>
-<p>The convergence condition <span class="math display">r_{k+1} &lt; r_k</span> imposes additional conditions on <span class="math display">r_k:  \;\;\; r_k &lt; \frac{2 \mu}{3M}</span></p>
-<p>Thus, we have an important result: Newton’s method for the function with Lipschitz positive Hessian converges <strong>quadratically</strong> near (<span class="math display">\| x_0 - x^* \| &lt; \frac{2 \mu}{3M}</span>) to the solution.</p>
+<p>The convergence condition <span class="math inline">r_{k+1} &lt; r_k</span> imposes additional conditions on <span class="math inline">r_k: \;\;\; r_k &lt; \frac{2 \mu}{3M}</span></p>
+<p>Thus, we have an important result: Newton’s method for the function with Lipschitz positive Hessian converges <strong>quadratically</strong> near (<span class="math inline">\| x_0 - x^* \| &lt; \frac{2 \mu}{3M}</span>) to the solution.</p>
 <section id="theorem" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="theorem"><span class="header-section-number">2.1</span> Theorem</h2>
-<p>Let <span class="math display">f(x)</span> be a strongly convex twice continuously differentiated function at <span class="math display">\mathbb{R}^n</span>, for the second derivative of which inequalities are executed: <span class="math display">\mu I_n\preceq f''(x) \preceq L I_n </span>. Then Newton’s method with a constant step locally converges to solving the problem with superlinear speed. If, in addition, Hessian is Lipschitz continuous, then this method converges locally to <span class="math display">x^*</span> at a quadratic rate.</p>
+<p>Let <span class="math inline">f(x)</span> be a strongly convex twice continuously differentiated function at <span class="math inline">\mathbb{R}^n</span>, for the second derivative of which inequalities are executed: $I_nf’’(x) L I_n $. Then Newton’s method with a constant step locally converges to solving the problem with superlinear speed. If, in addition, Hessian is Lipschitz continuous, then this method converges locally to <span class="math inline">x^*</span> at a quadratic rate.</p>
 </section>
 </section>
 <section id="summary" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Summary</h1>
 <p>It’s nice:</p>
 <ul>
-<li>quadratic convergence near the solution <span class="math display">x^*</span></li>
+<li>quadratic convergence near the solution <span class="math inline">x^*</span></li>
 <li>affinity invariance</li>
 <li>the parameters have little effect on the convergence rate</li>
 </ul>
 <p>It’s not nice:</p>
 <ul>
-<li>it is necessary to store the hessian on each iteration: <span class="math display">\mathcal{O}(n^2)</span> memory</li>
-<li>it is necessary to solve linear systems: <span class="math display">\mathcal{O}(n^3)</span> operations</li>
-<li>the Hessian can be degenerate at <span class="math display">x^*</span></li>
-<li>the hessian may not be positively determined <span class="math display">\to</span> direction <span class="math display">-(f''(x))^{-1}f'(x)</span> may not be a descending direction</li>
+<li>it is necessary to store the hessian on each iteration: <span class="math inline">\mathcal{O}(n^2)</span> memory</li>
+<li>it is necessary to solve linear systems: <span class="math inline">\mathcal{O}(n^3)</span> operations</li>
+<li>the Hessian can be degenerate at <span class="math inline">x^*</span></li>
+<li>the hessian may not be positively determined <span class="math inline">\to</span> direction <span class="math inline">-(f''(x))^{-1}f'(x)</span> may not be a descending direction</li>
 </ul>
 <section id="possible-directions" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="possible-directions"><span class="header-section-number">3.1</span> Possible directions</h2>
@@ -982,10 +964,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -995,8 +976,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1009,6 +999,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1052,6 +1164,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1077,6 +1190,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1135,22 +1274,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/new\.fmin\.xyz");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

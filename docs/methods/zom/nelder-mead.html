@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.467">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,7 +46,10 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    null
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -82,47 +85,45 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Nelder–Mead">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://new.fmin.xyz/docs/methods/zom/nm_mishra3d.svg">
 <meta name="twitter:title" content="Nelder–Mead">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://new.fmin.xyz/docs/methods/zom/nm_mishra3d.svg">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../../logo.svg" alt="fmin.xyz" class="navbar-logo">
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto tools-wide">
-    <a href="https://github.com/MerkulovDaniil/optim" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-    <a href="https://www.youtube.com/@fmin" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
-    <a href="https://t.me/fminxyz" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
+        <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/MerkulovDaniil/optim" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://www.youtube.com/@fmin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
+    <a href="https://t.me/fminxyz" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/methods/index.html">Methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/zom/zom.html">Zom</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/zom/nelder-mead.html">Nelder–Mead</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/methods/index.html">Methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/zom/index.html">Zero order methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/zom/nelder-mead.html">Nelder–Mead</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -240,69 +241,39 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LP and simplex algorithm</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Automatic differentiation</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Adaptive Metrics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <a href="../../../docs/methods/zom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zero order methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Newton method</span></a>
+  <a href="../../../docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bee algorithm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quasi Newton methods</span></a>
+  <a href="../../../docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Nelder–Mead</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/adaptive_metric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adaptive metric methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conjugate gradients</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">KFAC</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Natural gradient descent</span></a>
+  <a href="../../../docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulated annealing</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text">Fom</span></a>
+            <a href="../../../docs/methods/line_search/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Line search</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -310,10 +281,39 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/fom/fom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">First order methods</span></a>
+  <a href="../../../docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Binary search</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Golden search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inexact line search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Successive parabolic interpolation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/methods/fom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First order methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/fom/GD.html" class="sidebar-item-text sidebar-link">
@@ -372,80 +372,57 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Line Search</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <a href="../../../docs/methods/adaptive_metrics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adaptive metric methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/line_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Line search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Newton method</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Binary search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quasi Newton methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Golden search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjugate gradients</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inexact line search</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KFAC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Successive parabolic interpolation</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Natural gradient descent</span></a>
   </div>
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text">Zom</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/zom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Zero order methods</span></a>
+  <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LP and simplex algorithm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bee algorithm</span></a>
+  <a href="../../../docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic differentiation</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Nelder–Mead</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulated annealing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -716,7 +693,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -740,7 +717,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">4</span> Code</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/methods/zom/nelder-mead.md" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/methods/zom/nelder-mead.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
 <button type="button" name="button" class="btn" id="toggleSpoilers">
 🔽
@@ -752,27 +729,38 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header">
 </header>
 
+
 <section id="problem" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Problem</h1>
-<p>Sometimes the multidimensional function is so difficult to evaluate that even expressing the <span class="math display">1^{\text{st}}</span> derivative for gradient-based methods of finding optimum becomes an impossible task. In this case, we can only rely on the values of the function at each point. Or, in other words, on the <span class="math display">0</span> order oracle calls.</p>
+<p>Sometimes the multidimensional function is so difficult to evaluate that even expressing the <span class="math inline">1^{\text{st}}</span> derivative for gradient-based methods of finding optimum becomes an impossible task. In this case, we can only rely on the values of the function at each point. Or, in other words, on the <span class="math inline">0</span> order oracle calls.</p>
 <p>Let’s take, for instance, Mishra’s Bird function:</p>
 <p><span class="math display">
 f(x,y) = \sin{y} \cdot e^{\left( 1 - \cos{x} \right)^2} + \cos{x} \cdot e^{\left( 1 - \sin{y} \right)^2} + (x - y)^2
 </span></p>
-<p><img src="./nm_mishra3d.svg" class="img-fluid"></p>
-<p>This function is usually subjected to the domain <span class="math display">(x+5)^2 + (y+5)^2 &lt; 25</span>, but for the sake of picture beauty we will mainly use domain <span class="math display">[-10; 0] \times [-10; 0]</span>.</p>
-<p><img src="./nm_domains.svg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nm_mishra3d.svg" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
+<p>This function is usually subjected to the domain <span class="math inline">(x+5)^2 + (y+5)^2 &lt; 25</span>, but for the sake of picture beauty we will mainly use domain <span class="math inline">[-10; 0] \times [-10; 0]</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nm_domains.svg" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 </section>
 <section id="algorithm" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Algorithm</h1>
 <section id="related-definitions" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="related-definitions"><span class="header-section-number">2.1</span> Related definitions:</h2>
 <ul>
-<li><span class="math display">\textbf{Simplex}</span> – polytope with the least possible number of vertices in <span class="math display">n</span>-dimensional space. (So, it’s <span class="math display">(n+1)</span>-polytope.) In our <span class="math display">2D</span> case it will be triangle.</li>
-<li><span class="math display">\textbf{Best point }x_1</span> – vertex of the simplex, function value in which is the smallest among all vertices.</li>
-<li><span class="math display">\textbf{Worst point }x_{n+1}</span> – vertex of the simplex, function value in which is the largest among all vertices.</li>
-<li><span class="math display">\textbf{Other points }x_2, \ldots, x_n</span> – vertices of the simplex, ordered in such way that <span class="math display">f(x_1) \leqslant f(x_2) \leqslant \ldots \leqslant f(x_n) \leqslant f(x_{n+1})</span>. This implies that <span class="math display">\{ x_1, x_2, \ldots, x_n \}</span> are best points in relation to <span class="math display">x_{n+1}</span> and <span class="math display">\{ x_2, \ldots, x_n, x_{n+1} \}</span> are worst points in relation to <span class="math display">x_1</span>.</li>
-<li><span class="math display">\textbf{Centroid }x_o</span> – center of mass in the polytope. In Nelder-Mead the centroid is calculated for the polytope, constituted by best vertices. In our <span class="math display">2D</span> case it will be the center of the triangle side, which contains <span class="math display">2</span> best points <span class="math display">x_o = \dfrac{x_1 + x_2}{2}</span>.</li>
+<li><span class="math inline">\textbf{Simplex}</span> – polytope with the least possible number of vertices in <span class="math inline">n</span>-dimensional space. (So, it’s <span class="math inline">(n+1)</span>-polytope.) In our <span class="math inline">2D</span> case it will be triangle.</li>
+<li><span class="math inline">\textbf{Best point }x_1</span> – vertex of the simplex, function value in which is the smallest among all vertices.</li>
+<li><span class="math inline">\textbf{Worst point }x_{n+1}</span> – vertex of the simplex, function value in which is the largest among all vertices.</li>
+<li><span class="math inline">\textbf{Other points }x_2, \ldots, x_n</span> – vertices of the simplex, ordered in such way that <span class="math inline">f(x_1) \leqslant f(x_2) \leqslant \ldots \leqslant f(x_n) \leqslant f(x_{n+1})</span>. This implies that <span class="math inline">\{ x_1, x_2, \ldots, x_n \}</span> are best points in relation to <span class="math inline">x_{n+1}</span> and <span class="math inline">\{ x_2, \ldots, x_n, x_{n+1} \}</span> are worst points in relation to <span class="math inline">x_1</span>.</li>
+<li><span class="math inline">\textbf{Centroid }x_o</span> – center of mass in the polytope. In Nelder-Mead the centroid is calculated for the polytope, constituted by best vertices. In our <span class="math inline">2D</span> case it will be the center of the triangle side, which contains <span class="math inline">2</span> best points <span class="math inline">x_o = \dfrac{x_1 + x_2}{2}</span>.</li>
 </ul>
 </section>
 <section id="main-idea" class="level2" data-number="2.2">
@@ -787,63 +775,96 @@ f(x,y) = \sin{y} \cdot e^{\left( 1 - \cos{x} \right)^2} + \cos{x} \cdot e^{\left
 <p><span class="math display">
 f(x_1) \leqslant f(x_2) \leqslant \ldots \leqslant f(x_n) \leqslant f(x_{n+1})
 </span></p>
-<p>Check the termination condition. Possible exit with solution <span class="math display">x_{\min} = x_1</span>.</p>
+<p>Check the termination condition. Possible exit with solution <span class="math inline">x_{\min} = x_1</span>.</p>
 <p><strong>2. Centroid calculation</strong></p>
 <p><span class="math display">
 x_o = \dfrac{\sum\limits_{k=1}^{n}{x_k}}{n}
 </span></p>
 <p><strong>3. Reflection</strong></p>
-<p>Calculate the reflected point <span class="math display">x_r</span>:</p>
+<p>Calculate the reflected point <span class="math inline">x_r</span>:</p>
 <p><span class="math display">
 x_r = x_o + \alpha \left( x_o - x_{n+1} \right)
 </span></p>
-<p>where <span class="math display">\alpha</span> – reflection coefficient, <span class="math display">\alpha &gt; 0</span>. (If <span class="math display">\alpha \leqslant 0</span>, reflected point <span class="math display">x_r</span> will not overlap the centroid)</p>
-<p>The next step is figured out according to the value of <span class="math display">f(x_r)</span> in dependency to values in points <span class="math display">x_1</span> (best) and <span class="math display">x_n</span> (second worst): * <span class="math display">f(x_r) &lt; f(x_1)</span>: Go to step <span class="math display">4</span>. * <span class="math display">f(x_1) \leqslant f(x_r) &lt; f(x_n)</span>: new simplex with <span class="math display">x_{n+1} \rightarrow x_r</span>. Go to step <span class="math display">1</span>. * <span class="math display">f(x_r) \geqslant f(x_n)</span>: Go to step <span class="math display">5</span>.</p>
+<p>where <span class="math inline">\alpha</span> – reflection coefficient, <span class="math inline">\alpha &gt; 0</span>. (If <span class="math inline">\alpha \leqslant 0</span>, reflected point <span class="math inline">x_r</span> will not overlap the centroid)</p>
+<p>The next step is figured out according to the value of <span class="math inline">f(x_r)</span> in dependency to values in points <span class="math inline">x_1</span> (best) and <span class="math inline">x_n</span> (second worst):</p>
+<ul>
+<li><span class="math inline">f(x_r) &lt; f(x_1)</span>: Go to step <span class="math inline">4</span>.</li>
+<li><span class="math inline">f(x_1) \leqslant f(x_r) &lt; f(x_n)</span>: new simplex with <span class="math inline">x_{n+1} \rightarrow x_r</span>. Go to step <span class="math inline">1</span>.</li>
+<li><span class="math inline">f(x_r) \geqslant f(x_n)</span>: Go to step <span class="math inline">5</span>.</li>
+</ul>
 <p><strong>4. Expansion</strong></p>
-<p>Calculate the expanded point <span class="math display">x_e</span>:</p>
+<p>Calculate the expanded point <span class="math inline">x_e</span>:</p>
 <p><span class="math display">
 x_e = x_o + \gamma \left( x_r - x_o \right)
 </span></p>
-<p>where <span class="math display">\gamma</span> – expansion coefficient, <span class="math display">\gamma &gt; 1</span>. (If <span class="math display">\gamma &lt; 1</span>, expanded point <span class="math display">x_e</span> will be contracted towards centroid, if <span class="math display">\gamma = 1</span>: <span class="math display">x_e = x_r</span>)</p>
-<p>The next step is figured out according to the ratio between <span class="math display">f(x_e)</span> and <span class="math display">f(x_r)</span>: * <span class="math display">f(x_e) &lt; f(x_r)</span>: new simplex with <span class="math display">x_{n+1} \rightarrow x_e</span>. Go to step <span class="math display">1</span>. * <span class="math display">f(x_e) &gt; f(x_r)</span>: new simplex with <span class="math display">x_{n+1} \rightarrow x_r</span>. Go to step <span class="math display">1</span>.</p>
+<p>where <span class="math inline">\gamma</span> – expansion coefficient, <span class="math inline">\gamma &gt; 1</span>. (If <span class="math inline">\gamma &lt; 1</span>, expanded point <span class="math inline">x_e</span> will be contracted towards centroid, if <span class="math inline">\gamma = 1</span>: <span class="math inline">x_e = x_r</span>)</p>
+<p>The next step is figured out according to the ratio between <span class="math inline">f(x_e)</span> and <span class="math inline">f(x_r)</span>:</p>
+<ul>
+<li><span class="math inline">f(x_e) &lt; f(x_r)</span>: new simplex with <span class="math inline">x_{n+1} \rightarrow x_e</span>. Go to step <span class="math inline">1</span>.</li>
+<li><span class="math inline">f(x_e) &gt; f(x_r)</span>: new simplex with <span class="math inline">x_{n+1} \rightarrow x_r</span>. Go to step <span class="math inline">1</span>.</li>
+</ul>
 <p><strong>5. Contraction</strong></p>
-<p>Calculate the contracted point <span class="math display">x_c</span>:</p>
+<p>Calculate the contracted point <span class="math inline">x_c</span>:</p>
 <p><span class="math display">
 x_c = x_o + \beta \left( x_{n+1} - x_o \right)
 </span></p>
-<p>where <span class="math display">\beta</span> – contraction coefficient, <span class="math display">0 &lt; \beta \leqslant 0.5</span>. (If <span class="math display">\beta &gt; 0.5</span>, contraction is insufficient, if <span class="math display">\beta \leqslant 0</span>, contracted point <span class="math display">x_c</span> overlaps the centroid)</p>
-<p>The next step is figured out according to the ratio between <span class="math display">f(x_c)</span> and <span class="math display">f(x_{n+1})</span>: * <span class="math display">f(x_c) &lt; f(x_{n+1})</span>: new simplex with <span class="math display">x_{n+1} \rightarrow x_c</span>. Go to step <span class="math display">1</span>. * <span class="math display">f(x_c) \geqslant f(x_{n+1})</span>: Go to step <span class="math display">6</span>.</p>
+<p>where <span class="math inline">\beta</span> – contraction coefficient, <span class="math inline">0 &lt; \beta \leqslant 0.5</span>. (If <span class="math inline">\beta &gt; 0.5</span>, contraction is insufficient, if <span class="math inline">\beta \leqslant 0</span>, contracted point <span class="math inline">x_c</span> overlaps the centroid)</p>
+<p>The next step is figured out according to the ratio between <span class="math inline">f(x_c)</span> and <span class="math inline">f(x_{n+1})</span>:</p>
+<ul>
+<li><span class="math inline">f(x_c) &lt; f(x_{n+1})</span>: new simplex with <span class="math inline">x_{n+1} \rightarrow x_c</span>. Go to step <span class="math inline">1</span>.</li>
+<li><span class="math inline">f(x_c) \geqslant f(x_{n+1})</span>: Go to step <span class="math inline">6</span>.</li>
+</ul>
 <p><strong>6. Shrinkage</strong></p>
-<p>Replace all points of simplex <span class="math display">x_i</span> with new ones, except for the best point <span class="math display">x_1</span>:</p>
+<p>Replace all points of simplex <span class="math inline">x_i</span> with new ones, except for the best point <span class="math inline">x_1</span>:</p>
 <p><span class="math display">
 x_i = x_1 + \sigma \left( x_i - x_1 \right)
 </span></p>
-<p>where <span class="math display">\sigma</span> – shrinkage coefficient, <span class="math display">0 &lt; \sigma &lt; 1</span>. (If <span class="math display">\sigma \geqslant 1</span>, shrinked point <span class="math display">x_i</span> overlaps the best point <span class="math display">x_1</span>, if <span class="math display">\sigma \leqslant 0</span>, shrinked point <span class="math display">x_i</span> becomes extended)</p>
-<p>Go to step <span class="math display">1</span>.</p>
+<p>where <span class="math inline">\sigma</span> – shrinkage coefficient, <span class="math inline">0 &lt; \sigma &lt; 1</span>. (If <span class="math inline">\sigma \geqslant 1</span>, shrinked point <span class="math inline">x_i</span> overlaps the best point <span class="math inline">x_1</span>, if <span class="math inline">\sigma \leqslant 0</span>, shrinked point <span class="math inline">x_i</span> becomes extended)</p>
+<p>Go to step <span class="math inline">1</span>.</p>
 </section>
 </section>
 <section id="examples" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Examples</h1>
-<p>This algorithm, as any method in global optimization, is highly dependable on the initial conditions. For instance, if we use different initial simplex or different set of parameters <span class="math display">\{ \alpha, \beta, \gamma, \sigma \}</span> the resulting optimal point will differ.</p>
+<p>This algorithm, as any method in global optimization, is highly dependable on the initial conditions. For instance, if we use different initial simplex or different set of parameters <span class="math inline">\{ \alpha, \beta, \gamma, \sigma \}</span> the resulting optimal point will differ.</p>
 <section id="some-random-initial-simplex-and-default-set-of-parameters" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="some-random-initial-simplex-and-default-set-of-parameters"><span class="header-section-number">3.1</span> Some random initial simplex and default set of parameters</h2>
-<p><img src="./nm_SquareDomain1.gif" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nm_SquareDomain1.gif" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 </section>
 <section id="different-initial-simplex-and-same-set-of-parameters" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="different-initial-simplex-and-same-set-of-parameters"><span class="header-section-number">3.2</span> Different initial simplex and same set of parameters</h2>
-<p><img src="./nm_SquareDomain2.gif" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nm_SquareDomain2.gif" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 </section>
 <section id="same-initial-simplex-and-different-set-of-parameters" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="same-initial-simplex-and-different-set-of-parameters"><span class="header-section-number">3.3</span> Same initial simplex and different set of parameters</h2>
-<p><img src="./nm_SquareDomain3.gif" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nm_SquareDomain3.gif" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 </section>
 <section id="round-domain" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="round-domain"><span class="header-section-number">3.4</span> Round domain</h2>
-<p><img src="./nm_RoundDomain.gif" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="nm_RoundDomain.gif" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 </section>
 <section id="examples-with-all-sets-of-simplexes" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="examples-with-all-sets-of-simplexes"><span class="header-section-number">3.5</span> Examples with all sets of simplexes</h2>
-<p><img src="./nm_SquareDomain1.svg" class="img-fluid"> <img src="./nm_SquareDomain2.svg" class="img-fluid"> <img src="./nm_SquareDomain3.svg" class="img-fluid"> <img src="./nm_RoundDomain.svg" class="img-fluid"></p>
+<p><img src="nm_SquareDomain1.svg" class="img-fluid" alt="Illustration"> <img src="nm_SquareDomain2.svg" class="img-fluid" alt="Illustration"> <img src="nm_SquareDomain3.svg" class="img-fluid" alt="Illustration"> <img src="nm_RoundDomain.svg" class="img-fluid" alt="Illustration"></p>
 </section>
 </section>
 <section id="code" class="level1" data-number="4">
@@ -933,10 +954,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -946,8 +966,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -960,6 +989,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1003,6 +1154,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1028,6 +1180,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1086,22 +1264,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/new\.fmin\.xyz");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

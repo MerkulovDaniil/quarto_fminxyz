@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.467">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,7 +46,10 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    null
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -81,46 +84,44 @@ ul.task-list li input[type="checkbox"] {
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <meta property="og:title" content="Projected subgradient descent">
-<meta property="og:image" content="https://new.fmin.xyz/docs/methods/fom/geom_bound.svg">
 <meta name="twitter:title" content="Projected subgradient descent">
-<meta name="twitter:image" content="https://new.fmin.xyz/docs/methods/fom/geom_bound.svg">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../../logo.svg" alt="fmin.xyz" class="navbar-logo">
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto tools-wide">
-    <a href="https://github.com/MerkulovDaniil/optim" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-    <a href="https://www.youtube.com/@fmin" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
-    <a href="https://t.me/fminxyz" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
+        <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/MerkulovDaniil/optim" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://www.youtube.com/@fmin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-youtube"></i></a>
+    <a href="https://t.me/fminxyz" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/methods/index.html">Methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/fom/fom.html">Fom</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/fom/Projected_subgradient_descent.html">Projected subgradient descent</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/methods/index.html">Methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/fom/index.html">First order methods</a></li><li class="breadcrumb-item"><a href="../../../docs/methods/fom/Projected_subgradient_descent.html">Projected subgradient descent</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -238,22 +239,10 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LP and simplex algorithm</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Automatic differentiation</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Adaptive Metrics</span></a>
+            <a href="../../../docs/methods/zom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zero order methods</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -261,57 +250,68 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Newton method</span></a>
+  <a href="../../../docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bee algorithm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quasi Newton methods</span></a>
+  <a href="../../../docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nelder–Mead</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/adaptive_metric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adaptive metric methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conjugate gradients</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">KFAC</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Natural gradient descent</span></a>
+  <a href="../../../docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulated annealing</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">Fom</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <a href="../../../docs/methods/line_search/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Line search</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/fom/fom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">First order methods</span></a>
+  <a href="../../../docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Binary search</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Golden search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inexact line search</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Successive parabolic interpolation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/methods/fom/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First order methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/methods/fom/GD.html" class="sidebar-item-text sidebar-link">
@@ -370,49 +370,8 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Line Search</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/line_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Line search</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Binary search</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/golden_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Golden search</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/inexact.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inexact line search</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/line_search/parabola.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Successive parabolic interpolation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
- <span class="menu-text">Zom</span></a>
+            <a href="../../../docs/methods/adaptive_metrics/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adaptive metric methods</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -420,30 +379,48 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/zom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Zero order methods</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Newton method</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/bee_algorithm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bee algorithm</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/Quasi_newton.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quasi Newton methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/nelder-mead.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Nelder–Mead</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/CG.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conjugate gradients</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/methods/zom/simulated-annealing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulated annealing</span></a>
+  <a href="../../../docs/methods/adaptive_metrics/KFAC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KFAC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/adaptive_metrics/Natural_gradient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Natural gradient descent</span></a>
   </div>
 </li>
       </ul>
   </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/Simplex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LP and simplex algorithm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/methods/Autograd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic differentiation</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -714,7 +691,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -730,23 +707,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
   <li><a href="#algorithm" id="toc-algorithm" class="nav-link" data-scroll-target="#algorithm"><span class="header-section-number">2.2</span> Algorithm</a>
   <ul class="collapse">
-  <li><a href="#adaptive-stepsize-without-t" id="toc-adaptive-stepsize-without-t" class="nav-link" data-scroll-target="#adaptive-stepsize-without-t"><span class="header-section-number">2.2.1</span> Adaptive stepsize (without <span class="math display">T</span>)</a></li>
+  <li><a href="#adaptive-stepsize-without-t" id="toc-adaptive-stepsize-without-t" class="nav-link" data-scroll-target="#adaptive-stepsize-without-t"><span class="header-section-number">2.2.1</span> Adaptive stepsize (without <span class="math inline">T</span>)</a></li>
   <li><a href="#online-learning" id="toc-online-learning" class="nav-link" data-scroll-target="#online-learning"><span class="header-section-number">2.2.2</span> Online learning:</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#least-squares-with-l_1-regularization" id="toc-least-squares-with-l_1-regularization" class="nav-link" data-scroll-target="#least-squares-with-l_1-regularization"><span class="header-section-number">3.1</span> Least squares with <span class="math display">l_1</span> regularization</a>
+  <li><a href="#least-squares-with-l_1-regularization" id="toc-least-squares-with-l_1-regularization" class="nav-link" data-scroll-target="#least-squares-with-l_1-regularization"><span class="header-section-number">3.1</span> Least squares with <span class="math inline">l_1</span> regularization</a>
   <ul class="collapse">
   <li><a href="#nonnegativity" id="toc-nonnegativity" class="nav-link" data-scroll-target="#nonnegativity"><span class="header-section-number">3.1.1</span> Nonnegativity</a></li>
-  <li><a href="#l_2---ball" id="toc-l_2---ball" class="nav-link" data-scroll-target="#l_2---ball"><span class="header-section-number">3.1.2</span> <span class="math display">l_2</span> - ball</a></li>
+  <li><a href="#l_2---ball" id="toc-l_2---ball" class="nav-link" data-scroll-target="#l_2---ball"><span class="header-section-number">3.1.2</span> <span class="math inline">l_2</span> - ball</a></li>
   <li><a href="#linear-equality-constraints" id="toc-linear-equality-constraints" class="nav-link" data-scroll-target="#linear-equality-constraints"><span class="header-section-number">3.1.3</span> Linear equality constraints</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#bounds" id="toc-bounds" class="nav-link" data-scroll-target="#bounds"><span class="header-section-number">4</span> Bounds</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/methods/fom/Projected_subgradient_descent.md" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/MerkulovDaniil/optim/edit/master/docs/methods/fom/Projected_subgradient_descent.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
 <button type="button" name="button" class="btn" id="toggleSpoilers">
 🔽
@@ -758,6 +735,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header">
 </header>
 
+
 <section id="intuition" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Intuition</h1>
 <section id="recap" class="level2" data-number="1.1">
@@ -767,7 +745,7 @@ ul.task-list li input[type="checkbox"] {
 \tag{P}
 \min_{x \in S} f(x),
 </span></p>
-<p>When <span class="math display">S = \mathbb{R}^n</span>, we have the unconstrained problem, which sometimes could be solved with (sub)gradient descent algorithm:</p>
+<p>When <span class="math inline">S = \mathbb{R}^n</span>, we have the unconstrained problem, which sometimes could be solved with (sub)gradient descent algorithm:</p>
 <p><span class="math display">
 \tag{SD}
 x_{k+1} = x_k - \alpha_k g_k,
@@ -779,7 +757,7 @@ x_{k+1} = x_k - \alpha_k g_k,
 <h1 data-number="2"><span class="header-section-number">2</span> Bounds derivation</h1>
 <section id="introduction" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>В этом разделе мы будем рассматривать работу в рамках какого-то выпуклого множества <span class="math display">S \in \mathbb{R}^n</span>, так, чтобы <span class="math display">x_k \in S</span>. Запишем для начала соотношение для итераций:</p>
+<p>В этом разделе мы будем рассматривать работу в рамках какого-то выпуклого множества <span class="math inline">S \in \mathbb{R}^n</span>, так, чтобы <span class="math inline">x_k \in S</span>. Запишем для начала соотношение для итераций:</p>
 <p><span class="math display">
 \begin{align*}
 \|x_{k+1} - x^*\|^2 &amp;= \|(x_{k+1} - x_k) + (x_k - x^*)\|^2 = \\
@@ -787,7 +765,7 @@ x_{k+1} = x_k - \alpha_k g_k,
 2 \langle x_k - x_{k+1} ,x_k - x^*\rangle &amp;=  \|x_k - x^*\|^2 - \|x_{k+1} - x^*\|^2 + \|x_k - x_{k+1}\|^2
 \end{align*}
 </span></p>
-<p>Заметим, что при работе на ограниченном множестве у нас появилась небольшая проблема: <span class="math display">x_{k+1}</span> может не лежать в бюджетном множестве. Сейчас мы увидим, почему это является проблемой для выписывания оценок на число итераций: если мы имеем неравенство, записанное ниже, то процесс получения оценок будет абсолютно совпадать с описанными выше процедурами (потому что в случае субградиентного метода <span class="math display">x_k - x_{k+1} = \alpha_k g_k</span>).</p>
+<p>Заметим, что при работе на ограниченном множестве у нас появилась небольшая проблема: <span class="math inline">x_{k+1}</span> может не лежать в бюджетном множестве. Сейчас мы увидим, почему это является проблемой для выписывания оценок на число итераций: если мы имеем неравенство, записанное ниже, то процесс получения оценок будет абсолютно совпадать с описанными выше процедурами (потому что в случае субградиентного метода <span class="math inline">x_k - x_{k+1} = \alpha_k g_k</span>).</p>
 <p><span class="math display">
 \tag{Target}
 \langle \alpha_k g_k, x_k - x^* \rangle \leq \langle x_k - x_{k+1}, x_k - x^* \rangle
@@ -797,7 +775,7 @@ x_{k+1} = x_k - \alpha_k g_k,
 \tag{Forward Target}
 \langle \alpha_k g_k, x_{k+1} - x^* \rangle \leq \langle x_k - x_{k+1}, x_{k+1} - x^* \rangle
 </span></p>
-<p>Это связано с тем, что <span class="math display">x_{k+1}</span> нам легче контролировать при построении условного метода, а значит, легче записать на него оценку. К сожалению, привычной телескопической (сворачивающейся) суммы при таком неравенстве не получится. Однако, если неравенство (Forward Target) выполняется, то из него следует следующее неравенство:</p>
+<p>Это связано с тем, что <span class="math inline">x_{k+1}</span> нам легче контролировать при построении условного метода, а значит, легче записать на него оценку. К сожалению, привычной телескопической (сворачивающейся) суммы при таком неравенстве не получится. Однако, если неравенство (Forward Target) выполняется, то из него следует следующее неравенство:</p>
 <p><span class="math display">
 \begin{align*}
 \tag{Forward Target Fix}
@@ -846,19 +824,19 @@ f(\overline{x}) - f^* &amp;\leq G R \dfrac{1}{ \sqrt{T}}
 <p><span class="math display">
 \langle \alpha_k g_k, x_{k+1} - x^* \rangle \leq \langle x_k - x_{k+1}, x_{k+1} - x^* \rangle
 </span></p>
-<p>В более общем случае <span class="math display">\forall y \in S</span>:</p>
+<p>В более общем случае <span class="math inline">\forall y \in S</span>:</p>
 <p><span class="math display">
 \begin{align*}
 \langle \alpha_k g_k, x_{k+1} - y \rangle \leq \langle x_k - x_{k+1}, x_{k+1} - y \rangle &amp; \\
 \langle \alpha_k g_k, x_{k+1} - y \rangle - \langle x_k - x_{k+1}, x_{k+1} - y \rangle &amp;\leq 0
 \end{align*}
 </span></p>
-<p>Вспомним из неравенства для проекции (равно как и условия оптимальности первого порядка), что <span class="math display">\forall y \in S</span> для некоторой гладкой выпуклой минимизируемой функции <span class="math display">g(x)</span> в точке оптимума <span class="math display">x \in S</span>:</p>
+<p>Вспомним из неравенства для проекции (равно как и условия оптимальности первого порядка), что <span class="math inline">\forall y \in S</span> для некоторой гладкой выпуклой минимизируемой функции <span class="math inline">g(x)</span> в точке оптимума <span class="math inline">x \in S</span>:</p>
 <p><span class="math display">
 \langle \nabla g(x), x - y \rangle \leq 0
 </span></p>
-<p>В противном бы случае, можно было бы сделать градиентный шаг в направлении <span class="math display">y -x</span> и уменьшить значение функции.</p>
-<p>Рассмотрим теперь следующую функцию <span class="math display">g(x)</span>:</p>
+<p>В противном бы случае, можно было бы сделать градиентный шаг в направлении <span class="math inline">y -x</span> и уменьшить значение функции.</p>
+<p>Рассмотрим теперь следующую функцию <span class="math inline">g(x)</span>:</p>
 <p><span class="math display">
 g(x) = \langle \alpha_k g_k, x \rangle + \dfrac{1}{2} \| x - x_k\|^2, \quad \nabla g(x) = \alpha_k g_k + x - x_k
 </span></p>
@@ -882,14 +860,18 @@ x_{k+1} = \text{arg}\min\limits_{x \in S} \left( \langle \alpha_k g_k, x \rangle
 <p><span class="math display">
 x_{k+1} = \text{arg}\min\limits_{x \in S} \left( \langle \alpha_k g_k, x \rangle + \dfrac{1}{2} \| x - x_k\|^2 \right)
 </span></p>
-<p>Интересные фишки: * Такая же скорость сходимости, как и для безусловного алгоритма. (Однако, стоимость каждой итерации может быть существенно больше из за необходимости решать задачу оптимизации на каждом шаге) * В частном случае <span class="math display">S = \mathbb{R}^n</span> в точности совпадает с безусловным алгоритмом (убедитесь)</p>
+<p>Интересные фишки:</p>
+<ul>
+<li>Такая же скорость сходимости, как и для безусловного алгоритма. (Однако, стоимость каждой итерации может быть существенно больше из за необходимости решать задачу оптимизации на каждом шаге)</li>
+<li>В частном случае <span class="math inline">S = \mathbb{R}^n</span> в точности совпадает с безусловным алгоритмом (убедитесь)</li>
+</ul>
 <section id="adaptive-stepsize-without-t" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="adaptive-stepsize-without-t"><span class="header-section-number">2.2.1</span> Adaptive stepsize (without <span class="math display">T</span>)</h3>
-<p>Разберем теперь одну из стратегий того, как избежать знания количества шагов <span class="math display">T</span> заранее для подбора длины шага <span class="math display">\alpha_k</span>. Для этого зададим “диаметр” нашего множества <span class="math display">D</span>:</p>
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="adaptive-stepsize-without-t"><span class="header-section-number">2.2.1</span> Adaptive stepsize (without <span class="math inline">T</span>)</h3>
+<p>Разберем теперь одну из стратегий того, как избежать знания количества шагов <span class="math inline">T</span> заранее для подбора длины шага <span class="math inline">\alpha_k</span>. Для этого зададим “диаметр” нашего множества <span class="math inline">D</span>:</p>
 <p><span class="math display">
 D : \{ \max\limits_{x,y \in S} \|x - y\| \leq D \}
 </span></p>
-<p>Теперь зададим длину шага на <span class="math display">k</span>- ой итерации, как: <span class="math display">\alpha_k = \tau \sqrt{\dfrac{1}{k+1}}</span>. Константу <span class="math display">\tau \geq 0</span> подберем чуть позже.</p>
+<p>Теперь зададим длину шага на <span class="math inline">k</span>- ой итерации, как: <span class="math inline">\alpha_k = \tau \sqrt{\dfrac{1}{k+1}}</span>. Константу <span class="math inline">\tau \geq 0</span> подберем чуть позже.</p>
 <p>Для начала легко заметить, что:</p>
 <p><span class="math display">
 \begin{align*}
@@ -898,7 +880,12 @@ D : \{ \max\limits_{x,y \in S} \|x - y\| \leq D \}
 \end{align*}
 </span></p>
 <p>см. геометрический смысл неравенства ниже:</p>
-<p><img src="./geom_bound.svg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="geom_bound.svg" class="img-fluid figure-img"></p>
+<figcaption>Illustration</figcaption>
+</figure>
+</div>
 <p>Возьмем теперь равенство для классического субградиентного метода (БМ) (или неравенство в случае метода проекции субгадиента (УМ)):</p>
 <p><span class="math display">
 \begin{align*}
@@ -914,8 +901,8 @@ D : \{ \max\limits_{x,y \in S} \|x - y\| \leq D \}
 &amp; \leq DG \sqrt{2T}
 \end{align*}
 </span></p>
-<p>Где <span class="math display">\tau = \dfrac{D}{G\sqrt{2}}</span> - выбран путем минимизации данной оценки по <span class="math display">\tau</span>.</p>
-<p>Таким образом, мы получили, что в случае, когда количество шагов <span class="math display">T</span> неизвестно заранее (весьма важное свойство), оценка ухудшается в <span class="math display">\sqrt{2}</span> раз. Такие оценки называют anytime bounds.</p>
+<p>Где <span class="math inline">\tau = \dfrac{D}{G\sqrt{2}}</span> - выбран путем минимизации данной оценки по <span class="math inline">\tau</span>.</p>
+<p>Таким образом, мы получили, что в случае, когда количество шагов <span class="math inline">T</span> неизвестно заранее (весьма важное свойство), оценка ухудшается в <span class="math inline">\sqrt{2}</span> раз. Такие оценки называют anytime bounds.</p>
 </section>
 <section id="online-learning" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="online-learning"><span class="header-section-number">2.2.2</span> Online learning:</h3>
@@ -934,7 +921,7 @@ R_{T-1} &amp;= \sum\limits_{k = 0}^{T-1} f_k(x_k) - \min_{x \in S} \sum\limits_{
 <section id="examples" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Examples</h1>
 <section id="least-squares-with-l_1-regularization" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="least-squares-with-l_1-regularization"><span class="header-section-number">3.1</span> Least squares with <span class="math display">l_1</span> regularization</h2>
+<h2 data-number="3.1" class="anchored" data-anchor-id="least-squares-with-l_1-regularization"><span class="header-section-number">3.1</span> Least squares with <span class="math inline">l_1</span> regularization</h2>
 <p><span class="math display">
 \min_{x \in \mathbb{R^n}} \dfrac{1}{2}\|Ax - b\|_2^2 + \lambda \|x\|_1
 </span></p>
@@ -945,7 +932,7 @@ S = \{x \in \mathbb{R}^n \mid x \geq 0 \}
 </span></p>
 </section>
 <section id="l_2---ball" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="l_2---ball"><span class="header-section-number">3.1.2</span> <span class="math display">l_2</span> - ball</h3>
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="l_2---ball"><span class="header-section-number">3.1.2</span> <span class="math inline">l_2</span> - ball</h3>
 <p><span class="math display">
 S = \{x \in \mathbb{R}^n \mid \|x - x_c\| \le R \}
 </span></p>
@@ -1085,10 +1072,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1098,8 +1084,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1112,6 +1107,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1155,6 +1272,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1180,6 +1298,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1238,22 +1382,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/new\.fmin\.xyz");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
