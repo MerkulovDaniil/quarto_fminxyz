@@ -734,19 +734,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#idea" id="toc-idea" class="nav-link active" data-scroll-target="#idea"><span class="header-section-number">1</span> Idea</a>
+  <li><a href="#intuition" id="toc-intuition" class="nav-link active" data-scroll-target="#intuition"><span class="header-section-number">1</span> Intuition</a>
   <ul class="collapse">
-  <li><a href="#multivariate-chain-rule" id="toc-multivariate-chain-rule" class="nav-link" data-scroll-target="#multivariate-chain-rule"><span class="header-section-number">1.0.1</span> Multivariate chain rule</a></li>
-  <li><a href="#backpropagation" id="toc-backpropagation" class="nav-link" data-scroll-target="#backpropagation"><span class="header-section-number">1.1</span> Backpropagation</a>
+  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem"><span class="header-section-number">1.1</span> Problem</a>
   <ul class="collapse">
-  <li><a href="#forward-pass" id="toc-forward-pass" class="nav-link" data-scroll-target="#forward-pass"><span class="header-section-number">1.1.1</span> Forward pass:</a></li>
-  <li><a href="#backward-pass" id="toc-backward-pass" class="nav-link" data-scroll-target="#backward-pass"><span class="header-section-number">1.1.2</span> Backward pass:</a></li>
+  <li><a href="#finite-differences" id="toc-finite-differences" class="nav-link" data-scroll-target="#finite-differences"><span class="header-section-number">1.1.1</span> Finite differences</a></li>
+  <li><a href="#forward-mode-automatic-differentiation" id="toc-forward-mode-automatic-differentiation" class="nav-link" data-scroll-target="#forward-mode-automatic-differentiation"><span class="header-section-number">1.1.2</span> Forward mode automatic differentiation</a></li>
+  <li><a href="#multivariate-chain-rule" id="toc-multivariate-chain-rule" class="nav-link" data-scroll-target="#multivariate-chain-rule"><span class="header-section-number">1.1.3</span> Multivariate chain rule</a></li>
   </ul></li>
-  <li><a href="#jacobian-vector-product" id="toc-jacobian-vector-product" class="nav-link" data-scroll-target="#jacobian-vector-product"><span class="header-section-number">1.2</span> Jacobian vector product</a>
+  <li><a href="#backpropagation" id="toc-backpropagation" class="nav-link" data-scroll-target="#backpropagation"><span class="header-section-number">1.2</span> Backpropagation</a>
   <ul class="collapse">
-  <li><a href="#example-element-wise-exponent" id="toc-example-element-wise-exponent" class="nav-link" data-scroll-target="#example-element-wise-exponent"><span class="header-section-number">1.2.1</span> Example: element-wise exponent</a></li>
+  <li><a href="#forward-pass" id="toc-forward-pass" class="nav-link" data-scroll-target="#forward-pass"><span class="header-section-number">1.2.1</span> Forward pass:</a></li>
+  <li><a href="#backward-pass" id="toc-backward-pass" class="nav-link" data-scroll-target="#backward-pass"><span class="header-section-number">1.2.2</span> Backward pass:</a></li>
   </ul></li>
-  <li><a href="#hessian-vector-product" id="toc-hessian-vector-product" class="nav-link" data-scroll-target="#hessian-vector-product"><span class="header-section-number">1.3</span> Hessian vector product</a></li>
+  <li><a href="#jacobian-vector-product" id="toc-jacobian-vector-product" class="nav-link" data-scroll-target="#jacobian-vector-product"><span class="header-section-number">1.3</span> Jacobian vector product</a>
+  <ul class="collapse">
+  <li><a href="#example-element-wise-exponent" id="toc-example-element-wise-exponent" class="nav-link" data-scroll-target="#example-element-wise-exponent"><span class="header-section-number">1.3.1</span> Example: element-wise exponent</a></li>
+  </ul></li>
+  <li><a href="#hessian-vector-product" id="toc-hessian-vector-product" class="nav-link" data-scroll-target="#hessian-vector-product"><span class="header-section-number">1.4</span> Hessian vector product</a></li>
   </ul></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">2</span> Code</a></li>
   <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials"><span class="header-section-number">3</span> Materials</a></li>
@@ -764,14 +769,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="idea" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Idea</h1>
-<p><img src="./differentiation_scheme.svg" class="img-fluid"> Automatic differentiation is a scheme, that allows you to compute a value of gradient of function with a cost of computing function itself only twice. ## Chain rule We will illustrate some important matrix calculus facts for specific cases ### Univariate chain rule Suppose, we have the following functions <span class="math inline">R: \mathbb{R} \to \mathbb{R} , L: \mathbb{R} \to \mathbb{R}</span> and <span class="math inline">W \in \mathbb{R}</span>. Then</p>
+<section id="intuition" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Intuition</h1>
+<section id="problem" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="problem"><span class="header-section-number">1.1</span> Problem</h2>
+<p>Suppose we need to solve the following problem:</p>
+<p><span class="math display">
+L(w) \to \min_{w \in \mathbb{R}^d}
+</span></p>
+<p>Such problems typically arise in machine learning, when you need to find optimal hyperparameters <span class="math inline">w</span> of an ML model (i.e.&nbsp;train a neural network). You may use a lot of algorithms to approach this problem, but given the modern size of the problem, where <span class="math inline">d</span> could be dozens of billions it is very challenging to solve this problem without information about the gradients using zero-order optimization algorithms. That is why it would be beneficial to be able to calculate the gradient vector <span class="math inline">\nabla_w L = \left( \frac{\partial L}{\partial w_1}, \ldots, \frac{\partial L}{\partial w_d}\right)^T</span>. Typically, first-order methods perform much better in the huge scale optimization, while the second-order methods require too much memory.</p>
+<section id="finite-differences" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="finite-differences"><span class="header-section-number">1.1.1</span> Finite differences</h3>
+<p>The naive approach to get approximate values of gradients is <strong>Finite differences</strong> approach. For each coordinate one can calculate the partial derivative approximation:</p>
+<p><span class="math display">
+\dfrac{\partial L}{\partial w_k} (w) \approx \dfrac{L(w+\varepsilon e_k) - L(w)}{\varepsilon}, \quad e_k = (0, \ldots, \underset{{\tiny k}}{1}, \ldots, 0)
+</span></p>
+<div class="callout callout-style-default callout-question no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-question">
+<p>If the time needed for one calculation of <span class="math inline">L(w)</span> is <span class="math inline">T</span>, what is the time needed for calculating <span class="math inline">\nabla_w L</span> with this approach?</p>
+<div class="callout callout-style-default callout-answer no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-answer" data-collapse="true">
+<p><span class="math inline">2dT</span>, which is extremely long for the huge scale optimization. Moreover, this exact scheme is instable, which means that you will have to choose between accuracy and stability.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-theorem no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-theorem">
+<p>There is an algorithm to compute <span class="math inline">\nabla_w L</span> in <span class="math inline">\mathcal{O}(T)</span> operations. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="forward-mode-automatic-differentiation" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="forward-mode-automatic-differentiation"><span class="header-section-number">1.1.2</span> Forward mode automatic differentiation</h3>
+<p>To dive deep into the idea of automatic differentiation we will consider a simple function for calculating derivatives:</p>
+<p><span class="math display">
+L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
+</span></p>
+<p>Let’s draw a <em>computational graph</em> of this function:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="comp_graph.svg" class="img-fluid figure-img"></p>
+<figcaption>Illustration of computation graph of primitive arithmetic operations for the function <span class="math inline">L(w_1, w_2)</span></figcaption>
+</figure>
+</div>
+<p>Let’s go from the beginning of the graph to the end and calculate the derivative <span class="math inline">\dfrac{\partial L}{\partial w_1}</span>:</p>
+<table class="table">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 20%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Step</th>
+<th style="text-align: center;">Function</th>
+<th style="text-align: center;">Derivative</th>
+<th style="text-align: center;">Scheme</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">w_1 = w_1, w_2 = w_2</span></td>
+<td style="text-align: center;"><span class="math inline">\frac{\partial w_1}{\partial w_1} = 1, \frac{\partial w_2}{\partial w_1} = 0</span></td>
+<td style="text-align: center;"><img src="comp_graph_1.svg" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">v_1 = \log w_1</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{aligned}\frac{\partial v_1}{\partial w_1} &amp;= \frac{\partial v_1}{\partial w_1} \frac{\partial w_1}{\partial w_1}\\ &amp;= \frac{1}{w_1} 1\end{aligned}</span></td>
+<td style="text-align: center;"><img src="comp_graph_2.svg" class="img-fluid"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">v_2 = w_2 v_1</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{aligned}\frac{\partial v_2}{\partial w_1} &amp;= \frac{\partial v_2}{\partial v_1}\frac{\partial v_1}{\partial w_1} + \frac{\partial v_2}{\partial w_2}\frac{\partial w_2}{\partial w_1} \\&amp;= w_2\frac{\partial v_1}{\partial w_1} + v_1\frac{\partial w_2}{\partial w_1}\end{aligned}</span></td>
+<td style="text-align: center;"><img src="comp_graph_3.svg" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">v_3 = \sqrt{v_2}</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{aligned}\frac{\partial v_3}{\partial w_1} &amp;= \frac{\partial v_3}{\partial v_2}\frac{\partial v_2}{\partial w_1} \\ &amp;= \frac{1}{2\sqrt{v_2}}\frac{\partial v_2}{\partial w_1}\end{aligned}</span></td>
+<td style="text-align: center;"><img src="comp_graph_4.svg" class="img-fluid"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">L = v_2 + v_3</span></td>
+<td style="text-align: center;"><span class="math inline">\begin{aligned}\frac{\partial L}{\partial w_1} &amp;= \frac{\partial L}{\partial v_2}\frac{\partial v_2}{\partial w_1} + \frac{\partial L}{\partial v_3}\frac{\partial v_3}{\partial w_1} \\&amp;= 1\frac{\partial v_2}{\partial w_1} + 1\frac{\partial v_3}{\partial w_1}\end{aligned}</span></td>
+<td style="text-align: center;"><img src="comp_graph_5.svg" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-question no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-question">
+<p>Make the same computations for <span class="math inline">\dfrac{\partial L}{\partial w_2}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p>To sum it up:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="differentiation_scheme.svg" class="img-fluid figure-img"></p>
+<figcaption>Different approaches for taking derivatives</figcaption>
+</figure>
+</div>
+<p>Automatic differentiation is a scheme, that allows you to compute a value of gradient of function with a cost of computing function itself only twice. ## Chain rule We will illustrate some important matrix calculus facts for specific cases ### Univariate chain rule Suppose, we have the following functions <span class="math inline">R: \mathbb{R} \to \mathbb{R} , L: \mathbb{R} \to \mathbb{R}</span> and <span class="math inline">W \in \mathbb{R}</span>. Then</p>
 <p><span class="math display">
 \dfrac{\partial R}{\partial W} = \dfrac{\partial R}{\partial L} \dfrac{\partial L}{\partial W}
 </span></p>
-<section id="multivariate-chain-rule" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="multivariate-chain-rule"><span class="header-section-number">1.0.1</span> Multivariate chain rule</h3>
+</section>
+<section id="multivariate-chain-rule" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="multivariate-chain-rule"><span class="header-section-number">1.1.3</span> Multivariate chain rule</h3>
 <p>The simplest example:</p>
 <p><span class="math display">
 \dfrac{\partial }{\partial t} f(x_1(t), x_2(t)) = \dfrac{\partial f}{\partial x_1} \dfrac{\partial x_1}{\partial t} + \dfrac{\partial f}{\partial x_2} \dfrac{\partial x_2}{\partial t}
@@ -789,8 +949,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 \dfrac{\partial f}{\partial t} = J \dfrac{\partial x}{\partial t}\quad \iff \quad \left(\dfrac{\partial f}{\partial t}\right)^\top =  \left( \dfrac{\partial x}{\partial t}\right)^\top J^\top
 </span></p>
 </section>
-<section id="backpropagation" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="backpropagation"><span class="header-section-number">1.1</span> Backpropagation</h2>
+</section>
+<section id="backpropagation" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="backpropagation"><span class="header-section-number">1.2</span> Backpropagation</h2>
 <p>The whole idea came from the applying chain rule to the computation graph of primitive operations</p>
 <p><span class="math display">
 L = L\left(y\left(z(w,x,b)\right), t\right)
@@ -808,8 +969,8 @@ L = L\left(y\left(z(w,x,b)\right), t\right)
 \overline{v_i} = \dfrac{\partial L}{\partial v_i}
 </span></p>
 <p>Let <span class="math inline">v_1, . . . , v_N</span> be a topological ordering of the computation graph (i.e.&nbsp;parents come before children). <span class="math inline">v_N</span> denotes the variable we’re trying to compute derivatives of (e.g.&nbsp;loss).</p>
-<section id="forward-pass" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="forward-pass"><span class="header-section-number">1.1.1</span> Forward pass:</h3>
+<section id="forward-pass" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="forward-pass"><span class="header-section-number">1.2.1</span> Forward pass:</h3>
 <ul>
 <li>For <span class="math inline">i = 1, \ldots, N</span>:
 <ul>
@@ -817,8 +978,8 @@ L = L\left(y\left(z(w,x,b)\right), t\right)
 </ul></li>
 </ul>
 </section>
-<section id="backward-pass" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="backward-pass"><span class="header-section-number">1.1.2</span> Backward pass:</h3>
+<section id="backward-pass" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="backward-pass"><span class="header-section-number">1.2.2</span> Backward pass:</h3>
 <ul>
 <li>$ = 1$</li>
 <li>For <span class="math inline">i = N-1, \ldots, 1</span>:
@@ -830,11 +991,11 @@ L = L\left(y\left(z(w,x,b)\right), t\right)
 <p><img src="./backpropagation.svg" class="img-fluid"></p>
 </section>
 </section>
-<section id="jacobian-vector-product" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="jacobian-vector-product"><span class="header-section-number">1.2</span> Jacobian vector product</h2>
+<section id="jacobian-vector-product" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="jacobian-vector-product"><span class="header-section-number">1.3</span> Jacobian vector product</h2>
 <p>The reason why it works so fast in practice is that the Jacobian of the operations are already developed in effective manner in automatic differentiation frameworks. Typically, we even do not construct or store the full Jacobian, doing matvec directly instead.</p>
-<section id="example-element-wise-exponent" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="example-element-wise-exponent"><span class="header-section-number">1.2.1</span> Example: element-wise exponent</h3>
+<section id="example-element-wise-exponent" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="example-element-wise-exponent"><span class="header-section-number">1.3.1</span> Example: element-wise exponent</h3>
 <p><span class="math display">
 y = \exp{(z)} \qquad J = \text{diag}(\exp(z)) \qquad \overline{z} = \overline{y} J
 </span></p>
@@ -851,8 +1012,8 @@ y = \exp{(z)} \qquad J = \text{diag}(\exp(z)) \qquad \overline{z} = \overline{y}
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">lambda</span> g, ans, x, y : unbroadcast(y, <span class="op">-</span> g <span class="op">*</span> x <span class="op">/</span> y<span class="op">**</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="hessian-vector-product" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="hessian-vector-product"><span class="header-section-number">1.3</span> Hessian vector product</h2>
+<section id="hessian-vector-product" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="hessian-vector-product"><span class="header-section-number">1.4</span> Hessian vector product</h2>
 <p>Interesting, that the similar idea could be used to compute Hessian-vector products, which is essential for second order optimization or conjugate gradient methods. For a scalar-valued function <span class="math inline">f : \mathbb{R}^n \to \mathbb{R}</span> with continuous second derivatives (so that the Hessian matrix is symmetric), the Hessian at a point <span class="math inline">x \in \mathbb{R}^n</span> is written as <span class="math inline">\partial^2 f(x)</span>. A Hessian-vector product function is then able to evaluate</p>
 <p><span class="math display">
 v \mapsto \partial^2 f(x) \cdot v
@@ -888,7 +1049,13 @@ v \mapsto \partial^2 f(x) \cdot v
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Linnainmaa S. The representation of the cumulative rounding error of an algorithm as a Taylor expansion of the local rounding errors. Master’s Thesis (in Finnish), Univ. Helsinki, 1970.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
