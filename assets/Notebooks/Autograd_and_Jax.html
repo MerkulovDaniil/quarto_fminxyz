@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Automatic differentiation</title>
+<title>Examples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -97,6 +97,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 <script defer="" type="text/javascript" src="../../assets/toggle_button.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js" integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A" crossorigin="anonymous"></script>
 
@@ -117,8 +121,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
-<meta property="og:title" content="Automatic differentiation">
-<meta name="twitter:title" content="Automatic differentiation">
+<meta property="og:title" content="Examples">
+<meta property="og:description" content="">
+<meta name="twitter:title" content="Examples">
+<meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -732,19 +738,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#problem" id="toc-problem" class="nav-link active" data-scroll-target="#problem"><span class="header-section-number">1</span> Problem</a>
+  <li><a href="#autograd" id="toc-autograd" class="nav-link active" data-scroll-target="#autograd"><span class="header-section-number">0.1</span> Autograd</a>
   <ul class="collapse">
-  <li><a href="#possible-approach-numerical-differentiation" id="toc-possible-approach-numerical-differentiation" class="nav-link" data-scroll-target="#possible-approach-numerical-differentiation"><span class="header-section-number">1.1</span> Possible approach: numerical differentiation</a></li>
-  <li><a href="#possible-approach-symbolic-differentiation" id="toc-possible-approach-symbolic-differentiation" class="nav-link" data-scroll-target="#possible-approach-symbolic-differentiation"><span class="header-section-number">1.2</span> Possible approach: symbolic differentiation</a></li>
-  <li><a href="#possible-approach-manual-differentiation" id="toc-possible-approach-manual-differentiation" class="nav-link" data-scroll-target="#possible-approach-manual-differentiation"><span class="header-section-number">1.3</span> Possible approach: manual differentiation</a></li>
-  <li><a href="#idea-of-automatic-differentiation" id="toc-idea-of-automatic-differentiation" class="nav-link" data-scroll-target="#idea-of-automatic-differentiation"><span class="header-section-number">1.4</span> Idea of automatic differentiation</a></li>
+  <li><a href="#autograd-library" id="toc-autograd-library" class="nav-link" data-scroll-target="#autograd-library"><span class="header-section-number">0.1.1</span> Autograd library</a></li>
+  <li><a href="#pytorch-autograd" id="toc-pytorch-autograd" class="nav-link" data-scroll-target="#pytorch-autograd"><span class="header-section-number">0.1.2</span> PyTorch autograd</a></li>
+  <li><a href="#jax-autograd" id="toc-jax-autograd" class="nav-link" data-scroll-target="#jax-autograd"><span class="header-section-number">0.1.3</span> Jax autograd</a></li>
   </ul></li>
-  <li><a href="#simple-example-and-notation" id="toc-simple-example-and-notation" class="nav-link" data-scroll-target="#simple-example-and-notation"><span class="header-section-number">2</span> Simple example and notation</a>
-  <ul class="collapse">
-  <li><a href="#forward-mode-automatic-differentiation" id="toc-forward-mode-automatic-differentiation" class="nav-link" data-scroll-target="#forward-mode-automatic-differentiation"><span class="header-section-number">2.1</span> Forward mode automatic differentiation</a></li>
-  <li><a href="#backward-mode-automatic-differentiation" id="toc-backward-mode-automatic-differentiation" class="nav-link" data-scroll-target="#backward-mode-automatic-differentiation"><span class="header-section-number">2.2</span> Backward mode automatic differentiation</a></li>
-  </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">3</span> </a></li>
+  <li><a href="#forward-vs-reverse-mode-ad" id="toc-forward-vs-reverse-mode-ad" class="nav-link" data-scroll-target="#forward-vs-reverse-mode-ad"><span class="header-section-number">1</span> Forward vs Reverse mode AD</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">2</span> Sources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/MerkulovDaniil/optim/blob/master/assets/Notebooks/Autograd_and_Jax.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     <div class="quarto-margin-footer"><div class="margin-footer-item">
@@ -759,39 +760,721 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="problem" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Problem</h1>
-<section id="possible-approach-numerical-differentiation" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="possible-approach-numerical-differentiation"><span class="header-section-number">1.1</span> Possible approach: numerical differentiation</h2>
-</section>
-<section id="possible-approach-symbolic-differentiation" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="possible-approach-symbolic-differentiation"><span class="header-section-number">1.2</span> Possible approach: symbolic differentiation</h2>
-</section>
-<section id="possible-approach-manual-differentiation" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="possible-approach-manual-differentiation"><span class="header-section-number">1.3</span> Possible approach: manual differentiation</h2>
-</section>
-<section id="idea-of-automatic-differentiation" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="idea-of-automatic-differentiation"><span class="header-section-number">1.4</span> Idea of automatic differentiation</h2>
-</section>
-</section>
-<section id="simple-example-and-notation" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Simple example and notation</h1>
-<section id="forward-mode-automatic-differentiation" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="forward-mode-automatic-differentiation"><span class="header-section-number">2.1</span> Forward mode automatic differentiation</h2>
-</section>
-<section id="backward-mode-automatic-differentiation" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="backward-mode-automatic-differentiation"><span class="header-section-number">2.2</span> Backward mode automatic differentiation</h2>
-</section>
-</section>
-<section id="section" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> </h1>
-<div id="cell-2" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>parent: Methods</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>title: Automatic differentiation</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>order: <span class="dv">6</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-2" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install autograd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Requirement already satisfied: autograd in /Users/bratishka/.pyenv/versions/3.9.17/envs/benchmarx/lib/python3.9/site-packages (1.6.2)
+Requirement already satisfied: numpy&gt;=1.12 in /Users/bratishka/.pyenv/versions/3.9.17/envs/benchmarx/lib/python3.9/site-packages (from autograd) (1.25.2)
+Requirement already satisfied: future&gt;=0.15.2 in /Users/bratishka/.pyenv/versions/3.9.17/envs/benchmarx/lib/python3.9/site-packages (from autograd) (0.18.3)
+
+[notice] A new release of pip is available: 23.2.1 -&gt; 23.3.1
+[notice] To update, run: python3.9 -m pip install --upgrade pip</code></pre>
 </div>
+</div>
+<section id="autograd" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="autograd"><span class="header-section-number">0.1</span> Autograd</h2>
+<section id="autograd-library" class="level3" data-number="0.1.1">
+<h3 data-number="0.1.1" class="anchored" data-anchor-id="autograd-library"><span class="header-section-number">0.1.1</span> Autograd library</h3>
+<div id="cell-5" class="cell" data-outputid="471c3d04-bd2f-4a50-d43e-b94e7393f09a" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> autograd.numpy <span class="im">as</span> np <span class="co"># Thinly-wrapped version of Numpy</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> autograd <span class="im">import</span> grad</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> taylor_sine(x): <span class="co"># Taylor approximation to sine function</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  ans <span class="op">=</span> currterm <span class="op">=</span> x</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> np.<span class="bu">abs</span>(currterm) <span class="op">&gt;</span> <span class="fl">0.001</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    currterm <span class="op">=</span> <span class="op">-</span>currterm <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> ((<span class="dv">2</span> <span class="op">*</span> i <span class="op">+</span> <span class="dv">3</span>) <span class="op">*</span> (<span class="dv">2</span> <span class="op">*</span> i <span class="op">+</span> <span class="dv">2</span>))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    ans <span class="op">=</span> ans <span class="op">+</span> currterm</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> ans</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>grad_sine <span class="op">=</span> grad(taylor_sine)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Gradient of sin(pi) is </span><span class="sc">{</span>grad_sine(np.pi)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gradient of sin(pi) is -0.9998995297042174</code></pre>
+</div>
+</div>
+</section>
+<section id="pytorch-autograd" class="level3" data-number="0.1.2">
+<h3 data-number="0.1.2" class="anchored" data-anchor-id="pytorch-autograd"><span class="header-section-number">0.1.2</span> PyTorch autograd</h3>
+<section id="manual-gradient-implementation" class="level4" data-number="0.1.2.1">
+<h4 data-number="0.1.2.1" class="anchored" data-anchor-id="manual-gradient-implementation"><span class="header-section-number">0.1.2.1</span> Manual gradient implementation</h4>
+<div id="cell-8" class="cell" data-outputid="97e6e766-8c88-48b7-d5bb-cf3c8f8a55a9" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute every step manually</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear regression</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># f = w * x</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># here : f = 2 * x</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], dtype<span class="op">=</span>np.float32)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>], dtype<span class="op">=</span>np.float32)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># model output</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> forward(x):</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> w <span class="op">*</span> x</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># loss = MSE</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loss(y, y_pred):</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ((y_pred <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span>).mean()</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># J = MSE = 1/N * (w*x - y)**2</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># dJ/dw = 1/N * 2x(w*x - y)</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gradient(x, y, y_pred):</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.dot(<span class="dv">2</span><span class="op">*</span>x, y_pred <span class="op">-</span> y).mean()</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Prediction before training: f(5) = </span><span class="sc">{</span>forward(<span class="dv">5</span>)<span class="sc">:.3f}</span><span class="ss">'</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Training</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>n_iters <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(n_iters):</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># predict = forward pass</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> forward(X)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># loss</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> loss(Y, y_pred)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># calculate gradients</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    dw <span class="op">=</span> gradient(X, Y, y_pred)</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># update weights</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    w <span class="op">-=</span> learning_rate <span class="op">*</span> dw</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> epoch <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'epoch </span><span class="sc">{</span>epoch<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: w = </span><span class="sc">{</span>w<span class="sc">:.3f}</span><span class="ss">, loss = </span><span class="sc">{</span>l<span class="sc">:.8f}</span><span class="ss">'</span>)</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Prediction after training: f(5) = </span><span class="sc">{</span>forward(<span class="dv">5</span>)<span class="sc">:.3f}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Prediction before training: f(5) = 0.000
+epoch 1: w = 1.200, loss = 30.00000000
+epoch 3: w = 1.872, loss = 0.76800019
+epoch 5: w = 1.980, loss = 0.01966083
+epoch 7: w = 1.997, loss = 0.00050332
+epoch 9: w = 1.999, loss = 0.00001288
+epoch 11: w = 2.000, loss = 0.00000033
+epoch 13: w = 2.000, loss = 0.00000001
+epoch 15: w = 2.000, loss = 0.00000000
+epoch 17: w = 2.000, loss = 0.00000000
+epoch 19: w = 2.000, loss = 0.00000000
+Prediction after training: f(5) = 10.000</code></pre>
+</div>
+</div>
+</section>
+<section id="automatic-gradient" class="level4" data-number="0.1.2.2">
+<h4 data-number="0.1.2.2" class="anchored" data-anchor-id="automatic-gradient"><span class="header-section-number">0.1.2.2</span> Automatic gradient</h4>
+<div id="cell-10" class="cell" data-outputid="e0549276-4800-4ca9-cd0f-0467dab34088" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Here we replace the manually computed gradient with autograd</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear regression</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># f = w * x</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># here : f = 2 * x</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> torch.tensor([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> torch.tensor([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>], dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> torch.tensor(<span class="fl">0.0</span>, dtype<span class="op">=</span>torch.float32, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># model output</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> forward(x):</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> w <span class="op">*</span> x</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># loss = MSE</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loss(y, y_pred):</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ((y_pred <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span>).mean()</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Prediction before training: f(5) = </span><span class="sc">{</span>forward(<span class="dv">5</span>)<span class="sc">.</span>item()<span class="sc">:.3f}</span><span class="ss">'</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Training</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>n_iters <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(n_iters):</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># predict = forward pass</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> forward(X)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># loss</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> loss(Y, y_pred)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># calculate gradients = backward pass</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    l.backward()</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># update weights</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    <span class="co">#w.data = w.data - learning_rate * w.grad</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>        w <span class="op">-=</span> learning_rate <span class="op">*</span> w.grad</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># zero the gradients after updating</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    w.grad.zero_()</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> epoch <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'epoch </span><span class="sc">{</span>epoch<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: w = </span><span class="sc">{</span>w<span class="sc">.</span>item()<span class="sc">:.3f}</span><span class="ss">, loss = </span><span class="sc">{</span>l<span class="sc">.</span>item()<span class="sc">:.8f}</span><span class="ss">'</span>)</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Prediction after training: f(5) = </span><span class="sc">{</span>forward(<span class="dv">5</span>)<span class="sc">.</span>item()<span class="sc">:.3f}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Prediction before training: f(5) = 0.000
+epoch 1: w = 0.300, loss = 30.00000000
+epoch 11: w = 1.665, loss = 1.16278565
+epoch 21: w = 1.934, loss = 0.04506890
+epoch 31: w = 1.987, loss = 0.00174685
+epoch 41: w = 1.997, loss = 0.00006770
+epoch 51: w = 1.999, loss = 0.00000262
+epoch 61: w = 2.000, loss = 0.00000010
+epoch 71: w = 2.000, loss = 0.00000000
+epoch 81: w = 2.000, loss = 0.00000000
+epoch 91: w = 2.000, loss = 0.00000000
+Prediction after training: f(5) = 10.000</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="jax-autograd" class="level3" data-number="0.1.3">
+<h3 data-number="0.1.3" class="anchored" data-anchor-id="jax-autograd"><span class="header-section-number">0.1.3</span> Jax autograd</h3>
+<p>JAX is NumPy on the CPU, GPU, and TPU, with great automatic differentiation for high-performance machine learning research.</p>
+<div id="cell-12" class="cell" data-outputid="dabc7dd1-4c94-4fc9-e332-7ea62726c9fa" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jax <span class="im">import</span> grad, jit, vmap</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jax <span class="im">import</span> random</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> random.PRNGKey(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-13" class="cell" data-outputid="2c5fb6fd-8af0-4d08-afdb-df325d61addc" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>grad_tanh <span class="op">=</span> grad(jnp.tanh)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grad_tanh(<span class="fl">2.0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.070650816</code></pre>
+</div>
+</div>
+<div id="cell-14" class="cell" data-outputid="1595d066-4728-44b1-abf3-1a0b89defcbb" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grad(grad(jnp.tanh))(<span class="fl">2.0</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(grad(grad(grad(jnp.tanh)))(<span class="fl">2.0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-0.13621868
+0.25265405</code></pre>
+</div>
+</div>
+<div id="cell-15" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sigmoid(x):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0.5</span> <span class="op">*</span> (jnp.tanh(x <span class="op">/</span> <span class="dv">2</span>) <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Outputs probability of a label being true.</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predict(W, b, inputs):</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sigmoid(jnp.dot(inputs, W) <span class="op">+</span> b)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Build a toy dataset.</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>inputs <span class="op">=</span> jnp.array([[<span class="fl">0.52</span>, <span class="fl">1.12</span>,  <span class="fl">0.77</span>],</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>                   [<span class="fl">0.88</span>, <span class="op">-</span><span class="fl">1.08</span>, <span class="fl">0.15</span>],</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>                   [<span class="fl">0.52</span>, <span class="fl">0.06</span>, <span class="op">-</span><span class="fl">1.30</span>],</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>                   [<span class="fl">0.74</span>, <span class="op">-</span><span class="fl">2.49</span>, <span class="fl">1.39</span>]])</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>targets <span class="op">=</span> jnp.array([<span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>])</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Training loss is the negative log-likelihood of the training examples.</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loss(W, b):</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    preds <span class="op">=</span> predict(W, b, inputs)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    label_probs <span class="op">=</span> preds <span class="op">*</span> targets <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> preds) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> targets)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>jnp.<span class="bu">sum</span>(jnp.log(label_probs))</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize random model coefficients</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>key, W_key, b_key <span class="op">=</span> random.split(key, <span class="dv">3</span>)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>W <span class="op">=</span> random.normal(W_key, (<span class="dv">3</span>,))</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> random.normal(b_key, ())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-16" class="cell" data-outputid="b2757961-52ae-4ccd-ee73-e76e50c0086a" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Differentiate `loss` with respect to the first positional argument:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>W_grad <span class="op">=</span> grad(loss, argnums<span class="op">=</span><span class="dv">0</span>)(W, b)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'W_grad'</span>, W_grad)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Since argnums=0 is the default, this does the same thing:</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>W_grad <span class="op">=</span> grad(loss)(W, b)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'W_grad'</span>, W_grad)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># But we can choose different values too, and drop the keyword:</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>b_grad <span class="op">=</span> grad(loss, <span class="dv">1</span>)(W, b)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'b_grad'</span>, b_grad)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Including tuple values</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>W_grad, b_grad <span class="op">=</span> grad(loss, (<span class="dv">0</span>, <span class="dv">1</span>))(W, b)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'W_grad'</span>, W_grad)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'b_grad'</span>, b_grad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>W_grad [-0.16965583 -0.8774644  -1.4901346 ]
+W_grad [-0.16965583 -0.8774644  -1.4901346 ]
+b_grad -0.29227245
+W_grad [-0.16965583 -0.8774644  -1.4901346 ]
+b_grad -0.29227245</code></pre>
+</div>
+</div>
+<p>This <code>grad</code> API has a direct correspondence to the excellent notation in Spivak’s classic <em>Calculus on Manifolds</em> (1965), also used in Sussman and Wisdom’s <a href="http://mitpress.mit.edu/sites/default/files/titles/content/sicm_edition_2/book.html"><em>Structure and Interpretation of Classical Mechanics</em></a> (2015) and their <a href="https://mitpress.mit.edu/books/functional-differential-geometry"><em>Functional Differential Geometry</em></a> (2013). Both books are open-access. See in particular the “Prologue” section of <em>Functional Differential Geometry</em> for a defense of this notation.</p>
+<p>Essentially, when using the <code>argnums</code> argument, if <code>f</code> is a Python function for evaluating the mathematical function <span class="math inline">f</span>, then the Python expression <code>grad(f, i)</code> evaluates to a Python function for evaluating <span class="math inline">\partial_i f</span>.</p>
+<div id="cell-18" class="cell" data-outputid="f5442ac1-59b2-4ff2-ea5b-45f7d793ed89" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jax <span class="im">import</span> value_and_grad</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>loss_value, Wb_grad <span class="op">=</span> value_and_grad(loss, (<span class="dv">0</span>, <span class="dv">1</span>))(W, b)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'loss value'</span>, loss_value)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'loss grad'</span>, Wb_grad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>loss value 3.0519388
+loss grad (Array([-0.16965583, -0.8774644 , -1.4901346 ], dtype=float32), Array(-0.29227245, dtype=float32))</code></pre>
+</div>
+</div>
+<section id="numerical-vs-automatic-difference" class="level4" data-number="0.1.3.1">
+<h4 data-number="0.1.3.1" class="anchored" data-anchor-id="numerical-vs-automatic-difference"><span class="header-section-number">0.1.3.1</span> Numerical vs automatic difference</h4>
+<div id="cell-20" class="cell" data-outputid="12380dfb-cfcd-4b16-8ef0-0ac2f1bbc1e4" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a step size for finite differences calculations</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>eps <span class="op">=</span> <span class="fl">1e-4</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check b_grad with scalar finite differences</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>b_grad_numerical <span class="op">=</span> (loss(W, b <span class="op">+</span> eps <span class="op">/</span> <span class="fl">2.</span>) <span class="op">-</span> loss(W, b <span class="op">-</span> eps <span class="op">/</span> <span class="fl">2.</span>)) <span class="op">/</span> eps</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'b_grad_numerical'</span>, b_grad_numerical)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'b_grad_autodiff'</span>, grad(loss, <span class="dv">1</span>)(W, b))</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check W_grad with finite differences in a random direction</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>key, subkey <span class="op">=</span> random.split(key)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> random.normal(subkey, W.shape)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>unitvec <span class="op">=</span> vec <span class="op">/</span> jnp.sqrt(jnp.vdot(vec, vec))</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>W_grad_numerical <span class="op">=</span> (loss(W <span class="op">+</span> eps <span class="op">/</span> <span class="fl">2.</span> <span class="op">*</span> unitvec, b) <span class="op">-</span> loss(W <span class="op">-</span> eps <span class="op">/</span> <span class="fl">2.</span> <span class="op">*</span> unitvec, b)) <span class="op">/</span> eps</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'W_dirderiv_numerical'</span>, W_grad_numerical)</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'W_dirderiv_autodiff'</span>, jnp.vdot(grad(loss)(W, b), unitvec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>b_grad_numerical -0.29325485
+b_grad_autodiff -0.29227245
+W_dirderiv_numerical -0.2002716
+W_dirderiv_autodiff -0.19909117</code></pre>
+</div>
+</div>
+<p>JAX provides a simple convenience function that does essentially the same thing, but checks up to any order of differentiation that you like:</p>
+<div id="cell-22" class="cell" data-outputid="f15195e8-439c-4d01-ad70-538b067a5724" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> jax.test_util <span class="im">import</span> check_grads</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>check_grads(loss, (W, b), order<span class="op">=</span><span class="dv">2</span>)  <span class="co"># check up to 2nd order derivatives</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="forward-vs-reverse-mode-ad" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Forward vs Reverse mode AD</h1>
+<p><span class="math display">
+f(x) = \max_{i = 1, \ldots, n} (Ax)_i
+</span></p>
+<div id="cell-25" class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.auto <span class="im">import</span> tqdm</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fixing the value of n</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate the product of two matrices</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matvec(A, x):</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jnp.<span class="bu">max</span>(A <span class="op">@</span> x)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Wrapper functions to calculate the Jacobian using forward and reverse mode AD</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="at">@jax.jit</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> jac_fwd(A, x):</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jax.jacfwd(matvec, argnums<span class="op">=</span><span class="dv">1</span>)(A, x)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="at">@jax.jit</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> jac_rev(A, x):</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jax.jacrev(matvec, argnums<span class="op">=</span><span class="dv">1</span>)(A, x)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Range of m values</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>m_values <span class="op">=</span> jnp.logspace(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">20</span>, dtype<span class="op">=</span>jnp.float32)</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists to store timing results</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>times_fwd <span class="op">=</span> []</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>times_rev <span class="op">=</span> []</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform timing using %%timeit for each value of m</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> tqdm(m_values):</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> jax.random.normal(jax.random.PRNGKey(<span class="dv">0</span>), (<span class="bu">int</span>(m), n))</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> jax.random.normal(jax.random.PRNGKey(<span class="dv">1</span>), (n, <span class="dv">1</span>))</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"🤖 Input/Output ratio </span><span class="sc">{</span>m<span class="op">/</span>n<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"🤖 Forward time"</span>)</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Forward mode timing</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>    fwd_timing <span class="op">=</span> <span class="op">%</span>timeit <span class="op">-</span>n <span class="dv">50</span> <span class="op">-</span>o jac_fwd(A, x).block_until_ready()</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>    times_fwd.append(fwd_timing.best)</span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"🤖 Reverse time"</span>)</span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reverse mode timing</span></span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>    rev_timing <span class="op">=</span> <span class="op">%</span>timeit <span class="op">-</span>n <span class="dv">50</span> <span class="op">-</span>o jac_rev(A, x).block_until_ready()</span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>    times_rev.append(rev_timing.best)</span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the results</span></span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a>plt.plot([m_value <span class="op">/</span> n <span class="cf">for</span> m_value <span class="kw">in</span> m_values], times_fwd, label<span class="op">=</span><span class="st">'Forward Mode AD'</span>)</span>
+<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a>plt.plot([m_value <span class="op">/</span> n <span class="cf">for</span> m_value <span class="kw">in</span> m_values], times_rev, label<span class="op">=</span><span class="st">'Reverse Mode AD'</span>)</span>
+<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Ratio m/n'</span>)</span>
+<span id="cb22-53"><a href="#cb22-53" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'Time for $\nabla_x f$ calculation, (seconds)'</span>)</span>
+<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="vs">r'Comparison of Forward Mode and Reverse Mode AD. $f(x) = \max_i(Ax)$'</span>)</span>
+<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a>plt.grid(linestyle<span class="op">=</span><span class="st">":"</span>)</span>
+<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a>plt.xscale(<span class="st">'log'</span>)</span>
+<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a>plt.yscale(<span class="st">'log'</span>) </span>
+<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"forward_vs_reverse_ad_scalar_output.svg"</span>)</span>
+<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"7195015d2976458bb843fa134512a33a","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>🤖 Input/Output ratio 0.01
+🤖 Forward time
+The slowest run took 37.12 times longer than the fastest. This could mean that an intermediate result is being cached.
+57.5 µs ± 117 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 101.19 times longer than the fastest. This could mean that an intermediate result is being cached.
+49.1 µs ± 112 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.02
+🤖 Forward time
+9.24 µs ± 180 ns per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+3.49 µs ± 71.3 ns per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.03
+🤖 Forward time
+The slowest run took 45.70 times longer than the fastest. This could mean that an intermediate result is being cached.
+69.7 µs ± 141 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 146.48 times longer than the fastest. This could mean that an intermediate result is being cached.
+90.2 µs ± 210 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.04
+🤖 Forward time
+The slowest run took 49.97 times longer than the fastest. This could mean that an intermediate result is being cached.
+69.5 µs ± 148 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 101.74 times longer than the fastest. This could mean that an intermediate result is being cached.
+57.9 µs ± 132 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.07
+🤖 Forward time
+The slowest run took 44.04 times longer than the fastest. This could mean that an intermediate result is being cached.
+70.9 µs ± 149 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 101.63 times longer than the fastest. This could mean that an intermediate result is being cached.
+59.8 µs ± 134 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.11
+🤖 Forward time
+The slowest run took 44.51 times longer than the fastest. This could mean that an intermediate result is being cached.
+82.4 µs ± 173 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 130.18 times longer than the fastest. This could mean that an intermediate result is being cached.
+66.9 µs ± 155 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.18
+🤖 Forward time
+The slowest run took 40.05 times longer than the fastest. This could mean that an intermediate result is being cached.
+85.9 µs ± 177 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 153.62 times longer than the fastest. This could mean that an intermediate result is being cached.
+85.1 µs ± 199 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.30
+🤖 Forward time
+The slowest run took 34.82 times longer than the fastest. This could mean that an intermediate result is being cached.
+97 µs ± 195 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 181.71 times longer than the fastest. This could mean that an intermediate result is being cached.
+96.1 µs ± 226 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.48
+🤖 Forward time
+The slowest run took 28.01 times longer than the fastest. This could mean that an intermediate result is being cached.
+122 µs ± 233 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 178.73 times longer than the fastest. This could mean that an intermediate result is being cached.
+101 µs ± 237 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 0.78
+🤖 Forward time
+The slowest run took 21.23 times longer than the fastest. This could mean that an intermediate result is being cached.
+139 µs ± 250 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 170.27 times longer than the fastest. This could mean that an intermediate result is being cached.
+111 µs ± 259 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 1.27
+🤖 Forward time
+The slowest run took 10.34 times longer than the fastest. This could mean that an intermediate result is being cached.
+196 µs ± 257 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 182.45 times longer than the fastest. This could mean that an intermediate result is being cached.
+120 µs ± 282 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 2.07
+🤖 Forward time
+The slowest run took 7.27 times longer than the fastest. This could mean that an intermediate result is being cached.
+270 µs ± 292 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 134.45 times longer than the fastest. This could mean that an intermediate result is being cached.
+114 µs ± 265 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 3.36
+🤖 Forward time
+The slowest run took 5.98 times longer than the fastest. This could mean that an intermediate result is being cached.
+291 µs ± 270 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 91.38 times longer than the fastest. This could mean that an intermediate result is being cached.
+113 µs ± 256 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 5.46
+🤖 Forward time
+The slowest run took 5.64 times longer than the fastest. This could mean that an intermediate result is being cached.
+260 µs ± 248 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 62.08 times longer than the fastest. This could mean that an intermediate result is being cached.
+111 µs ± 245 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 8.86
+🤖 Forward time
+399 µs ± 264 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 46.42 times longer than the fastest. This could mean that an intermediate result is being cached.
+121 µs ± 255 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 14.38
+🤖 Forward time
+706 µs ± 328 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 34.96 times longer than the fastest. This could mean that an intermediate result is being cached.
+140 µs ± 282 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 23.36
+🤖 Forward time
+805 µs ± 288 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 25.43 times longer than the fastest. This could mean that an intermediate result is being cached.
+160 µs ± 303 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 37.93
+🤖 Forward time
+1.13 ms ± 339 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 13.58 times longer than the fastest. This could mean that an intermediate result is being cached.
+156 µs ± 242 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 61.58
+🤖 Forward time
+1.64 ms ± 301 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 10.34 times longer than the fastest. This could mean that an intermediate result is being cached.
+210 µs ± 291 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Input/Output ratio 100.00
+🤖 Forward time
+2.4 ms ± 316 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)
+🤖 Reverse time
+The slowest run took 6.11 times longer than the fastest. This could mean that an intermediate result is being cached.
+249 µs ± 248 µs per loop (mean ± std. dev. of 7 runs, 50 loops each)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Autograd_and_Jax_files/figure-html/cell-14-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<p><span class="math display">
+f(x) = Ax
+</span></p>
+<div id="cell-27" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax.numpy <span class="im">as</span> jnp</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.auto <span class="im">import</span> tqdm</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fixing the value of n</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate the product of two matrices</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matvec(A, x):</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> A<span class="op">@</span>x</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Wrapper functions to calculate the Jacobian using forward and reverse mode AD</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="at">@jax.jit</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> jac_fwd(A, x):</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jax.jacfwd(matvec, argnums<span class="op">=</span><span class="dv">1</span>)(A, x)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="at">@jax.jit</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> jac_rev(A, x):</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> jax.jacrev(matvec, argnums<span class="op">=</span><span class="dv">1</span>)(A, x)</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Range of m values</span></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>m_values <span class="op">=</span> jnp.logspace(<span class="dv">0</span>, <span class="fl">4.5</span>, <span class="dv">20</span>, dtype<span class="op">=</span>jnp.float32)</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists to store timing results</span></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>times_fwd <span class="op">=</span> []</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>times_rev <span class="op">=</span> []</span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform timing using %%timeit for each value of m</span></span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> tqdm(m_values):</span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> jax.random.normal(jax.random.PRNGKey(<span class="dv">0</span>), (<span class="bu">int</span>(m), n))</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> jax.random.normal(jax.random.PRNGKey(<span class="dv">1</span>), (n, <span class="dv">1</span>))</span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"🤖 Input/Output ratio </span><span class="sc">{</span>m<span class="op">/</span>n<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"🤖 Forward time"</span>)</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Forward mode timing</span></span>
+<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a>    fwd_timing <span class="op">=</span> <span class="op">%</span>timeit <span class="op">-</span>n <span class="dv">5</span> <span class="op">-</span>o jac_fwd(A, x).block_until_ready()</span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a>    times_fwd.append(fwd_timing.best)</span>
+<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"🤖 Reverse time"</span>)</span>
+<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reverse mode timing</span></span>
+<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a>    rev_timing <span class="op">=</span> <span class="op">%</span>timeit <span class="op">-</span>n <span class="dv">5</span> <span class="op">-</span>o jac_rev(A, x).block_until_ready()</span>
+<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a>    times_rev.append(rev_timing.best)</span>
+<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the results</span></span>
+<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a>plt.plot([m_value <span class="op">/</span> n <span class="cf">for</span> m_value <span class="kw">in</span> m_values], times_fwd, label<span class="op">=</span><span class="st">'Forward Mode AD'</span>)</span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a>plt.plot([m_value <span class="op">/</span> n <span class="cf">for</span> m_value <span class="kw">in</span> m_values], times_rev, label<span class="op">=</span><span class="st">'Reverse Mode AD'</span>)</span>
+<span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Ratio m/n'</span>)</span>
+<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'Time for $\nabla_x f$ calculation, (seconds)'</span>)</span>
+<span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="vs">r'Comparison of Forward Mode and Reverse Mode AD. $f(x) = Ax$'</span>)</span>
+<span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a>plt.grid(linestyle<span class="op">=</span><span class="st">":"</span>)</span>
+<span id="cb24-57"><a href="#cb24-57" aria-hidden="true" tabindex="-1"></a>plt.xscale(<span class="st">'log'</span>)</span>
+<span id="cb24-58"><a href="#cb24-58" aria-hidden="true" tabindex="-1"></a>plt.yscale(<span class="st">'log'</span>) </span>
+<span id="cb24-59"><a href="#cb24-59" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"forward_vs_reverse_ad.svg"</span>)</span>
+<span id="cb24-60"><a href="#cb24-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"fd667bbf626c4097b5e1343bec8105da","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>🤖 Input/Output ratio 0.01
+🤖 Forward time
+The slowest run took 323.00 times longer than the fastest. This could mean that an intermediate result is being cached.
+421 µs ± 1.01 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 783.68 times longer than the fastest. This could mean that an intermediate result is being cached.
+315 µs ± 765 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 0.02
+🤖 Forward time
+9.21 µs ± 608 ns per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+3.17 µs ± 379 ns per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 0.03
+🤖 Forward time
+The slowest run took 390.02 times longer than the fastest. This could mean that an intermediate result is being cached.
+503 µs ± 1.18 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 1051.40 times longer than the fastest. This could mean that an intermediate result is being cached.
+488 µs ± 1.19 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 0.05
+🤖 Forward time
+The slowest run took 350.01 times longer than the fastest. This could mean that an intermediate result is being cached.
+401 µs ± 964 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 799.69 times longer than the fastest. This could mean that an intermediate result is being cached.
+369 µs ± 897 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 0.09
+🤖 Forward time
+The slowest run took 344.16 times longer than the fastest. This could mean that an intermediate result is being cached.
+421 µs ± 1 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 726.31 times longer than the fastest. This could mean that an intermediate result is being cached.
+372 µs ± 901 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 0.15
+🤖 Forward time
+The slowest run took 237.52 times longer than the fastest. This could mean that an intermediate result is being cached.
+399 µs ± 947 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 666.18 times longer than the fastest. This could mean that an intermediate result is being cached.
+410 µs ± 993 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 0.26
+🤖 Forward time
+The slowest run took 207.68 times longer than the fastest. This could mean that an intermediate result is being cached.
+423 µs ± 999 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 539.15 times longer than the fastest. This could mean that an intermediate result is being cached.
+423 µs ± 1.02 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 0.45
+🤖 Forward time
+The slowest run took 85.39 times longer than the fastest. This could mean that an intermediate result is being cached.
+444 µs ± 995 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 296.52 times longer than the fastest. This could mean that an intermediate result is being cached.
+425 µs ± 1.02 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 0.78
+🤖 Forward time
+The slowest run took 100.36 times longer than the fastest. This could mean that an intermediate result is being cached.
+407 µs ± 931 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 127.99 times longer than the fastest. This could mean that an intermediate result is being cached.
+412 µs ± 947 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 1.35
+🤖 Forward time
+The slowest run took 62.31 times longer than the fastest. This could mean that an intermediate result is being cached.
+469 µs ± 974 µs per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 36.21 times longer than the fastest. This could mean that an intermediate result is being cached.
+550 µs ± 1.1 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 2.34
+🤖 Forward time
+The slowest run took 38.68 times longer than the fastest. This could mean that an intermediate result is being cached.
+511 µs ± 1.02 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 17.34 times longer than the fastest. This could mean that an intermediate result is being cached.
+697 µs ± 1.12 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 4.03
+🤖 Forward time
+The slowest run took 26.59 times longer than the fastest. This could mean that an intermediate result is being cached.
+551 µs ± 1 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 11.00 times longer than the fastest. This could mean that an intermediate result is being cached.
+879 µs ± 1.2 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 6.95
+🤖 Forward time
+The slowest run took 15.04 times longer than the fastest. This could mean that an intermediate result is being cached.
+751 µs ± 1.12 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+The slowest run took 4.99 times longer than the fastest. This could mean that an intermediate result is being cached.
+1.83 ms ± 1.41 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 11.99
+🤖 Forward time
+The slowest run took 10.07 times longer than the fastest. This could mean that an intermediate result is being cached.
+818 µs ± 1.09 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+2.37 ms ± 1.3 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 20.69
+🤖 Forward time
+The slowest run took 10.89 times longer than the fastest. This could mean that an intermediate result is being cached.
+821 µs ± 1.09 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+4.77 ms ± 1.29 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 35.70
+🤖 Forward time
+The slowest run took 7.00 times longer than the fastest. This could mean that an intermediate result is being cached.
+1.16 ms ± 1.23 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+12.1 ms ± 1.9 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 61.58
+🤖 Forward time
+The slowest run took 4.65 times longer than the fastest. This could mean that an intermediate result is being cached.
+1.27 ms ± 1 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+37.8 ms ± 1.25 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 106.25
+🤖 Forward time
+1.73 ms ± 1.05 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+101 ms ± 6.12 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 183.30
+🤖 Forward time
+3.74 ms ± 1.74 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+305 ms ± 24 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Input/Output ratio 316.23
+🤖 Forward time
+3.26 ms ± 1.03 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)
+🤖 Reverse time
+920 ms ± 68.1 ms per loop (mean ± std. dev. of 7 runs, 5 loops each)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Autograd_and_Jax_files/figure-html/cell-15-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="sources" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Sources</h1>
+<ul>
+<li><a href="https://github.com/HIPS/autograd/blob/master/docs/tutorial.md">HIPS autograd</a></li>
+<li><a href="https://www.python-engineer.com/courses/pytorchbeginner/05-gradient-descent/">PyTorch autograd</a></li>
+<li><a href="https://colab.research.google.com/github/google/jax/blob/master/docs/notebooks/autodiff_cookbook.ipynb#scrollTo=RsQSyT5p7OJW">Jax Autodiff cookbook</a></li>
+</ul>
 
 
 </section>

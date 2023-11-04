@@ -746,12 +746,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#univariate-chain-rule" id="toc-univariate-chain-rule" class="nav-link" data-scroll-target="#univariate-chain-rule"><span class="header-section-number">5.1</span> Univariate chain rule</a></li>
   <li><a href="#multivariate-chain-rule" id="toc-multivariate-chain-rule" class="nav-link" data-scroll-target="#multivariate-chain-rule"><span class="header-section-number">5.2</span> Multivariate chain rule</a></li>
   <li><a href="#backpropagation" id="toc-backpropagation" class="nav-link" data-scroll-target="#backpropagation"><span class="header-section-number">5.3</span> Backpropagation</a></li>
-  <li><a href="#linear-least-squares-layer" id="toc-linear-least-squares-layer" class="nav-link" data-scroll-target="#linear-least-squares-layer"><span class="header-section-number">5.4</span> Linear least squares layer</a></li>
-  <li><a href="#jacobian-vector-product" id="toc-jacobian-vector-product" class="nav-link" data-scroll-target="#jacobian-vector-product"><span class="header-section-number">5.5</span> Jacobian vector product</a>
-  <ul class="collapse">
-  <li><a href="#example-element-wise-exponent" id="toc-example-element-wise-exponent" class="nav-link" data-scroll-target="#example-element-wise-exponent"><span class="header-section-number">5.5.1</span> Example: element-wise exponent</a></li>
-  </ul></li>
-  <li><a href="#hessian-vector-product" id="toc-hessian-vector-product" class="nav-link" data-scroll-target="#hessian-vector-product"><span class="header-section-number">5.6</span> Hessian vector product</a></li>
+  <li><a href="#jacobian-vector-product" id="toc-jacobian-vector-product" class="nav-link" data-scroll-target="#jacobian-vector-product"><span class="header-section-number">5.4</span> Jacobian vector product</a></li>
+  <li><a href="#hessian-vector-product" id="toc-hessian-vector-product" class="nav-link" data-scroll-target="#hessian-vector-product"><span class="header-section-number">5.5</span> Hessian vector product</a></li>
   </ul></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">6</span> Code</a></li>
   <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials"><span class="header-section-number">7</span> Materials</a></li>
@@ -775,11 +771,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><span class="math display">
 L(w) \to \min_{w \in \mathbb{R}^d}
 </span></p>
-<p>Such problems typically arise in machine learning, when you need to find optimal hyperparameters <span class="math inline">w</span> of an ML model (i.e.&nbsp;train a neural network). You may use a lot of algorithms to approach this problem, but given the modern size of the problem, where <span class="math inline">d</span> could be dozens of billions it is very challenging to solve this problem without information about the gradients using zero-order optimization algorithms. That is why it would be beneficial to be able to calculate the gradient vector <span class="math inline">\nabla_w L = \left( \frac{\partial L}{\partial w_1}, \ldots, \frac{\partial L}{\partial w_d}\right)^T</span>. Typically, first-order methods perform much better in the huge scale optimization, while the second-order methods require too much memory.</p>
+<p>Such problems typically arise in machine learning, when you need to find optimal hyperparameters <span class="math inline">w</span> of an ML model (i.e.&nbsp;train a neural network). You may use a lot of algorithms to approach this problem, but given the modern size of the problem, where <span class="math inline">d</span> could be dozens of billions it is very challenging to solve this problem without information about the gradients using zero-order optimization algorithms. That is why it would be beneficial to be able to calculate the gradient vector <span class="math inline">\nabla_w L = \left( \frac{\partial L}{\partial w_1}, \ldots, \frac{\partial L}{\partial w_d}\right)^T</span>. Typically, first-order methods perform much better in huge-scale optimization, while second-order methods require too much memory.</p>
 </section>
 <section id="finite-differences" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Finite differences</h1>
-<p>The naive approach to get approximate values of gradients is <strong>Finite differences</strong> approach. For each coordinate one can calculate the partial derivative approximation:</p>
+<p>The naive approach to get approximate values of gradients is <strong>Finite differences</strong> approach. For each coordinate, one can calculate the partial derivative approximation:</p>
 <p><span class="math display">
 \dfrac{\partial L}{\partial w_k} (w) \approx \dfrac{L(w+\varepsilon e_k) - L(w)}{\varepsilon}, \quad e_k = (0, \ldots, \underset{{\tiny k}}{1}, \ldots, 0)
 </span></p>
@@ -810,7 +806,7 @@ Answer
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-answer" data-collapse="true">
-<p><span class="math inline">2dT</span>, which is extremely long for the huge scale optimization. Moreover, this exact scheme is instable, which means that you will have to choose between accuracy and stability.</p>
+<p><span class="math inline">2dT</span>, which is extremely long for the huge scale optimization. Moreover, this exact scheme is unstable, which means that you will have to choose between accuracy and stability.</p>
 </div>
 </div>
 </div>
@@ -996,7 +992,7 @@ Forward mode automatic differentiation algorithm
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-theorem">
-<p>Suppose, we have a computational graph <span class="math inline">v_i, i \in [1; N]</span>. Our goal is to calculate the derivative of the output of this graph with respect to some input variable <span class="math inline">w_k</span>, i.e.&nbsp;<span class="math inline">\dfrac{\partial v_N}{\partial w_k}</span>. This idea implies propagation of the gradient with respect to input variable from start to the end, that is why we can introduce the notation:</p>
+<p>Suppose, we have a computational graph <span class="math inline">v_i, i \in [1; N]</span>. Our goal is to calculate the derivative of the output of this graph with respect to some input variable <span class="math inline">w_k</span>, i.e.&nbsp;<span class="math inline">\dfrac{\partial v_N}{\partial w_k}</span>. This idea implies propagation of the gradient with respect to the input variable from start to end, that is why we can introduce the notation:</p>
 <p><span class="math display">
 \overline{v_i} = \dfrac{\partial v_i}{\partial w_k}
 </span></p>
@@ -1021,11 +1017,11 @@ Forward mode automatic differentiation algorithm
 </div>
 </div>
 </div>
-<p>Note, that this approach does not require storing all intermediate computations, but one can see, that for calculating the derivative <span class="math inline">\dfrac{\partial L}{\partial w_k}</span> we need <span class="math inline">\mathcal{O}(T)</span> operations. Which means, that for the whole gradient we need <span class="math inline">d\mathcal{O}(T)</span> operations, which is the same as for finite differences, but we do not have stability issues, inaccuracies now (the formulas above are exact).</p>
+<p>Note, that this approach does not require storing all intermediate computations, but one can see, that for calculating the derivative <span class="math inline">\dfrac{\partial L}{\partial w_k}</span> we need <span class="math inline">\mathcal{O}(T)</span> operations. This means, that for the whole gradient, we need <span class="math inline">d\mathcal{O}(T)</span> operations, which is the same as for finite differences, but we do not have stability issues, or inaccuracies now (the formulas above are exact).</p>
 </section>
 <section id="backward-mode-automatic-differentiation" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Backward mode automatic differentiation</h1>
-<p>We will consider again the same function</p>
+<p>We will consider the same function</p>
 <p><span class="math display">
 L(w_1, w_2) = w_2 \log w_1 + \sqrt{w_2 \log w_1}
 </span></p>
@@ -1090,7 +1086,7 @@ Question
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-question">
-<p>Note, that for the same price of computations as it was in the forward mode we have the full vector of gradient <span class="math inline">\nabla_w L</span>. Is it free lunch? What is the cost of acceleration?</p>
+<p>Note, that for the same price of computations as it was in the forward mode we have the full vector of gradient <span class="math inline">\nabla_w L</span>. Is it a free lunch? What is the cost of acceleration?</p>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1105,7 +1101,7 @@ Answer
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-answer" data-collapse="true">
-<p>Note, that for using the reverse mode AD you need to store all intermediate computations from the forward pass. This problem could be somehow mitigated with the gradient checkpointing approach, which involves necessary recomputations of some intermediate values. This could significantly reduce the memory footprint of the large machine learning model.</p>
+<p>Note, that for using the reverse mode AD you need to store all intermediate computations from the forward pass. This problem could be somehow mitigated with the gradient checkpointing approach, which involves necessary recomputations of some intermediate values. This could significantly reduce the memory footprint of the large machine-learning model.</p>
 </div>
 </div>
 </div>
@@ -1168,8 +1164,19 @@ Example
 <div>
 <div class="callout-example">
 <p>Which of the AD modes would you choose (forward/ reverse) for the following computational graph of primitive arithmetic operations? Suppose, you are needed to compute the jacobian <span class="math inline">J = \left\{ \dfrac{\partial L_i}{\partial w_j} \right\}_{i,j}</span></p>
-<p><img src="ad_choose.svg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ad_choose.svg" class="img-fluid figure-img"></p>
+<figcaption>Which mode would you choose for calculating gradients there?</figcaption>
+</figure>
+</div>
 <p>Note, that the reverse mode computational time is proportional to the number of outputs here, while the forward mode works proportionally to the number of inputs there. This is why it would be a good idea to consider the forward mode AD.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="forward_vs_reverse_ad.svg" class="img-fluid figure-img"></p>
+<figcaption>This graph nicely illustrates the idea of choice between the modes. The <span class="math inline">n = 100</span> dimension is fixed and the graph presents the time needed for Jacobian calculation w.r.t. <span class="math inline">x</span> for <span class="math inline">f(x) = Ax</span></figcaption>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1187,7 +1194,12 @@ Question
 <div>
 <div class="callout-question">
 <p>Which of the AD modes would you choose (forward/ reverse) for the following computational graph of primitive arithmetic operations? Suppose, you are needed to compute the jacobian <span class="math inline">J = \left\{ \dfrac{\partial L_i}{\partial w_j} \right\}_{i,j}</span>. Note, that <span class="math inline">G</span> is an arbitrary computational graph</p>
-<p><img src="ad_mixed.svg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ad_mixed.svg" class="img-fluid figure-img"></p>
+<figcaption>Which mode would you choose for calculating gradients there?</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1202,12 +1214,167 @@ Answer
 <div class="callout-body-container callout-body">
 <div>
 <div class="callout-answer" data-collapse="true">
-<p>It is generally impossible to say it without some knowledge about specific structure of the graph <span class="math inline">G</span>. Note, that there are also plenty of advanced approaches to mix forward and reverse mode AD, based on the specific <span class="math inline">G</span> structure.</p>
+<p>It is generally impossible to say it without some knowledge about the specific structure of the graph <span class="math inline">G</span>. Note, that there are also plenty of advanced approaches to mix forward and reverse mode AD, based on the specific <span class="math inline">G</span> structure.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Feedforward Architecture
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="feedforward.svg" class="img-fluid figure-img"></p>
+<figcaption>Feedforward neural network architecture</figcaption>
+</figure>
+</div>
+<p><strong>FORWARD</strong></p>
+<ul>
+<li><p><span class="math inline">v_0 = x</span> typically we have a batch of data <span class="math inline">x</span> here as an input.</p></li>
+<li><p>For <span class="math inline">k = 1, \ldots, t-1, t</span>:</p>
+<ul>
+<li><span class="math inline">v_k = \sigma(v_{k-1}w_k)</span>. Note, that practically speaking the data has dimension <span class="math inline">x \in \mathbb{R}^{b \times d}</span>, where <span class="math inline">b</span> is the batch size (for the single data point <span class="math inline">b=1</span>). While the weight matrix <span class="math inline">w_k</span> of a <span class="math inline">k</span> layer has a shape <span class="math inline">n_{k-1} \times n_k</span>, where <span class="math inline">n_k</span> is the dimension of an inner representation of the data.</li>
+</ul></li>
+<li><p><span class="math inline">L = L(v_t)</span> - calculate the loss function.</p></li>
+</ul>
+<p><strong>BACKWARD</strong></p>
+<ul>
+<li><p><span class="math inline">v_{t+1} = L, \dfrac{\partial L}{\partial L} = 1</span></p></li>
+<li><p>For <span class="math inline">k = t, t-1, \ldots, 1</span>:</p>
+<ul>
+<li><span class="math inline">\underset{b \times n_k}{\dfrac{\partial L}{\partial v_k}} = \underset{b \times n_{k+1}}{\dfrac{\partial L}{\partial v_{k+1}}} \underset{n_{k+1} \times n_k}{\dfrac{\partial v_{k+1}}{\partial v_{k}}}</span></li>
+<li><span class="math inline">\underset{b \times n_{k-1} \cdot n_k}{\dfrac{\partial L}{\partial w_k}} = \underset{b \times n_{k+1}}{\dfrac{\partial L}{\partial v_{k+1}}} \cdot \underset{n_{k+1} \times n_{k-1} \cdot n_k}{\dfrac{\partial v_{k+1}}{\partial w_{k}}}</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Gradient propagation through the linear least squares
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="linear_least_squares_layer.svg" class="img-fluid figure-img"></p>
+<figcaption><span class="math inline">x</span> could be found as a solution of linear system</figcaption>
+</figure>
+</div>
+<p>Suppose, we have an invertible matrix <span class="math inline">A</span> and a vector <span class="math inline">b</span>, the vector <span class="math inline">x</span> is the solution of the linear system <span class="math inline">Ax = b</span>, namely one can write down an analytical solution <span class="math inline">x = A^{-1}b</span>, in this example we will show, that computing all derivatives <span class="math inline">\dfrac{\partial L}{\partial A}, \dfrac{\partial L}{\partial b}, \dfrac{\partial L}{\partial x}</span>, i.e.&nbsp;the backward pass, costs approximately the same as the forward pass.</p>
+<p>It is known, that the differential of the function does not depend on the parametrization:</p>
+<p><span class="math display">
+dL = \left\langle\dfrac{\partial L}{\partial x}, dx \right\rangle = \left\langle\dfrac{\partial L}{\partial A}, dA \right\rangle + \left\langle\dfrac{\partial L}{\partial b}, db \right\rangle
+</span></p>
+<p>Given the linear system, we have:</p>
+<p><span class="math display">
+\begin{align*}
+Ax &amp;= b \\
+dAx + Adx = db &amp;\to dx = A^{-1}(db - dAx)
+\end{align*}
+</span></p>
+<p>The straightforward substitution gives us:</p>
+<p><span class="math display">
+\left\langle\dfrac{\partial L}{\partial x}, A^{-1}(db - dAx) \right\rangle = \left\langle\dfrac{\partial L}{\partial A}, dA \right\rangle + \left\langle\dfrac{\partial L}{\partial b}, db \right\rangle
+</span></p>
+<p><span class="math display">
+\left\langle -A^{-T}\dfrac{\partial L}{\partial x} x^T, dA \right\rangle + \left\langle A^{-T}\dfrac{\partial L}{\partial x},db \right\rangle = \left\langle\dfrac{\partial L}{\partial A}, dA \right\rangle + \left\langle\dfrac{\partial L}{\partial b}, db \right\rangle
+</span></p>
+<p>Therefore:</p>
+<p><span class="math display">
+\dfrac{\partial L}{\partial A} = -A^{-T}\dfrac{\partial L}{\partial x} x^T \quad \dfrac{\partial L}{\partial b} =  A^{-T}\dfrac{\partial L}{\partial x}
+</span></p>
+<p>It is interesting, that the most computationally intensive part here is the matrix inverse, which is the same as for the forward pass. Sometimes it is even possible to store the result itself, which makes the backward pass even cheaper.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Gradient propagation through the SVD
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
+<p>Suppose, we have the rectangular matrix <span class="math inline">W \in \mathbb{R}^{m \times n}</span>, which has a singular value decomposition:</p>
+<p><span class="math display">
+W = U \Sigma V^T, \quad U^TU = I, \quad V^TV = I, \quad \Sigma = \text{diag}(\sigma_1, \ldots, \sigma_{\min(m,n)})
+</span></p>
+<ol type="1">
+<li><p>Similarly to the previous example:</p>
+<p><span class="math display">
+\begin{split}
+W &amp;= U \Sigma V^T \\
+dW &amp;= dU \Sigma V^T + U d\Sigma V^T + U \Sigma dV^T \\
+U^T dW V &amp;= U^TdU \Sigma V^TV + U^TU d\Sigma V^TV + U^TU \Sigma dV^TV \\
+U^T dW V &amp;= U^TdU \Sigma + d\Sigma + \Sigma dV^TV
+\end{split}
+</span></p></li>
+<li><p>Note, that <span class="math inline">U^T U = I \to dU^TU + U^T dU = 0</span>. But also <span class="math inline">dU^TU = (U^T dU)^T</span>, which actually involves, that the matrix <span class="math inline">U^TdU</span> is antisymmetric:</p>
+<p><span class="math display">
+(U^T dU)^T +  U^T dU = 0 \quad \to \quad \text{diag}( U^T dU) = (0, \ldots, 0)
+</span></p>
+<p>The same logic could be applied to the matrix <span class="math inline">V</span> and</p>
+<p><span class="math display">
+\text{diag}(dV^T V) = (0, \ldots, 0)
+</span></p></li>
+<li><p>At the same time, the matrix <span class="math inline">d \Sigma</span> is diagonal, which means (look at the 1.) that</p>
+<p><span class="math display">
+\text{diag}(U^T dW V) = d \Sigma
+</span></p>
+<p>Here on both sides, we have diagonal matrices.</p></li>
+<li><p>Now, we can decompose the differential of the loss function as a function of <span class="math inline">\Sigma</span> - such problems arise in ML problems, where we need to restrict the matrix rank:</p>
+<p><span class="math display">
+\begin{split}
+dL &amp;= \left\langle\dfrac{\partial L}{\partial \Sigma}, d\Sigma \right\rangle \\
+&amp;= \left\langle\dfrac{\partial L}{\partial \Sigma}, \text{diag}(U^T dW V)\right\rangle \\
+&amp;= \text{tr}\left(\dfrac{\partial L}{\partial \Sigma}^T \text{diag}(U^T dW V) \right)
+\end{split}
+</span></p>
+<p>As soon as we have diagonal matrices inside the product, the trace of the diagonal part of the matrix will be equal to the trace of the whole matrix:</p>
+<p><span class="math display">
+\begin{split}
+dL &amp;= \text{tr}\left(\dfrac{\partial L}{\partial \Sigma}^T \text{diag}(U^T dW V) \right) \\
+&amp;= \text{tr}\left(\dfrac{\partial L}{\partial \Sigma}^T U^T dW V \right)  \\
+&amp;= \left\langle\dfrac{\partial L}{\partial \Sigma}, U^T dW V \right\rangle \\
+&amp;= \left\langle U \dfrac{\partial L}{\partial \Sigma} V^T, dW \right\rangle
+\end{split}
+</span></p></li>
+<li><p>Finally, using another parametrization of the differential</p>
+<p><span class="math display">
+\left\langle U \dfrac{\partial L}{\partial \Sigma} V^T, dW \right\rangle = \left\langle\dfrac{\partial L}{\partial W}, dW \right\rangle
+</span></p>
+<p><span class="math display">
+\dfrac{\partial L}{\partial W} =  U \dfrac{\partial L}{\partial \Sigma} V^T,
+</span></p>
+<p>This nice result allows us to connect the gradients <span class="math inline">\dfrac{\partial L}{\partial W}</span> and <span class="math inline">\dfrac{\partial L}{\partial \Sigma}</span>.</p></li>
+</ol>
 </div>
 </div>
 </div>
@@ -1219,7 +1386,7 @@ Answer
 <li>AD is not a symbolic derivative</li>
 <li>AD is not just the chain rule</li>
 <li>AD is not just backpropagation</li>
-<li>AD (reverse mode) is time efficient and numerically stable</li>
+<li>AD (reverse mode) is time-efficient and numerically stable</li>
 <li>AD (reverse mode) is memory inefficient (you need to store all intermediate computations from the forward pass). :::</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
@@ -1228,7 +1395,6 @@ Answer
 <figcaption>Different approaches for taking derivatives</figcaption>
 </figure>
 </div>
-<p>Automatic differentiation is a scheme, that allows you to compute a value of gradient of function with a cost of computing function itself only twice.</p>
 </section>
 </section>
 <section id="important-stories-from-matrix-calculus" class="level1" data-number="5">
@@ -1262,21 +1428,38 @@ Answer
 </section>
 <section id="backpropagation" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="backpropagation"><span class="header-section-number">5.3</span> Backpropagation</h2>
-<p>{{HERE}}</p>
+<p>Backpropagation is a specific application of reverse-mode automatic differentiation within neural networks. It is the standard algorithm for computing gradients in neural networks, especially for training with stochastic gradient descent. Here’s how it works:</p>
+<ul>
+<li>Perform a forward pass through the network to compute activations and outputs.</li>
+<li>Calculate the loss function at the output, which measures the difference between the network prediction and the actual target values.</li>
+<li>Commence the backward pass by computing the gradient of the loss with respect to the network’s outputs.</li>
+<li>Propagate these gradients back through the network, layer by layer, using the chain rule to calculate the gradients of the loss with respect to each weight and bias.</li>
+<li>The critical point of backpropagation is that it efficiently calculates the gradient of a complex, multilayered function by decomposing it into simpler derivative calculations. This aspect makes the update of a large number of parameters in deep networks computationally feasible.</li>
+</ul>
 </section>
-<section id="linear-least-squares-layer" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="linear-least-squares-layer"><span class="header-section-number">5.4</span> Linear least squares layer</h2>
-<p>Consider the following computational graph, where <span class="math inline">Ax = b, A \in \mathbb{R}^{m \times n}, b \in \mathbb{R}^m, x \in \mathbb{R}^n</span>, we will show thе important idea, that forward pass and reverse mode backward pass are approximately the same in terms of the computational time. {{HERE}}</p>
-</section>
-<section id="jacobian-vector-product" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="jacobian-vector-product"><span class="header-section-number">5.5</span> Jacobian vector product</h2>
-<p>{{HERE}} The reason why it works so fast in practice is that the Jacobian of the operations are already developed in effective manner in automatic differentiation frameworks. Typically, we even do not construct or store the full Jacobian, doing matvec directly instead.</p>
-<section id="example-element-wise-exponent" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="example-element-wise-exponent"><span class="header-section-number">5.5.1</span> Example: element-wise exponent</h3>
+<section id="jacobian-vector-product" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="jacobian-vector-product"><span class="header-section-number">5.4</span> Jacobian vector product</h2>
+<p>The power of automatic differentiation is encapsulated in the computation of the Jacobian-vector product. Instead of calculating the entire Jacobian matrix, which is computationally expensive and often unnecessary, AD computes the product of the Jacobian and a vector directly. This is crucial for gradients in neural networks where the Jacobian may be very large, but the end goal is the product of this Jacobian with the gradient of the loss with respect to the outputs (vector). The reason why it works so fast in practice is that the Jacobian of the operations is already developed effectively in automatic differentiation frameworks. Typically, we even do not construct or store the full Jacobian, doing matvec directly instead. Note, for some functions (for example, any element-wise function of the input vector) matvec costs linear time, instead of quadratic and requires no additional memory to store a Jacobian.</p>
+<div class="callout callout-style-default callout-example no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: element-wise exponent
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div>
+<div class="callout-example">
 <p><span class="math display">
 y = \exp{(z)} \qquad J = \text{diag}(\exp(z)) \qquad \overline{z} = \overline{y} J
 </span></p>
-<p>See the examples of Vector-Jacobian Products from autodidact library:</p>
+</div>
+</div>
+</div>
+</div>
+<p>See the examples of Vector-Jacobian Products from the autodidact library:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>defvjp(anp.add,         <span class="kw">lambda</span> g, ans, x, y : unbroadcast(x, g),</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">lambda</span> g, ans, x, y : unbroadcast(y, g))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>defvjp(anp.multiply,    <span class="kw">lambda</span> g, ans, x, y : unbroadcast(x, y <span class="op">*</span> g),</span>
@@ -1288,10 +1471,9 @@ y = \exp{(z)} \qquad J = \text{diag}(\exp(z)) \qquad \overline{z} = \overline{y}
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>defvjp(anp.true_divide, <span class="kw">lambda</span> g, ans, x, y : unbroadcast(x,   g <span class="op">/</span> y),</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">lambda</span> g, ans, x, y : unbroadcast(y, <span class="op">-</span> g <span class="op">*</span> x <span class="op">/</span> y<span class="op">**</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="hessian-vector-product" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="hessian-vector-product"><span class="header-section-number">5.6</span> Hessian vector product</h2>
-<p>Interesting, that the similar idea could be used to compute Hessian-vector products, which is essential for second order optimization or conjugate gradient methods. For a scalar-valued function <span class="math inline">f : \mathbb{R}^n \to \mathbb{R}</span> with continuous second derivatives (so that the Hessian matrix is symmetric), the Hessian at a point <span class="math inline">x \in \mathbb{R}^n</span> is written as <span class="math inline">\partial^2 f(x)</span>. A Hessian-vector product function is then able to evaluate</p>
+<section id="hessian-vector-product" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="hessian-vector-product"><span class="header-section-number">5.5</span> Hessian vector product</h2>
+<p>Interestingly, a similar idea could be used to compute Hessian-vector products, which is essential for second-order optimization or conjugate gradient methods. For a scalar-valued function <span class="math inline">f : \mathbb{R}^n \to \mathbb{R}</span> with continuous second derivatives (so that the Hessian matrix is symmetric), the Hessian at a point <span class="math inline">x \in \mathbb{R}^n</span> is written as <span class="math inline">\partial^2 f(x)</span>. A Hessian-vector product function is then able to evaluate</p>
 <p><span class="math display">
 v \mapsto \partial^2 f(x) \cdot v
 </span></p>
@@ -1309,7 +1491,7 @@ v \mapsto \partial^2 f(x) \cdot v
 </section>
 <section id="code" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Code</h1>
-<p><a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Autograd.ipynb">Open In Colab</a>{: .btn }</p>
+<p><a href="https://colab.research.google.com/github/MerkulovDaniil/optim/blob/master/assets/Notebooks/Autograd_and_Jax.ipynb">Open In Colab</a></p>
 </section>
 <section id="materials" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Materials</h1>
